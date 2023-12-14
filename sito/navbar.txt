@@ -1,0 +1,87 @@
+/////////////
+    HTML
+/////////////
+
+        <div id="navbar">
+            <input type="text" id="search-input" placeholder="Cerca...">
+            <button>C</button>
+            <nav id="menu">
+            <ul>
+                <li><a href="">EVENTI FUTURI</a></li>            
+                <li>CHI SIAMO</li>
+                <li><a href="">ACCEDI</a></li>
+                <li><a href="">REGISTRAZIONE</a></li>            
+            </ul>
+        </nav>
+        </div>
+<hr>
+
+/////////////
+     CSS
+/////////////
+
+hr {
+    border: none;
+    height: 3px;
+    background-color: var(--gray);
+    width: 95%;
+    margin-left: 2.5%;
+}
+
+#navbar{
+    padding: 1em 1em 1em 2em;
+}
+
+input[type="text"] {
+    background-color: var(--gray);
+    color: #FFFFFF;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    width: 400px;
+}
+input[type="text"]::placeholder {
+    color: #fff;
+}
+
+button{
+    background-color: var(--gray);
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    border-radius: 50px;
+    background-image: url(../Progetto/Immagini/Sito/filter-icon-white.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+    text-indent: -9999px;
+    margin-left: 0.5em;
+}
+
+
+#menu {
+    display: inline-block;
+    text-align: left;
+    font-family: 'Rubik Mono One', sans-serif;
+  }
+
+#menu ul{
+    margin:auto;
+    padding:1em;
+    list-style-type: none;
+}
+
+#menu ul li {
+    display: inline-block;
+    white-space: nowrap;
+    margin-right: 3em;
+}
+
+a:link {
+    color: #000000;
+    text-decoration: underline;
+  }
+
+a:hover, a:focus {
+    color: var(--gray);
+}
