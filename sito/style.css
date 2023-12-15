@@ -22,23 +22,21 @@ hr{
 
 div img{
 	border-radius: 10px 10px 0 0;
-	width:100%;
-	height:60%;
+	width:28.5vw;
+	height:13vw;
 }
 
 .topnav{
-  overflow: hidden;
-  background-color: #e9e9e9;
+  text-align:center;
 }
 
 .topnav a{
-  float: left;
-  display: block;
+  float: center;
   color: black;
   text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+  padding:16px;
+  font-size: 27px;
+  font-weight:bold;
 }
 
 .topnav a:hover{
@@ -55,17 +53,18 @@ div img{
     background-color: rgb(184,184,184);
     color: #FFFFFF;
     padding: 10px;
-	float: left;
+	float: center;
     border: none;
     border-radius: 10px;
     width: 400px;
+	height:34px;
 }
 .topnav input[type="text"]::placeholder{
     color: #fff;
 }
 
 .topnav button{
-	float: left;
+	float: center;
     background-color: rgb(184,184,184);
     cursor: pointer;
     width: 36px;
@@ -74,16 +73,14 @@ div img{
     background-image: url(immagini/filter.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 20px;
+    background-size: 30px;
     text-indent: -9999px;
     margin-left: 0.5em;
 }
 
 .column{
 	float: left;
-	width: 25%;
-	padding-left:4.15%;
-	padding-right:4.15%;
+	width: 33.33%;
 	padding-bottom:2%;
 }
 
@@ -94,7 +91,8 @@ div img{
     transition: 0.3s;
     text-align: left;
 	line-height:1%;
-	height: 30%;
+	width:28.5vw;
+	height: 18.5vw;
 }
 
 .container:hover{
@@ -108,75 +106,74 @@ div img{
 }
 
 .GCard{
+	display:block;
 	font-weight:bold;
 	font-size:20px;
 }
 
-.generiM{
-  background-color: rgb(184,184,184);
-  border: none;
-  color: white;
-  width: 150px;
-  height: 150px;
-  text-align: center;
-  font-size: 16px;
-  margin: 4px 15px;
-  border-radius: 75%;
-  background-image: url(immagini/evento1.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 250px;
+.descrizioneEventiT{
+	font-style:bold;
+	font-size:1.2vw;
+}
+.descrizioneEventiD{
+	font-size:1vw;
 }
 
-.generiA{
+.generiImmagini{
   background-color: rgb(184,184,184);
   border: none;
+  display:block;
   color: white;
-  width: 150px;
-  height: 150px;
-  text-align: center;
-  font-size: 16px;
-  margin: 4px 15px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom:auto;
+  width: 15vw;
+  height: 15vw;
   border-radius: 75%;
-  background-image: url(immagini/evento3.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 250px;
+  transition:0.3s;
 }
 
-.generiC{
-  background-color: rgb(184,184,184);
-  border: none;
-  color: white;
-  width: 150px;
-  height: 150px;
-  text-align: center;
-  font-size: 16px;
-  margin: 4px 15px;
-  border-radius: 75%;
-  background-image: url(immagini/evento2.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 250px;
+.generiImmagini:hover{
+  transform: scale(1.1);
 }
 
-.generiB{
-  background-color: rgb(184,184,184);
-  border: none;
-  color: white;
-  width: 150px;
-  height: 150px;
-  text-align: center;
-  font-size: 16px;
-  margin: 4px 15px;
-  border-radius: 75%;
-  background-image: url(immagini/evento1.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 250px;
+.generiColumn{
+	float: left;
+	width: 64.5%;
+	padding-left:1%;
+	padding-right:1%;
+	padding-bottom:2%;
 }
 
-@media screen and (max-width: 600px){
+.generiColumn div{
+	float: left;
+	width: 23%;
+	padding-left:1%;
+	padding-right:1%;
+	padding-bottom:2%;
+}
+
+.GeneriScritte{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	font-style:bold;
+	font-size:25px;
+}
+
+#posizione{
+	font-size:20px;
+	font-style:bold;
+}
+
+
+#posizione span{
+	font-size:20px;
+	font-style:bold;
+	color:red;
+}
+
+@media screen and (max-width: 800px){
   .topnav a, .topnav input[type=text]{
     float: none;
     display: block;
@@ -192,21 +189,71 @@ div img{
   
   .column{
 	float: center;
-	width: 80%;
+	width: 100%;
 	padding-left:10%;
 	padding-right:10%;
 	padding-bottom:2%;
   }
   
+.generiColumn{
+	width: 100%;
+	padding-left:10%;
+	padding-right:10%;
+	padding-bottom:2%;
+}
+
+.generiColumn div{
+	width: 48%;
+	padding-left:1%;
+	padding-right:1%;
+}
+
+.GeneriScritte{
+	text-align:center;
+	font-style:bold;
+	font-size:25px;
+}
+
+  .generiImmagini{
+    background-color: rgb(184,184,184);
+    border: none;
+    color: black;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25vw;
+    height: 25vw;
+    border-radius: 75%;
+    transition:0.3s;
+  }
+
+	div img{
+		border-radius: 10px 10px 0 0;
+		width:75vw;
+		height:35vw;
+	}
+  
   .container{
 	border-radius: 3% 3% 3% 3%;
 	background-color: rgb(184,184,184);
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-	transition: 0.3s;
-	text-align: left;
+    transition: 0.3s;
+    text-align: left;
 	line-height:1%;
-	height: 25%;
+	width:75vw;
+	height:55vw;
    }
+   
+   .descrizioneEventiT{
+		font-style:bold;
+		font-size:4.5vw;
+	}
+	.descrizioneEventiD{
+		font-size:4vw;
+	}
+   
+   .spazio{
+	display:none;
+	}
 
    .container:hover {
 	transform: scale(1.05);
