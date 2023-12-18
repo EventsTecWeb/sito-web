@@ -80,7 +80,9 @@ div img{
 
 .column{
 	float: left;
-	width: 33.33%;
+	width: 29.25%;
+	padding-left:2.03%;
+	padding-right:2.03%;
 	padding-bottom:2%;
 }
 
@@ -108,7 +110,7 @@ div img{
 .GCard{
 	display:block;
 	font-weight:bold;
-	font-size:20px;
+	font-size:25px;
 }
 
 .descrizioneEventiT{
@@ -154,10 +156,8 @@ div img{
 }
 
 .GeneriScritte{
-	display:block;
-	margin-left:auto;
-	margin-right:auto;
-	font-style:bold;
+	width:100%;
+	text-align:center;
 	font-size:25px;
 }
 
@@ -189,23 +189,15 @@ div img{
   
   .column{
 	float: center;
-	width: 100%;
-	padding-left:10%;
-	padding-right:10%;
+	width: 81%;
+	padding-left:9.5%;
+	padding-right:9.5%;
 	padding-bottom:2%;
   }
   
 .generiColumn{
 	width: 100%;
-	padding-left:10%;
-	padding-right:10%;
 	padding-bottom:2%;
-}
-
-.generiColumn div{
-	width: 48%;
-	padding-left:1%;
-	padding-right:1%;
 }
 
 .GeneriScritte{
@@ -218,10 +210,8 @@ div img{
     background-color: rgb(184,184,184);
     border: none;
     color: black;
-    margin-left: auto;
-    margin-right: auto;
-    width: 25vw;
-    height: 25vw;
+    width: 17vw;
+    height: 17vw;
     border-radius: 75%;
     transition:0.3s;
   }
@@ -249,10 +239,6 @@ div img{
 	}
 	.descrizioneEventiD{
 		font-size:4vw;
-	}
-   
-   .spazio{
-	display:none;
 	}
 
    .container:hover {
