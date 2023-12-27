@@ -5,22 +5,49 @@
 		<meta name="description" content="Events Padova, sito che permette di trovare eventi di qualsiasi genere">
 		<title>Events</title>
 		<link rel="stylesheet" href="style.css">
+		<meta charset="UTF-8">
+		<!-- MODIFICA -->
+		<meta name="description" content= "MODIFICA" />
+		<!-- MODIFICA -->
+		<meta name="keywords" content="MODIFICA">
+		<!-- MODIFICA -->
+		<link rel="stylesheet" href="navbar.css"/>
+		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,400&display=swap">
 	</head>
 	<body>
 		<header>
 			<h1>Events</h1>
-		</header>
+        <div class="header-items">
+        <div class="search-container">
+        <form id="searchBarA" action="/cerca" method="get">
+            <!-- MODIFICA -->
+            <input type="text" id="searchBar" name="cerca" placeholder="Cerca...">
+        </form>
+        </div>
+        <!-- MODIFICA -->
+        <button type="submit" id="searchButton">
+            <img src="immagini/search.png" alt="Icona Cerca">
+        </button>
+        <button class="bottoneFiltro">
+            <img src="immagini/filter-icon-0.png" alt="Filtro">
+        </button>
+        <button class="bottoneHamburger">
+            <img src="immagini/menu-button-of-three-horizontal-lines.png" alt="Filtro">
+        </button>
         <nav>
-			<div class="topnav">
-				<button>F</button>
-				<input type="text" placeholder="Cerca...">
-				<a href="">EVENTI FUTURI</a>          
-				<a href="">CHI SIAMO</a>
-				<a href="">ACCEDI</a>
-				<a href="">REGISTRAZIONE</a>           
-			</div>
-            <p  id="posizione">Ti trovi in: <span lang="en">Home</span></p>
+            <ul class="linkPagina">
+                <li><a id="EventiFuturi" href="eventi">EVENTI FUTURI</a></li>
+                <li><a id="ChiSiamoLink" href="chisiamo">CHI SIAMO</a></li>
+                <li><a id="AccediLink" href="accedi">ACCEDI</a></li>
+                <li><a id="RegistratiLink" href="registrazione">REGISTRAZIONE</a></li>
+            </ul>
         </nav>
+        <nav aria-label="breadcrumb">
+            <!-- MODIFICA -->
+            <p>Ti trovi in: <span lang="en"><a id="returnHome" href="#">Home</a></p>
+        </nav>
+		</header>
 		<hr>
 		<main class="colonne">
             <div class="row">

@@ -1,18 +1,47 @@
-<html>
-<head>
-	<link rel="stylesheet" href="style.css">
+<!DOCTYPE html>
+<html lang="it">
+<head> 
+  <meta charset="UTF-8">
+  <!-- MODIFICA -->
+  <meta name="description" content= "MODIFICA" />
+  <!-- MODIFICA -->
+  <meta name="keywords" content="MODIFICA">
+  <!-- MODIFICA -->
+  <link rel="stylesheet" href="navbar.css"/>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,400&display=swap">
 </head>
 <body>
-	<nav>
-		<div class="topnav">
-			<input type="text" placeholder="Search.."></input>
-			<a><img src="immagini/filter.png"></a>
-			<a class="active" href="#home">HOME</a>
-			<a href="#news">EVENTI FUTURI</a>
-			<a href="#contact">CHI SIAMO</a>
-			<a href="#about">ACCEDI</a>
-			<a href="#about">REGISTRATI</a>
-		</div>
-	</nav>
+    <header>
+        <div class="header-items">
+        <div class="search-container">
+        <form id="searchBarA" action="/cerca" method="get">
+            <!-- MODIFICA -->
+            <input type="text" id="searchBar" name="cerca" placeholder="Cerca...">
+        </form>
+        </div>
+        <!-- MODIFICA -->
+        <button type="submit" id="searchButton">
+            <img src="immagini/search.png" alt="Icona Cerca">
+        </button>
+        <button class="bottoneFiltro">
+            <img src="immagini/filter-icon-0.png" alt="Filtro">
+        </button>
+        <button class="bottoneHamburger">
+            <img src="immagini/menu-button-of-three-horizontal-lines.png" alt="Filtro">
+        </button>
+        <nav>
+            <ul class="linkPagina">
+                <li><a id="EventiFuturi" href="eventi">EVENTI FUTURI</a></li>
+                <li><a id="ChiSiamoLink" href="chisiamo">CHI SIAMO</a></li>
+                <li><a id="AccediLink" href="accedi">ACCEDI</a></li>
+                <li><a id="RegistratiLink" href="registrazione">REGISTRAZIONE</a></li>
+            </ul>
+        </nav>
+        <nav aria-label="breadcrumb">
+            <!-- MODIFICA -->
+            <p>Ti trovi in: <span lang="en"><a id="returnHome" href="#">Home</a></p>
+        </nav>
+    </header>
 </body>
 </html>
