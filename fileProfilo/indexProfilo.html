@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+		<meta name="keywords" content="EVENTS, CONCERTI, CULTURA">
+		<meta name="description" content="Events Padova, sito che permette di trovare eventi di qualsiasi genere">
+		<title>Profilo</title>
+		<link rel="stylesheet" href="styleProfilo.css">
+        <link rel="stylesheet" href="styleProfiloMobile.css" media="screen and (max-width:600px)">
+    </head>
+    <body>
+        <header>
+            <h1>Chi Siamo</h1>
+        </header>
+        <div id="navbar">
+            <input type="text" id="search-input" placeholder="Cerca...">
+            <button id="cerca">C</button>
+            <nav id="menu">
+            <ul>
+                <li><a href="">EVENTI FUTURI</a></li>            
+                <li><a href="">CHI SIAMO</a></li>       
+            </ul>
+        </nav>
+        <button id="aggiungiEvento">R</button>
+        <button id="menuTendina">T</button>
+        <button id="notifiche">N</button> 
+        <button id="profilo">P</button>
+               
+        </div>
+
+        <hr>
+        <nav id="breadcrumb">
+            <p>Ti trovi in: <a href="indexChiSiamo.html" lang="en">Home</a> &gt;&gt; Profilo</p>
+        </nav>
+
+        <div id="contenitore">
+
+        <nav id="menuleft">
+            <ul>
+            <li><button id="buttonprofilo">Profilo</button></li>
+            <li><button>Informazioni Personali</button></li>
+            <li><button>Eventi Preferiti</button></li>
+            <li><button>Impostazioni e Sicurezza</button></li>
+            </ul>
+        </nav>
+        <main>
+
+            <div id="box">
+                <div id="profile-info-container">
+                    <img id="immagineProfilo" src="../Progetto/Immagini/Sito/andrew_garfield.jpg">
+                    <ul id="descrizioneProfilo">
+                        <li id="NomeCompleto">Mario Rossi</li>
+                        <li id="NomeUtente">mar_ros87</li>
+                        <li id="Amici">32 amici</li>
+                    </ul>
+                </div>
+                <form>
+                    <label for="image">Immagine:</label>
+                    <div id="image-container" contenteditable="false">
+                        <p class="drag-drop-text">Trascina un'immagine qui</p>
+                    </div>
+                    <input type="file" id="image" name="image">
+                    <img src="" alt="Immagine dell'evento">
+            
+                    <label for="eventName">Nome dell'evento:</label>
+                    <input type="text" id="eventName" name="eventName">
+            
+                    <div class="form-group">
+                        <div>
+                            <label for="eventDate">Data:</label>
+                            <input type="date" id="eventDate" name="eventDate">
+                        </div>
+                        <div>
+                            <label for="eventTime">Ora:</label>
+                            <input type="time" id="eventTime" name="eventTime">
+                        </div>
+                    </div>
+            
+                    <label for="visibility">Visibilità:</label>
+                    <select id="visibility" name="visibility">
+                        <option value="public">Pubblico</option>
+                        <option value="private">Privato</option>
+                    </select>
+            
+                    <label for="eventDescription">Descrizione dell'evento:</label>
+                    <textarea id="eventDescription" name="eventDescription"></textarea>
+            
+                    <button id="invia" type="submit">Invia</button>
+                </form>
+                </div>
+            </div>
+        </main>
+        </div>
+    </body>
+    <footer>
+        <p>Matteo Pincin <span lang="en">All Rights Reserved.</span></p>
+    </footer>
+</html>
+

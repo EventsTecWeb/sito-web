@@ -1,22 +1,22 @@
 header {
     margin-top: -35px;
     position:relative;
-  }
+}
   
-  .header-items {
+.header-items {
     display: flex;
-    justify-content: space-between;
-  }
+    justify-content: space-around;
+}
   
-  nav[aria-label="breadcrumb"] {
+nav[aria-label="breadcrumb"] {
     position: absolute;
     width: 100%; /* Assicura che la breadcrumb si estenda per tutta la larghezza dell'header */
     bottom: -50px;
     font-size: small;
     text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
-  }
+}
   
-  header .bottoneHamburger {
+header .bottoneHamburger {
     border-radius: 50%; /* Rendi il bottone rotondo */
     width: 30px; /* Imposta la larghezza desiderata per il bottone */
     height: 30px; /* Imposta l'altezza desiderata per il bottone */
@@ -24,94 +24,98 @@ header {
     border: none;
     display: none;
     margin-left: 0.5vw;
-  }
+}
   
-  .bottoneHamburger img {
+.bottoneHamburger img {
     padding-top: 5px;
     width: 70%; /* Assicura che l'immagine si adatti al bottone */
     height: auto; /* Imposta l'altezza automatica per mantenere le proporzioni */
     border: none; /* Rimuove il bordo dell'immagine */
     object-fit: cover;
-  }
+}
   
-  header h1{
+header h1{
     text-indent: -999em;
-    background-image: url("/Users/macuser/Desktop/sito-web/Images/eventsLogoRid.png");
+    background-image: url("../Images/eventsLogoRid.png");
     font-size: 4em;
     line-height: 1.5em;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 20%;
-  }
+}
   
-  ul.linkPagina {
+ul.linkPagina {
     display: flex; /* Usiamo flexbox per mantenere gli elementi sulla stessa riga */
     list-style: none; /* Rimuove i punti elenco */
     padding: 0; 
-  }
+}
   
-  ul.linkPagina li {
+ul.linkPagina li {
     white-space: nowrap; /* Impedisce il wrap dell'elemento */
-    font-family: 'Rubik Mono One', sans-serif;
-    font-size: 1vw;
-    margin-right: 10px; 
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2vw;
+    margin-right: 5vh; 
     text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
-  }
+}
   
-  #EventiFuturi{
+#EventiFuturi{
     text-align: center; /* Centra il link orizzontalmente */
     color: rgb(0, 0, 0); /* Colore specifico */
     text-decoration: underline;
     padding-right: 2.0%;
-  }
+}
   
-  #EventiFuturi:hover {
+#EventiFuturi:hover {
     text-decoration: none; /* Rimuove la sottolineatura al passaggio sopra */
-  }
+}
    
-  #ChiSiamoLink{
+#ChiSiamoLink{
     text-align: center; /* Centra il link orizzontalmente */
     color: rgb(0, 0, 0); /* Colore specifico */
     text-decoration: underline;
     padding-right: 2.0%;
-  }
+}
   
-  #ChiSiamoLink:hover {
+#ChiSiamoLink:hover {
     text-decoration: none; /* Rimuove la sottolineatura al passaggio sopra */
-  }
+}
   
-  #AccediLink{
+#AccediLink{
     text-align: center; /* Centra il link orizzontalmente */
     color: rgb(0, 0, 0); /* Colore specifico */
     text-decoration: underline;
     padding-right: 2.0%;
-  }
-  
-  #AccediLink:hover {
+    pointer-events: none;
+    cursor: default;
+}
+
+#AccediLink:hover {
     text-decoration: none; /* Rimuove la sottolineatura al passaggio sopra */
-  }
+}
    
-  #RegistratiLink{
+#RegistratiLink{
     text-align: center; /* Centra il link orizzontalmente */
     color: rgb(0, 0, 0); /* Colore specifico */
     text-decoration: underline;
-  }
+}
   
-  #RegistratiLink:hover {
+#RegistratiLink:hover {
     text-decoration: none; /* Rimuove la sottolineatura al passaggio sopra */
-  }
+}
   
-  input[type="text" ] #searchBarRegistrati {
+/* AAAAAAAAAAAAAA - Modifica e.g. searchBarRegistrati, searchButtonRegistrati */
+input[type="text" ] #searchBar {
     border: none; /* Rimuove il bordo */
     border-bottom: 1px solid black; /* Aggiunge una linea inferiore */
     background-color: transparent; /* Sfondo trasparente */
     padding: 5px; /* Spazio interno per migliorare la leggibilità */
     outline: none; /* Rimuove il bordo quando l'input è in focus */
     width:30%;
-  }
+}
   
-  #searchBarRegistrati {
+/* AAAAAAAAAAAAAA - Modifica e.g. searchBarRegistrati, searchButtonRegistrati */
+#searchBar {
     width: 404px;
     height: 39px;
     left: 48px;
@@ -124,77 +128,101 @@ header {
     font-family: 'Poppins', sans-serif;
     margin-right:1vw;
     transition: width 1s ease-in-out;
-  }
-  
-  #searchBarRegistrati::placeholder {
+}
+
+/* AAAAAAAAAAAAAA - Modifica e.g. searchBarRegistrati, searchButtonRegistrati */
+#searchBar::placeholder {
     color: rgb(111, 111, 111); 
-  }
+}
   
-  .bottoneFiltro {
+.bottoneFiltro {
     border-radius: 50%; /* Rendi il bottone rotondo */
     width: 40px; /* Imposta la larghezza desiderata per il bottone */
     height: 40px; /* Imposta l'altezza desiderata per il bottone */
     overflow: hidden; /* Assicura che l'immagine si adatti al bordo rotondo */
     border: none;
-  }
+}
   
-  .bottoneFiltro img {
+.bottoneFiltro img {
     padding-top: 5px;
     width: 80%; /* Assicura che l'immagine si adatti al bottone */
     height: auto; /* Imposta l'altezza automatica per mantenere le proporzioni */
     border: none; /* Rimuove il bordo dell'immagine */
     object-fit: cover; /* Fai in modo che l'immagine copra completamente l'area del bottone */
-  }
+}
   
-  
-  
-  #searchButtonRegistrati {
+/* AAAAAAAAAAAAAA - Modifica e.g. searchBarRegistrati, searchButtonRegistrati */
+#searchButton {
     border-radius: 50%; /* Rendi il bottone rotondo */
     width: 40px; /* Imposta la larghezza desiderata per il bottone */
     height: 40px; /* Imposta l'altezza desiderata per il bottone */
     overflow: hidden; /* Assicura che l'immagine si adatti al bordo rotondo */
     border: none;
-  }
+}
   
-  
-  #searchButtonRegistrati img{
+/* AAAAAAAAAAAAAA - Modifica e.g. searchBarRegistrati, searchButtonRegistrati */
+#searchButton img{
     padding-top: 5px;
     width: 90%; /* Assicura che l'immagine si adatti al bottone */
     height: auto; /* Imposta l'altezza automatica per mantenere le proporzioni */
     border: none; /* Rimuove il bordo dell'immagine */
     object-fit: cover; /* Fai in modo che l'immagine copra completamente l'area del bottone */
-  }
+}
   
-  #searchButtonRegistrati, .bottoneFiltro, .bottoneHamburger {
+/* AAAAAAAAAAAAAA - Modifica e.g. searchBarRegistrati, searchButtonRegistrati */
+#searchButton, .bottoneFiltro, .bottoneHamburger {
     position: relative;
     margin-left: -1.5vw;
     margin-bottom: 1vh;
     transition: width 0.3s ease, height 0.3s ease;
     transition: margin-top 0.5s ease, width 0.5s ease, height 0.5s ease; 
-  }
+}
+
+.bottoneFiltro{
+    margin-left:0.1vw;
+}
+
+header:after {
+    content: '';
+    display: block;
+    border-bottom: 1px solid #ccc;
+    margin-top: 10px; /* Altezza della linea grigia */
+}
   
-  .bottoneFiltro{
-      margin-left:0.1vw;
-  }
-  
-  nav[aria-label="breadcrumb"] {
+nav[aria-label="breadcrumb"] {
     padding-left: 1vw;
     font-family: Poppins, sans-serif;
     margin-top: -10px;
-  }
+}
   
-  #returnHome{
+#returnHome{
     color: black;
     text-decoration: underline;
-  }
+}
   
-  #returnHome:hover{
+#returnHome:hover{
     text-decoration: none;
-  }
+}
+    
+input[type="text"] {
+    font-family: Poppins, sans-serif;
+    border: none; /* Rimuove il bordo */
+    border-bottom: 1px solid black; /* Aggiunge una linea inferiore */
+    background-color: transparent; /* Sfondo trasparente */
+    padding: 5px; /* Spazio interno per migliorare la leggibilità */
+    outline: none; /* Rimuove il bordo quando l'input è in focus */
+    width:100%;
+}
   
-  .image-container-ragComp {
+
+/* Rimuove i bordi del focus sugli input di tipo text */
+input[type="text"]:focus {
+    outline: none;
+}
+
+.image-container-ragComp {
     /* Imposta l'immagine di default */
-    background-image: url('/Users/macuser/Desktop/sito-web/Images/person2.webp');
+    background-image: url('/Users/macuser/Desktop/sito-web/Images/person.webp');
     /* Imposta altre proprietà necessarie per visualizzare correttamente l'immagine di sfondo */
     background-size: contain;
     background-position: center;
@@ -235,10 +263,10 @@ header {
   }
   
   #container-sinistro{
-    padding-top: 13.5vh;
+    padding-top: 4.5vh;
   }
   
-   #registratiScritta{
+   #accediScritta{
     font-family: Poppins, sans-serif;
     width: 20%; 
     height: 6%; 
@@ -321,149 +349,178 @@ header {
     font-family: Poppins, sans-serif;
   }
   
-  @media screen and (max-width: 950px) {
-    #searchButtonRegistrati {
-      margin-top: 1vh;
-      width: 30px; /* Modifica la larghezza */
-      height: 30px; /* Modifica l'altezza */
+
+@media screen and (max-width: 950px) {
+    #searchButton {
+        margin-top: 1vh;
+        width: 30px; /* Modifica la larghezza */
+        height: 30px; /* Modifica l'altezza */
     }
   
     .bottoneFiltro {
-      margin-top: 1vh;
-      width: 30px; /* Modifica la larghezza */
-      height: 30px; /* Modifica l'altezza */
+        margin-top: 1vh;
+        width: 30px; /* Modifica la larghezza */
+        height: 30px; /* Modifica l'altezza */
     }
-  }
+}
   
-  @media screen and (max-width: 830px) {
-      #searchBarRegistrati {
+
+@media screen and (max-width: 900px) {
+    /* AAAAAAAAAAAAAA - Modifica e.g. searchBarRegistrati, searchButtonRegistrati */
+    #searchBar {
         width: 250px; /* Riduci la larghezza */
         height: 30px; /* Riduci l'altezza */
         transition: width 2s ease-in-out;
-      }
-  }
-  
-  @media screen and (max-width: 830px) {
-    #searchBarRegistrati {
-      width: 180px; /* Riduci la larghezza */
-      height: 30px; /* Riduci l'altezza */
-      transition: width 1s ease-in-out;
     }
-  }
+
+    ul.linkPagina li {
+        white-space: nowrap; /* Impedisce il wrap dell'elemento */
+        font-family: 'Roboto', sans-serif;
+        font-size: 0.8em;
+        margin-right: 5vh; 
+        text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+    }
+     
+}
   
-  @media screen and (max-width: 500px) {
+
+@media screen and (max-width: 900px) {
+    /* AAAAAAAAAAAAAA - Modifica e.g. searchBarRegistrati, searchButtonRegistrati */
+    #searchBar {
+        width: 180px; /* Riduci la larghezza */
+        height: 30px; /* Riduci l'altezza */
+        transition: width 1s ease-in-out;
+    }
+
+    ul.linkPagina li {
+        white-space: nowrap; /* Impedisce il wrap dell'elemento */
+        font-family: 'Roboto', sans-serif;
+        font-size: 0.8em;
+        margin-right: 5vh; 
+        text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+    }
+      
+}
   
+
+@media screen and (max-width: 700px) {
     header h1{
-      padding-top: 10px;
-      background-size: 50%;
+        padding-top: 10px;
+        background-size: 50%;
     }
-  
   
     header {
-      position: relative; /* Assicura che la breadcrumb sia posizionata rispetto all'header */
+        position: relative; /* Assicura che la breadcrumb sia posizionata rispetto all'header */
     }
     
     .header-items {
-      margin-top: -30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+        margin-top: -30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
   
-    .header-items button {
-      width: calc(25% / 3); /* Divides the width of searchBarAccedi by three */
-      height: auto; /* Adjusts the height automatically based on the content */
-      margin: auto;
-    }
-  
+    .header-items button,
     .header-items button .bottoneHamburger {
-      width: calc(25% / 3); /* Divides the width of searchBarAccedi by three */
-      height: auto; /* Adjusts the height automatically based on the content */
-      margin: auto;
+        width: 6vh; /* Divides the width of searchBarAccedi by three */
+        height: 6vh; /* Set the height equal to the width to make it a circle */
+        margin: auto;
+        border-radius: 50%; /* Makes the button circular */
     }
-  
+
     header::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -10px;
-      height: 3px;
-      background-color: rgba(217, 217, 217, 1);
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -10px;
+        height: 3px;
+        background-color: rgba(217, 217, 217, 1);
     }
   
-    #searchButtonRegistrati {
-      width: calc(25% / 3); /* Divides the width of searchBarAccedi by three */
-      height: auto; /* Adjusts the height automatically based on the content */
-      margin: auto; /* Centers the button horizontally and vertically */
+    /* AAAAAAAAAAAAAA - Modifica e.g. searchBarRegistrati, searchButtonRegistrati */
+    #searchButton {
+        width: 6vh; /* Divides the width of searchBarAccedi by three */
+        height: 6vh; /* Adjusts the height automatically based on the content */
+        margin: auto; /* Centers the button horizontally and vertically */
     }
   
-    header .bottoneHamburger, #searchButtonRegistrati,.bottoneFiltro, #searchBarRegistrati {
-      display: inline-block; /* Makes all three elements inline */
-      vertical-align: middle; /* Aligns them vertically in the middle */
+    /* AAAAAAAAAAAAAA - Modifica e.g. searchBarRegistrati, searchButtonRegistrati */
+    header .bottoneHamburger, #searchButton,.bottoneFiltro, #searchBar {
+        display: inline-block; /* Makes all three elements inline */
+        vertical-align: middle; /* Aligns them vertically in the middle */
     }
+
+    ul.linkPagina li {
+        white-space: nowrap; /* Impedisce il wrap dell'elemento */
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.2vw;
+        margin-right: 5vh; 
+        text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+    }
+      
     
     nav[aria-label="breadcrumb"] {
-      position: absolute;
-      bottom: -50px; /* Regola la distanza verticale dalla parte inferiore dell'header */
-      /* Altri stili per la breadcrumb */
+        position: absolute;
+        bottom: -50px; /* Regola la distanza verticale dalla parte inferiore dell'header */
+        /* Altri stili per la breadcrumb */
     }
   
-  
-    #searchBarRegistrati {
-      width: 220px; 
-      max-width: 300px; 
-      height: 35px; 
-      left: unset; 
-      top: unset; 
-      position: relative; 
-      margin-right: 0; 
-      margin-left: auto; 
+    /* AAAAAAAAAAAAAA - Modifica e.g. searchBarRegistrati, searchButtonRegistrati */
+    #searchBar {
+        width: 220px; 
+        max-width: 300px; 
+        height: 35px; 
+        left: unset; 
+        top: unset; 
+        position: relative; 
+        margin-right: 0; 
+        margin-left: auto; 
     }
   
     header .bottoneHamburger {
-      display: block;
+        display: block;
     }
   
     header .linkPagina{
-      display: none;
+        display: none;
     }
-  
+
     .image-container-ragComp {
-      /* Cambia l'immagine quando la larghezza dello schermo è inferiore a 600px */
-      background-image: url('/Users/macuser/Desktop/sito-web/Images/people2.png');
-      background-size: contain;
-    }
+        /* Cambia l'immagine quando la larghezza dello schermo è inferiore a 600px */
+        background-image: url('/Users/macuser/Desktop/sito-web/Images/people.png');
+        background-size: contain;
+      }
+    
+      #pannello-principale {
+        display: flex;
+        flex-direction: column;
+      }
+    
+      #container-destro {
+        order: 1;
+      }
+    
+      #accediScritta{
+        font-family: Poppins, sans-serif;
+        width: 10%; 
+        height: 6%; 
+        left: 35%; 
+        top: 15%; 
+        font-weight: 600;
+        font-size: 2.5em; 
+        line-height: 1.2; 
+        padding-top:4.5vh;
+        margin-bottom:15px;
+      }
+    
+      #container-sinistro {
+        order: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        
+      }
   
-    #pannello-principale {
-      display: flex;
-      flex-direction: column;
-    }
-  
-    #container-destro {
-      order: 1;
-      margin-bottom: -70px;
-    }
-  
-    #accediScritta{
-      font-family: Poppins, sans-serif;
-      width: 10%; 
-      height: 6%; 
-      left: 35%; 
-      top: 15%; 
-      font-weight: 600;
-      font-size: 2.5em; 
-      line-height: 1.2; 
-      padding-top:4.5vh;
-      margin-bottom:15px;
-    }
-  
-    #container-sinistro {
-      order: 2;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      padding-top: -30px;
-    }
-  }
+}
