@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="it">
+<head> 
+  <meta charset="UTF-8">
+  <title>Events: Profilo</title>
+  <!-- MODIFICA -->
+  <meta name="description" content= "Pagina di dettagli del profilo" />
+  <!-- MODIFICA -->
+  <meta name="keywords" content="accesso profilo events, events,accesso utente events, login, accesso personale, profilo utente events, accesso privato events">
+  <!-- MODIFICA -->
+  <link rel="stylesheet" href="../profilo/styleProfilo.css"/>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,400&display=swap">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="../profilo/scriptProfilo.js"></script>
+</head>
+<body>
+    <header>
+            <h1>Events</h1>
+        <div class="header-items">
+        <div class="search-container">
+        <form id="searchBarA" action="/cerca" method="get">
+            <!-- MODIFICA -->
+            <input type="text" id="searchBar" name="cerca" placeholder="Cerca...">
+        </form>
+        </div>
+        <!-- MODIFICA -->
+        <button type="submit" id="searchButton">
+            <img src="../Progetto/Images/search.png" alt="Icona Cerca">
+        </button>
+        <button class="bottoneFiltro">
+            <img src="../Progetto/Images/filter-icon-0.png" alt="Filtro">
+        </button>
+        <button class="bottoneHamburger">
+            <img src="../Progetto/Images/menu-button-of-three-horizontal-lines.png" alt="Bottone per link nascosti in formato cellulare">
+        </button>
+        <nav>
+            <ul class="linkPagina">
+                <li><a id="EventiFuturi" href="eventi">EVENTI FUTURI</a></li>
+                <li><a id="ChiSiamoLink" href="../Progetto/indexChiSiamo.html">CHI SIAMO</a></li>
+            </ul>
+        </nav>
+        <button class="bottonePlus">
+            <img src="../Progetto/Images/add.png" alt="Bottone per creare un nuovo evento">
+        </button>
+        <!--Da gestire la foto del profilo in modo che si adatti al profilo -->
+        <button class="bottoneProfilo">
+            <img src="../Progetto/Images/andrew_garfield.jpg" alt="Bottone per accedere ai dati del proprio profilo">
+        </button>
+        <nav aria-label="breadcrumb" id="bread">
+            <!-- MODIFICA -->
+            <p>Ti trovi in: <span lang="en"><a id="returnHome" href="#">Home</a></span> >> Profilo</p>
+        </nav>
+    </div>
+    </header>
+    <nav id="menuCenter">
+        <ul class="menu-orizzontale">
+            <li><a id="profilo" href="../Progetto/indexProfilo.html">Profilo Personale</a></li>
+            <li><a id="info" href="../infoPers/informazioniPersonali.html">Informazioni Personali</a></li>
+            <li><a id="prefe" href="prefe">Eventi Preferiti</a></li>
+            <li><a id="impo" href="impo">Impostazioni e Sicurezza</a></li>
+        </ul>
+    </nav>
+    <div class="wrapper">
+    <nav id="menuleft">
+        <ul>
+            <li><button id="buttonProfilo" onclick="vaiAPaginaProfilo()">Profilo</a></button></li>
+            <li><button id="buttonInfo" onclick="vaiAPaginaInfo()">Informazioni Personali</button></li>
+            <li><button>Eventi Preferiti</button></li>
+            <li><button>Impostazioni e Sicurezza</button></li>
+        </ul>
+    </nav>
+    <div id="box">
+        <div id="profile-info-container">
+            <img id="immagineProfilo" src="../Images/andrew_garfield.jpg">
+            <ul id="descrizioneProfilo">
+                <li id="NomeCompleto">Mario Rossi</li>
+                <li id="NomeUtente">mar_ros87</li>
+                <li id="Amici">32 amici</li>
+            </ul>
+        </div>
+        <form>
+            <label for="image">Immagine:</label>
+            <div id="image-container" contenteditable="false">
+                <p class="drag-drop-text">Trascina un'immagine qui</p>
+                <img id="image-preview" src="" alt="Immagine dell'evento">
+            </div>
+            <input type="file" id="image" name="image">
+
+    
+            <label for="eventName">Nome dell'evento:</label>
+            <input type="text" id="eventName" name="eventName">
+    
+            <div class="form-group">
+                <div>
+                    <label for="eventDate">Data:</label>
+                    <input type="date" id="eventDate" name="eventDate">
+                </div>
+                <div>
+                    <label for="eventTime">Ora:</label>
+                    <input type="time" id="eventTime" name="eventTime">
+                </div>
+            </div>
+    
+            <label for="visibility">Visibilità:</label>
+            <select id="visibility" name="visibility">
+                <option value="public">Pubblico</option>
+                <option value="private">Privato</option>
+            </select>
+    
+            <label for="eventDescription">Descrizione dell'evento:</label>
+            <textarea id="eventDescription" name="eventDescription"></textarea>
+    
+            <button id="invia" type="submit">Invia</button>
+        </form>
+        </div>
+    </div>
+</body>
+</html>
