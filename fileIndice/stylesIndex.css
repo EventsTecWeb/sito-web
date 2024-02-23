@@ -1,13 +1,12 @@
-body, html {
+#index {
   height: 100%;
-  margin: 0;
+  margin-top: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f0f0f0;
 }
 
-.DescizioneConBottoni {
+#DescizioneConBottoniIndex {
   position: relative;
   text-align: center;
   font-family: 'Poppins';
@@ -23,34 +22,29 @@ body, html {
   padding-bottom: 50px; /* Spazio per i bottoni */
 }
 
-.DescizioneConBottoni .image-container {
+#DescizioneConBottoniIndex #image-container-index {
+  background-image: url('/Users/macuser/Desktop/sito-web/Images/eventsLogoRid.png'); 
+  background-size: contain;
+  background-repeat: no-repeat;
   position: relative;
-  width: 30%;
+  width: 17vw; 
+  height: 15vw; 
+  padding-bottom:0;
+  margin-bottom: -10vh;
 }
 
-.DescizioneConBottoni .image-container img {
-  width: 100%;
-  height: auto;
-}
-
-.DescizioneConBottoni .image-container::after {
+#DescizioneConBottoniIndex #image-container-index::after {
   content: '';
   position: absolute;
-  left: -20%; /* Estendi la linea verso sinistra rispetto al contenitore */
-  right: -20%; /* Estendi la linea verso destra rispetto al contenitore */
-  bottom: -10px;
+  left: -20%;
+  right: -20%;
+  bottom: 9vh;
   height: 3px; /* Altezza della linea */
   background-color: rgba(217, 217, 217, 1);
 }
 
-.DescizioneConBottoni p {
+#DescizioneConBottoniIndex p {
   font-size: 16px; /* Dimensione predefinita */
-}
-
-@media (max-width: 768px) {
-  .DescizioneConBottoni p {
-    font-size: 14px; /* Modifica la dimensione del testo per schermi più piccoli */
-  }
 }
 
 .ContainerBottoni {
@@ -67,7 +61,7 @@ body, html {
   border-radius: 39px;
 }
 
-button {
+.buttonIndex {
   width: 80%;
   max-width: 278px;
   height: 58px;
@@ -81,15 +75,15 @@ button {
   margin-bottom: 15px; /* Aggiungi spazio tra i pulsanti */
 }
 
-button:first-child {
+.buttonIndex:first-child {
   margin-top: 10px; /* Aggiungi spazio sopra il primo bottone */
 }
 
-button:last-child {
+.buttonIndex:last-child {
   margin-bottom: 10px; /* Aggiungi spazio sotto l'ultimo pulsante */
 }
 
-button:hover {
+.buttonIndex:hover {
   background-color: rgba(14, 31, 187, 1);
 }
 
@@ -107,7 +101,7 @@ button:hover {
   text-decoration: none; /* Rimuove la sottolineatura al passaggio sopra */
 }
 
-footer {
+#footerIndex {
   text-align: center; /* Centra il contenuto orizzontalmente */
   margin-top: 5px; /* Aggiunge spazio sopra il footer */
   position: fixed;
@@ -117,3 +111,8 @@ footer {
   padding: 20px 0;
 }
 
+@media (max-width: 768px) {
+  .DescizioneConBottoni p {
+    font-size: 14px; /* Modifica la dimensione del testo per schermi più piccoli */
+  }
+}

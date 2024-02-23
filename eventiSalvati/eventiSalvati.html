@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="it">
+<head> 
+  <meta charset="UTF-8">
+  <title>Events eventi salvati</title>
+  <!-- MODIFICA -->
+  <meta name="description" content= "Pagina per una visualizzazione del proprio profilo events più ampia, dove si può trovare il proprio nome utente, gli eventi che si sono salvati e anche la possibilità di creare un nuovo evento a cui fare da organizzatore. " />
+  <!-- MODIFICA -->
+  <meta name="keywords" content="profilo utente events, nome utente, eventi salvati, events, eventi, creazione evento personalizzato, nuovo evento">
+  <!-- MODIFICA -->
+  <link rel="stylesheet" href="eventiSalvati.css"/>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,400&display=swap">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+            <h1>Events</h1>
+        <div class="header-items">
+        <div class="search-container">
+        <form id="searchBarA" action="/cerca" method="get">
+            <!-- MODIFICA -->
+            <input type="text" id="searchBar" name="cerca" placeholder="Cerca...">
+        </form>
+        </div>
+        <!-- MODIFICA -->
+        <button type="submit" id="searchButton">
+            <img src="../Images/search.png" alt="Icona Cerca">
+        </button>
+        <button class="bottoneFiltro">
+            <img src="../Images/filter-icon-0.png" alt="Filtro">
+        </button>
+        <button class="bottoneHamburger">
+            <img src="../Images/menu-button-of-three-horizontal-lines.png" alt="Bottone per link nascosti in formato cellulare">
+        </button>
+        <nav>
+            <ul class="linkPagina">
+                <li><a id="EventiFuturi" href="eventi">EVENTI FUTURI</a></li>
+                <li><a id="ChiSiamoLink" href="chisiamo">CHI SIAMO</a></li>
+            </ul>
+        </nav>
+        <button class="bottonePlus">
+            <img src="../Images/add_white.png" alt="Bottone per creare un nuovo evento">
+        </button>
+        <!--Da gestire la foto del profilo in modo che si adatti al profilo -->
+        <button class="bottoneProfilo">
+            <img src="../Images/andrew_garfield.jpg" alt="Bottone per accedere ai dati del proprio profilo">
+        </button>
+        <nav aria-label="breadcrumb" id="bread">
+            <!-- MODIFICA -->
+            <p>Ti trovi in: <span lang="en"><a class="returnBread" href="#">Home</a></span> >> Profilo</p>
+        </nav>
+    </div>
+    </header>
+    <nav id="menuCenter">
+        <ul class="menu-orizzontale">
+            <li><a id="profilo" href="profilo">Profilo Personale</a></li>
+            <li><a id="info" href="info">Informazioni Personali</a></li>
+            <li><a id="prefe" href="prefe">Eventi Preferiti</a></li>
+            <li><a id="impo" href="impo">Impostazioni e Sicurezza</a></li>
+        </ul>
+    </nav>
+    <div class="wrapper">
+    <nav id="menuleft">
+        <ul>
+        <li><button>Profilo</button></li>
+        <li><button>Informazioni Personali</button></li>
+        <li><button id="buttonEventiPreferiti">Eventi Preferiti</button></li>
+        <li><button>Impostazioni e Sicurezza</button></li>
+        </ul>
+    </nav>
+<div id="eventiSalvati">
+
+
+    <h2 class="meseAnnoSalvato">Dicembre 2023</h2>
+<div class="containerSalvati">
+  <div class="cardSalvato" id="event1Salvato">
+    <a href="link_per_natale_a_roma.html" class="NomiLinkSalvati">
+    <div class="card-body-salvati">
+      <h3>Silent Party Portello</h3>
+    </a>
+      <p class="infoEventoSalvato">Oggi • 21:00 PM – Porta Portello Padova PD</p>
+      <span class="genereEventoSalvato">Music - Disco</span>
+      <a href="link_per_natale_a_roma.html">
+      <div class="container-immagini-eventi">
+      </div>
+    </div>
+  </a>
+  </div>
+  <div class="cardSalvato" id="event2Salvato">
+    <div class="card-body-salvati">
+      <a href="link_per_natale_a_roma.html" class="NomiLinkSalvati">
+      <h3>Silent Party Portello</h3>
+    </a>
+      <p class="infoEventoSalvato">Oggi • 21:00 PM – Porta Portello Padova PD</p>
+      <span class="genereEventoSalvato">Music - Disco</span>
+      <a href="link_per_natale_a_roma.html">
+      <div class="container-immagini-eventi">
+      </div>
+    </a>
+    </div>
+  </div>
+  <div class="cardSalvato" id="event3Salvato">
+    <div class="card-body-salvati">
+      <a href="link_per_natale_a_roma.html" class="NomiLinkSalvati">
+      <h3>Silent Party Portello</h3>
+    </a>
+      <p class="infoEventoSalvato">Oggi • 21:00 PM – Porta Portello Padova PD</p>
+      <span class="genereEventoSalvato">Music - Disco</span>
+      <a href="link_per_natale_a_roma.html">
+      <div class="container-immagini-eventi">
+      </div>
+    </a>
+    </div>
+  </div>
+</div>
+
+<h2 class="meseAnnoSalvato wavy-line">Novembre 2023</h2>
+<div class="containerSalvati">
+  <div class="cardSalvato" id="event4Salvato">
+    <div class="card-body-salvati">
+      <a href="link_per_natale_a_roma.html" class="NomiLinkSalvati">
+      <h3>Silent Party Portello</h3>
+    </a>
+      <p class="infoEventoSalvato">Oggi • 21:00 PM – Porta Portello Padova PD</p>
+      <span class="genereEventoSalvato">Music - Disco</span>
+      <a href="link_per_natale_a_roma.html">
+      <div class="container-immagini-eventi">
+      </div>
+    </a>
+    </div>
+  </div>
+  <div class="cardSalvato" id="event5Salvato">
+    <div class="card-body-salvati">
+      <a href="link_per_natale_a_roma.html" class="NomiLinkSalvati">
+      <h3>Silent Party Portello</h3>
+    </a>
+      <p class="infoEventoSalvato">Oggi • 21:00 PM – Porta Portello Padova PD</p>
+      <span class="genereEventoSalvato">Music - Disco</span>
+      <a href="link_per_natale_a_roma.html">
+      <div class="container-immagini-eventi">
+      </div>
+    </a>
+    </div>
+  </div>
+  <div class="cardSalvato" id="event6Salvato">
+    <div class="card-body-salvati">
+      <a href="link_per_natale_a_roma.html" class="NomiLinkSalvati">
+      <h3>Silent Party Portello</h3>
+    </a>
+      <p class="infoEventoSalvato">Oggi • 21:00 PM – Porta Portello Padova PD</p>
+      <span class="genereEventoSalvato">Music - Disco</span>
+      <a href="link_per_natale_a_roma.html">
+      <div class="container-immagini-eventi">
+      </div>
+    </a>
+    </div>
+  </div>
+  <div class="cardSalvato" id="event7Salvato">
+    <div class="card-body-salvati">
+      <a href="link_per_natale_a_roma.html" class="NomiLinkSalvati">
+      <h3>Silent Party Portello</h3>
+    </a>
+      <p class="infoEventoSalvato">Oggi • 21:00 PM – Porta Portello Padova PD</p>
+      <span class="genereEventoSalvato">Music - Disco</span>
+      <a href="link_per_natale_a_roma.html">
+      <div class="container-immagini-eventi">
+      </div>
+    </a>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>
