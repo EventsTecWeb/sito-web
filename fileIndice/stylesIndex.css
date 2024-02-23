@@ -1,0 +1,118 @@
+#index {
+  height: 100%;
+  margin-top: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#DescizioneConBottoniIndex {
+  position: relative;
+  text-align: center;
+  font-family: 'Poppins';
+  font-size: 1.5vw;
+  font-style: normal;
+  font-weight: 200;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  min-height: 50vh;
+  padding-bottom: 50px; /* Spazio per i bottoni */
+}
+
+#DescizioneConBottoniIndex #image-container-index {
+  background-image: url('/Users/macuser/Desktop/sito-web/Images/eventsLogoRid.png'); 
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  width: 17vw; 
+  height: 15vw; 
+  padding-bottom:0;
+  margin-bottom: -10vh;
+}
+
+#DescizioneConBottoniIndex #image-container-index::after {
+  content: '';
+  position: absolute;
+  left: -20%;
+  right: -20%;
+  bottom: 9vh;
+  height: 3px; /* Altezza della linea */
+  background-color: rgba(217, 217, 217, 1);
+}
+
+#DescizioneConBottoniIndex p {
+  font-size: 16px; /* Dimensione predefinita */
+}
+
+.ContainerBottoni {
+  position: relative;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  padding-top: 20px; /* Aggiunge spazio sopra i bottoni */
+  padding-bottom: 20px; /* Aggiunge spazio sotto i bottoni */
+  background: #D9D9D9;
+  border-radius: 39px;
+}
+
+.buttonIndex {
+  width: 80%;
+  max-width: 278px;
+  height: 58px;
+  background: #656565;
+  border: none;
+  border-radius: 16px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 15px; /* Aggiungi spazio tra i pulsanti */
+}
+
+.buttonIndex:first-child {
+  margin-top: 10px; /* Aggiungi spazio sopra il primo bottone */
+}
+
+.buttonIndex:last-child {
+  margin-bottom: 10px; /* Aggiungi spazio sotto l'ultimo pulsante */
+}
+
+.buttonIndex:hover {
+  background-color: rgba(14, 31, 187, 1);
+}
+
+#TerminiCondizioni {
+  font-family: 'Poppins';
+  font-size: 1.5vw;
+  display: block; /* Mostra il link come blocco */
+  text-align: center; /* Centra il link orizzontalmente */
+  margin-top: 10px; /* Aggiunge spazio sopra il link */
+  color: rgba(14, 31, 187, 1); /* Colore specifico */
+  text-decoration: underline;
+}
+
+#TerminiCondizioni:hover {
+  text-decoration: none; /* Rimuove la sottolineatura al passaggio sopra */
+}
+
+#footerIndex {
+  text-align: center; /* Centra il contenuto orizzontalmente */
+  margin-top: 5px; /* Aggiunge spazio sopra il footer */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #f0f0f0;
+  padding: 20px 0;
+}
+
+@media (max-width: 768px) {
+  .DescizioneConBottoni p {
+    font-size: 14px; /* Modifica la dimensione del testo per schermi più piccoli */
+  }
+}
