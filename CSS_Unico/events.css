@@ -2701,70 +2701,6 @@ input[type="text"]:focus {
 /*-------------------------------------PROFILO----------------------------------------------*/
 
 
-#cerca{
-    background-color: var(--gray);
-    cursor: pointer;
-    width: 36px;
-    height: 36px;
-    border-radius: 50px;
-    background-image: url(../Progetto/Immagini/Sito/filter-icon-white.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 20px;
-    text-indent: -9999px;
-    margin-left: 0.5em;
-}
-
-
-#aggiungiEvento{
-    display: inline;
-    background-color: var(--gray);
-    cursor: pointer;
-    width: 36px;
-    height: 36px;
-    border-radius: 50px;
-    background-image: url(../Progetto/Immagini/Sito/add_white.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 20px;
-    text-indent: -9999px;
-    margin-left: 0.5em;
-}
-
-#notifiche{
-    display: inline;
-    background-color: var(--gray);
-    cursor: pointer;
-    width: 36px;
-    height: 36px;
-    border-radius: 50px;
-    background-image: url(../Progetto/Immagini/Sito/bell_white.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 20px;
-    text-indent: -9999px;
-    margin-left: 0.5em;
-}
-
-#profilo{
-    display: inline;
-    background-color: var(--gray);
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
-    border-radius: 50px;
-    background-image: url(../Progetto/Immagini/Sito/andrew_garfield.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
-    text-indent: -9999px;
-    margin-left: 0.5em;
-}
-
-#menuTendina{
-    display: none;
-}
-
 
 #profile-info-container {
     display: flex;
@@ -2807,13 +2743,12 @@ input[type="text"]:focus {
     width: 100%;
     font-family: 'Poppins', sans-serif;
 }
-
 #profile-info-container{
     order: 1;
 }
 
 
-form {
+#box form {
     background-color: #fff;
     padding: 1em;
     border-radius: 10px;
@@ -2828,33 +2763,38 @@ label {
     margin-bottom: 8px;
 }
 
-input, select {
+#box input, #box select {
     width: 100%;
     padding: 8px;
     margin-bottom: 16px;
     box-sizing: border-box;
 }
+
 #image-container {
+    position: relative;
     border: 2px dashed #ccc;
-    max-width: 100%;
-    height: 200px;
-    margin-bottom: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+    text-align: center;
+    overflow: hidden; /* Evita che l'immagine vada oltre il bordo del contenitore */
+}
+
+#image-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Assicura che l'immagine copra completamente il contenitore mantenendo le proporzioni */
+    display: block;
+    margin: 0 auto; /* Centra l'immagine all'interno del contenitore */
+    visibility: hidden; /* Nasconde l'immagine inizialmente */
+    border: none;
+}
+
+.drag-drop-text {
+    margin-bottom: 10px;
 }
 
 .drag-drop-text {
     text-align: center;
 }
 
-img {
-    border: 2px dashed #ccc;
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 16px;
-}
 
 .form-group {
     display: flex;
@@ -2875,55 +2815,22 @@ textarea {
 }
 
 #invia {
-    background-color: var(--gray);
-    color: #000;
+    background-color: rgba(114, 162, 233, 1);
+    color: #fff;
     padding: 10px 15px;
     border: none;
-    border-radius: 5px;
+    border-radius: 16px;
     cursor: pointer;
+    width: 60%;
+    height: 3em;
+    margin-left: 20%;
+    font-size: 20px;
+}
+
+#invia:hover{
+    background-color: rgba(14, 31, 187, 1);
 }
 
 
-@media (max-width: 600px) {
-
-    #profilo{
-        display: inline;
-        background-color: var(--gray);
-        cursor: pointer;
-        width: 36px;
-        height: 36px;
-        border-radius: 100%;
-        background-image: url(../Progetto/Immagini/Sito/andrew_garfield.jpg);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 100%;
-        text-indent: -9999px;
-        margin-left: 0.5em;
-    }
-
-    #box{
-        width: 90%;
-        margin-left: 5%;
-    }
-
-    #aggiungiEvento{
-        display: none;
-    }
-
-    #menuTendina{
-        display: inline;
-        background-color: var(--gray);
-        cursor: pointer;
-        width: 36px;
-        height: 36px;
-        border-radius:100%;
-        background-image: url("Images/battery-1_icon-icons.com_64865.png");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 20px;
-        text-indent: -9999px;
-        margin-left: 0.5em;
-    }
-}
 
 /*-------------------------------------PROFILO----------------------------------------------*/
