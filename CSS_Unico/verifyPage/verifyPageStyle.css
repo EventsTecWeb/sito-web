@@ -1,0 +1,121 @@
+:root {
+    --main-font: 'Poppins', sans-serif;
+    --main-font-size: 2.5vh;
+    --main-font-color: #555;
+    --main-bg-color: #fff;
+    --main-border-color: black;
+    --main-border-radius: 2vh;
+    --main-border-width: 0.3vh;
+}
+
+body {
+    font-family: var(--main-font);
+}
+
+header {
+    margin-top: -35px;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+header h1 {
+    text-indent: -999em;
+    background-image: url("../Images/eventsLogoRid.png");
+    font-size: 4em;
+    line-height: 1.5em;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30vh;
+}
+
+#pannello-principale {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.userInformations {
+    text-align: center;
+}
+
+.userInformations h2{
+    font-size: 4vh;
+    font-weight: bolder;
+}
+
+.userAccount {
+    background-color: var(--main-bg-color);
+    border-radius: 6vh;
+    display: flex;
+    align-items: center;
+    border: var(--main-border-width) solid var(--main-border-color);
+}
+
+.userImage img {
+    width: 8vh;
+    height: 8vh;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 2vh;
+    margin-left: 2vh;
+}
+
+.userEmail {
+    font-size: 3vh;
+    font-weight: 500;
+    color: var(--main-font-color);
+    margin-right: 4vh;
+}
+
+.infoText{
+    font-size: var(--main-font-size);
+    text-align: center;
+}
+
+input[type="password"] {
+    font-size: 2.7vh;
+    font-family: var(--main-font);
+    border: none;
+    border-bottom: var(--main-border-width) solid var(--main-border-color);
+    background-color: transparent;
+    padding: 5px;
+    outline: none;
+    width: 100%;
+    margin-bottom: 2vh;
+}
+
+input[type="password"]:focus {
+    outline: none;
+}
+
+#showPasswordLabel{
+    font-size: 2.6vh;
+    font-family: var(--main-font);
+}
+
+.continueButton {
+    margin-top: 4vh;
+    background: #656565;
+    border: none;
+    border-radius: var(--main-border-radius);
+    color: white;
+    font-size: var(--main-font-size);
+    font-weight: bold;
+    cursor: pointer;
+    height: 6.5vh;
+    width: 16vh; 
+    max-width: none;
+    padding-top: 1.5vh;
+    font-family: var(--main-font);
+    padding: 1vh 0; 
+    box-sizing: border-box; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.continueButton:hover{
+    background-color: rgba(14, 31, 187, 1);
+}

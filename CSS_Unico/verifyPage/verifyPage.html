@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it">
+<head> 
+  <meta charset="UTF-8">
+  <title>Events:Verify identity</title>
+  <!-- MODIFICA -->
+  <meta name="description" content= "verifica identità per continuare" />
+  <!-- MODIFICA -->
+  <meta name="keywords" content="EVENTS VERIFY, IDENTITY, VERIFICA IDENTITA, SICUREZZA, VERIFICA PER CONTINUARE">
+  <link rel="stylesheet" href="verifyPageStyle.css"/>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,400&display=swap">
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+        <h1>Events</h1>
+    </div>
+  </header>
+  <div id="pannello-principale">
+    <div class="userInformations">
+      <h2 class="name">Mario Rossi</h2>
+      <div class="userAccount">
+        <div class="userImage">
+          <img src="../Images/andrew_garfield.jpg" alt="Immagine profilo">
+        </div>
+        <p class="userEmail">mariorossi1987@gnail.com</p>
+      </div>
+    </div>
+    <p class="infoText">Per continuare, verifica innanzitutto la tua identità</p>
+    <form>
+      <input type="password" id="passwordInput" name="password" placeholder="Password...">
+    </form>
+    <form>
+      <label id="showPasswordLabel" for="showPasswordCheckbox">Mostra la Password</label>
+      <input type="checkbox" id="showPasswordCheckbox" name="showPassword">
+    </form>
+    <button class="continueButton">Avanti</button>
+  </div>
+</body>
+</html>

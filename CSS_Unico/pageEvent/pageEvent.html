@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+<head> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>Events:Event Page</title>
+  <!-- MODIFICA -->
+  <meta name="description" content= "Nome evento, Data evento, descrizione evento" />
+  <!-- MODIFICA -->
+  <meta name="keywords" content="EVENTS PAGE, SCHEDA EVENTI, NOME EVENTO, NOME EVENTO DATA">
+  <link rel="stylesheet" href="../events.css"/>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,400&display=swap">
+</head>
+<body>
+    <header>
+            <h1>Events</h1>
+        <div class="header-items">
+        <div class="search-container">
+        <form id="searchBarA" action="/cerca" method="get">
+            <!-- MODIFICA -->
+            <input type="text" id="searchBar" name="cerca" placeholder="Cerca...">
+        </form>
+        </div>
+        <!-- MODIFICA -->
+        <button type="submit" id="searchButton">
+            <img src="../Images/search.png" alt="Icona Cerca">
+        </button>
+        <button class="bottoneFiltro">
+            <img src="../Images/filter-icon-0.png" alt="Filtro">
+        </button>
+        <button class="bottoneHamburger">
+            <img src="../Images/menu-button-of-three-horizontal-lines.png" alt="Filtro">
+        </button>
+        <nav>
+            <ul class="linkPagina">
+                <li><a id="EventiFuturi" href="eventi">EVENTI FUTURI</a></li>
+                <li><a id="ChiSiamoLink" href="chisiamo">CHI SIAMO</a></li>
+                <li><a id="AccediLink" href="accedi">ACCEDI</a></li>
+                <li><a id="RegistratiLink" href="registrazione">REGISTRAZIONE</a></li>
+            </ul>
+        </nav>
+        <nav aria-label="breadcrumb">
+            <p>Ti trovi in: <span lang="en"><a id="returnHome" href="#">Home</a></span> >> Nome evento</p>
+        </nav>
+    </header>
+    <div id="pannello-principale-pe">
+        <div class="boxImage-pe">
+            <div class="imgEvent-pe">
+                <img src="../Images/GMO2.0.jpeg" alt="immagine evento">
+            </div>
+        </div>
+        <div class="containerPrincipale-pe">
+            <div class="container_sx-pe">
+                <h2>Godzilla Minus One</h2>
+                <p class="dataEvento-pe"><time datetime="2024-04-03"><span>03</span> Aprile 2024</time> alle ore 17:00</p>
+                <p>Cinema UCI Luxe - Centro commerciale Palladio, Vicenza (<abbr title="Vicenza">VI</abbr>)</p>
+            </div>
+            <div class="container_dx-pe">
+                <button class="sonoInteressato-pe"> Sono Interessato</button>
+            </div>
+        </div>
+        <div class="containerSecondario-pe">
+            <h2><span style="font-weight:bold;">Dettagli</h2>
+            <div class="accountEvento-pe">
+                <img src="../Images/UCI.png" alt="Account">
+                <p class="accountName-pe">Evento di <span style="font-weight:bold;">UCI Luxe Vicenza</span></p>
+            </div>
+            <div class="personeInteressate-pe">
+                <img src="../Images/people_icon_small.png" alt="Immagine persone interessate">
+                <p class="peopleInterested-pe">Interessa a Tizio, Caio...</p>
+            </div>
+            <div class="descrizione-pe"><span style="font-weight:bold;">Descrizione: </span>blablabla blablabla blablabla blablabla blablabla blablabla. blablabla blablabla blablabla </div>
+        </div>
+    </div>
+</body>
+</html>

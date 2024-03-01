@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="it">
+<head> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>Events:search</title>
+  <!-- MODIFICA -->
+  <meta name="description" content= "events - ricerca evento per nome" />
+  <!-- MODIFICA -->
+  <meta name="keywords" content="EVENTS SEARCH, RICERCA EVENTI, RICERCA NOME EVENTO, SEARCH EVENT BY NAME, RICERCA EVENTO PER NOME">
+  <link rel="stylesheet" href="searchPageStyle.css"/>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,400&display=swap">
+</head>
+<body>
+    <header>
+            <h1>Events</h1>
+        <div class="header-items">
+        <div class="search-container">
+        <form id="searchBarA" action="/cerca" method="get">
+            <!-- MODIFICA -->
+            <input type="text" id="searchBar" name="cerca" placeholder="Cerca...">
+        </form>
+        </div>
+        <!-- MODIFICA -->
+        <button type="submit" id="searchButton">
+            <img src="../Images/search.png" alt="Icona Cerca">
+        </button>
+        <button class="bottoneFiltro">
+            <img src="../Images/filter-icon-0.png" alt="Filtro">
+        </button>
+        <button class="bottoneHamburger">
+            <img src="../Images/menu-button-of-three-horizontal-lines.png" alt="Filtro">
+        </button>
+        <nav>
+            <ul class="linkPagina">
+                <li><a id="EventiFuturi" href="eventi">EVENTI FUTURI</a></li>
+                <li><a id="ChiSiamoLink" href="chisiamo">CHI SIAMO</a></li>
+                <li><a id="AccediLink" href="accedi">ACCEDI</a></li>
+                <li><a id="RegistratiLink" href="registrazione">REGISTRAZIONE</a></li>
+            </ul>
+        </nav>
+        <nav aria-label="breadcrumb">
+            <p>Ti trovi in: <span lang="en"><a id="returnHome" href="#">Home</a></span> >> ricerca <span style="font-weight: bold;">"Natale"</span></p>
+        </nav>
+    </header>
+    <div id="nameSearched-se">
+        <h2>Risultati ricerca per: <span style="font-weight: bold;">"Natale"</span></h2>
+    </div>
+    <div class="row-se">
+        <div class="column-se">
+            <div class="container-se">
+            <img src="../Images/Natale5.jpg" alt="music event">
+            <div class="infoText-se">
+                <h4 class="descrizioneEventiT-se">Natale a Roma</h4>
+                <time class="descrizioneEventiD-se" datetime="2023-12-11 21:00">25-12-2023 - Colosseo, Roma (<abbr title="Roma">RM</abbr>)</time>
+                <p class="descrizioneEventiD-se">Music - Disco</p>
+            </div>
+            </div>
+        </div>
+        <div class="column-se">
+            <div class="container-se">
+            <img src="../Images/Natale2.jpg" alt="music event">
+            <div class="infoText-se">
+                <h4 class="descrizioneEventiT-se">Natale a Vicenza</h4>
+                <time class="descrizioneEventiD-se" datetime="2023-12-11 21:00">25-12-2023 - Piazza dei Signori, Vicenza (<abbr title="Vicenza">VI</abbr>)</time>
+                <p class="descrizioneEventiD-se">Music - Disco</p>
+            </div>
+            </div>
+        </div>
+        <div class="column-se">
+            <div class="container-se">
+            <img src="../Images/GMO2.0.jpeg" alt="music event">
+            <div class="infoText-se">
+                <h4 class="descrizioneEventiT-se">Natale a Tokyo</h4>
+                <time class="descrizioneEventiD-se" datetime="2023-12-11 21:00">25-12-2023 - Torre di Tokyo (<abbr title="Tokyo">TO</abbr>)</time>
+                <p class="descrizioneEventiD-se">Music - Disco</p>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="row-se">
+        <div class="column-se">
+            <div class="container-se">
+            <img src="../Images/Natale6.jpg" alt="music event">
+            <div class="infoText-se">
+                <h4 class="descrizioneEventiT-se">Natale a Milano</h4>
+                <time class="descrizioneEventiD-se" datetime="2023-12-11 21:00">25-12-2023 - Piazza Duomo, Milano (<abbr title="Milano">MI</abbr>)</time>
+                <p class="descrizioneEventiD-se">Music - Disco</p>
+            </div>
+            </div>
+        </div>
+        <div class="column-se">
+            <div class="container-se">
+            <img src="../Images/Natale4.jpg" alt="music event">
+            <div class="infoText-se">
+                <h4 class="descrizioneEventiT-se">Natale a Verona</h4>
+                <time class="descrizioneEventiD-se" datetime="2023-12-11 21:00">25-12-2023 - Arena di Verona (<abbr title="Verona">VR</abbr>)</time>
+                <p class="descrizioneEventiD-se">Music - Disco</p>
+            </div>
+            </div>
+        </div>
+        <div class="column-se">
+            <div class="container-se">
+            <img src="../Images/Natale3.jpg" alt="music event">
+                <div class="infoText-se">
+                    <h4 class="descrizioneEventiT-se">Natale a Rovigo</h4>
+                    <time class="descrizioneEventiD-se" datetime="2023-12-11 21:00">25-12-2023 - Torre di Rovigo (<abbr title="Rovigo">RO</abbr>)</time>
+                    <p class="descrizioneEventiD-se">Music - Disco</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
