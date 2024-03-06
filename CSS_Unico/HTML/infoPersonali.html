@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="it">
+<head> 
+  <meta charset="UTF-8">
+  <title>Events: Informazioni Personali</title>
+  <!-- MODIFICA -->
+  <meta name="description" content= "Pagina per vedere le informazioni personali" />
+  <!-- MODIFICA -->
+  <meta name="keywords" content="accesso profilo events, events,accesso utente events, login, accesso personale, profilo utente events, accesso privato events">
+  <!-- MODIFICA -->
+  <link rel="stylesheet" href="../events.css"/>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,400&display=swap">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="../JS/scriptInfoPers.js"></script>
+</head>
+<body>
+    <header>
+            <h1>Events</h1>
+        <div class="header-items">
+        <div class="search-container">
+        <form id="searchBarA" action="/cerca" method="get">
+            <!-- MODIFICA -->
+            <input type="text" id="searchBar" name="cerca" placeholder="Cerca...">
+        </form>
+        </div>
+        <!-- MODIFICA -->
+        <button type="submit" id="searchButton">
+            <img src="../Images/search.png" alt="Icona Cerca">
+        </button>
+        <button class="bottoneFiltro">
+            <img src="../Images/filter-icon-0.png" alt="Filtro">
+        </button>
+        <button class="bottoneHamburger">
+            <img src="../Images/menu-button-of-three-horizontal-lines.png" alt="Bottone per link nascosti in formato cellulare">
+        </button>
+        <nav>
+            <ul class="linkPagina">
+                <li><a id="EventiFuturi" href="eventi">EVENTI FUTURI</a></li>
+                <li><a id="ChiSiamoLink" href="../Progetto/indexChiSiamo.html">CHI SIAMO</a></li>
+            </ul>
+        </nav>
+        <button class="bottonePlus">
+            <img src="../Images/add.png" alt="Bottone per creare un nuovo evento">
+        </button>
+        <!--Da gestire la foto del profilo in modo che si adatti al profilo -->
+        <button class="bottoneProfilo">
+            <img src="../Images/andrew_garfield.jpg" alt="Bottone per accedere ai dati del proprio profilo">
+        </button>
+        <nav aria-label="breadcrumb" id="bread">
+            <!-- MODIFICA -->
+            <p>Ti trovi in: <span lang="en"><a id="returnHome" href="#">Home</a></span> >><a id="returnProfilo" href="../profilo/indexProfilo.html">Profilo</a> >> Informazioni Personali</p>
+        </nav>
+    </div>
+    </header>
+    <nav id="menuCenter">
+        <ul class="menu-orizzontale">
+            <li><a id="profilo" href="../profilo/indexProfilo.html">Profilo Personale</a></li>
+            <li><a id="info" href="../infoPers/informazioniPersonali.html">Informazioni Personali</a></li>
+            <li><a id="prefe" href="prefe">Eventi Preferiti</a></li>
+            <li><a id="impo" href="impo">Impostazioni e Sicurezza</a></li>
+        </ul>
+    </nav>
+    <div class="wrapper">
+    <nav id="menuleft">
+        <ul>
+            <li><button id="buttonProfilo" onclick="vaiAPaginaProfilo()">Profilo</a></button></li>
+            <li><button id="buttonInfo" onclick="vaiAPaginaInfo()">Informazioni Personali</button></li>
+            <li><button>Eventi Preferiti</button></li>
+            <li><button>Impostazioni e Sicurezza</button></li>
+        </ul>
+    </nav>
+    <div class="settings-ip">
+        <h2>Informazioni Personali</h2>
+        <div class="option-ip">
+            <span>Nome e Cognome</span>
+            <p id="nome-ip">Mario Rossi</p>
+            <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">
+        </div>
+        <div class="content-ip">
+        <div id="privacy-ip">
+            <!-- Contenuto da mostrare/nascondere per la prima opzione -->
+            <div class="mod-nome-ip">
+                <h2>Modifica Nome e Cognome</h2>
+                <div class="separator-ip"></div>
+                    <div class="left-align-ip">
+                            <input type="text" id="campoNome-ip" value="Mario Rossi" readonly>
+                            <img id="frecciaEdit-ip" src="../Images/pencil.png" alt="Modifica" tabindex="0" onclick="ModificaNome()">
+                    </div>
+                    <p id="domanda-ip">Chi può vedere il tuo nome?</p>
+                    <div class="center-align-ip">
+                        <img class="publicInfo-ip" src="../Images/people_icon.png"> Chiunque può vedere queste informazioni quando visualizza il tuo profilo, comunica con te o quando consulta contenuti creati da te</p>
+                        <button type="submit" class="salva-ip" onclick="salvaModificheNome()">Salva</button>
+                    </div>
+            </div>            
+        </div>
+    </div>
+        
+        <div class="option-ip">
+            <span lang="en">Username</span>
+            <p id="username-ip">mariorossitop98</p>
+            <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">        
+        </div>
+        <div class="content-ip">
+            <!-- Contenuto da mostrare/nascondere per la seconda opzione -->
+            <div id="modNick-ip">
+                <h2>Modifica <span lang="en">Username</span></h2>
+                <div class="separator-ip"></div>
+                    <div class="left-align-ip">
+                        <input type="text" id="campoNick-ip" value="mariorossitop98" readonly>
+                        <img id="frecciaEdit-ip" src="../Images/pencil.png" alt="Modifica" tabindex="0" onclick="ModificaNick()">
+                    </div>
+                
+                    <p id="domanda-ip">Chi può vedere il tuo <span lang="en">Username</span>?</p>
+                    <div class="center-align-ip">
+                        <img class="publicInfo-ip" src="../Images/people_icon.png"> Chiunque può vedere queste informazioni quando visualizza il tuo profilo, comunica con te o quando consulta contenuti creati da te</p>
+                        <button type="submit" class="salva-ip" onclick="salvaModificheNick()">Salva</button>
+                    </div>
+            </div>
+        </div>
+
+        <div class="option-ip">
+            <span>Genere</span>
+            <p id="genere-ip">Uomo</p>
+            <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">
+        </div>
+        <div class="content-ip">
+        <div id="privacy-ip">
+            <!-- Contenuto da mostrare/nascondere per la prima opzione -->
+                <h2>Modifica Genere</h2>
+                <div class="separator-ip"></div>
+                <form>
+                    <div id="elenco-genere-ip">
+                        <label>
+                            <p class="p_privacy-ip">Uomo</p>
+                            <input type="radio" name="privacy" value="uomo">
+                        </label>
+                        <label>
+                            <p class="p_privacy-ip">Donna</p>
+                            <input type="radio" name="privacy" value="donna" checked>
+                        </label>
+                        <label>
+                            <p class="p_privacy-ip">Altro</p>
+                            <input type="radio" name="privacy" value="altro" checked>
+                        </label>
+                        <label>
+                            <p class="p_privacy-ip">Preferisco non specificare</p>
+                            <input type="radio" name="privacy" value="non-specificato" checked>
+                        </label>
+                    </div>
+                    <p id="domanda-ip">Chi può vedere il tuo genere?</p>
+                    <div class="center-align-ip">
+                        <img class="publicInfo-ip" src="../Images/lock.png"> Queste informazioni sono private, puoi vederle solo te</p>
+                        <button type="submit" class="salva-ip" onclick="salvaModificheGenere()">Salva</button>
+                    </div>
+                </form>            
+        </div>
+    </div>
+
+        <div class="option-ip">
+            <span>Data di nascita</span>
+            <p id="data-ip"><time datetime="2024-04-03">03 Aprile 2024</time></p>
+            <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">
+        </div>
+        <div class="content-ip">
+            <!-- Contenuto da mostrare/nascondere per la seconda opzione -->
+            <div id="mod-data-ip">
+                <h2>Modifica data di nascita</h2>
+                <div class="separator-ip"></div>
+                <div class="date-input-ip">
+                    <input type="number" id="day-ip" name="day" placeholder="Giorno" min="1" max="31" required>
+                    <select id="month-ip" name="month" onchange="updateDays()" required>
+                        <option value="" disabled selected>Mese</option>
+                        <option value="1">Gennaio</option>
+                        <option value="2">Febbraio</option>
+                        <option value="3">Marzo</option>
+                        <option value="4">Aprile</option>
+                        <option value="5">Maggio</option>
+                        <option value="6">Giugno</option>
+                        <option value="7">Luglio</option>
+                        <option value="8">Agosto</option>
+                        <option value="9">Settembre</option>
+                        <option value="10">Ottobre</option>
+                        <option value="11">Novembre</option>
+                        <option value="12">Dicembre</option>
+                    </select>
+                    <input type="number" id="year-ip" name="year" placeholder="Anno" min="1900" max="2024" required>
+                </div>
+                <p id="domanda-ip">Chi può vedere la tua data di nascita?</p>
+                    <div class="center-align-ip">
+                        <img class="publicInfo-ip" src="../Images/lock.png"> Queste informazioni sono private, puoi vederle solo te</p>
+                        <button type="submit" class="salva-ip" onclick="aggiornaDataNascita()">Salva</button>
+                    </div>
+            </div>
+        </div>
+
+        <h2>Informazioni di contatto</h2>
+        <div class="option-ip">
+            <span lang="en">Email</span>
+            <p id="email-ip">mariorossi@gmail.com</p>
+            <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">
+        </div>
+        <div class="content-ip">
+        <div id="privacy-ip">
+            <!-- Contenuto da mostrare/nascondere per la prima opzione -->
+            <div class="mod-nome-ip">
+                <h2>Modifica <span lang="en">Email</span></h2>
+                <div class="separator-ip"></div>
+                    <div class="left-align-ip">
+                            <input type="text" id="campoEmail-ip" value="mariorossi@gmail.com" readonly>
+                            <img id="frecciaEdit-ip" src="../Images/pencil.png" alt="Modifica" tabindex="0" onclick="ModificaEmail()">
+                    </div>
+                    <p id="domanda-ip">Chi può vedere la tua <span lang="en">Email</span>?</p>
+                    <div class="center-align-ip">
+                        <img class="publicInfo-ip" src="../Images/people_icon.png"> Chiunque può vedere queste informazioni quando visualizza il tuo profilo, comunica con te o quando consulta contenuti creati da te</p>
+                        <button type="submit" class="salva-ip" onclick="salvaModificheEmail()">Salva</button>
+                    </div>
+            </div>            
+        </div>
+    </div>
+        
+        <div class="option-ip">
+            <span>Numero di telefono</span>
+            <p id="numero-ip">3285698774</p>
+            <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">        
+        </div>
+        <div class="content-ip">
+            <!-- Contenuto da mostrare/nascondere per la seconda opzione -->
+            <div id="modTel-ip">
+                <h2>Modifica numero di telefono</h2>
+                <div class="separator-ip"></div>
+                    <div class="left-align-ip">
+                        <img id="bandierina-ip" src="../Images/italy.png">
+                        <input type="text" id="campoTel-ip" value="3285698774" readonly>
+                        <img id="frecciaEdit-ip" src="../Images/pencil.png" alt="Modifica" tabindex="0" onclick="ModificaTel()">
+                    </div>
+                
+                    <p id="domanda-ip">Chi può vedere il tuo numero di telefono?</p>
+                    <div class="center-align-ip">
+                        <img class="publicInfo-ip" src="../Images/lock.png"> Queste informazioni sono private, puoi vederle solo te</p>
+                        <button type="submit" class="salva-ip" onclick="salvaModificheTel()">Salva</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

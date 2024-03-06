@@ -3073,3 +3073,413 @@ textarea {
 
 
 /*-------------------------------------HOME----------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-------------------------------------CHI SIAMO----------------------------------------------*/
+ 
+
+
+#chi_siamo_main{
+    text-align: left;
+    padding: 4em 1em 2px 4em;
+    font-family: 'Poppins', sans-serif;
+}
+
+#chi_siamo_main h2{
+        font-size: 2em;
+        margin-bottom: 0.5em;
+        font-weight: bold;
+}
+
+.chi_siamo{
+    padding: 0 2em 2.5em 0;
+}
+
+#contenitore-cs {
+    overflow: hidden;
+}
+  
+#contenitore-cs >  img {
+    width: 30%;
+    height: auto;
+    margin-right: 1em;
+    float: right;
+}
+
+
+@media (max-width: 800px) {
+
+    #contenitore-cs >  img {
+        width: 60%;
+        margin-left: 20%;
+        height: auto;
+        float:none;
+        margin-bottom: 0.5em;
+    }
+
+}
+
+/*-------------------------------------CHI SIAMO----------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-------------------------------------INFO PERSONALI----------------------------------------------*/
+
+
+/* Opzioni di impostazioni e sicurezza */
+.settings-ip {
+    float: right;
+    width: 80%; /* Usa una larghezza relativa */
+    padding: 3%; /* Utilizza padding relativo rispetto alla larghezza */
+    padding-left: 10%;
+    padding-right: 15%;
+    margin-top: 1%; /* Margine superiore relativo */
+    box-sizing: border-box;
+}
+  
+  .settings-ip h2 {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Stile del menu a tendina */
+  .option-ip {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    cursor: pointer;
+  }
+  
+  .option-ip img {
+    width: 12px;
+    height: 12px;
+    transition: transform 0.3s ease;
+  }
+  .option-ip span {
+    width: 30%;
+  }
+  
+#nome-ip, #username-ip, #genere-ip, #data-ip, #email-ip, #numero-ip{
+    padding: 0;
+    margin: 0;
+    margin-left: -30%;
+    text-align: center;
+}
+
+  
+  /* Effetto di transizione sull'icona a tendina */
+  .option-ip.open img {
+    transform: rotate(180deg);
+  }
+  
+  /* Nascondi il testo del menu a tendina per default */
+  .option-ip span:nth-child(2) {
+    display: none;
+  }
+  
+  /* Stile del testo del menu a tendina quando è aperto */
+  .option-ip.open span:nth-child(2) {
+    display: inline-block;
+  }
+
+   .settings-ip{
+    font-family: Inter, sans-serif;
+   }
+
+/*---------------------------PRIVACY------------------------------------------------------*/
+
+.content-ip {
+    display: none;
+}
+
+#privacy-ip {
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    padding: 60px;
+    padding-top: 30px;
+    width: 80%;
+    margin: 2vh auto;
+}
+
+#domanda-ip{
+    margin-bottom: -0.5vh;
+    font-weight:bold;
+}
+
+.mod-nome-ip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#campoNome-ip {
+    width: 100%;
+    margin-bottom: 10px; /* Aggiunge spazio tra il campo Nome e il testo successivo */
+}
+
+#frecciaEdit-ip{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+#EditNome-ip{
+    display: flex;
+    flex-direction: row;
+    padding: 0 0 1.5em 0;
+}
+
+#bandierina-ip, .Lock-ip, .publicInfo-ip{
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.date-input-ip {
+    display: flex;
+    width: 100%;
+}
+
+.date-input-ip input,
+.date-input-ip select {
+    width: 30%;
+    height: 3em;
+    margin: 1.5em;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+
+.separator-ip {
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px; /* Spazio tra la linea e gli elementi successivi */
+}
+
+.left-align-ip {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.center-align-ip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-text-ip {
+    margin-bottom: 20px; 
+}
+
+#privacy-ip button{
+    background-color: rgba(114, 162, 233, 1);
+    color: white;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+}
+
+#privacy-ip button:hover{
+    background-color: rgba(14, 31, 187, 1);
+}
+#elenco-genere-ip {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#menuCenter-ip{
+    display:none;
+}
+
+   /*-------------------------PASSWORD-----------------------------------------------------*/
+
+#modNick-ip, #modTel-ip {
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    padding: 60px;
+    padding-top: 30px;
+    width: 80%;
+    margin: 2vh auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; 
+}
+
+#modNick-ip h2, #modTel-ip h2 {
+    font-family: Inter, sans-serif;
+}
+
+.separator-ip {
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px; /* Spazio tra la linea e gli elementi successivi */
+}
+
+#modNick-ip p, #modTel-ip p {
+    text-align: justify;
+    font-family: Inter, sans-serif;
+}
+
+ #labelNewP-ip, #labelRepP-ip{
+    font-family: Inter, sans-serif;
+}
+#labelNewP-ip{
+    margin-bottom:-0.2vh;
+}
+
+#labelRepP-ip{
+    margin-bottom:-0.2vh;
+}
+
+
+#modNick-ip button, #modTel-ip button{
+    background-color: rgba(114, 162, 233, 1);
+    color: white;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+}
+
+#modNick-ip button:hover, #modTel-ip button:hover{
+    background-color: rgba(14, 31, 187, 1);
+}
+
+.button-container-ip {
+    margin-top: 20px; 
+}
+
+/*---------------------------ELIMINA---------------------------------------------------------*/
+.separator-ip {
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px; /* Spazio tra la linea e gli elementi successivi */
+}
+
+.vertical-center-ip {
+    /* Impostazioni per centrare verticalmente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*---------------------------ESCI---------------------------------------------------------*/
+#mod-data-ip {
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    padding: 60px;
+    padding-top: 30px;
+    width: 80%;
+    margin: 2vh auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#mod-data-ip h2 {
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+}
+
+.separator-ip {
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+#mod-data-ip p {
+    font-size: 2vh;
+    padding: 2vh;
+}
+
+.checkbox-ip {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.button-container-ip {
+    margin-top: 20px;
+}
+
+#mod-data-ip .salva {
+    background-color: rgba(114, 162, 233, 1);
+    color: white;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+}
+
+#mod-data-ip .salva:hover {
+    background-color: rgba(14, 31, 187, 1);
+}
+  
+
+  
+
+@media screen and (max-width: 700px) {
+    .settings-ip h2 {
+        text-align: center;
+    }
+  
+}
+
+
+
+/*-------------------------------------INFO PERSONALI----------------------------------------------*/
