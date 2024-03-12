@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="it">
+<head> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>Events:Event Page</title>
+  <!-- MODIFICA -->
+  <meta name="description" content= "Nome evento, Data evento, descrizione evento" />
+  <!-- MODIFICA -->
+  <meta name="keywords" content="EVENTS PAGE, SCHEDA EVENTI, NOME EVENTO, NOME EVENTO DATA">
+  <link rel="stylesheet" href="../events.css"/>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,400&display=swap">
+  <link rel="shortcut icon" href="../Images/events_logo_site_e.png">
+</head>
+<body>
+    <header>
+        <h1>Events</h1>
+    <div class="header-items">
+        <div class="search-container">
+            <form id="searchBarA" action="../PHP/barra_ricerca.php" role="search" method="get">
+                <input type="text" id="searchBar" name="cerca_evento" placeholder="Cerca...">
+            </form>
+        </div>
+    <button type="submit" id="searchButton">
+        <img src="../Images/search.png" alt="Icona Cerca">
+    </button>
+    <button class="bottoneFiltro">
+        <img src="../Images/filter-icon-0.png" alt="Filtro">
+    </button>
+    <button class="bottoneHamburger">
+        <img src="../Images/menu-button-of-three-horizontal-lines.png" alt="Bottone per link nascosti in formato cellulare">
+    </button>
+    <nav>
+        <ul class="linkPagina">
+            <li><a id="EventiFuturi" href="eventi">EVENTI FUTURI</a></li>
+            <li><a id="ChiSiamoLink" href="../PHP/chiSiamo.php">CHI SIAMO</a></li>
+        </ul>
+    </nav>
+    <a href="../PHP/indexProfilo.php" class="bottonePlus">
+        <img src="../Images/add_blue.png" alt="Bottone per creare un nuovo evento">
+    </a>
+    <a href="../PHP/infoPersonali.php" class="bottoneProfilo">
+        <img src="<?php echo $profile_image_path; ?>" alt="Bottone per accedere ai dati del proprio profilo">
+    </a>
+    <nav aria-label="breadcrumb" id="bread">
+        <p>Ti trovi in: <span lang="en"><a id="returnHome" href="../PHP/home.php">Home</a></span> >><a id="returnProfilo" href="../PHP/eventiSalvati.php">Profilo</a> >> Pagina Evento </p>
+    </nav>
+</div>
+</header>
+    <div id="pannello-principale-pe">
+        <div class="boxImage-pe">
+            <div class="imgEvent-pe">
+                <img src="<?php echo $row['url_immagine']; ?>" alt="immagine evento">
+            </div>
+        </div>
+        <div class="containerPrincipale-pe">
+            <div class="container_sx-pe">
+                <h2><?php echo $row['titolo']; ?></h2>
+                <p class="dataEvento-pe"><time datetime="<?php echo $row['data_inizio']; ?>"><span><?php echo date('d', strtotime($row['data_inizio'])); ?></span> <?php echo date('F Y', strtotime($row['data_inizio'])); ?></time> alle ore <?php echo date('H:i', strtotime($row['orario_inizio'])); ?></p>
+                <p><?php echo $row['luogo']; ?></p>
+            </div>
+            <div class="container_dx-pe">
+                <button class="sonoInteressato-pe"> Sono Interessato</button>
+                <button class="sonoInteressato-pe"> Elimina</button>
+            </div>
+        </div>
+        <div class="containerSecondario-pe">
+            <h2><span style="font-weight:bold;">Dettagli</span></h2>
+            <div class="accountEvento-pe">
+                <img src="../Images/UCI.png" alt="Account">
+                <p class="accountName-pe">Evento di <span style="font-weight:bold;"><?php echo $row['creatore_id']; ?></span></p>
+            </div>
+            <div class="personeInteressate-pe">
+                <img src="../Images/people_icon_small.png" alt="Immagine persone interessate">
+                <p class="peopleInterested-pe"><?php echo $frase_partecipanti; ?></p>
+            </div>
+            <div class="descrizione-pe"><span style="font-weight:bold;">Descrizione: </span><?php echo $row['descrizione']; ?></div>
+        </div>
+    </div>
+</body>
+</html>
