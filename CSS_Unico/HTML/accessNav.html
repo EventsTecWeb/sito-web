@@ -3,11 +3,8 @@
 <head> 
   <meta charset="UTF-8">
   <title>Events:accedi</title>
-  <!-- MODIFICA -->
   <meta name="description" content= "Accedi al tuo profilo su Events per esplorare eventi mozzafiato, connetterti con persone appassionate e personalizzare la tua esperienza. Entra nel mondo di Events e vivi esperienze straordinarie!" />
-  <!-- MODIFICA -->
   <meta name="keywords" content="accesso profilo events, events,accesso utente events, login, accesso personale, profilo utente events, accesso privato events">
-  <!-- MODIFICA -->
   <link rel="stylesheet" href="../events.css"/>
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,400&display=swap">
@@ -17,10 +14,10 @@
   <header>
     <h1>Events</h1>
 <div class="header-items">
-<div class="search-container">
-<form id="searchBarA" action="/cerca" method="get">
-    <input type="text" id="searchBar" name="cerca" placeholder="Cerca...">
-</form>
+  <div class="search-container">
+    <form id="searchBarA" action="../PHP/barra_ricerca.php" role="search" method="get">
+        <input type="text" id="searchBar" name="cerca_evento" placeholder="Cerca...">
+    </form>
 </div>
 <button type="submit" id="searchButton">
     <img src="../Images/search.png" alt="Icona Cerca">
@@ -34,18 +31,14 @@
 <nav>
     <ul class="linkPagina">
         <li><a id="EventiFuturi" href="eventi">EVENTI FUTURI</a></li>
-        <li><a id="ChiSiamoLink" href="chisiamo">CHI SIAMO</a></li>
+        <li><a id="ChiSiamoLink" href="../PHP/chiSiamo.php">CHI SIAMO</a></li>
     </ul>
 </nav>
-<button class="bottonePlus">
-    <img src="../Images/add_white.png" alt="Bottone per creare un nuovo evento">
-</button>
-<!--Da gestire la foto del profilo in modo che si adatti al profilo -->
-<button class="bottoneProfilo">
-    <img src="../Images/andrew_garfield.jpg" alt="Bottone per accedere ai dati del proprio profilo">
-</button>
+<a href="../PHP/indexProfilo.php" class="bottonePlus">
+  <img src="../Images/add_blue.png" alt="Bottone per creare un nuovo evento">
+</a>
 <nav aria-label="breadcrumb" id="bread">
-    <p>Ti trovi in: <span lang="en"><a id="returnHome" href="#">Home</a></span> >><a id="returnProfilo" href="#">Profilo</a> >> Errore 404 </p>
+    <p>Ti trovi in: <a id="returnHome" href="../PHP/index.php">Indice</a> >> Accesso Profilo</p>
 </nav>
 </div>
 </header>
@@ -53,7 +46,7 @@
         <div id="container-sinistro-acc">
           <div class="image-container-ragComp-acc">
           </div>
-          <p id="infoNoAccount-acc">Non hai un account: <a></a><a href="#" id="linkRegistrati">Registrati</a></p>
+          <p id="infoNoAccount-acc">Non hai un account: <a></a><a href="../PHP/registrazione.php" id="linkRegistrati">Registrati</a></p>
         </div>
         <div id="container-destro-acc">
           <p id="accediScritta-acc">Accedi</p>

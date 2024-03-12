@@ -3,11 +3,8 @@
 <head> 
   <meta charset="UTF-8">
   <title>Events:registrati</title>
-  <!-- MODIFICA -->
   <meta name="description" content= "Registrati ad Events per non perdere le ultime novità e partecipare alle attività." />
-  <!-- MODIFICA -->
   <meta name="keywords" content="eventi, registrazione, iscrizione, partecipazione, events">
-  <!-- MODIFICA -->
   <link rel="stylesheet" href="../events.css"/>
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,400&display=swap">
@@ -17,10 +14,10 @@
   <header>
     <h1>Events</h1>
 <div class="header-items">
-<div class="search-container">
-<form id="searchBarA" action="/cerca" method="get">
-    <input type="text" id="searchBar" name="cerca" placeholder="Cerca...">
-</form>
+  <div class="search-container">
+    <form id="searchBarA" action="../PHP/accessNav.php" role="search" method="get">
+        <input type="text" id="searchBar" name="cerca_evento" placeholder="Cerca...">
+    </form>
 </div>
 <button type="submit" id="searchButton">
     <img src="../Images/search.png" alt="Icona Cerca">
@@ -34,18 +31,17 @@
 <nav>
     <ul class="linkPagina">
         <li><a id="EventiFuturi" href="eventi">EVENTI FUTURI</a></li>
-        <li><a id="ChiSiamoLink" href="chisiamo">CHI SIAMO</a></li>
+        <li><a id="ChiSiamoLink" href="../PHP/chiSiamo.php">CHI SIAMO</a></li>
     </ul>
 </nav>
-<button class="bottonePlus">
-    <img src="../Images/add_white.png" alt="Bottone per creare un nuovo evento">
-</button>
-<!--Da gestire la foto del profilo in modo che si adatti al profilo -->
-<button class="bottoneProfilo">
-    <img src="../Images/andrew_garfield.jpg" alt="Bottone per accedere ai dati del proprio profilo">
-</button>
+<a href="../PHP/accessNav.php" class="bottonePlus">
+  <img src="../Images/add_blue.png" alt="Bottone per creare un nuovo evento">
+</a>
+<a href="../PHP/accessNav.php" class="bottoneProfilo">
+  <img src="<?php echo $profile_image_path; ?>" alt="Bottone per accedere ai dati del proprio profilo">
+</a>
 <nav aria-label="breadcrumb" id="bread">
-    <p>Ti trovi in: <span lang="en"><a id="returnHome" href="#">Home</a></span> >><a id="returnProfilo" href="#">Profilo</a> >> Errore 404 </p>
+    <p>Ti trovi in: <a id="returnHome" href="../PHP/index.php">Indice</a> >> Registrazione </p>
 </nav>
 </div>
 </header>

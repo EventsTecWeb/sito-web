@@ -3,11 +3,7 @@
 <head> 
   <meta charset="UTF-8">
   <title>Events: Profilo</title>
-  <!-- MODIFICA -->
-  <meta name="description" content= "Pagina di dettagli del profilo" />
-  <!-- MODIFICA -->
   <meta name="keywords" content="accesso profilo events, events,accesso utente events, login, accesso personale, profilo utente events, accesso privato events">
-  <!-- MODIFICA -->
   <link rel="stylesheet" href="../events.css"/>
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,400&display=swap">
@@ -20,12 +16,10 @@
             <h1>Events</h1>
         <div class="header-items">
         <div class="search-container">
-        <form id="searchBarA" action="/cerca" method="get">
-            <!-- MODIFICA -->
-            <input type="text" id="searchBar" name="cerca" placeholder="Cerca...">
+        <form id="searchBarA" action="../PHP/barra_ricerca.php" role="search" method="get">
+            <input type="text" id="searchBar" name="cerca_evento" placeholder="Cerca...">
         </form>
         </div>
-        <!-- MODIFICA -->
         <button type="submit" id="searchButton">
             <img src="../Images/search.png" alt="Icona Cerca">
         </button>
@@ -38,19 +32,14 @@
         <nav>
             <ul class="linkPagina">
                 <li><a id="EventiFuturi" href="eventi">EVENTI FUTURI</a></li>
-                <li><a id="ChiSiamoLink" href="../Progetto/indexChiSiamo.html">CHI SIAMO</a></li>
+                <li><a id="ChiSiamoLink" href="../PHP/chiSiamo.php">CHI SIAMO</a></li>
             </ul>
         </nav>
-        <button class="bottonePlus">
-            <img src="../Images/add.png" alt="Bottone per creare un nuovo evento">
-        </button>
-        <!--Da gestire la foto del profilo in modo che si adatti al profilo -->
-        <button class="bottoneProfilo">
-            <img src="../Images/andrew_garfield.jpg" alt="Bottone per accedere ai dati del proprio profilo">
-        </button>
+    <a href="../PHP/infoPersonali.php" class="bottoneProfilo">
+        <img src="../Images/user.png" alt="Bottone per accedere ai dati del proprio profilo">
+    </a>
         <nav aria-label="breadcrumb" id="bread">
-            <!-- MODIFICA -->
-            <p>Ti trovi in: <span lang="en"><a id="returnHome" href="#">Home</a></span> >> Profilo</p>
+            <p>Ti trovi in: <span lang="en"><a id="returnHome" href="../PHP/home.php">Home</a></span> >> Profilo Personale</p>
         </nav>
     </div>
     </header>
@@ -73,40 +62,56 @@
         </nav>
     <div id="box">
         <div id="profile-info-container">
-            <img class="avatar-ev" src="../Images/andrew_garfield.jpg">
+            <img class="avatar-ev" src="../Images/<?php echo $profile_image_path; ?>">
             <ul id="descrizioneProfilo">
-                <li id="NomeCompleto">Mario Rossi</li>
-                <li id="NomeUtente">mar_ros87</li>
-                <li id="Amici">32 amici</li>
+                <li id="NomeCompleto"><?php echo $userData['nome']; ?></li>
+                <li id="NomeUtente"><?php echo $username; ?></li>
             </ul>
         </div>
         <form>
-            <label for="image">Immagine:</label>
-            <div id="image-container" contenteditable="false">
-                <p class="drag-drop-text">Trascina un'immagine qui</p>
-                <img id="image-preview" src="" alt="Immagine dell'evento">
-            </div>
-            <input type="file" id="image" name="image">
+            <label for="imageURL">URL immagine dell'evento:</label>
+                <input type="text" id="imageURL" name="imageURL">
 
-    
             <label for="eventName">Nome dell'evento:</label>
             <input type="text" id="eventName" name="eventName">
     
             <div class="form-group">
                 <div>
-                    <label for="eventDate">Data:</label>
-                    <input type="date" id="eventDate" name="eventDate">
+                    <label for="eventStartDate">Data d'inizio:</label>
+                    <input type="date" id="eventStartDate" name="eventStartDate">
                 </div>
                 <div>
-                    <label for="eventTime">Ora:</label>
-                    <input type="time" id="eventTime" name="eventTime">
+                    <label for="eventStartTime">Orario d'inizio:</label>
+                    <input type="time" id="eventStartTime" name="eventStartTime">
                 </div>
             </div>
-    
-            <label for="visibility">Visibilità:</label>
-            <select id="visibility" name="visibility">
-                <option value="public">Pubblico</option>
-                <option value="private">Privato</option>
+
+            <div class="form-group">
+                <div>
+                    <label for="eventEndDate">Data di fine:</label>
+                    <input type="date" id="eventEndDate" name="eventEndDate">
+                </div>
+                <div>
+                    <label for="eventEndTime">Orario di fine:</label>
+                    <input type="time" id="eventEndTime" name="eventEndTime">
+                </div>
+            </div>
+
+            <label for="eventLocation">Luogo:</label>
+            <input type="text" id="eventLocation" name="eventLocation">
+
+            <label for="eventCost">Costo:</label>
+            <input type="text" id="eventCost" name="eventCost">
+
+            <label for="eventCategory">Categoria evento:</label>
+            <select id="eventCategory" name="eventCategory">
+                <option value="music">Musica</option>
+                <option value="sport">Sport</option>
+                <option value="food">Cibo</option>
+                <option value="art">Arte</option>
+                <option value="art">Teatro</option>
+                <option value="art">Conferenze</option>
+                <option value="art">Beneficenza</option>
             </select>
     
             <label for="eventDescription">Descrizione dell'evento:</label>

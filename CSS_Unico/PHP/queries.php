@@ -8,6 +8,23 @@ function clearInput($value) {
     return $value;
 }
 
+function getPartecipantiEvento($conn, $evento_id) {
+    $sql = "SELECT Utenti.nome, Utenti.cognome 
+            FROM Utenti
+            INNER JOIN Partecipazioni ON Utenti.utente_id = Partecipazioni.utente_id
+            WHERE Partecipazioni.evento_id = ?";
+
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $evento_id);
+    
+    $stmt->execute();
+
+    $result = $stmt->get_result();
+    
+    return $result;
+}
+
+
 function logout() {
     $_SESSION = array();
 

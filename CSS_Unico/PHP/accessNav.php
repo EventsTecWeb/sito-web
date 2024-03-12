@@ -1,12 +1,11 @@
 <?php
 
-require_once '../../queries/queries.php'; //include il file che contiene le query necessarie per interrogare il database. 
-session_start();/*avvia una nuova sessione o riprende una sessione esistente.
- Dopo che l'utente ha inserito le credenziali e ha fatto clic su "Accedi", è necessario mantenere traccia del fatto che l'utente sia autenticato durante la sua sessione sul sito.*/
+require_once 'queries.php';
+session_start();
 
 $errore_credenziali="";
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {  /*si controolla se la richiesta http è di tipo post*/
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {  
     if (!isset($_POST['username']) || !isset($_POST['password'])) {  /*controlla se i campi 'utente' e 'password' sono stati inviati con il modulo POST.
         Se uno dei due manca, reindirizza l'utente alla pagina di errore 404 e termina lo script.*/
         header('Location: 404.php');

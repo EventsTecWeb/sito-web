@@ -1,5 +1,5 @@
 <?php
-require_once '../../queries/queries.php';
+require_once 'queries.php';
 session_start();
 
 $registration_feedback = '';
