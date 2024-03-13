@@ -3535,3 +3535,48 @@ textarea {
 
 
 /*-------------------------------------INFO PERSONALI----------------------------------------------*/
+
+/*-------------------------------------PARTNERS----------------------------------------------*/
+
+
+#partner-container {
+    margin-top: 20px;
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: Poppins, sans-serif;
+}
+
+#partner-container h1 {
+    font-size: 2em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#partner-container .partner-text-why {
+    font-size: 1.4em;
+    color: #2b2b2b;
+    text-align: center;
+    padding: 10px 0;
+}
+
+#partners-logos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.partner-image {
+    width: 30%;
+    text-align: center;
+}
+
+.partner-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+  /*-------------------------------------PARTNERS----------------------------------------------*/
