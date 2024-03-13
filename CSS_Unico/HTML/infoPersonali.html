@@ -11,8 +11,10 @@
   <link rel="shortcut icon" href="../Images/events_logo_site_e.png">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="../JS/scriptInfoPers.js"></script>
+  <script src="../JS/scriptSkip.js"></script>
 </head>
 <body>
+    <a class="skip-link visually-hidden" href="#nome-ip" id="skipLink">Salta al contenuto principale</a>
     <header>
             <h1>Events</h1>
         <div class="header-items">
@@ -37,7 +39,7 @@
             </ul>
         </nav>
         <a href="../PHP/indexProfilo.php" class="bottonePlus">
-            <img src="../Images/add_blue.png" alt="Bottone per creare un nuovo evento">
+            <img src="../Images/add.png" alt="Bottone per creare un nuovo evento">
         </a>
         <a href="../PHP/infoPersonali.php" class="bottoneProfilo">
             <img src="<?php echo $profile_image_path; ?>" alt="Bottone per accedere ai dati del proprio profilo">

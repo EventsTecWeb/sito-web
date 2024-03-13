@@ -9,18 +9,19 @@
     <link rel="stylesheet" href="../print.css">
     <link rel="shortcut icon" href="../Images/events_logo_site_e.png">
     <title>Errore 500</title>
+    <script src="../JS/scriptSkip.js"></script>
 </head>
 
 <body>
+    <a class="skip-link visually-hidden" href="#error-container" id="skipLink">Salta al contenuto principale</a>
     <header>
         <h1>Events</h1>
-    <div class="header-items">
         <div class="header-items">
             <div class="search-container">
                 <form id="searchBarA" action="../PHP/barra_ricerca.php" role="search" method="get">
                     <input type="text" id="searchBar" name="cerca_evento" placeholder="Cerca...">
                 </form>
-            </div>
+        </div>
     <button type="submit" id="searchButton">
         <img src="../Images/search.png" alt="Icona Cerca">
     </button>
@@ -37,7 +38,7 @@
         </ul>
     </nav>
     <a href="../PHP/indexProfilo.php" class="bottonePlus">
-        <img src="../Images/add_blue.png" alt="Bottone per creare un nuovo evento">
+        <img src="../Images/add.png" alt="Bottone per creare un nuovo evento">
     </a>
     <a href="../PHP/infoPersonali.php" class="bottoneProfilo">
         <img src="<?php echo $profile_image_path; ?>" alt="Bottone per accedere ai dati del proprio profilo">

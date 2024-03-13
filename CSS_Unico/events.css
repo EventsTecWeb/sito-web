@@ -362,20 +362,75 @@ header:after {
 
 /*------------------------------/INTESTAZIONE------------------------------------*/
 
+/*-----------------------/Skip al contenuto principale-------------------------------------*/
+
+.visually-hidden {
+    position: absolute;
+    width: 1vw; 
+    height: 1vh; 
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+  
+  .skip-link {
+    position: absolute;
+    left: 0;
+    background-color: #ffffff;
+    color: black; 
+    padding: 1em; 
+    z-index: 999;
+    font-family: Arial, Helvetica, sans-serif; 
+  }
+  
+
+  .skip-link, .skip-link:visited {
+    font-family: Poppins, sans-serif; 
+  }
+
+  @media screen and (max-width: 950px) {
+    .skip-link {
+      position: fixed; 
+      top: 1em; 
+      left: 1em; 
+      background-color: #ffffff;
+      color: black; 
+      padding: 0.5em; 
+      font-size: 0.8em; 
+      z-index: 999;
+      font-family: Arial, Helvetica, sans-serif; 
+    }
+  
+    .skip-link:focus {
+      display: block; 
+    }
+  }
+  
+  @media screen and (max-width: 730px) {
+    .skip-link {
+      position: fixed; 
+      top: 1em; 
+      left: 1em; 
+      background-color: #ffffff;
+      color: black; 
+      padding: 0.5em; 
+      font-size: 0.8em; 
+      z-index: 999;
+      font-family: Arial, Helvetica, sans-serif; 
+    }
+  
+    .skip-link:focus {
+      display: block; 
+    }
+  }
+  
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+  
+  
+  
 
 /*-------------------------------/BREADCRUMB-------------------------------------------------*/
 /*Codice riguardante la breadcrumb*/
@@ -3217,9 +3272,6 @@ textarea {
 
 /*---------------------------PRIVACY------------------------------------------------------*/
 
-.content-ip {
-    display: none;
-}
 
 #privacy-ip {
     border: 1px solid #ccc;
@@ -3452,7 +3504,7 @@ textarea {
     margin-top: 20px;
 }
 
-#mod-data-ip .salva {
+#mod-data-ip .salva-ip {
     background-color: rgba(114, 162, 233, 1);
     color: white;
     border: none;
@@ -3466,7 +3518,7 @@ textarea {
     border-radius: 16px;
 }
 
-#mod-data-ip .salva:hover {
+#mod-data-ip .salva-ip:hover {
     background-color: rgba(14, 31, 187, 1);
 }
   
