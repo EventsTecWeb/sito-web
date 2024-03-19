@@ -46,7 +46,6 @@ header h1{
     background-image: url("Images/eventsLogoRid.png");
     font-size: 4em;
     line-height: 1.5em;
-    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 20%;
@@ -63,7 +62,6 @@ ul.linkPagina {
 ul.linkPagina li {
     white-space: nowrap;
     /*metto prima lo stile testuale per il fallback*/
-    font-family: Arial, Helvetica, sans-serif;
     font-family: 'Roboto', sans-serif;
     font-size: 1.2vw;
     margin-right: 5vh; 
@@ -150,7 +148,6 @@ input[type="text" ] #searchBar {
     border: none;
     text-indent: 10px;
     /*metto prima lo stile testuale per il fallback*/
-    font-family: Arial, Helvetica, sans-serif;
     font-family: 'Poppins', sans-serif;
     margin-right:1vw;
     transition: width 1s ease-in-out;
@@ -235,7 +232,6 @@ input[type="text" ] #searchBar {
 /* Modifica e.g. searchBarRegistrati, searchButtonRegistrati */
 #searchButton, .bottoneFiltro, .bottoneHamburger {
     position: relative;
-    margin-left: -1.5vw;
     margin-bottom: 1vh;
     transition: width 0.3s ease, height 0.3s ease;
     transition: margin-top 0.5s ease, width 0.5s ease, height 0.5s ease; 
@@ -382,7 +378,6 @@ header:after {
 nav[aria-label="breadcrumb"] {
     padding-left: 1vw;
     /*metto prima lo stile testuale per il fallback*/
-    font-family: Arial, Helvetica, sans-serif;
     font-family: Poppins, sans-serif;
     margin-top: -10px;
 }
@@ -408,16 +403,6 @@ nav[aria-label="breadcrumb"] {
 .returnBread:hover{
     text-decoration: none;
 }
-
-input[type="text"] {
-    font-family: Poppins, sans-serif;
-    border: none; /* Rimuove il bordo */
-    border-bottom: 1px solid black; /* Aggiunge una linea inferiore */
-    background-color: transparent; /* Sfondo trasparente */
-    padding: 5px; /* Spazio interno per migliorare la leggibilità */
-    outline: none; /* Rimuove il bordo quando l'input è in focus */
-    width:100%;
-}
   
 
 /* Rimuove i bordi del focus sugli input di tipo text */
@@ -437,15 +422,6 @@ input[type="text"]:focus {
 /* -------------------------------/GESTIONE INPUT----------------------------- */
 
   
-  input[type="text"] {
-    font-family: Poppins, sans-serif;
-    border: none; /* Rimuove il bordo */
-    border-bottom: 1px solid black; /* Aggiunge una linea inferiore */
-    background-color: transparent; /* Sfondo trasparente */
-    padding: 5px; /* Spazio interno per migliorare la leggibilità */
-    outline: none; /* Rimuove il bordo quando l'input è in focus */
-    width:100%;
-  }
   
   input[type="password"] {
     font-family: Poppins, sans-serif;
@@ -473,16 +449,6 @@ input[type="text"]:focus {
     padding: 5px; /* Spazio interno per migliorare la leggibilità */
     outline: none; /* Rimuove il bordo quando l'input è in focus */
     width:100%;
-  }
-  
-  input[type="password"] {
-    font-family: Poppins, sans-serif;
-    border: none;
-    border-bottom: 1px solid black;
-    background-color: transparent;
-    padding: 5px;
-    outline: none;
-    width: 100%;
   }
   
   /* Rimuove i bordi del focus sugli input di tipo text */
@@ -519,13 +485,11 @@ input[type="text"]:focus {
     cursor: pointer;
     background-repeat: no-repeat;
     background-position: center;
-    border:none;
     width:100%;
     height: 3em;
     font-size: 20px;
     text-align: left;
     /*metto prima lo stile testuale per il fallback*/
-    font-family: Arial, Helvetica, sans-serif;
     font-family: 'Poppins', sans-serif;
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
@@ -718,12 +682,6 @@ input[type="text"]:focus {
     margin-bottom: 20px; /* Spazio tra la linea e gli elementi successivi */
 }
 
-.separator-sicu {
-    width: 100%;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 20px; /* Spazio tra la linea e gli elementi successivi */
-}
-
 /*left-align viene cambiato da class a id perché utilizzato solo una volta e inoltre cambia il nome in left-align-privacy*/
 #left-align-privacy-sicu {
     display: flex;
@@ -743,20 +701,6 @@ input[type="text"]:focus {
     margin-bottom: 20px; 
 }
 
-/*codice per i bottoni blu con la scritta Salva*/
-.button-impo-sicu{
-    background-color: rgba(114, 162, 233, 1);
-    color: white;
-    border: none;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 16px;
-}
 
 /*codice per i bottoni blu con la scritta Salva*/
 .button-impo-sicu:hover{
@@ -777,35 +721,6 @@ input[type="text"]:focus {
     text-align: center; 
 }
 
-/*codice per la parte della password*/
-#modPass-sicu h2 {
-    font-family: Inter, sans-serif;
-}
-
-/*codice per la parte della password*/
-#modPass-sicu p {
-    text-align: justify;
-    /*metto prima lo stile testuale per il fallback*/
-    font-family: Arial, Helvetica, sans-serif;
-    font-family: Inter, sans-serif;
-}
-
-/*codice per la parte della password*/
-#modPass-sicu input[type="password"] {
-    border: none; 
-    border-bottom: 1px solid black; 
-    background-color: transparent; 
-    padding: 5px; 
-    outline: none; 
-    width:70%;
-    margin-bottom: 1.5vh;
-}
-
-#labelNewP-sicu, #labelRepP-sicu{
-    /*metto prima lo stile testuale per il fallback*/
-    font-family: Arial, Helvetica, sans-serif;
-    font-family: Inter, sans-serif;
-}
 
 #labelNewP-sicu, #labelRepP-sicu{
     margin-bottom:-0.2vh;
@@ -821,22 +736,6 @@ input[type="text"]:focus {
     margin-top: 20px;
 }
 
-/*parte riguardante l'eliminazione dell'account*/
-#eliAcc-sicu {
-    border: 1px solid #ccc;
-    border-radius: 50px;
-    padding: 60px;
-    padding-top: 30px;
-    width: 80%;
-    margin: 2vh auto;
-    align-content: center;
-}
-
-#eliAcc-sicu h2 {
-    padding: 10px;
-    font-size: 25px;
-    font-family: Inter, sans-serif;
-}
 
 /*warning viene cambiato da class a id perché utilizzato solo una volta e inoltre cambia il nome in warning-password*/
 #warning-sicu {
@@ -854,31 +753,11 @@ input[type="text"]:focus {
     color: red;
 }
 
-.checkbox-sicu {
-    margin: 20px;
-}
 
 .checkbox-sicu {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
-}
-
-#eliAcc-sicu #eliminaButton-sicu {
-    background-color: darkred;
-    color: white;
-    border: none;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 16px;
-    flex-direction: column;
-    align-items: center;
-    
+    margin: 20px;
 }
 
 #eliAcc-sicu #eliminaButton-sicu:hover {
@@ -894,46 +773,6 @@ input[type="text"]:focus {
     align-items: center;
 }
 
-/*codice che riguarda la parte esci*/
-#esciAcc-sicu {
-    border: 1px solid #ccc;
-    border-radius: 50px;
-    padding: 60px;
-    padding-top: 30px;
-    width: 80%;
-    margin: 2vh auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-#esciAcc-sicu h2 {
-    font-weight: bold;
-    /*metto prima lo stile testuale per il fallback*/
-    font-family: Arial, Helvetica, sans-serif;
-    font-family: 'Inter', sans-serif;
-}
-
-#esciAcc-sicu p {
-    font-size: 2vh;
-    padding: 2vh;
-}
-
-/*tratto separatamente questo bottone, perché non è sempre utilizzabile, cosa che invece gli altri sono*/
-#esciAcc-sicu #esciButton-sicu {
-    background-color: rgba(114, 162, 233, 1);
-    color: white;
-    border: none;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 16px;
-}
 
 /*tratto separatamente questo bottone, perché non è sempre utilizzabile, cosa che invece gli altri sono*/
 #esciAcc-sicu #esciButton-sicu:hover {
@@ -1053,8 +892,6 @@ input[type="text"]:focus {
   }
 
   #TerminiCondizioni {
-    /*metto prima lo stile testuale per il fallback*/
-    font-family: Arial, Helvetica, sans-serif;
     font-family: 'Poppins';
     font-size: 2.6vh;
     display: block;
@@ -1113,8 +950,6 @@ input[type="text"]:focus {
 
 /*contenitore totale della pagina*/
 #profile-ev{
-    /*metto prima lo stile testuale per il fallback*/
-    font-family: Arial, Helvetica, sans-serif;
     font-family: Inter, sans-serif;
     align-content: center;
     display: flex;
@@ -1178,12 +1013,9 @@ input[type="text"]:focus {
 }
 
 #fraseEventiCreati-ev{
-    /*metto prima lo stile testuale per il fallback*/
-    font-family: Arial, Helvetica, sans-serif;
     font-family: 'Poppins', sans-serif;
     color: rgb(0, 0, 0); 
-    padding-right: 25vw;
-
+    padding-right: 25vw;    
 }
 
 
@@ -1550,10 +1382,6 @@ input[type="text"]:focus {
     background-color: rgba(14, 31, 187, 1);
   }
   
-  #container-destro-reg form {
-    font-size:large;
-  }
-  
   #container-destro-reg {
     padding-left: 2.5vw;
   }
@@ -1654,7 +1482,6 @@ input[type="text"]:focus {
     width: 100%; 
     max-width: none;
     height:15%;
-    padding-top: 2vh;
     font-family: Poppins, sans-serif;
     padding: 10px 0; 
     box-sizing: border-box; 
@@ -1667,9 +1494,6 @@ input[type="text"]:focus {
     background-color: rgba(14, 31, 187, 1);
   }
   
-  #container-destro-acc form {
-    font-size:large;
-  }
   
   #container-destro-acc {
     padding-left: 2.5vw;
@@ -1784,7 +1608,6 @@ input[type="text"]:focus {
   
   .NomiLinkSalvati-es{
     /*metto prima lo stile testuale per il fallback*/
-    font-family: Arial, Helvetica, sans-serif;
     font-family: 'Roboto', sans-serif;
     color: rgb(0, 0, 0); /* Colore specifico */
     text-decoration: underline;
@@ -1796,7 +1619,6 @@ input[type="text"]:focus {
   
   .infoEventoSalvato-es{
     /*metto prima lo stile testuale per il fallback*/
-    font-family: Arial, Helvetica, sans-serif;
     font-family: 'Poppins', sans-serif;
     color: rgb(0, 0, 0);
     font-size: 0.85em;
@@ -1804,7 +1626,6 @@ input[type="text"]:focus {
   
   .genereEventoSalvato-es{
     /*metto prima lo stile testuale per il fallback*/
-    font-family: Arial, Helvetica, sans-serif;
     font-family: 'Poppins', sans-serif;
     color: rgb(0, 0, 0);
     font-size: 0.9em;
@@ -1837,10 +1658,6 @@ input[type="text"]:focus {
 
 /*-------------------------------------IMPO SICUREZZA----------------------------------------------*/
 
-.titolini-sicu{
-    color: red;
-}
-
 #menuleft #buttonImpostazioniSicu{
     background-color: var(--gray);
 }
@@ -1863,22 +1680,7 @@ input[type="text"]:focus {
   .settings-sicu h2 {
     margin-bottom: 20px;
   }
-  
-  /* Stile del menu a tendina */
-  .option-sicu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #ccc;
-    padding: 10px 0;
-    cursor: pointer;
-  }
-  
-  .option-sicu img {
-    width: 12px;
-    height: 12px;
-    transition: transform 0.3s ease;
-  }
+
   
   /* Effetto di transizione sull'icona a tendina */
   .option-sicu.open img {
@@ -1907,19 +1709,6 @@ input[type="text"]:focus {
 
 /*---------------------------PRIVACY------------------------------------------------------*/
 
-#privacy-sicu {
-    border: 1px solid #ccc;
-    border-radius: 50px;
-    padding: 60px;
-    padding-top: 30px;
-    width: 80%;
-    margin: 2vh auto;
-}
-
-.p_privacy-sicu{
-    margin-bottom: -0.5vh;
-}
-
 #domanda-sicu{
     margin-bottom: -0.5vh;
     font-weight:bold;
@@ -1930,12 +1719,6 @@ input[type="text"]:focus {
     flex-direction: column;
     align-items: center;
     text-align: center;
-}
-
-.separator-sicu {
-    width: 100%;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 20px; /* Spazio tra la linea e gli elementi successivi */
 }
 
 .left-align-sicu {
@@ -1978,63 +1761,22 @@ input[type="text"]:focus {
 
    /*-------------------------PASSWORD-----------------------------------------------------*/
 
-#modPass-sicu {
-    border: 1px solid #ccc;
-    border-radius: 50px;
-    padding: 60px;
-    padding-top: 30px;
-    width: 80%;
-    margin: 2vh auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center; 
-}
 
-#modPass-sicu h2 {
-    font-family: Inter, sans-serif;
-}
-
-.separator-sicu {
-    width: 100%;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 20px; /* Spazio tra la linea e gli elementi successivi */
-}
 
 #modPass-sicu p {
     text-align: justify;
-    font-family: Inter, sans-serif;
-}
-
- #labelNewP-sicu, #labelRepP-sicu{
-    font-family: Inter, sans-serif;
 }
 
 #modPass-sicu input[type="password"] {
-    border: none; /* Rimuove il bordo */
-    border-bottom: 1px solid black; /* Aggiunge una linea inferiore */
-    background-color: transparent; /* Sfondo trasparente */
-    padding: 5px; /* Spazio interno per migliorare la leggibilità */
-    outline: none; /* Rimuove il bordo quando l'input è in focus */
     width:70%;
     margin-bottom: 1.5vh;
 }
-
-#labelNewP-sicu{
-    margin-bottom:-0.2vh;
-}
-
-#labelRepP-sicu{
-    margin-bottom:-0.2vh;
-}
-
 
 #modPass-sicu button{
     background-color: rgba(114, 162, 233, 1);
     color: white;
     border: none;
     padding: 15px 32px;
-    text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
@@ -2046,11 +1788,6 @@ input[type="text"]:focus {
 #modPass-sicu button:hover{
     background-color: rgba(14, 31, 187, 1);
 }
-
-.button-container-sicu {
-    margin-top: 20px; 
-}
-
 /*---------------------------ELIMINA---------------------------------------------------------*/
 
 #eliAcc-sicu {
@@ -2072,12 +1809,6 @@ input[type="text"]:focus {
     font-family: Inter, sans-serif;
 }
 
-.separator-sicu {
-    width: 100%;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 20px; /* Spazio tra la linea e gli elementi successivi */
-}
-
 .warning-sicu {
     border: 3px solid red;
     margin: 10px;
@@ -2089,9 +1820,6 @@ input[type="text"]:focus {
 }
 .warning-icon-sicu {
     color: red;
-}
-.checkbox-sicu {
-    margin: 20px;
 }
 
 #eliAcc-sicu #eliminaButton-sicu {
@@ -2140,21 +1868,9 @@ input[type="text"]:focus {
     font-family: 'Inter', sans-serif;
 }
 
-.separator-sicu {
-    width: 100%;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 20px;
-}
-
 #esciAcc-sicu p {
     font-size: 2vh;
     padding: 2vh;
-}
-
-.checkbox-sicu {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
 }
 
 .button-container-sicu {
@@ -2611,8 +2327,6 @@ input[type="text"]:focus {
 
     div img{
         border-radius: 10px 10px 0 0;
-        width:75vw;
-        height:35vw;
     }
 
     .container-se{
@@ -2659,6 +2373,7 @@ input[type="text"]:focus {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    order: 1;
 }
 
 #immagineProfilo {
@@ -2675,7 +2390,6 @@ input[type="text"]:focus {
 }
 
 #descrizioneProfilo li {
-    font-family: 'Poppins', sans-serif;
     padding: 5px;
 }
 
@@ -2695,9 +2409,6 @@ input[type="text"]:focus {
     flex-direction: column;
     width: 80%;
     font-family: 'Poppins', sans-serif;
-}
-#profile-info-container{
-    order: 1;
 }
 
 
@@ -3162,6 +2873,7 @@ textarea {
     padding-right: 15%;
     margin-top: 1%; /* Margine superiore relativo */
     box-sizing: border-box;
+    font-family: Inter, sans-serif;
 }
   
   .settings-ip h2 {
@@ -3210,10 +2922,6 @@ textarea {
   .option-ip.open span:nth-child(2) {
     display: inline-block;
   }
-
-   .settings-ip{
-    font-family: Inter, sans-serif;
-   }
 
 /*---------------------------PRIVACY------------------------------------------------------*/
 
@@ -3280,13 +2988,6 @@ textarea {
     text-align: center;
 }
 
-
-.separator-ip {
-    width: 100%;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 20px; /* Spazio tra la linea e gli elementi successivi */
-}
-
 .left-align-ip {
     width: 100%;
     display: flex;
@@ -3347,16 +3048,6 @@ textarea {
     text-align: center; 
 }
 
-#modNick-ip h2, #modTel-ip h2 {
-    font-family: Inter, sans-serif;
-}
-
-.separator-ip {
-    width: 100%;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 20px; /* Spazio tra la linea e gli elementi successivi */
-}
-
 #modNick-ip p, #modTel-ip p {
     text-align: justify;
     font-family: Inter, sans-serif;
@@ -3397,11 +3088,6 @@ textarea {
 }
 
 /*---------------------------ELIMINA---------------------------------------------------------*/
-.separator-ip {
-    width: 100%;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 20px; /* Spazio tra la linea e gli elementi successivi */
-}
 
 .vertical-center-ip {
     /* Impostazioni per centrare verticalmente */
@@ -3428,7 +3114,6 @@ textarea {
 
 #mod-data-ip h2 {
     font-weight: bold;
-    font-family: 'Inter', sans-serif;
 }
 
 .separator-ip {
