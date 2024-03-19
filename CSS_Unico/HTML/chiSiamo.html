@@ -7,6 +7,7 @@
 		<title>Chi Siamo?</title>
 		<link rel="stylesheet" href="../events.css">
         <link rel="shortcut icon" href="../Images/events_logo_site_e.png">
+        <script src="../JS/sideMenu.js"></script>
     </head>
     <body>
         <header>
@@ -17,7 +18,6 @@
                     <input type="text" id="searchBar" name="cerca_evento" placeholder="Cerca...">
                 </form>
             </div>
-        </div>
         <button type="submit" id="searchButton">
             <img src="../Images/search.png" alt="Icona Cerca">
         </button>
@@ -29,12 +29,13 @@
         </button>
         <nav>
             <ul class="linkPagina">
-                <li><a id="EventiFuturi" href="eventi">EVENTI FUTURI</a></li>
+                <li><a id="returnHomeHeader" href="../PHP/home.php">HOMEPAGE</a></li>
+                <li><a id="PartnersLink" href="../PHP/partners.php">PARTNERS</a></li>
                 <li><a id="ChiSiamoLink" href="../PHP/chiSiamo.php">CHI SIAMO</a></li>
             </ul>
         </nav>
         <a href="../PHP/indexProfilo.php" class="bottonePlus">
-            <img src="../Images/add_blue.png" alt="Bottone per creare un nuovo evento">
+            <img src="../Images/add.png" alt="Bottone per creare un nuovo evento">
         </a>
         <a href="../PHP/infoPersonali.php" class="bottoneProfilo">
             <img src="<?php echo $profile_image_path; ?>" alt="Bottone per accedere ai dati del proprio profilo">
@@ -44,6 +45,16 @@
         </nav>
     </div>
     </header>
+    <div id="overlay" class="overlay"></div>
+        <div id="sideMenu" class="side-menu">
+            <a href="javascript:void(0)" class="closebtn">&times;</a>
+            <a href="../PHP/home.php">Homepage</a>
+            <a href="../PHP/accessNav.php">Informazioni Profilo</a>
+            <a href="../PHP/crea_inserimento_evento.php">Crea Evento</a>
+            <a href="../PHP/chiSiamo.php">Chi siamo</a>
+            <a href="../PHP/partners.php">Partners Events</a>
+        </div>
+        </div>
         <main id="chi_siamo_main">
             <h2>Il team: </h2> 
             <p class="chi_siamo">Nel gruppo di lavoro per il progetto del sito, quattro individui eccezionali collaborano
