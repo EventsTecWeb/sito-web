@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,400&display=swap">
   <link rel="shortcut icon" href="../Images/events_logo_site_e.png">
   <script src="../JS/scriptSkip.js"></script>
+  <script src="../JS/sideMenu.js"></script>
 </head>
 <body>
   <header>
@@ -21,24 +22,22 @@
         <input type="text" id="searchBar" name="cerca_evento" placeholder="Cerca...">
     </form>
 </div>
-<button type="submit" id="searchButton">
+<button type="submit" id="searchButton" aria-label="Cerca">
     <img src="../Images/search.png" alt="Icona Cerca">
 </button>
-<button class="bottoneFiltro">
+<button class="bottoneFiltro" aria-label="Filtra">
     <img src="../Images/filter-icon-0.png" alt="Filtro">
 </button>
-<button class="bottoneHamburger">
-    <img src="../Images/menu-button-of-three-horizontal-lines.png" alt="Bottone per link nascosti in formato cellulare">
+<button class="bottoneHamburger" aria-label="Menu">
+    <img src="../Images/menu-button-of-three-horizontal-lines.png" alt="Bottone per link nascosti per le pagine di dimensioni minori">
 </button>
 <nav>
     <ul class="linkPagina">
-        <li><a id="EventiFuturi" href="eventi">EVENTI FUTURI</a></li>
-        <li><a id="ChiSiamoLink" href="../PHP/chiSiamo.php">CHI SIAMO</a></li>
+      <li><a id="returnHomeHeader" href="../PHP/registrazione.php">HOMEPAGE</a></li>
+      <li><a id="PartnersLink" href="../PHP/registrazione.php">PARTNERS</a></li>
+      <li><a id="ChiSiamoLink" href="../PHP/registrazione.php">CHI SIAMO</a></li>
     </ul>
 </nav>
-<a href="../PHP/accessNav.php" class="bottonePlus">
-  <img src="../Images/add_blue.png" alt="Bottone per creare un nuovo evento">
-</a>
 <a href="../PHP/accessNav.php" class="bottoneProfilo">
   <img src="<?php echo $profile_image_path; ?>" alt="Bottone per accedere ai dati del proprio profilo">
 </a>
@@ -47,27 +46,41 @@
 </nav>
 </div>
 </header>
+<div id="overlay" class="overlay"></div>
+        <div id="sideMenu" class="side-menu">
+            <a href="javascript:void(0)" class="closebtn">&times;</a>
+            <a href="../PHP/registrazione.php">Homepage</a>
+            <a href="../PHP/accessNav.php">Informazioni Profilo</a>
+            <a href="../PHP/registrazione.php">Crea Evento</a>
+            <a href="../PHP/registrazione.php">Chi siamo</a>
+            <a href="../PHP/registrazione.php">Partners Events</a>
+        </div>
     <div id="pannello-principale-reg">
         <div id="container-sinistro-reg">
           <div class="image-container-ragComp-reg">
           </div>
-          <p id="infoNoAccount-reg">Hai già un account? <a></a><a href="#" id="linkRegistrati">Accedi</a></p>
+          <p id="infoNoAccount-reg">Hai già un account? <a></a><a href="../PHP/accessNav.php" id="linkRegistrati">Accedi</a></p>
         </div>
         <div id="container-destro-reg">
           <p id="registratiScritta-reg">Registrati</p>
           <form>
+            <label for="nomeInput" class="visually-hidden">Nome</label>
             <input type="text" id="nomeInput" name="nome" placeholder="Nome...">
           </form>
           <form>
+            <label for="cognomeInput" class="visually-hidden">Cognome</label>
             <input type="text" id="cognomeInput" name="cognome" placeholder="Cognome...">
           </form>
           <form>
+              <label for="nomeUtenteInput" class="visually-hidden">Nome Utente</label>
               <input type="text" id="nomeUtenteInput" name="nomeUtente" placeholder="Nome Utente...">
           </form>
           <form>
+              <label for="mailInput" class="visually-hidden">Mail</label>
               <input type="text" id="mailInput" name="mail" placeholder="Mail...">
           </form>
           <form>
+              <label for="passwordInput" class="visually-hidden">Password</label>
               <input type="password" id="passwordInput" name="password" placeholder="Password...">
           </form>
           <form>

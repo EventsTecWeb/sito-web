@@ -76,19 +76,6 @@ ul.linkPagina a:visited {
 }
 
 /*Codice riguardante un link di navigazione*/ 
-#EventiFuturi{
-    text-align: center; 
-    color: rgb(0, 0, 0); 
-    text-decoration: underline;
-    padding-right: 2.0%;
-}
- 
-/*Codice riguardante un link di navigazione*/ 
-#EventiFuturi:hover {
-    text-decoration: none; 
-}
-
-/*Codice riguardante un link di navigazione*/ 
 #ChiSiamoLink{
     text-align: center; 
     color: rgb(0, 0, 0); 
@@ -102,6 +89,19 @@ ul.linkPagina a:visited {
 }
 
 /*Codice riguardante un link di navigazione*/ 
+#PartnersLink{
+    text-align: center; 
+    color: rgb(0, 0, 0); 
+    text-decoration: underline;
+    padding-right: 2.0%;
+}
+
+/*Codice riguardante un link di navigazione*/ 
+#PartnersLink:hover {
+    text-decoration: none; 
+}
+
+/*Codice riguardante un link di navigazione*/ 
 #AccediLink{
     text-align: center; 
     color: rgb(0, 0, 0); 
@@ -109,6 +109,19 @@ ul.linkPagina a:visited {
     padding-right: 2.0%;
     pointer-events: none;
     cursor: default;
+}
+
+/*Codice riguardante un link di navigazione*/ 
+#returnHomeHeader{
+    text-align: center; 
+    color: rgb(0, 0, 0); 
+    text-decoration: underline;
+    padding-right: 2.0%;
+}
+
+/*Codice riguardante un link di navigazione*/ 
+#returnHomeHeader:hover {
+    text-decoration: none; 
 }
 
 /*Codice riguardante un link di navigazione*/ 
@@ -185,7 +198,8 @@ input[type="text" ] #searchBar {
 }
 
 .bottonePlus img{
-    padding-top: 5px;
+    padding-top: 0.7vh;
+    padding-left: 0.35vw;
     width: 80%; 
     height: auto; 
     border: none; 
@@ -254,7 +268,7 @@ header:after {
 }
 
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 980px) {
     #searchBar {
         width: 40vh; 
         height: 6vh; 
@@ -272,7 +286,7 @@ header:after {
     }
 }
 
-@media screen and (max-width: 730px) {
+@media screen and (max-width: 830px) {
     header h1{
         padding-top: 0.5vh;
         background-size: 50%;
@@ -1062,50 +1076,42 @@ input[type="text"]:focus {
 
   
 
-/*Codice del contenitore dei bottoni*/
-  .ContainerBottoni {
-    position: relative;
-    width: 50%;
+/* Codice riguardante i link dell'indice */
+.ContainerBottoniIndex {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-    padding-top: 20px; /* Aggiunge spazio sopra i bottoni */
-    padding-bottom: 20px; /* Aggiunge spazio sotto i bottoni */
-    background: #D9D9D9;
-    border-radius: 39px;
   }
   
-/*Codice riguardante i botttoni dell'indice*/
   .buttonIndex {
-    width: 80%;
-    max-width: 278px;
-    height: 58px;
+    width: 12vw;
+    height: 7vh;
     background: #656565;
     border: none;
     border-radius: 16px;
     color: white;
-    font-size: 18px;
+    font-size: 2.5vh;
     font-weight: bold;
+    text-decoration: none; /* Aggiunta per rimuovere sottolineatura */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
-    margin-bottom: 15px; 
- }
+    margin-bottom: 15px;
+  }
   
-/*Codice riguardante i botttoni dell'indice*/
   .buttonIndex:first-child {
-    margin-top: 10px; 
+    margin-top: 10px;
   }
   
-/*Codice riguardante i botttoni dell'indice*/  
   .buttonIndex:last-child {
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
   }
-
-/*Codice riguardante i botttoni dell'indice*/
+  
   .buttonIndex:hover {
     background-color: rgba(14, 31, 187, 1);
   }
+  
 
   #TerminiCondizioni {
     /*metto prima lo stile testuale per il fallback*/
@@ -1524,16 +1530,12 @@ input[type="text"]:focus {
 
 
 .image-container-ragComp-reg {
-    /* Imposta l'immagine di default */
     background-image: url('Images/person2.webp');
-    /* Imposta altre proprietà necessarie per visualizzare correttamente l'immagine di sfondo */
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    /* Imposta l'altezza e la larghezza dell'elemento per visualizzare l'immagine di sfondo */
-    height: 200px; /* Modifica secondo le tue esigenze */
-    width: 200px;  /* Modifica secondo le tue esigenze */
-  }
+    height: 35vh;
+}
   
   div #pannello-principale-reg{
     position: relative;
@@ -1545,7 +1547,7 @@ input[type="text"]:focus {
     justify-content: center;
     width: 80%; /* Puoi modificare questa percentuale in base alle tue esigenze */
     margin: 0 auto;
-    padding-top: 5vw;
+    padding-top: 3vw;
   }
   
   .image-container-ragComp-reg img{
@@ -1566,7 +1568,7 @@ input[type="text"]:focus {
   }
   
   #container-sinistro-reg{
-    padding-top: 13.5vh;
+    padding-top: 8.5vh;
   }
   
    #registratiScritta-reg{
@@ -1611,6 +1613,8 @@ input[type="text"]:focus {
   
   #container-destro-reg {
     padding-left: 2.5vw;
+    height: 45vh;
+    width: 45vh;
   }
   
   #container-destro-reg form,
@@ -1622,6 +1626,46 @@ input[type="text"]:focus {
   #ricordamiLabel-reg{
     font-family: Poppins, sans-serif;
   }
+
+  @media screen and (max-width: 730px) {
+ 
+    .image-container-ragComp-reg {
+        background-image: url('Images/people2.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 200px; 
+        width: 200px; 
+      }
+
+      #registratiScritta-reg{
+        font-family: Poppins, sans-serif;
+        width: 20%; 
+        height: 6%; 
+        left: 35%; 
+        top: 15%; 
+        font-weight: 600;
+        font-size: 2.5em; 
+        line-height: 1.2; 
+      }
+    
+      #pannello-principale-reg {
+        display: flex;
+        flex-direction: column;
+      }
+    
+      #container-destro-reg {
+        order: 1;
+      }
+    
+      #container-sinistro-reg {
+        order: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
 
 /*-------------------------------------REGISTRAZIONE----------------------------------------------*/
 
@@ -1641,15 +1685,11 @@ input[type="text"]:focus {
 /*-------------------------------------ACCESSO----------------------------------------------*/
 
 .image-container-ragComp-acc {
-    /* Imposta l'immagine di default */
     background-image: url('Images/person.webp');
-    /* Imposta altre proprietà necessarie per visualizzare correttamente l'immagine di sfondo */
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    /* Imposta l'altezza e la larghezza dell'elemento per visualizzare l'immagine di sfondo */
-    height: 200px; /* Modifica secondo le tue esigenze */
-    width: 200px;  /* Modifica secondo le tue esigenze */
+    height: 30vh; 
   }
   
   div #pannello-principale-acc{
@@ -1660,13 +1700,13 @@ input[type="text"]:focus {
   #pannello-principale-acc {
     display: flex;
     justify-content: center;
-    width: 80%; /* Puoi modificare questa percentuale in base alle tue esigenze */
+    width: 80%; 
     margin: 0 auto;
     padding-top: 5vw;
   }
   
   .image-container-ragComp-acc img{
-      width: 20vw;
+      width: 25vh;
       height: auto;
   }
   
@@ -1684,6 +1724,10 @@ input[type="text"]:focus {
   
   #container-sinistro-acc{
     padding-top: 4.5vh;
+  }
+
+  #container-sinistro-acc #container-destro-acc{
+    width: 110%;
   }
   
    #accediScritta-acc{
@@ -1728,12 +1772,14 @@ input[type="text"]:focus {
   
   #container-destro-acc {
     padding-left: 2.5vw;
+    height: 45vh;
+    width: 35vh;
   }
   
   #container-destro-acc form,
   #container-destro-acc label,
   #container-destro-acc button {
-    margin-bottom: 15px; /* Aggiunge uno spazio di 15px tra i form, le label e il button */
+    margin-bottom: 15px; 
   }
   
   #ricordamiLabel-acc{
@@ -1745,10 +1791,21 @@ input[type="text"]:focus {
 @media screen and (max-width: 730px) {
  
     .image-container-ragComp-acc {
-        /* Cambia l'immagine quando la larghezza dello schermo è inferiore a 600px */
         background-image: url('Images/people.png');
         background-size: contain;
-      }
+        background-position: center;
+        background-repeat: no-repeat;   
+        height: 200px; 
+        width: 200px; 
+    }
+
+    #pannello-principale-acc {
+        display: flex;
+        justify-content: center;
+        width: 80%; 
+        margin: 0 auto;
+        padding-top: 5vw;
+    }
     
       #pannello-principale-acc {
         display: flex;
@@ -1757,20 +1814,9 @@ input[type="text"]:focus {
     
       #container-destro-acc {
         order: 1;
+        padding-left:9vw;
       }
-    
-      #accediScritta-acc{
-        font-family: Poppins, sans-serif;
-        width: 10%; 
-        height: 6%; 
-        left: 35%; 
-        top: 15%; 
-        font-weight: 600;
-        font-size: 2.5em; 
-        line-height: 1.2; 
-        padding-top:4.5vh;
-        margin-bottom:15px;
-      }
+      
     
       #container-sinistro-acc {
         order: 2;
@@ -3580,3 +3626,54 @@ textarea {
 }
 
   /*-------------------------------------PARTNERS----------------------------------------------*/
+
+  /*-------------------------------------SIDE MENU----------------------------------------------*/
+.side-menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0; /* Cambia da 'left' a 'right' */
+    background-color: #313131;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+.side-menu a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.side-menu a:hover {
+    color: #f1f1f1;
+}
+
+.closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 8vh; /* Cambia da 6vh a 8vh */
+    margin-left: 50px;
+}
+
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0, 0.5);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+/*-------------------------------------SIDE MENU----------------------------------------------*/

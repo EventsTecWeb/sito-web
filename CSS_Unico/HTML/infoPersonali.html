@@ -12,6 +12,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="../JS/scriptInfoPers.js"></script>
   <script src="../JS/scriptSkip.js"></script>
+  <script src="../JS/sideMenu.js"></script>
 </head>
 <body>
     <a class="skip-link visually-hidden" href="#nome-ip" id="skipLink">Salta al contenuto principale</a>
@@ -34,7 +35,8 @@
         </button>
         <nav>
             <ul class="linkPagina">
-                <li><a id="EventiFuturi" href="eventi">EVENTI FUTURI</a></li>
+                <li><a id="returnHomeHeader" href="../PHP/home.php">HOMEPAGE</a></li>
+                <li><a id="PartnersLink" href="../PHP/partners.php">PARTNERS</a></li>
                 <li><a id="ChiSiamoLink" href="../PHP/chiSiamo.php">CHI SIAMO</a></li>
             </ul>
         </nav>
@@ -49,6 +51,15 @@
         </nav>
     </div>
     </header>
+    <div id="overlay" class="overlay"></div>
+        <div id="sideMenu" class="side-menu">
+            <a href="javascript:void(0)" class="closebtn">&times;</a>
+            <a href="../PHP/home.php">Homepage</a>
+            <a href="../PHP/accessNav.php">Informazioni Profilo</a>
+            <a href="../PHP/crea_inserimento_evento.php">Crea Evento</a>
+            <a href="../PHP/chiSiamo.php">Chi siamo</a>
+            <a href="../PHP/partners.php">Partners Events</a>
+        </div>
     <nav id="menuCenter">
         <ul class="menu-orizzontale">
             <li><a id="profilo" href="../PHP/informazioni_personali.php">Informazioni Personali</a></li>

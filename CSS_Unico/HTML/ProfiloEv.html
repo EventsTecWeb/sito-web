@@ -11,6 +11,7 @@
   <link rel="shortcut icon" href="../Images/events_logo_site_e.png">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="../JS/scriptSkip.js"></script>
+  <script src="../JS/sideMenu.js"></script>
 </head>
 <body>
   <a class="skip-link visually-hidden" href="#profile-ev" id="skipLink">Salta al contenuto principale</a>
@@ -19,28 +20,30 @@
         <div class="header-items">
           <div class="search-container">
             <form id="searchBarA" action="../PHP/barra_ricerca.php" role="search" method="get">
+                <label for="searchBar" class="visually-hidden">Cerca evento</label>
                 <input type="text" id="searchBar" name="cerca_evento" placeholder="Cerca...">
             </form>
         </div>
-            <button type="submit" id="searchButton">
+            <button type="submit" id="searchButton" aria-label="Cerca">
                 <img src="../Images/search.png" alt="Icona Cerca">
             </button>
-            <button class="bottoneFiltro">
+            <button class="bottoneFiltro" aria-label="Filtra">
                 <img src="../Images/filter-icon-0.png" alt="Filtro">
             </button>
-            <button class="bottoneHamburger">
+            <button class="bottoneHamburger" aria-label="Menu">
                 <img src="../Images/menu-button-of-three-horizontal-lines.png" alt="Bottone per link nascosti in formato cellulare">
             </button>
             <nav>
                 <ul class="linkPagina">
-                    <li><a id="EventiFuturi" href="eventi">EVENTI FUTURI</a></li>
-                    <li><a id="ChiSiamoLink" href="../PHP/chiSiamo.php">CHI SIAMO</a></li>
+                  <li><a id="returnHomeHeader" href="../PHP/home.php">HOMEPAGE</a></li>
+                  <li><a id="PartnersLink" href="../PHP/partners.php">PARTNERS</a></li>
+                  <li><a id="ChiSiamoLink" href="../PHP/chiSiamo.php">CHI SIAMO</a></li>
                 </ul>
             </nav>
-            <button class="bottonePlus">
+            <button href="../PHP/indexProfilo.php" class="bottonePlus" aria-label="Crea nuovo evento">
                 <img src="../Images/add_blue.png" alt="Bottone per creare un nuovo evento">
             </button>
-            <a href="../PHP/infoPersonali.php" class="bottoneProfilo">
+            <a href="../PHP/infoPersonali.php" class="bottoneProfilo" aria-label="Accesso ai dati del profilo">
               <img src="<?php echo $profile_image_path; ?>" alt="Bottone per accedere ai dati del proprio profilo">
           </a>
             <nav aria-label="breadcrumb" id="bread">
@@ -48,6 +51,15 @@
             </nav>
         </div>
     </header>
+    <div id="overlay" class="overlay"></div>
+        <div id="sideMenu" class="side-menu">
+            <a href="javascript:void(0)" class="closebtn">&times;</a>
+            <a href="../PHP/home.php">Homepage</a>
+            <a href="../PHP/accessNav.php">Informazioni Profilo</a>
+            <a href="../PHP/crea_inserimento_evento.php">Crea Evento</a>
+            <a href="../PHP/chiSiamo.php">Chi siamo</a>
+            <a href="../PHP/partners.php">Partners Events</a>
+        </div>
     <nav id="menuCenter">
       <ul class="menu-orizzontale">
           <li><a id="profilo" href="../PHP/informazioni_personali.php">Informazioni Personali</a></li>
