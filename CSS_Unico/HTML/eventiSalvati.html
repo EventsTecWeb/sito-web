@@ -17,40 +17,35 @@
 <body>
   <header>
     <h1>Events</h1>
-    <div class="header-items">
-      <div class="header-items">
-            <div class="search-container">
-                <form id="searchBarA" action="../PHP/barra_ricerca.php" role="search" method="get">
-                    <input type="text" id="searchBar" name="cerca_evento" placeholder="Cerca...">
-                </form>
-            </div>
-      <button type="submit" id="searchButton">
-        <img src="../Images/search.png" alt="Icona Cerca">
-      </button>
-      <button class="bottoneFiltro">
-        <img src="../Images/filter-icon-0.png" alt="Filtro">
-      </button>
-      <button class="bottoneHamburger">
-        <img src="../Images/menu-button-of-three-horizontal-lines.png" alt="Bottone per link nascosti in formato cellulare">
-      </button>
-      <nav>
-        <ul class="linkPagina">
-          <li><a id="EventiFuturi" href="eventi">EVENTI FUTURI</a></li>
-          <li><a id="ChiSiamoLink" href="../PHP/chiSiamo.php">CHI SIAMO</a></li>
-        </ul>
-      </nav>
-      <a href="../PHP/indexProfilo.php" class="bottonePlus">
-        <img src="../Images/add_blue.png" alt="Bottone per creare un nuovo evento">
-    </a>
-    <a href="../PHP/infoPersonali.php" class="bottoneProfilo">
-      <img src="<?php echo $profile_image_path; ?>" alt="Bottone per accedere ai dati del proprio profilo">
-  </a>
-      <nav aria-label="breadcrumb" id="bread">
-        <p>Ti trovi in: <span lang="en"><a class="returnBread" href="../PHP/home.php">Home</a></span> >> Eventi Salvati</p>
-      </nav>
-    </div>
-  </header>
-  
+<div class="header-items">
+  <div class="search-container">
+    <form id="searchBarA" action="../PHP/barra_ricerca.php" role="search" method="get">
+        <input type="text" id="searchBar" name="cerca_evento" placeholder="Cerca...">
+    </form>
+</div>
+<button type="submit" id="searchButton">
+    <img src="../Images/search.png" alt="Icona Cerca">
+</button>
+<button class="bottoneFiltro">
+    <img src="../Images/filter-icon-0.png" alt="Filtro">
+</button>
+<button class="bottoneHamburger">
+    <img src="../Images/menu-button-of-three-horizontal-lines.png" alt="Bottone per link nascosti in formato cellulare">
+</button>
+<nav>
+    <ul class="linkPagina">
+        <li><a id="EventiFuturi" href="eventi">EVENTI FUTURI</a></li>
+        <li><a id="ChiSiamoLink" href="../PHP/chiSiamo.php">CHI SIAMO</a></li>
+    </ul>
+</nav>
+<a href="../PHP/indexProfilo.php" class="bottonePlus">
+  <img src="../Images/add_blue.png" alt="Bottone per creare un nuovo evento">
+</a>
+<nav aria-label="breadcrumb" id="bread">
+    <p>Ti trovi in: <span lang="en"></span><a id="returnHome" href="../PHP/home.php">Home</a> >> Eventi Salvati<p>
+</nav>
+</div>
+</header>
   <nav id="menuCenter">
     <ul class="menu-orizzontale">
         <li><a id="profilo" href="../PHP/informazioni_personali.php">Informazioni Personali</a></li>
