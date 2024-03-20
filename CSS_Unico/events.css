@@ -3169,80 +3169,61 @@ textarea {
     margin-top:2vh;
 }
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 950px){
   
-  .column-home{
-    float: center;
-    width: 81%;
-    padding-left:9.5%;
-    padding-right:9.5%;
-    padding-bottom:2%;
-  }
-  
-.generiColumn-home{
-    width: 100%;
-    padding-bottom:2%;
+
+.column-home, .row-home, .generiColumn-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.GeneriScritte-home{
-    text-align:center;
-    font-style:bold;
-    font-size:25px;
+.container-home, .container-home-evidenza {
+    width: 90%;
+    box-sizing: border-box;
+    padding: 10px;
 }
 
-  .generiImmagini-home{
+.container-home-evidenza{
+    width:80%;
+    margin-left:5vh;
+}
+
+.generiImmagini-home{
     background-color: rgb(184,184,184);
     border: none;
-    color: black;
-    width: 17vw;
-    height: 17vw;
+    display:block;
+    color: white;
+    width: 35vw;
+    height: 35vw;
+    margin-left: 12vh;
     border-radius: 75%;
     transition:0.3s;
-  }
+    margin-top: -12vh;
+}
 
-    div-home img{
-        border-radius: 10px 10px 0 0;
-        width:75vw;
-        height:35vw;
-    }
-  
-  .container-home{
-    border-radius: 3% 3% 3% 3%;
-    background-color: rgb(255, 252, 252);
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
+/* Stili per i titoli */
+.GCard1-home, .GCard2-home, .GCard3-home {
+    text-align: center;
+    width: 100%;
+    font-size: 5vh ;
+}
+
+.GCard2-home{
     text-align: left;
-    line-height:1%;
-    width:75vw;
-    height:55vw;
-   }
+}
+/* Stili per i link dei generi */
+.generiColumn-home a {
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+}
 
-   .container-home-evidenza{
-    border-radius: 3% 3% 3% 3%;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    text-align: left;
-    line-height:1%;
-    width:75vw;
-    height:55vw;
-   }
-   
-   .descrizioneEventiT-home{
-        font-style:bold;
-        font-size:4.5vw;
-    }
-    .descrizioneEventiD-home{
-        font-size:4vw;
-    }
+/* Stili per le descrizioni degli eventi */
+.descrizioneEventiT-home, .descrizioneEventiD-home, .descrizioneEventiG-home {
+    text-align: center;
+}
 
-   .container-home:hover {
-    transform: scale(1.05);
-   }
-
-   .container-home-evidenza:hover {
-    transform: scale(1.05);
-   }
 }
 
 
