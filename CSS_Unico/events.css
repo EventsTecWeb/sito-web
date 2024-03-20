@@ -1917,7 +1917,13 @@ input[type="text"]:focus {
     color: rgb(0, 0, 0);
     font-size: 1.3em;
   }
-  
+
+
+@media screen and (max-width: 830px) {
+  .cardSalvato-es {
+    width: 100%; /* 1 card per row */
+  }
+}
 /*-------------------------------------EVENTI SALVATI----------------------------------------------*/
 
 
@@ -2279,8 +2285,7 @@ input[type="text"]:focus {
     background-color: rgba(14, 31, 187, 1);
 }
 
-
-@media screen and (max-width: 730px) {
+@media screen and (max-width: 830px) {
 
     .wrapper #menuleft {
         display: none;
@@ -2305,41 +2310,40 @@ input[type="text"]:focus {
         padding: 0;
         margin: 0;
         display: flex;
-      }
+        justify-content: center; /* Centra il menu orizzontale */
+    }
       
-      .menu-orizzontale li {
+    .menu-orizzontale li {
         margin-right: 1.5vw;
-      }
+    }
       
-      .menu-orizzontale li:first-child {
+    .menu-orizzontale li:first-child {
         margin-left: 0vw;
-      }
+    }
       
-      .menu-orizzontale a {
+    .menu-orizzontale a {
         display: inline-block;
-        padding: 4px 8px; /* Riduci ulteriormente il padding */
+        padding: 2vh 3vh; /* Aumenta il padding per rendere i pulsanti più grandi */
         text-align: center;
         text-decoration: none;
         font-family: 'Roboto', sans-serif;
         color: black;
         font-weight: bold;
         text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
-        font-size: x-small; /* Riduci ulteriormente la dimensione del testo */
-        border: 1px solid black; /* Modifica lo spessore del bordo se necessario */
-        border-radius: 3px; /* Regola la curvatura del bordo */
+        font-size: 1.7vh;
+        border: 1px solid black;
+        border-radius: 3px;
         transition: all 0.3s ease;
-      }
+    }
       
-      .menu-orizzontale a:hover {
+    .menu-orizzontale a:hover {
         background-color: black;
         color: white;
-      }
-      
+    }
       
     .bottonePlus, .bottoneProfilo{
         display: none;
     }
-  
 }
 /*-------------------------------------IMPO SICUREZZA----------------------------------------------*/
 
