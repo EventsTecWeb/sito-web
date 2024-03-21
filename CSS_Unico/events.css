@@ -1160,6 +1160,9 @@ input[type="text"]:focus {
 
 /*--------------CSS SPECIFICO PAG. PROFILO CREAZIONE----------------------------------------------*/
 /*ProfiloEv.html*/
+#profile-ev .cardSalvato-es {
+    margin-right: 20px; /* Aggiungi il margine a destra desiderato */
+}
 
 /*contenitore totale della pagina*/
 #profile-ev {
