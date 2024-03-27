@@ -2795,7 +2795,6 @@ input[type="text"]:focus {
 }
 
 #box{
-    margin-left: -10%;
     margin-top: 2em;
     display: flex;
     align-items: center;
@@ -3018,6 +3017,10 @@ textarea {
     margin-left:3vh;
 }
 
+.generiColumn-home{
+    margin-right:-30vw;
+}
+
 .container-home {
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -3125,13 +3128,40 @@ textarea {
     margin-top:-0.2vh;
 }
 
+.descrizioneEventiT-home-ev{
+    font-style:bold;
+    font-size:1vw;
+    /*metto prima lo stile testuale per il fallback*/
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    padding-left: 1vh;
+}
+
+.descrizioneEventiD-home-ev{
+    font-size:0.8vw;
+    /*metto prima lo stile testuale per il fallback*/
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    padding-left:1vh;
+}
+
+.descrizioneEventiG-home-ev{
+    font-size:0.8vw;
+    /*metto prima lo stile testuale per il fallback*/
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    padding-left:1vh;
+    margin-top:-0.2vh;
+}
+
 .generiColumn-home {
     display: flex;
     justify-content:center;
     width: 50%;
     margin-top: 25vh;
-    margin-left: -15vh;
+    margin-left: -10vh;
     padding-right: 15vh;
+
 }
 
 .generiColumn-home > a {
@@ -3150,7 +3180,6 @@ textarea {
 .generiImmagini-home{
   background-color: rgb(184,184,184);
   border: none;
-  display:block;
   color: white;
   margin-left: auto;
   margin-right: auto;
@@ -3176,80 +3205,290 @@ textarea {
     margin-top:2vh;
 }
 
-@media screen and (max-width: 800px){
-  
-  .column-home{
-    float: center;
-    width: 81%;
-    padding-left:9.5%;
-    padding-right:9.5%;
-    padding-bottom:2%;
-  }
-  
-.generiColumn-home{
+#beneficenzaGenere{
+    margin-left:6.5vh;
+}
+
+@media screen and (max-width: 1350px){
+   
+    .generiColumn-home {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px; 
+        justify-items: center;
+        margin-left:-9vw;
+    }
+    
+    .generiColumn-home a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 5vh; 
+    }
+    
+    .GeneriScritte-home {
+        font-size: 2vh; 
+    }
+
+    .container-home-evidenza {
+        width:fit-content;
+        height: 50vh;
+        margin-top:13vh;
+        margin-right: 6vh;
+    }
+
+    .container-home, .container-home-evidenza {
+        border-radius: 3%;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        text-align: left; 
+    }
+    
+    .container-home img, .container-home-evidenza img {
+        border-radius: 10px;
+        max-width: 100%; 
+        height: auto; 
+    }
+
+    .container-home-evidenza img{
+        margin-left:1vw;
+    }
+
+    .container-home img{
+        margin-left:1.5vw;
+    }
+
+    .descrizioneEventiT-home, .descrizioneEventiD-home, .descrizioneEventiG-home {
+        font-size: 1.75vh;
+        text-align: left;
+        text-wrap: wrap;
+    }
+    
+    .GeneriScritte-home{
+        font-size:2vh;
+    }
+    
+    .descrizioneEventiT-home-ev, .descrizioneEventiD-home-ev, .descrizioneEventiG-home-ev {
+        font-size: 1.75vh;
+        text-wrap: wrap;
+        text-align: left;
+    }
+
+    #arteGenere{
+        margin-left:14vh;
+    }
+
+    .GCard2-home{
+        margin-left:10vh;
+    }
+}
+
+@media screen and (max-width: 1100px){
+
+    #arteGenere{
+        margin-left:12vh;
+        transition: 0.3s;
+    }
+
+    .container-home-evidenza{
+        height: 40vh;
+        transition: 0.5s;
+    }
+}
+
+@media screen and (max-width: 950px){
+
+    #arteGenere{
+        margin-left:9vh;
+    }
+    
+    #sportGenere{
+        margin-left:9vh;
+    }
+    
+    #musicaGenere{
+        margin-left:9vh;
+    }
+    
+    #beneficenzaGenere{
+        margin-left:4vh;
+    }
+}
+
+@media screen and (max-width: 750px){
+    
+    #beneficenzaGenere{
+        margin-left:0;
+    }
+
+    .descrizioneEventiT-home, .descrizioneEventiD-home, .descrizioneEventiG-home {
+        font-size: 1.25vh;
+    }
+
+    .descrizioneEventiT-home-ev, .descrizioneEventiD-home-ev, .descrizioneEventiG-home-ev {
+        font-size: 1.5vh;
+    }
+}
+
+@media screen and (max-width: 650px){
+
+.row-home {
+    margin-left:-4vh;
+    margin-right: 0;
+}
+
+.generiColumn-home img {
+    width: 45vw;
+    height: 45vw;
+}
+
+.generiColumn-home {
+    display: flex;
+    justify-content:center;
+    width: 50%;
+    margin-top: 25vh;
+    margin-left: -15vh;
+    padding-right: 15vh;
+}
+
+.generiColumn-home > a {
+    width: 20%;
+    padding:12vh;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-decoration: none; 
+    color: inherit; 
+    margin-top:-15vh;
+    margin-bottom:9vh;
+}
+
+.container-home-evidenza {
+    margin-top:5vh;
+    margin-right:-3vh;
+}
+
+.column-home, .row-home, .generiColumn-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right:0;
+}
+
+.container-home, .container-home-evidenza {
+    width: 90%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.container-home img, .container-home-evidenza img{
+    padding-right:10vh;
+    border-radius: 10px;
+}
+
+.container-home{
+    margin-left:2vh;
+}
+
+.column-home{
+    margin-left:3vw;
+}
+
+.container-home-evidenza{
+    width:80%;
+    margin-left:2vh;
+    margin-top:-5vh;
+    margin-bottom:8vh;
+    height: 45vh;
+    transition: 0.5s;
+}
+
+.generiImmagini-home{
+    background-color: rgb(184,184,184);
+    border: none;
+    display:block;
+    color: white;
+    width: 50vw;
+    height: 50vw;
+    margin-left: 5vh;
+    border-radius: 75%;
+    transition:0.3s;
+    margin-top: -8.5vh;
+}
+
+/* Stili per i titoli */
+.GCard1-home, .GCard2-home, .GCard3-home {
+    text-align: center;
     width: 100%;
-    padding-bottom:2%;
+    font-size: 5vh;
+}
+
+.GCard2-home{
+    margin-top:-12vh;
+    margin-left:-2vh;
+    margin-bottom:8vh;
+    
+}
+
+.GCard1-home{
+    margin-bottom:-13vh;
+    margin-left:1vh;
+}
+
+.GCard3-home{
+    text-align: left;
+    margin-left:-2vh;
+    text-wrap:nowrap;
+}
+
+.generiColumn-home a {
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+}
+
+
+.descrizioneEventiT-home, .descrizioneEventiD-home, .descrizioneEventiG-home {
+    text-align: left;
+    font-size: 1.5vh;
 }
 
 .GeneriScritte-home{
-    text-align:center;
-    font-style:bold;
-    font-size:25px;
+    font-size:4vh;
+    text-align: center;
+    text-size-adjust:inherit;
 }
 
-  .generiImmagini-home{
-    background-color: rgb(184,184,184);
-    border: none;
-    color: black;
-    width: 17vw;
-    height: 17vw;
-    border-radius: 75%;
-    transition:0.3s;
-  }
-
-    div-home img{
-        border-radius: 10px 10px 0 0;
-        width:75vw;
-        height:35vw;
-    }
-  
-  .container-home{
-    border-radius: 3% 3% 3% 3%;
-    background-color: rgb(255, 252, 252);
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
+.descrizioneEventiT-home-ev, .descrizioneEventiD-home-ev, .descrizioneEventiG-home-ev {
     text-align: left;
-    line-height:1%;
-    width:75vw;
-    height:55vw;
-   }
+    font-size: 1.5vh;
+}
 
-   .container-home-evidenza{
-    border-radius: 3% 3% 3% 3%;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    text-align: left;
-    line-height:1%;
-    width:75vw;
-    height:55vw;
-   }
-   
-   .descrizioneEventiT-home{
-        font-style:bold;
-        font-size:4.5vw;
-    }
-    .descrizioneEventiD-home{
-        font-size:4vw;
-    }
+.GeneriScritte-home-ev{
+    font-size:4vh;
+}
 
-   .container-home:hover {
-    transform: scale(1.05);
-   }
 
-   .container-home-evidenza:hover {
-    transform: scale(1.05);
-   }
+#arteGenere{
+    margin-left:25vh;
+}
+
+#sportGenere{
+    margin-left:22.5vh;
+}
+
+#musicaGenere{
+    margin-left:20vh;
+}
+
+#beneficenzaGenere{
+    margin-left:10vh;
+}
+
+
 }
 
 
