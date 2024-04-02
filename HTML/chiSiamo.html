@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+		<meta name="keywords" content="EVENTS, CONCERTI, CULTURA">
+		<meta name="description" content="Events Padova, sito che permette di trovare eventi di qualsiasi genere">
+		<title>Chi Siamo?</title>
+		<link rel="stylesheet" href="../events.css">
+        <link rel="shortcut icon" href="../Images/events_logo_site_e.png">
+        <script src="../JS/sideMenu.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Events</h1>
+        <div class="header-items">
+            <div class="search-container">
+                <form id="searchBarA" action="../PHP/barra_ricerca.php" role="search" method="get">
+                    <input type="text" id="searchBar" name="cerca_evento" placeholder="Cerca...">
+                </form>
+            </div>
+        <button type="submit" id="searchButton">
+            <img src="../Images/search.png" alt="Icona Cerca">
+        </button>
+        <button class="bottoneFiltro">
+            <img src="../Images/filter-icon-0.png" alt="Filtro">
+        </button>
+        <button class="bottoneHamburger">
+            <img src="../Images/menu-button-of-three-horizontal-lines.png" alt="Bottone per link nascosti in formato cellulare">
+        </button>
+        <nav>
+            <ul class="linkPagina">
+                <li><a id="returnHomeHeader" href="../PHP/home.php">HOMEPAGE</a></li>
+                <li><a id="PartnersLink" href="../PHP/partners.php">PARTNERS</a></li>
+                <li><a id="ChiSiamoLink" href="../PHP/chiSiamo.php">CHI SIAMO</a></li>
+            </ul>
+        </nav>
+        <a href="../PHP/indexProfilo.php" class="bottonePlus">
+            <img src="../Images/add.png" alt="Bottone per creare un nuovo evento">
+        </a>
+        <a href="../PHP/infoPersonali.php" class="bottoneProfilo">
+            <img src="<?php echo $profile_image_path; ?>" alt="Bottone per accedere ai dati del proprio profilo">
+        </a>
+        <nav aria-label="breadcrumb" id="bread">
+            <p>Ti trovi in: <span lang="en"><a id="returnHome" href="../PHP/home.php">Home</a></span> >> Chi Siamo</p>
+        </nav>
+    </div>
+    </header>
+    <div id="overlay" class="overlay"></div>
+        <div id="sideMenu" class="side-menu">
+            <a href="javascript:void(0)" class="closebtn">&times;</a>
+            <a href="../PHP/home.php">Homepage</a>
+            <a href="../PHP/accessNav.php">Informazioni Profilo</a>
+            <a href="../PHP/crea_inserimento_evento.php">Crea Evento</a>
+            <a href="../PHP/chiSiamo.php">Chi siamo</a>
+            <a href="../PHP/partners.php">Partners Events</a>
+        </div>
+        </div>
+        <main id="chi_siamo_main">
+            <h2>Il team: </h2> 
+            <p class="chi_siamo">Nel gruppo di lavoro per il progetto del sito, quattro individui eccezionali collaborano
+                              sinergicamente per portare avanti l'iniziativa con competenza e creatività. Nicola, esperto
+                              sviluppatore, guida l'implementazione tecnica del sito, assicurandosi che il codice sia
+                              efficiente e conforme agli standard moderni. Davide, il progettista grafico del team,
+                              infonde vita al progetto con il suo talento visivo, creando un'esperienza utente 
+                              coinvolgente attraverso il design intuitivo e accattivante. Matteo, responsabile del contenuto,
+                              si occupa della creazione e dell'organizzazione del testo, garantendo che il sito trasmetta
+                              in modo chiaro e persuasivo il messaggio desiderato. Michael, coordinatore del progetto,
+                              gestisce le tempistiche e le risorse, facilitando la comunicazione e assicurando il
+                              progresso fluido del team. La diversità di competenze di questi quattro professionisti 
+                              crea una squadra dinamica, pronta a superare le sfide e a realizzare un sito web di 
+                              successo.</p>
+            <h2>La nostra missione: </h2> 
+            <div id="contenitore-cs">
+            <img src="../Images/Multicultural Communities vector 2.jpg"/>
+            <p class="chi_siamo">
+                La missione del nostro gruppo di lavoro è creare un sito web innovativo e funzionale che soddisfi le esigenze 
+                e le aspettative dei nostri utenti. Ci impegniamo a fornire un'esperienza online straordinaria, unendo le nostre 
+                competenze tecniche, creative e organizzative. La nostra missione è realizzare un sito che non solo rispecchi 
+                l'identità e gli obiettivi del nostro cliente, ma che anche superi le aspettative degli utenti finali, 
+                offrendo loro un ambiente digitale intuitivo, accessibile e coinvolgente.<br>                
+                Siamo focalizzati sulla qualità del nostro lavoro, dall'aspetto visivo all'esperienza utente, assicurandoci 
+                che ogni dettaglio rifletta professionalità e cura. Collaboriamo attivamente, capitalizzando le nostre diverse 
+                competenze per affrontare le sfide in modo creativo e trovare soluzioni innovative. La nostra missione è guidata 
+                dalla volontà di creare un impatto positivo attraverso la realizzazione di un sito web che non solo risponda alle 
+                esigenze del momento, ma che sia anche preparato per affrontare le sfide future del mondo digitale.</p>
+            
+                
+            </div>
+        </main>
+    </body>
+</html>

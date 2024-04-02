@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+		<title>Events: home</title>
+        <meta name="keywords" content="Events, concerti, cultura, home, eventi, ricerca eventi">
+        <meta name="description" content="Events Padova, sito che permette di trovare eventi di qualsiasi genere per il tuo intrattenimento">
+		<link rel="stylesheet" href="../events.css"/>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,400&display=swap">
+        <link rel="shortcut icon" href="../Images/events_logo_site_e.png">
+        <script src="../JS/sideMenu.js"></script>
+        <script src="../JS/scriptSkip.js"></script>
+    </head>
+    <body>
+		<a class="skip-link visually-hidden" href="#privacy-sicu" id="skipLink">Salta al contenuto principale</a>
+        <header>
+            <h1>Events</h1>
+        <div class="header-items">
+			<div class="search-container">
+                <form id="searchBarA" action="../PHP/barra_ricerca.php" role="search" method="get">
+                    <input type="text" id="searchBar" name="cerca_evento" placeholder="Cerca...">
+                </form>
+            </div>
+        <button type="submit" id="searchButton">
+            <img src="../Images/search.png" alt="Icona Cerca">
+        </button>
+        <button class="bottoneFiltro">
+            <img src="../Images/filter-icon-0.png" alt="Filtro">
+        </button>
+        <button class="bottoneHamburger">
+            <img src="../Images/menu-button-of-three-horizontal-lines.png" alt="Bottone per link nascosti in formato cellulare">
+        </button>
+        <nav>
+            <ul class="linkPagina">
+                <li><a id="returnHomeHeader" href="../PHP/home.php">HOMEPAGE</a></li>
+                <li><a id="PartnersLink" href="../PHP/partners.php">PARTNERS</a></li>
+                <li><a id="ChiSiamoLink" href="../PHP/chiSiamo.php">CHI SIAMO</a></li>
+            </ul>
+        </nav>
+		<a href="../PHP/indexProfilo.php" class="bottonePlus">
+            <img src="../Images/add.png" alt="Bottone per creare un nuovo evento">
+        </a>
+        <a href="../PHP/infoPersonali.php" class="bottoneProfilo">
+            <img src="<?php echo $profile_image_path; ?>" alt="Bottone per accedere ai dati del proprio profilo">
+        </a>
+        <nav aria-label="breadcrumb" id="bread">
+            <p>Ti trovi in: <span lang="en"><a id="returnHome" href="../PHP/indexProfilo.php">Index</a></span><span lang="en">>>Home</span></p>
+        </nav>
+	</div>
+        </header>
+		<div id="overlay" class="overlay">
+        <div id="sideMenu" class="side-menu">
+            <a href="javascript:void(0)" class="closebtn">&times;</a>
+            <a href="../PHP/home.php">Homepage</a>
+            <a href="../PHP/accessNav.php">Informazioni Profilo</a>
+            <a href="../PHP/crea_inserimento_evento.php">Crea Evento</a>
+            <a href="../PHP/chiSiamo.php">Chi siamo</a>
+            <a href="../PHP/partners.php">Partners Events</a>
+        </div>
+	</div>
+        <main class="column-home">
+            <div class="row-home">
+                <h2 class="GCard1-home">Generi in evidenza:</h2>
+                <div  class="generiColumn-home">
+                    <a>
+                        <img src="../Images/amleto.jpg" alt="music event" class="generiImmagini-home">
+                        <h3 class="GeneriScritte-home">Musica</h3>
+                    </a>
+                    <a>
+                        <img src="../Images/amleto.jpg" alt="music event" class="generiImmagini-home">
+                        <h3 class="GeneriScritte-home">Arte</h3>
+                    </a>
+                    <a>
+                        <img src="../Images/amleto.jpg" alt="music event" class="generiImmagini-home">
+                        <h3 class="GeneriScritte-home">Sport</h3>
+                    </a>
+                    <a>
+                        <img src="../Images/amleto.jpg" alt="music event" class="generiImmagini-home">
+                        <h3 class="GeneriScritte-home">Beneficenza</h3>
+                    </a>
+                </div>
+                <h2 class="GCard2-home">Evento in evidenza:</h2>
+                <div class="column-home">
+                    <div class="container-home-evidenza">
+                    <img src="../Images/amleto.jpg" alt="music event">
+                        <h4 class="descrizioneEventiT-home">Silent Party Portello</h4>
+                        <time class="descrizioneEventiD-home" datetime="2023-12-11 21:00">11-12-2023 - Porta portello Padova (PD)</time>
+                        <p class="descrizioneEventiG-home">Music - Disco</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row-home">
+                <h2 class="GCard3-home">Prossimi eventi:</h2>
+            </div>
+            <div class="row-home">
+                <div class="column-home">
+                    <div class="container-home">
+                    <img src="../Images/amleto.jpg" alt="music event">
+                        <h4 class="descrizioneEventiT-home">Silent Party Portello</h4>
+                        <time class="descrizioneEventiD-home" datetime="2023-12-11 21:00">11-12-2023 - Porta portello Padova (PD)</time>
+                        <p class="descrizioneEventiG-home">Music - Disco</p>
+                    </div>
+                </div>
+                <div class="column-home">
+                    <div class="container-home">
+                    <img src="../Images/amleto.jpg" alt="music event">
+                        <h4 class="descrizioneEventiT-home">Silent Party Portello</h4>
+                        <time class="descrizioneEventiD-home" datetime="2023-12-11 21:00">11-12-2023 - Porta portello Padova (PD)</time>
+                        <p class="descrizioneEventiG-home">Music - Disco</p>
+                    </div>
+                </div>
+                <div class="column-home">
+                    <div class="container-home">
+                    <img src="../Images/amleto.jpg" alt="music event">
+                        <h4 class="descrizioneEventiT-home">Silent Party Portello</h4>
+                        <time class="descrizioneEventiD-home" datetime="2023-12-11 21:00">11-12-2023 - Porta portello Padova (PD)</time>
+                        <p class="descrizioneEventiG-home">Music - Disco</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row-home">
+                <div class="column-home">
+                    <div class="container-home">
+                    <img src="../Images/amleto.jpg" alt="music event">
+                        <h4 class="descrizioneEventiT-home">Silent Party Portello</h4>
+                        <time class="descrizioneEventiD-home" datetime="2023-12-11 21:00">11-12-2023 - Porta portello Padova (PD)</time>
+                        <p class="descrizioneEventiG-home">Music - Disco</p>
+                    </div>
+                </div>
+                <div class="column-home">
+                    <div class="container-home">
+                    <img src="../Images/amleto.jpg" alt="music event">
+                        <h4 class="descrizioneEventiT-home">Silent Party Portello</h4>
+                        <time class="descrizioneEventiD-home" datetime="2023-12-11 21:00">11-12-2023 - Porta portello Padova (PD)</time>
+                        <p class="descrizioneEventiG-home">Music - Disco</p>
+                    </div>
+                </div>
+                <div class="column-home">
+                    <div class="container-home">
+                    <img src="../Images/amleto.jpg" alt="music event">
+                        <h4 class="descrizioneEventiT-home">Silent Party Portello</h4>
+                        <time class="descrizioneEventiD-home" datetime="2023-12-11 21:00">11-12-2023 - Porta portello Padova (PD)</time>
+                        <p class="descrizioneEventiG-home">Music - Disco</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body> 
+</html>
