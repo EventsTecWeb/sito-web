@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['email'] = $user['email'];
             $_SESSION['logged_in'] = true;
             $_SESSION['user_id']= $user['utente_id'];
-			header('Location: ../php/indexProfilo.php');
+			header('Location: ../php/infoPersonali.php');
             exit();
         } else { 
             $errore_credenziali="<p>L'username che è stato inserito oppure la password sono errate, si prega di ricontrolare i valori inseriti nei campi.</p>";

@@ -6,7 +6,6 @@ $query = "SELECT titolo, orario_inizio, orario_fine, luogo, costo, categoria, ur
 
 $errore = "";
 $results = getEventiByCategoria($conn, "Musica");
-$conn -> close();
 
 if ($results!=null) {
 	$template = file_get_contents('../HTML/home.html');
@@ -22,14 +21,33 @@ else {
 
 $evidenza='<div class="column">
 				<div class="container">
-				<img src="immagini/evento4.jpg" alt="music event">
-					<h4 class="descrizioneEventiT">Silent Party Portello</h4>
-					<time class="descrizioneEventiD" datetime="2023-12-11 21:00">11-12-2023 - Porta portello Padova (PD)</time>
-					<p class="descrizioneEventiD">Music - Disco</p>
+				<img src="'.$results["url_immagine"].'" alt="music event">
+					<h4 class="descrizioneEventiT">'.$results["titolo"].'</h4>
+					<time class="descrizioneEventiD" datetime="'.$results["data_inizio"].' - '.$results["luogo"].'</time>
+					<p class="descrizioneEventiD">'.$results["categoria"].'</p>
 				</div>
-			</div>'
+			</div>';
 
+$pEventi = getProssimiEventi($conn);
+
+$prossimiEventi="";
+if (!is_null($pEventi)) {
+    // Ciclo foreach per iterare su ogni evento restituito
+    foreach ($pEventi as $evento) {
+        $prossimiEventi.='<div class="column-home">
+                    <div class="container-home-evidenza">
+                    <img src="'.$evento["url_immagine"].'" alt="music event">
+                        <h4 class="descrizioneEventiT-home">'.$evento["titolo"].'</h4>
+                        <time class="descrizioneEventiD-home" datetime="2023-12-11 21:00">'.$evento["data_inizio"].' - '.$evento["luogo"].'</time>
+                        <p class="descrizioneEventiG-home">'.$evento["categoria"].'</p>
+                    </div>
+                </div>';
+    }
+} else {
+    echo "Non ci sono eventi futuri.";
+}
 $template = str_replace('{EVIDENZA}', $evidenza, $template);
+$template = str_replace('{PROSSIMIEVENTI}', $prossimiEventi, $template);
 
-echo $content;
+echo $template;
 ?>

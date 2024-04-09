@@ -1,6 +1,6 @@
 <?php
 /*da riguardare*/
-require_once '../../queries/queries.php';
+require_once 'queries.php';
 session_start();
 
 if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {

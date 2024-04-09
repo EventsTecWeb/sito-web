@@ -129,7 +129,7 @@ function getEventiByDate($conn, $month)
 
     $stmt->close();
 
-    if ($resultEventi && $resultEventi->num_rows > 0) {
+    if ($resultEventi && $resultEventi->num_rows > 0) { 
         return $resultEventi;
     } else {
         return (bool) false;
@@ -185,6 +185,128 @@ function getEventiCreati($conn, $id)
     }
 }
 
+function updateUserUsername($conn, $userId, $newUsername) {
+    // Prepariamo la query SQL per aggiornare lo username dell'utente
+    $query = "UPDATE Utenti SET username = ? WHERE utente_id = ?";
+    $stmt = $conn->prepare($query);
+    // Associamo i parametri (i valori delle variabili $newUsername e $userId) ai posti dei segnaposto nella query
+    $stmt->bind_param("si", $newUsername, $userId);
+    // Eseguiamo la query preparata
+    $stmt->execute();
+    
+    // Controlliamo se l'aggiornamento ha avuto successo
+    if ($stmt->affected_rows > 0) {
+        echo "Lo username è stato aggiornato con successo.";
+    } else {
+        echo "Errore nell'aggiornamento dello username o nessuna modifica apportata.";
+    }
+    
+    // Chiudiamo lo statement
+    $stmt->close();
+}
+
+function updateUserGender($conn, $userId, $newGender) {
+    // Prepariamo la query SQL per aggiornare il genere dell'utente
+    $query = "UPDATE Utenti SET genere = ? WHERE utente_id = ?";
+    $stmt = $conn->prepare($query);
+    // Associamo i parametri (i valori delle variabili $newGender e $userId) ai posti dei segnaposto nella query
+    $stmt->bind_param("si", $newGender, $userId);
+    // Eseguiamo la query preparata
+    $stmt->execute();
+    
+    // Controlliamo se l'aggiornamento ha avuto successo
+    if ($stmt->affected_rows > 0) {
+        echo "Il genere è stato aggiornato con successo.";
+    } else {
+        echo "Errore nell'aggiornamento del genere o nessuna modifica apportata.";
+    }
+    
+    // Chiudiamo lo statement
+    $stmt->close();
+}
+
+function updateUserPhone($conn, $userId, $newPhone) {
+    // Prepariamo la query SQL per aggiornare il numero di telefono dell'utente
+    $query = "UPDATE Utenti SET telefono = ? WHERE utente_id = ?";
+    $stmt = $conn->prepare($query);
+    // Associamo i parametri (i valori delle variabili $newPhone e $userId) ai posti dei segnaposto nella query
+    $stmt->bind_param("si", $newPhone, $userId);
+    // Eseguiamo la query preparata
+    $stmt->execute();
+    
+    // Controlliamo se l'aggiornamento ha avuto successo
+    if ($stmt->affected_rows > 0) {
+        echo "Il numero di telefono è stato aggiornato con successo.";
+    } else {
+        echo "Errore nell'aggiornamento del numero di telefono o nessuna modifica apportata.";
+    }
+    
+    // Chiudiamo lo statement
+    $stmt->close();
+}
+
+function getProssimiEventi($conn) {
+    // Prepariamo la query SQL per selezionare i prossimi 12 eventi
+    $query = "SELECT * FROM Eventi WHERE data_inizio > NOW() ORDER BY data_inizio ASC LIMIT 12";
+    $result = $conn->query($query);
+    
+    // Verifichiamo se la query ha prodotto risultati
+    if ($result->num_rows > 0) {
+        // Creiamo un array per contenere gli eventi
+        $eventi = array();
+        // Iteriamo sui risultati e li aggiungiamo all'array
+        while($row = $result->fetch_assoc()) {
+            $eventi[] = $row;
+        }
+        return $eventi;
+    } else {
+        // Restituiamo null se non ci sono eventi futuri
+        return null;
+    }
+}
+
+function updateUserEmail($conn, $userId, $newEmail) {
+    // Prepariamo la query SQL per aggiornare l'email dell'utente
+    $query = "UPDATE Utenti SET email = ? WHERE utente_id = ?";
+    $stmt = $conn->prepare($query);
+    // Associamo i parametri (i valori delle variabili $newEmail e $userId) ai posti dei segnaposto nella query
+    $stmt->bind_param("si", $newEmail, $userId);
+    // Eseguiamo la query preparata
+    $stmt->execute();
+    
+    // Controlliamo se l'aggiornamento ha avuto successo
+    if ($stmt->affected_rows > 0) {
+        echo "L'indirizzo email è stato aggiornato con successo.";
+    } else {
+        echo "Errore nell'aggiornamento dell'email o nessuna modifica apportata.";
+    }
+    
+    // Chiudiamo lo statement
+    $stmt->close();
+}
+
+function insertUserDateOfBirth($conn, $userId, $dateOfBirth) {
+    // Check if the user already has a date of birth set and update it if so, or insert a new record otherwise
+    $query = "SELECT utente_id FROM Utenti WHERE utente_id = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("i", $userId);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        // User exists, update their date of birth
+        $updateQuery = "UPDATE Utenti SET data_nascita = ? WHERE utente_id = ?";
+        $updateStmt = $conn->prepare($updateQuery);
+        $updateStmt->bind_param("si", $dateOfBirth, $userId);
+        $updateStmt->execute();
+        $updateStmt->close();
+    } else {
+        // User does not exist, optional: handle this case according to your application's logic
+        echo "User not found.";
+    }
+
+    $stmt->close();
+}
 
 function getEventiByIdQuery($conn, $idEvento)
 {
