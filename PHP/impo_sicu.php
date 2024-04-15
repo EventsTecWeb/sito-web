@@ -1,5 +1,7 @@
 <?php
 require_once 'queries.php';
+$template = file_get_contents("../HTML/impoSicu.html");
+
 session_start();
 include 'user_session.php';
 $accedi_stringa = gestisciAccesso($conn);

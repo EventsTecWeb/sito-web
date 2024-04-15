@@ -5,7 +5,7 @@ $template = file_get_contents("../HTML/home.html");
 $query = "SELECT titolo, orario_inizio, orario_fine, luogo, costo, categoria, url_immagine FROM Eventi WHERE orario_inizio>NOW";
 
 $errore = "";
-$results = getEventiByCategoria($conn, "Musica");
+$results = getEventiByCategoria($conn, "Teatro");
 
 if ($results!=null) {
 	$template = file_get_contents('../HTML/home.html');
@@ -19,14 +19,15 @@ else {
 	header('Location:404.html');
 }
 
-$evidenza='<div class="column">
-				<div class="container">
+$evidenza='<div class="column-home-e">
+				<div class="container-home-evidenza-e">
 				<img src="'.$results["url_immagine"].'" alt="music event">
-					<h4 class="descrizioneEventiT">'.$results["titolo"].'</h4>
-					<time class="descrizioneEventiD" datetime="'.$results["data_inizio"].' - '.$results["luogo"].'</time>
-					<p class="descrizioneEventiD">'.$results["categoria"].'</p>
+				<h4 class="descrizioneEventiT-home">'.$results["titolo"].'</h4>
+					<time class="descrizioneEventiD-home" datetime="'.$results["data_inizio"].' - '.$results["luogo"].'</time>
+					<p class="descrizioneEventiD-home">'.$results["categoria"].'</p>
 				</div>
 			</div>';
+
 
 $pEventi = getProssimiEventi($conn);
 
@@ -34,14 +35,16 @@ $prossimiEventi="";
 if (!is_null($pEventi)) {
     // Ciclo foreach per iterare su ogni evento restituito
     foreach ($pEventi as $evento) {
-        $prossimiEventi.='<div class="column-home">
-                    <div class="container-home-evidenza">
-                    <img src="'.$evento["url_immagine"].'" alt="music event">
-                        <h4 class="descrizioneEventiT-home">'.$evento["titolo"].'</h4>
-                        <time class="descrizioneEventiD-home" datetime="2023-12-11 21:00">'.$evento["data_inizio"].' - '.$evento["luogo"].'</time>
-                        <p class="descrizioneEventiG-home">'.$evento["categoria"].'</p>
-                    </div>
-                </div>';
+		$prossimiEventi.=
+		'<div class="column-home">
+			<div class="container-home-evidenza">
+				<img src="'.$evento["url_immagine"].'" alt="music event">
+				<h4 class="descrizioneEventiT-home">'.$evento["titolo"].'</h4>
+				<time class="descrizioneEventiD-home" datetime="2023-12-11 21:00">'.$evento["data_inizio"].'</time>
+				<p class="descrizioneEventiL-home">'.$evento["luogo"].'</p>
+				<p class="descrizioneEventiG-home">'.$evento["categoria"].'</p>
+			</div>
+		</div>';
     }
 } else {
     echo "Non ci sono eventi futuri.";
