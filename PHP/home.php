@@ -2,8 +2,6 @@
 require_once 'queries.php';
 $template = file_get_contents("../HTML/home.html");
 
-$query = "SELECT titolo, orario_inizio, orario_fine, luogo, costo, categoria, url_immagine FROM Eventi WHERE orario_inizio>NOW";
-
 $errore = "";
 $results = getEventiByCategoria($conn, "Teatro");
 
