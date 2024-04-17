@@ -6,7 +6,7 @@
     $dbname = "events";
     try {
         $conn = new mysqli($servername, $username, $password, $dbname);
-        
+
         // Verifico la connessione
         if ($conn->connect_error) {
             throw new Exception("Errore di connessione al database: " . $conn->connect_error);
