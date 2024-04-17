@@ -66,7 +66,7 @@
             <li><a id="profilo" href="../PHP/informazioni_personali.php">Informazioni Personali</a></li>
             <li><a id="info" href="../PHP/eventi_creati.php">Eventi Creati</a></li>
             <li><a id="prefe" href="../PHP/eventi_salvati.php">Eventi Salvati</a></li>
-            <li><a id="impo" href="../PHP/impostazioni_sicurezza.php">Impostazioni e Sicurezza</a></li>
+            <li><a id="impo" href="../PHP/impo_sicu.php">Impostazioni e Sicurezza</a></li>
         </ul>
     </nav>
     <div class="wrapper">
@@ -75,7 +75,7 @@
                 <li><a href="../PHP/informazioni_personali.php"><button>Informazioni Personali</button></a></li>
                 <li><a href="../PHP/eventi_creati.php"><button>Eventi Creati</button></a></li>
                 <li><a href="../PHP/eventi_salvati.php"><button>Eventi Salvati</button></a></li>
-                <li><a href="../PHP/impostazioni_sicurezza.php"><button>Impostazioni e Sicurezza</button></a></li>
+                <li><a href="../PHP/impo_sicu.php"><button>Impostazioni e Sicurezza</button></a></li>
             </ul>
         </nav>
     <div class="settings-sicu">
@@ -85,6 +85,8 @@
             <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">
         </div>
         <div class="content-sicu">
+            
+        <form action="../PHP/impo_sicu.php" method="POST">
         <div id="privacy-sicu">
             <div class="privacy-settings-sicu">
                 <h2>Privacy dell'account</h2>
@@ -93,24 +95,25 @@
                     <div class="left-align-sicu">
                         <label>
                             <p class="p_privacy-sicu">Pubblico</p>
-                            <input type="radio" name="privacy" value="public">
+                            <input type="radio" name="privacy" value="Pubblico">
                         </label>
                         <label>
                             <p class="p_privacy-sicu">Privato</p>
-                            <input type="radio" name="privacy" value="private" checked>
+                            <input type="radio" name="privacy" value="Privato" checked>
                         </label>
                     </div>
                     <p id="domanda-sicu">Chi può vedere i tuoi contenuti?</p>
                     <div class="center-align-sicu">
                         <p class="info-text-sicu">La configurazione di un profilo come pubblico su Events implica la visibilità delle attività salvate e degli eventi creati da te da parte di altri utenti. Al contrario, se il profilo è impostato come privato, queste informazioni saranno nascoste agli altri utenti.</p>
-                        <button type="submit" class="button-impo-sicu">Salva</button>
+                        <button type="submit" name="update-password" class="button-impo-sicu">Salva</button>
                     </div>
                 </form>
             </div>            
         </div>
+    </form>
     </div>
-        
-        <div class="option-sicu">
+    <form action="../PHP/impo_sicu.php" method="POST">
+            <div class="option-sicu">
             <span>Password</span>
             <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">
         </div>
@@ -127,11 +130,12 @@
                 <input type="password" id="repeat-password-sicu" name="repeat-password">
                 
                 <div class="button-container-sicu">
-                    <button type="submit" class="button-impo-sicu">Salva</button>
+                    <button type="submit" name="update-password" class="button-impo-sicu">Salva</button>
                 </div>
             </div>
         </div>
-
+    </form>
+    <form action="../PHP/impo_sicu.php" method="POST">
         <div class="option-sicu">
             <span class="titolini-sicu">Elimina</span>
             <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">
@@ -156,7 +160,9 @@
                 <button id="eliminaButton-sicu" disabled>Elimina</button>
             </div>
         </div>
-
+    </form>
+    
+    <form action="../PHP/impo_sicu.php" method="POST">
         <div class="option-sicu">
             <span class="titolini-sicu">Esci dall'<span lang="en">account</span></span>
             <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">
@@ -172,10 +178,11 @@
                     <label for="read">Si, voglio uscire dall'account corrente.</label>
                 </div>
                 <div class="button-container-sicu">
-                    <button id="esciButton-sicu" disabled>Esci</button>
+                    <button type="submit" id="esciButton-sicu">Esci</button>
                 </div>
             </div>
         </div>
+        </form>
     </div>
 </div>
 </body>

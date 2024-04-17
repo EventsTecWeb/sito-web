@@ -1,8 +1,9 @@
 <?php
+session_start();
 require_once 'queries.php';
 $template = file_get_contents("../HTML/impoSicu.html");
+echo $template;
 
-session_start();
 include 'user_session.php';
 $accedi_stringa = gestisciAccesso($conn);
 
@@ -32,10 +33,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $newPassword = $_POST['new-password'];
                 $repeatPassword = $_POST['repeat-password'];
                 if ($newPassword === $repeatPassword) {
-                    $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
                     $sql = "UPDATE Utenti SET password = ? WHERE utente_id = ?";
                     $stmt = $conn->prepare($sql);
-                    $stmt->bind_param("si", $hashedPassword, $userId);
+                    $stmt->bind_param("si", $newPassword, $userId);
                     if ($stmt->execute()) {
                         echo "Password aggiornata con successo.";
                     } else {
@@ -53,12 +53,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if ($stmt->execute()) {
                     echo "Account eliminato con successo.";
                     logout();
+                    header("Location: ../HTML/index.html"); // Reindirizza alla pagina index
+                    exit;
                 } else {
                     echo "Errore nell'eliminazione dell'account: " . $stmt->error;
                 }
                 $stmt->close();
             } elseif (isset($_POST['logout'])) {
                 logout();
+                header("Location: ../HTML/index.html"); // Reindirizza alla pagina index
+                exit;
             }
         } else {
             echo "Utente non trovato.";
