@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+<head> 
+  <meta charset="UTF-8">
+  <title>Events:registrati</title>
+  <meta name="description" content= "Registrati ad Events per non perdere le ultime novità e partecipare alle attività." />
+  <meta name="keywords" content="eventi, registrazione, iscrizione, partecipazione, events">
+  <link rel="stylesheet" href="../events.css"/>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,400&display=swap">
+  <link rel="shortcut icon" href="../Images/events_logo_site_e.png">
+  <script src="../JS/scriptSkip.js"></script>
+  <script src="../JS/sideMenu.js"></script>
+</head>
+<body>
+  <header>
+    <a class="skip-link visually-hidden" href="#pannello-principale-reg" id="skipLink">Salta al contenuto principale</a>
+    <h1>Events</h1>
+<div class="header-items">
+  <div class="search-container">
+    <form id="searchBarA" action="../PHP/accessNav.php" role="search" method="get">
+        <input type="text" id="searchBar" name="cerca_evento" placeholder="Cerca...">
+    </form>
+</div>
+<button type="submit" id="searchButton" aria-label="Cerca">
+    <img src="../Images/search.png" alt="Icona Cerca">
+</button>
+<button class="bottoneFiltro" aria-label="Filtra">
+    <img src="../Images/filter-icon-0.png" alt="Filtro">
+</button>
+<button class="bottoneHamburger" aria-label="Menu">
+    <img src="../Images/menu-button-of-three-horizontal-lines.png" alt="Bottone per link nascosti per le pagine di dimensioni minori">
+</button>
+<nav>
+    <ul class="linkPagina">
+      <li><a id="returnHomeHeader" href="../PHP/registrazione.php">HOMEPAGE</a></li>
+      <li><a id="PartnersLink" href="../HTML/partner.html">PARTNERS</a></li>
+      <li><a id="ChiSiamoLink" href="../HTML/chiSiamo.html">CHI SIAMO</a></li>
+    </ul>
+</nav>
+<a href="../PHP/accessNav.php" class="bottoneProfilo">
+  <img src="<?php echo $profile_image_path; ?>" alt="Bottone per accedere ai dati del proprio profilo">
+</a>
+<nav aria-label="breadcrumb" id="bread">
+    <p>Ti trovi in: <a id="returnHome" href="../HTML/index.html">Indice</a> >> Registrazione </p>
+</nav>
+</div>
+</header>
+<div id="overlay" class="overlay"></div>
+        <div id="sideMenu" class="side-menu">
+            <a href="javascript:void(0)" class="closebtn">&times;</a>
+            <a href="../PHP/registrazione.php">Homepage</a>
+            <a href="../PHP/accessNav.php">Informazioni Profilo</a>
+            <a href="../PHP/registrazione.php">Crea Evento</a>
+            <a href="../PHP/registrazione.php">Chi siamo</a>
+            <a href="../PHP/registrazione.php">Partners Events</a>
+        </div>
+    <div id="pannello-principale-reg">
+        <div id="container-sinistro-reg">
+          <div class="image-container-ragComp-reg">
+          </div>
+          <p id="infoNoAccount-reg">Hai già un account? <a></a><a href="../PHP/accessNav.php" id="linkRegistrati">Accedi</a></p>
+        </div>
+        <div id="container-destro-reg">
+          <p id="registratiScritta-reg">Registrati</p>
+          <form action="../PHP/registrazione.php" method="POST">
+            <label for="nomeInput" class="visually-hidden">Nome</label>
+            <input type="text" id="nomeInput" name="nome" placeholder="Nome...">
+            <label for="cognomeInput" class="visually-hidden">Cognome</label>
+            <input type="text" id="cognomeInput" name="cognome" placeholder="Cognome...">
+            <label for="nomeUtenteInput" class="visually-hidden">Nome Utente</label>
+            <input type="text" id="nomeUtenteInput" name="username" placeholder="Nome Utente...">
+            <label for="mailInput" class="visually-hidden">Mail</label>
+            <input type="text" id="nomeUtenteInput" name="email" placeholder="email...">
+            <label for="passwordInput" class="visually-hidden">Password</label>
+            <input type="password" id="passwordInput" name="password" placeholder="Password...">
+            <input type="password" id="passwordInput" name="password_confirm" placeholder="conferma Password">
+            <input type="submit" value="Registrati" class="buttonSubmit">
+          </form>
+          {ERRORE}
+        </div>
+      </div>
+</body>
+</html>

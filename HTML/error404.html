@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Errore 404</title>
+    <meta name="keywords" content="Events, eventi">
+    <meta name="description" content="Pagina gestione errore 404 sito events">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../events.css">
+    <link rel="stylesheet" href="../print.css" media="print">
+    <link rel="shortcut icon" href="../Images/events_logo_site_e.png">
+    <script src="../JS/scriptSkip.js"></script>
+    <script src="../JS/sideMenu.js"></script>
+</head>
+
+<body>
+    <a class="skip-link visually-hidden" href="#error-container" id="skipLink">Salta al contenuto principale</a>
+    <header>
+        <h1>Events</h1>
+    <div class="header-items">
+        <div class="search-container">
+            <form id="searchBarA" action="../PHP/barra_ricerca.php" role="search" method="get">
+                <input type="text" id="searchBar" name="cerca_evento" placeholder="Cerca...">
+            </form>
+        </div>
+    <button type="submit" id="searchButton">
+        <img src="../Images/search.png" alt="Icona Cerca">
+    </button>
+    <button class="bottoneFiltro">
+        <img src="../Images/filter-icon-0.png" alt="Filtro">
+    </button>
+    <button class="bottoneHamburger">
+        <img src="../Images/menu-button-of-three-horizontal-lines.png" alt="Bottone per link nascosti in formato cellulare">
+    </button>
+    <nav>
+        <ul class="linkPagina">
+            <li><a id="returnHomeHeader" href="../PHP/home.php">HOMEPAGE</a></li>
+            <li><a id="PartnersLink" href="../HTML/partner.html">PARTNERS</a></li>
+            <li><a id="ChiSiamoLink" href="../HTML/chiSiamo.html">CHI SIAMO</a></li>
+        </ul>
+    </nav>
+    <a href="../PHP/indexProfilo.php" class="bottonePlus">
+        <img src="../Images/add.png" alt="Bottone per creare un nuovo evento">
+    </a>
+    <a href="../PHP/infoPersonali.php" class="bottoneProfilo">
+        <img src="<?php echo $profile_image_path; ?>" alt="Bottone per accedere ai dati del proprio profilo">
+    </a>
+    <nav aria-label="breadcrumb" id="bread">
+        <p>Ti trovi in: <span lang="en"><a id="returnHome" href="../PHP/home.php">Home</a></span> >> Errore 404 </p>
+    </nav>
+</div>
+</header>
+<div id="overlay" class="overlay"></div>
+        <div id="sideMenu" class="side-menu">
+            <a href="javascript:void(0)" class="closebtn">&times;</a>
+            <a href="../PHP/home.php">Homepage</a>
+            <a href="../PHP/accessNav.php">Informazioni Profilo</a>
+            <a href="../PHP/crea_inserimento_evento.php">Crea Evento</a>
+            <a href="../PHP/chiSiamo.php">Chi siamo</a>
+            <a href="../PHP/partners.php">Partners Events</a>
+        </div>
+
+    <main>
+
+        <div id="error-container">
+            <h1>Errore 404</h1>
+            <body>
+                <p id="subtitle-error">Ops! Sembra che gli eventi siano svaniti nel nulla!</p>
+                <p>Ci dispiace informarti che la pagina che stavi cercando di raggiungere su Events non è disponibile o è stata spostata.</p>
+                <p>Tuttavia, vogliamo assicurarti che i tuoi dati personali e i tuoi eventi salvati sono al sicuro e non sono stati compromessi.</p>
+                <p>Ti invitiamo cortesemente a tornare alla nostra <a href="../PHP/home.php">Homepage</a> per continuare la tua esperienza di navigazione.</p>
+                <p>Ci scusiamo per l'inconveniente e ti ringraziamo per la tua comprensione.</p>
+            </body>
+        </div>
+
+    </main>
+
+</body>
+
+</html>

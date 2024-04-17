@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="it">
+<head> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>Events:Event Page</title>
+  <!-- MODIFICA -->
+  <meta name="description" content= "Nome evento, Data evento, descrizione evento" />
+  <!-- MODIFICA -->
+  <meta name="keywords" content="EVENTS PAGE, SCHEDA EVENTI, NOME EVENTO, NOME EVENTO DATA">
+  <link rel="stylesheet" href="../events.css"/>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,400&display=swap">
+  <link rel="shortcut icon" href="../Images/events_logo_site_e.png">
+  <script src="../JS/scriptSkip.js"></script>
+  <script src="../JS/sideMenu.js"></script>
+</head>
+<body>
+    <a class="skip-link visually-hidden" href="#pannello-principale-pe" id="skipLink">Salta al contenuto principale</a>
+    <header>
+        <h1>Events</h1>
+    <div class="header-items">
+        <div class="search-container">
+            <form id="searchBarA" action="../PHP/barra_ricerca.php" role="search" method="get">
+                <input type="text" id="searchBar" name="cerca_evento" placeholder="Cerca...">
+            </form>
+        </div>
+    <button type="submit" id="searchButton">
+        <img src="../Images/search.png" alt="Icona Cerca">
+    </button>
+    <button class="bottoneFiltro">
+        <img src="../Images/filter-icon-0.png" alt="Filtro">
+    </button>
+    <button class="bottoneHamburger">
+        <img src="../Images/menu-button-of-three-horizontal-lines.png" alt="Bottone per link nascosti in formato cellulare">
+    </button>
+    <nav>
+        <ul class="linkPagina">
+            <li><a id="returnHomeHeader" href="../PHP/home.php">HOMEPAGE</a></li>
+            <li><a id="PartnersLink" href="../HTML/partner.html ">PARTNERS</a></li>
+            <li><a id="ChiSiamoLink" href="../HTML/chiSiamo.html">CHI SIAMO</a></li>
+        </ul>
+    </nav>
+    <a href="../PHP/indexProfilo.php" class="bottonePlus">
+        <img src="../Images/add.png" alt="Bottone per creare un nuovo evento">
+    </a>
+    <a href="../PHP/infoPersonali.php" class="bottoneProfilo">
+        <img src="<?php echo $profile_image_path; ?>" alt="Bottone per accedere ai dati del proprio profilo">
+    </a>
+    <nav aria-label="breadcrumb" id="bread">
+        <p>Ti trovi in: <span lang="en"><a id="returnHome" href="../PHP/home.php">Home</a></span> >><a id="returnProfilo" href="../PHP/eventiSalvati.php">Profilo</a> >> Pagina Evento </p>
+    </nav>
+</div>
+</header>
+<div id="overlay" class="overlay"></div>
+        <div id="sideMenu" class="side-menu">
+            <a href="javascript:void(0)" class="closebtn">&times;</a>
+            <a href="../PHP/home.php">Homepage</a>
+            <a href="../PHP/accessNav.php">Informazioni Profilo</a>
+            <a href="../PHP/crea_inserimento_evento.php">Crea Evento</a>
+            <a href="../HTML/chiSiamo.html">Chi siamo</a>
+            <a href="../HTML/partner.html">Partners Events</a>
+        </div>
+        {EVENTO}
+</body>
+</html>
