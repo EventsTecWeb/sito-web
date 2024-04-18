@@ -185,6 +185,15 @@ function getEventiCreati($conn, $id)
     }
 }
 
+function updateUserName($conn, $userId, $nome, $cognome) {
+    $sql = "UPDATE utenti SET nome = IF(? IS NOT NULL, ?, nome), cognome = IF(? IS NOT NULL, ?, cognome) WHERE utente_id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ssssi", $nome, $nome, $cognome, $cognome, $userId);
+    $stmt->execute();
+    $stmt->close();
+}
+
+
 function updateUserUsername($conn, $userId, $newUsername) {
     // Prepariamo la query SQL per aggiornare lo username dell'utente
     $query = "UPDATE Utenti SET username = ? WHERE utente_id = ?";

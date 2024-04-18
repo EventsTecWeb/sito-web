@@ -26,12 +26,23 @@ if(isset($_POST["cerca_evento"])){
     $results = getProssimiEventi($conn);
 }
 
-if($results==False){
-    $ricerca="<p>Nessun risultato trovato</p>";
-}else{
+if($results == false && $resultsC == false) {
+    $ricerca = "<p>Nessun risultato trovato</p>";
+} else {
     $ricerca = "<p>Risultati per: &#34" . $ricerca . "&#34</p>"; // Add "Risultati per" before the search term
-    foreach ($results as $evento) {
-        $ricercaris .= generateSearchResultItem($evento);
+    
+    // Se ci sono risultati dalla ricerca per titolo, aggiungili all'output
+    if($results != false) {
+        foreach ($results as $evento) {
+            $ricercaris .= generateSearchResultItem($evento);
+        }
+    }
+    
+    // Se ci sono risultati dalla ricerca per categoria, aggiungili all'output
+    if($resultsC != false) {
+        foreach ($resultsC as $evento) {
+            $ricercaris .= generateSearchResultItem($evento);
+        }
     }
 }
 

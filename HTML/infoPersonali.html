@@ -90,17 +90,19 @@
                     <div class="mod-nome-ip">
                         <h2>Modifica Nome e Cognome</h2>
                         <div class="separator-ip"></div>
-                            <div class="left-align-ip">
-                                    <input type="text" id="campoNome-ip" value="" readonly>
-                                    <img id="frecciaEdit-ip" src="../Images/pencil.png" alt="Modifica" tabindex="0" onclick="ModificaNome()">
-                            </div>
-                            <p id="domanda-ip">Chi può vedere il tuo nome?</p>
-                            <div class="center-align-ip">
-                                <img class="publicInfo-ip" src="../Images/people_icon.png"> Chiunque può vedere queste informazioni quando visualizza il tuo profilo, comunica con te o quando consulta contenuti creati da te</p>
-                                <button type="submit" class="salva-ip" onclick="salvaModificheNome()">Salva</button>
-                            </div>
+                        <div class="left-align-ip">
+                            <input type="text" id="campoNome-ip" name="nome" placeholder="Nome">
+                            <img id="frecciaEdit-ip" src="../Images/pencil.png" alt="Modifica" tabindex="0" onclick="ModificaNome()">
+                            <input type="text" id="campoCognome-ip" name="cognome" placeholder="Cognome">
+                            <img id="frecciaEdit-ip" src="../Images/pencil.png" alt="Modifica" tabindex="0" onclick="ModificaCognome()">
+                        </div>
+                        <p id="domanda-ip">Chi può vedere il tuo nome?</p>
+                        <div class="center-align-ip">
+                            <img class="publicInfo-ip" src="../Images/people_icon.png"> Chiunque può vedere queste informazioni quando visualizza il tuo profilo, comunica con te o quando consulta contenuti creati da te</p>
+                            <button type="submit" class="salva-ip" onclick="salvaModificheNome()">Salva</button>
+                        </div>
                     </div>  
-                </form>          
+                </form>     
             </div>
         </div>
         
@@ -212,7 +214,7 @@
                     <h2>Modifica <span lang="en">Email</span></h2>
                     <div class="separator-ip"></div>
                         <div class="left-align-ip">
-                                <input type="text" name="email" id="campoEmail-ip" value="<{EMAIL}>" readonly>
+                                <input type="text" name="email" id="campoEmail-ip" value="{EMAIL}" readonly>
                                 <img id="frecciaEdit-ip" src="../Images/pencil.png" alt="Modifica" tabindex="0" onclick="ModificaEmail()">
                         </div>
                         <p id="domanda-ip">Chi può vedere la tua <span lang="en">Email</span>?</p>

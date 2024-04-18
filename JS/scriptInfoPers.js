@@ -24,6 +24,12 @@ function ModificaNome() {
     campoNome.focus();
     campoNome.select();
 }
+function ModificaCognome() {
+    var campoCognome = document.getElementById('campoCognome-ip');
+    campoCognome.readOnly = false;
+    campoCognome.focus();
+    campoCognome.select();
+}
 function ModificaNick() {
     var campoNick = document.getElementById('campoNick-ip');
     campoNick.readOnly = false;

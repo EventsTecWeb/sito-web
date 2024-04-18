@@ -3756,6 +3756,13 @@ textarea {
     transform: scale(1.1);
 }
 
+#ricerca-genere-musica,
+#ricerca-genere-arte,
+#ricerca-genere-sport,
+#ricerca-genere-teatro{
+    color: #000000;
+}
+
 
 @media screen and (max-width: 1000px) {
 

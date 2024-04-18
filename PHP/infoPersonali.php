@@ -21,8 +21,14 @@ if(isset($_SESSION['username']) || isset($_SESSION['email'])) {
         insertUserDateOfBirth($conn, $_SESSION['user_id'], $dateOfBirth);
     }
     if(isset($_POST["email"])){
-        updateUserEmail($conn, $_SESSION['user_id'], clearInput($_POST["email"]));
-        $_SESSION["email"]=$_POST["email"];
+        // Ottieni la nuova email dall'input del modulo
+        $newEmail = clearInput($_POST["email"]);
+        
+        // Chiama la funzione per aggiornare l'email dell'utente nel database
+        updateUserEmail($conn, $_SESSION['user_id'], $newEmail);
+        
+        // Aggiorna anche l'email nella sessione per mantenerla coerente
+        $_SESSION["email"] = $newEmail;
     }
     if(isset($_POST["telefono"])){
         updateUserPhone($conn, $_SESSION['user_id'], clearInput($_POST["telefono"]));
@@ -33,6 +39,15 @@ if(isset($_SESSION['username']) || isset($_SESSION['email'])) {
     if(isset($_POST["username"])){
         updateUserUsername($conn, $_SESSION['user_id'], clearInput($_POST["username"]));
     }
+    if(isset($_POST["nome"]) && isset($_POST["cognome"])) {
+        $nome = clearInput($_POST["nome"]);
+        $cognome = clearInput($_POST["cognome"]);
+        
+        if(!empty($nome) && !empty($cognome)) {
+            updateUserName($conn, $_SESSION['user_id'], $nome, $cognome);
+        }
+    }
+    
 
     $user = isset($_SESSION['username']) ? $_SESSION['username'] : $_SESSION['email'];
     $userData = getUserByMailOrUsername($conn, $user);
