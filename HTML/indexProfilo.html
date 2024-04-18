@@ -16,36 +16,38 @@
 <body>
     <header>
         <a class="skip-link visually-hidden" href="#box" id="skipLink">Salta al contenuto principale</a>
-            <h1>Events</h1>
+        <h1>Events</h1>
         <div class="header-items">
-        <div class="search-container">
-            <form id="searchBarA" action="../PHP/searchbar.php" role="search" method="POST">
-                <input type="text" id="searchBar" name="cerca_evento" placeholder="Cerca...">
-            </form>
+            <div class="search-container">
+                <form id="searchBarA" action="../PHP/searchbar.php" role="search" method="POST">
+                    <input type="text" id="searchBar" name="cerca_evento" placeholder="Cerca...">
+                    <button type="submit" id="searchButton">
+                        <img src="../Images/search.png" alt="Icona Cerca">
+                    </button>
+                </form>
+            </div>
+            <a href="../PHP/eventi_salvati.php" class="bottoneStar">
+                <button class="bottoneStar">
+                    <img src="../Images/star_full.png" alt="Eventi Salvati">
+                </button>                
+            </a>
+            <button class="bottoneHamburger">
+                <img src="../Images/menu-button-of-three-horizontal-lines.png" alt="Bottone per link nascosti in formato cellulare">
+            </button>
+            <nav>
+                <ul class="linkPagina">
+                    <li><a id="returnHomeHeader" href="../PHP/home.php">HOMEPAGE</a></li>
+                    <li><a id="PartnersLink" href="../HTML/partner.html">PARTNERS</a></li>
+                    <li><a id="ChiSiamoLink" href="../HTML/chiSiamo.html">CHI SIAMO</a></li>
+                </ul>
+            </nav>
+            <a href="../PHP/infoPersonali.php" class="bottoneProfilo">
+                <img src="../Images/user.png" alt="Bottone per accedere ai dati del proprio profilo">
+            </a>
+            <nav aria-label="breadcrumb" id="bread">
+                <p>Ti trovi in: <span lang="en"><a id="returnHome" href="../PHP/home.php">Home</a></span> >> Creazione evento</p>
+            </nav>
         </div>
-        <button type="submit" id="searchButton">
-            <img src="../Images/search.png" alt="Icona Cerca">
-        </button>
-        <button class="bottoneFiltro">
-            <img src="../Images/filter-icon-0.png" alt="Filtro">
-        </button>
-        <button class="bottoneHamburger">
-            <img src="../Images/menu-button-of-three-horizontal-lines.png" alt="Bottone per link nascosti in formato cellulare">
-        </button>
-        <nav>
-            <ul class="linkPagina">
-                <li><a id="returnHomeHeader" href="../PHP/home.php">HOMEPAGE</a></li>
-                <li><a id="PartnersLink" href="../HTML/partner.html">PARTNERS</a></li>
-                <li><a id="ChiSiamoLink" href="../HTML/chiSiamo.html">CHI SIAMO</a></li>
-            </ul>
-        </nav>
-    <a href="../PHP/infoPersonali.php" class="bottoneProfilo">
-        <img src="../Images/user.png" alt="Bottone per accedere ai dati del proprio profilo">
-    </a>
-        <nav aria-label="breadcrumb" id="bread">
-            <p>Ti trovi in: <span lang="en"><a id="returnHome" href="../PHP/home.php">Home</a></span> >> Profilo Personale</p>
-        </nav>
-    </div>
     </header>
     <div id="overlay" class="overlay"></div>
         <div id="sideMenu" class="side-menu">
@@ -69,7 +71,7 @@
         <nav id="menuleft">
             <ul>
                 <li><a href="../PHP/infoPersonali.php"><button>Informazioni Personali</button></a></li>
-                <li><a href="../PHP/profiloEv.php"><button id="buttonEventiCreati">Eventi Creati</button></a></li>
+                <li><a href="../PHP/profiloEv.php"><button>Eventi Creati</button></a></li>
                 <li><a href="../PHP/eventi_salvati.php"><button>Eventi Salvati</button></a></li>
                 <li><a href="../PHP/impo_sicu.php"><button>Impostazioni e Sicurezza</button></a></li>
             </ul>

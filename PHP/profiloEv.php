@@ -7,9 +7,9 @@ if (isset($_SESSION['user_id'])) {
     $template = file_get_contents("../HTML/ProfiloEv.html");
     $ris = getEventiCreati($conn, $_SESSION['user_id']);
     if($ris == false){
-        $eventiCreati = '<div class="cardCreato-ev" id="event4Salvato-es">
-                        non ci sono eventi creati
-                        </div>';
+        $eventiCreati = '<p class="nessunEventoTrovatoImpo">
+                        Non ci sono eventi creati... per ora!
+                        </p>';
     } else {
         while($evento = $ris->fetch_assoc()){
             $eventiCreati .= '<div class="cardCreato-ev" id="event2Salvato-es">

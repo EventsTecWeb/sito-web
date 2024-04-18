@@ -19,17 +19,26 @@
     <header>
             <h1>Events</h1>
         <div class="header-items">
-            <div class="search-container">
-                <form id="searchBarA" action="../PHP/searchbar.php" role="search" method="POST">
-                    <input type="text" id="searchBar" name="cerca_evento" placeholder="Cerca...">
-                </form>
+            <div class="header-items">
+                <div class="search-container">
+                    <form id="searchBarA" action="../PHP/searchbar.php" role="search" method="POST">
+                        <input type="text" id="searchBar" name="cerca_evento" placeholder="Cerca...">
+                        <button type="submit" id="searchButton">
+                            <img src="../Images/search.png" alt="Icona Cerca">
+                        </button>
+                    </form>
+                </div>
             </div>
-        <button type="submit" id="searchButton">
-            <img src="../Images/search.png" alt="Icona Cerca">
-        </button>
-        <button class="bottoneFiltro">
-            <img src="../Images/filter-icon-0.png" alt="Filtro">
-        </button>
+            <script>
+                document.getElementById("searchButton").addEventListener("click", function() {
+                    document.getElementById("searchBarA").submit();
+                });
+            </script>
+                <a href="../PHP/eventi_salvati.php" class="bottoneStar">
+                    <button class="bottoneStar">
+                        <img src="../Images/star_full.png" alt="Eventi Salvati">
+                    </button>                
+                </a>
         <button class="bottoneHamburger">
             <img src="../Images/menu-button-of-three-horizontal-lines.png" alt="Bottone per link nascosti in formato cellulare">
         </button>
@@ -44,10 +53,10 @@
             <img src="../Images/add.png" alt="Bottone per creare un nuovo evento">
         </a>
         <a href="../PHP/infoPersonali.php" class="bottoneProfilo">
-            <img src="<?php echo $profile_image_path; ?>" alt="Bottone per accedere ai dati del proprio profilo">
+            <img src="../Images/user.png" alt="Bottone per accedere ai dati del proprio profilo">
         </a>
         <nav aria-label="breadcrumb" id="bread">
-            <p>Ti trovi in: <span lang="en"><a id="returnHome" href="../PHP/home.php">Home</a></span> >><a id="returnProfilo" href="../PHP/indexProfilo.php">Profilo</a> >> Impostazioni e Sicurezza</p>
+            <p>Ti trovi in: <span lang="en"><a id="returnHome" href="../PHP/home.php">Home</a></span> >> Impostazioni e Sicurezza</p>
         </nav>
     </div>
     </header>

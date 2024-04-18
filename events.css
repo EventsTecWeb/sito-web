@@ -176,7 +176,7 @@ input[type="text" ] #searchBar {
     color: rgb(111, 111, 111); 
 }
   
-.bottoneFiltro {
+.bottoneStar {
     border-radius: 50%; 
     width: 7vh; 
     height: 7vh; 
@@ -184,7 +184,7 @@ input[type="text" ] #searchBar {
     border: none;
 }
   
-.bottoneFiltro img {
+.bottoneStar img {
     padding-top: 5px;
     width: 80%; 
     height: auto; 
@@ -233,6 +233,7 @@ input[type="text" ] #searchBar {
   
 /*Modifica e.g. searchBarRegistrati, searchButtonRegistrati */
 #searchButton {
+    margin-left: 5vh;
     border-radius: 50%; 
     width: 7vh; 
     height: 7vh; 
@@ -250,15 +251,15 @@ input[type="text" ] #searchBar {
 }
   
 /* Modifica e.g. searchBarRegistrati, searchButtonRegistrati */
-#searchButton, .bottoneFiltro, .bottoneHamburger {
+#searchButton, .bottoneStar, .bottoneHamburger {
     position: relative;
-    margin-left: -1.5vw;
-    margin-bottom: 1vh;
+    /* margin-left: -1.5vw; */
+    margin-bottom: -6vh;
     transition: width 0.3s ease, height 0.3s ease;
     transition: margin-top 0.5s ease, width 0.5s ease, height 0.5s ease; 
 }
 
-.bottoneFiltro{
+.bottoneStar{
     margin-left:0.1vw;
 }
 
@@ -336,10 +337,11 @@ header:after {
         width: 6vh; 
         height: 6vh; 
         margin: auto; 
+        margin-left: 6vh;
     }
   
     /* Modifica e.g. searchBarRegistrati, searchButtonRegistrati */
-    header .bottoneHamburger, #searchButton,.bottoneFiltro, #searchBar {
+    header .bottoneHamburger, #searchButton,.bottoneStar, #searchBar {
         display: inline-block; 
         vertical-align: middle; 
     }
@@ -606,8 +608,8 @@ input[type="text"]:focus {
 }
 
 #menuleft #buttonImpostazioniSicu{
-    background-color: rgba(114, 162, 233, 1);
-    border-color: #a7a7a7;
+    background-color: rgb(45, 45, 45);
+    border-color: #000000;
     color: white;}
 
 #menuleft #buttonRitornoProfilo{
@@ -2001,10 +2003,6 @@ input[type="text"]:focus {
     color: red;
 }
 
-#menuleft #buttonImpostazioniSicu{
-    background-color: var(--gray);
-}
-
 #menuleft ul li button:hover,#menuleft button:focus {
     background-color: #f0f0f0;
 }
@@ -2089,7 +2087,7 @@ input[type="text"]:focus {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .separator-sicu {
@@ -3231,6 +3229,7 @@ textarea {
     width: 20px;
     height: 20px;
     cursor: pointer;
+    margin-right: 3vh;
 }
 
 #EditNome-ip{
@@ -3859,7 +3858,13 @@ textarea {
     margin: 8vh;
 } 
 
-
+.nessunEventoTrovatoImpo{
+    font-family: Arial, Helvetica, sans-serif; 
+    font-family: 'Poppins', sans-serif; 
+    color: rgb(0, 0, 0); 
+    font-size: 1.3em; 
+    margin: 5vh;
+}
 
 
 

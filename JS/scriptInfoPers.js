@@ -52,14 +52,20 @@ function ModificaTel() {
 
 function salvaModificheNome() {
     var campoNome = document.getElementById('campoNome-ip');
+    var campoCognome = document.getElementById('campoCognome-ip');
     var nuovoNome = campoNome.value;
-
-    // Simula il salvataggio del nuovo nome (puoi inviarlo al server qui se necessario)
-    alert("Confermare le modifiche? Il nuovo nome è: " + nuovoNome);
-
-    // Imposta il campo come solo lettura e aggiorna il valore visualizzato
-    campoNome.readOnly = true;
-    campoNome.value = nuovoNome;
+    var nuovoCognome = campoCognome.value;
+    if(nuovoNome != "" && nuovoCognome != ""){ // Check that both nuovoNome and nuovoCognome are not empty
+        var nomeCompleto = nuovoNome + " " + nuovoCognome;
+        alert("Confermare le modifiche? Il nuovo nome è: " + nomeCompleto);
+        campoNome.readOnly = true;
+        campoCognome.readOnly = true; // Set campoCognome's readOnly property to true
+        campoNome.value = nuovoNome;
+        campoCognome.value = nuovoCognome; // Set campoCognome's value to nuovoCognome
+    }
+    else{
+        alert("Devi inserire un nome ed un cognome");
+    }
 }
 
 function salvaModificheNick() {

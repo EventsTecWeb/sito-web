@@ -6,9 +6,9 @@ if (isset($_SESSION['user_id'])) {
     $template = file_get_contents("../HTML/eventiSalvati.html");
     $ris = getEventiSalvati($conn, $_SESSION['user_id']);
     if($ris==false){
-        $eventiSalvati='<div class="cardSalvato-es" id="event4Salvato-es">
-                        non ci sono eventi salvati
-                        </div>';
+        $eventiSalvati='<p class="nessunEventoTrovatoImpo">
+                        Non ci sono eventi salvati... per ora!
+                        </p>';
     }else{
         while($evento = $ris->fetch_assoc()){
             $eventiSalvati.='<div class="cardSalvato-es" id="event4Salvato-es">

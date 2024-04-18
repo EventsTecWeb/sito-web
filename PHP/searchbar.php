@@ -27,7 +27,7 @@ if(isset($_POST["cerca_evento"])){
 }
 
 if($results == false && $resultsC == false) {
-    $ricerca = "<p>Nessun risultato trovato</p>";
+    $ricerca = "<p>Nessun risultato trovato per &#34" .$ricerca ."&#34</p>";
 } else {
     $ricerca = "<p>Risultati per: &#34" . $ricerca . "&#34</p>"; // Add "Risultati per" before the search term
     
