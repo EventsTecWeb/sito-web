@@ -1,56 +1,48 @@
 <?php
-/*da riguardare*/
-require_once '../../queries/queries.php';
+require_once 'queries.php';
 session_start();
-include 'user_session.php';
-$accedi_stringa = gestisciAccesso($conn);
 
-$datalist_options = '';
-$evento_trovato = null;
-$categorie_options = '';
-
-
-if(isset($_GET['evento_titolo'])) {
-    $ricerca_evento_titolo = clearInput($_GET['evento_titolo']);
-    $evento_trovato = getEventoByTitolo($conn, $ricerca_evento_titolo);
-    $conn->close();
+function generateSearchResultItem($evento) {
+    return '<div class="column-home">
+                <div class="container-home-evidenza">
+                    <img src="'.$evento["url_immagine"].'" alt="music event">
+                    <h4 class="descrizioneEventiRic">'.$evento["titolo"].'</h4>
+                    <time class="descrizioneEventiRicD" datetime="2023-12-11 21:00">'.$evento["data_inizio"].'</time>
+                    <p class="descrizioneEventiRicL">'.$evento["luogo"].'</p>
+                    <p class="descrizioneEventiRicG">'.$evento["categoria"].'</p>
+                </div>
+            </div>';
 }
 
-
-if(isset($_GET['categoria_evento'])) {
-    $categoria_evento_selezionata = clearInput($_GET['categoria_evento']);
-    $result_eventi = getEventiByCategoria($conn, $categoria_evento_selezionata);
-} else {
-    $result_eventi = getEventi($conn);
+$template = file_get_contents("../HTML/searchPage.html");
+$ricercaris="";
+$ricerca="";
+$results="";
+if(isset($_POST["cerca_evento"])){
+    $ricerca=clearInput($_POST["cerca_evento"]);
+    $results = getEventiByTitolo($conn, $ricerca);
+    $resultsC = getEventiByCategoria($conn, $ricerca);
+}else{
+    $results = getProssimiEventi($conn);
 }
 
-// Popolo le opzioni per il datalist
-while ($row = $result_eventi->fetch_assoc()) {
-    $evento_titolo = $row['titolo'];
-    $datalist_options .= "<option value='$evento_titolo'>";
+if($results==False){
+    $ricerca="<p>Nessun risultato trovato</p>";
+}else{
+    $ricerca = "<p>Risultati per: &#34" . $ricerca . "&#34</p>"; // Add "Risultati per" before the search term
+    foreach ($results as $evento) {
+        $ricercaris .= generateSearchResultItem($evento);
+    }
 }
 
-$result_categorie = getCategorie($conn);
-while ($row = $result_categorie->fetch_assoc()) {
-    $categoria = $row['categoria'];
-    $categorie_options .= "<option value='$categoria'>$categoria</option>";
+if($resultsC==True){
+    foreach ($resultsC as $evento) {
+        $ricercaris .= generateSearchResultItem($evento);
+    }
 }
 
-if ($evento_trovato) {
-    $evento_id = $evento_trovato['evento_id'];
-    header("Location: info_evento.php?evento=$evento_id");
-    exit();
-}
-
-
-$barra_ricerca_eventi_html = file_get_contents('../html/barra_ricerca_eventi.html'); 
-
-
-$barra_ricerca_eventi_html = str_replace('{ACCEDI}', $accedi_stringa, $barra_ricerca_eventi_html);
-$barra_ricerca_eventi_html = str_replace('{RICERCA_EVENTO_TITOLO}', $ricerca_evento_titolo ?? '', $barra_ricerca_eventi_html);
-$barra_ricerca_eventi_html = str_replace('{DATALIST-OPTIONS}', $datalist_options, $barra_ricerca_eventi_html);
-$barra_ricerca_eventi_html = str_replace('{CATEGORIE-OPTIONS}', $categorie_options, $barra_ricerca_eventi_html);
-
-echo $barra_ricerca_eventi_html; /*da sviluppare questo codice*/
+$template = str_replace('{RICERCA}', $ricerca, $template);
+$template = str_replace('{RISULTATI}', $ricercaris, $template);
+echo $template;
 
 ?>

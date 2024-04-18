@@ -86,15 +86,16 @@ function getEventiByTitolo($conn, $titolo)
     if ($resultEventi && $resultEventi->num_rows > 0) {
         return $resultEventi;
     } else {
-        header('Location: ../php/404.php');
-        exit;
+        return False;
     }
 }
 
 function getEventiByCategoria($conn, $categoria)
 {
     // Mi preparo la query per selezionare gli eventi con una determinata categoria
-    $queryEventi = "SELECT * FROM Eventi WHERE categoria = ?";
+    $queryEventi = "SELECT * FROM Eventi WHERE categoria LIKE ?";
+    $categoria = "%" . $categoria . "%"; 
+
     $stmt = $conn->prepare($queryEventi);
 
     $stmt->bind_param("s", $categoria);
@@ -107,10 +108,9 @@ function getEventiByCategoria($conn, $categoria)
     $stmt->close();
 
     if ($resultEventi && $resultEventi->num_rows > 0) {
-        return $resultEventi->fetch_assoc();
+        return $resultEventi;
     } else {
-        header('Location: ../php/404.php');
-        exit;
+        return false;
     }
 }
 

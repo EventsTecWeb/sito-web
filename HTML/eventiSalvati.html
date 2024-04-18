@@ -22,9 +22,9 @@
     <h1>Events</h1>
       <div class="header-items">
             <div class="search-container">
-                <form id="searchBarA" action="../PHP/barra_ricerca.php" role="search" method="get">
-                    <input type="text" id="searchBar" name="cerca_evento" placeholder="Cerca...">
-                </form>
+              <form id="searchBarA" action="../PHP/searchbar.php" role="search" method="POST">
+                <input type="text" id="searchBar" name="cerca_evento" placeholder="Cerca...">
+            </form>
             </div>
       <button type="submit" id="searchButton">
         <img src="../Images/search.png" alt="Icona Cerca">
@@ -73,12 +73,12 @@
 </nav>
 <div class="wrapper">
     <nav id="menuleft">
-        <ul>
-            <li><a href="../PHP/infoPersonali.php"><button>Informazioni Personali</button></a></li>
-            <li><a href="../PHP/profiloEv.php"><button>Eventi Creati</button></a></li>
-            <li><a href="../PHP/eventi_salvati.php"><button>Eventi Salvati</button></a></li>
-            <li><a href="../PHP/impo_sicu.php"><button>Impostazioni e Sicurezza</button></a></li>
-        </ul>
+      <ul>
+        <li><a href="../PHP/infoPersonali.php"><button>Informazioni Personali</button></a></li>
+        <li><a href="../PHP/profiloEv.php"><button>Eventi Creati</button></a></li>
+        <li><a href="../PHP/eventi_salvati.php"><button  id="buttonEventiSalvati">Eventi Salvati</button></a></li>
+        <li><a href="../PHP/impo_sicu.php"><button>Impostazioni e Sicurezza</button></a></li>
+    </ul>
     </nav>
 
     <div id="eventiSalvati-es">

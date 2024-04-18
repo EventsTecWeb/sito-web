@@ -2,31 +2,34 @@
 require_once 'queries.php';
 $template = file_get_contents("../HTML/home.html");
 
-$query = "SELECT titolo, orario_inizio, orario_fine, luogo, costo, categoria, url_immagine FROM Eventi WHERE orario_inizio>NOW";
-
 $errore = "";
 $results = getEventiByCategoria($conn, "Teatro");
 
 if ($results!=null) {
-	$template = file_get_contents('../HTML/home.html');
-	$titolo=$results['titolo'];
-	$data_inizio=$results['data_inizio'];
-	$luogo = $results['luogo'];
-	$costo = $results['costo'];
-}
-else {
-	$error = '<p>Errore! Nessun <span lang="en">evento</span> trovato. Riprova o se il problema persiste contattare l\'amministrazione.</p>';
-	header('Location:404.html');
+    $row = $results->fetch_assoc(); // Fetch the row
+    if ($row) {
+        $template = file_get_contents('../HTML/home.html');
+        $titolo=$row['titolo'];
+        $data_inizio=$row['data_inizio'];
+        $luogo = $row['luogo'];
+        $costo = $row['costo'];
+    } else {
+        $error = '<p>Errore! Nessun <span lang="en">evento</span> trovato. Riprova o se il problema persiste contattare l\'amministrazione.</p>';
+        header('Location:404.html');
+    }
+} else {
+    $error = '<p>Errore! Nessun <span lang="en">evento</span> trovato. Riprova o se il problema persiste contattare l\'amministrazione.</p>';
+    header('Location:404.html');
 }
 
 $evidenza='<div class="column-home-e">
-				<div class="container-home-evidenza-e">
-				<img src="'.$results["url_immagine"].'" alt="music event">
-				<h4 class="descrizioneEventiT-home">'.$results["titolo"].'</h4>
-					<time class="descrizioneEventiD-home" datetime="'.$results["data_inizio"].' - '.$results["luogo"].'</time>
-					<p class="descrizioneEventiD-home">'.$results["categoria"].'</p>
-				</div>
-			</div>';
+                <div class="container-home-evidenza-e">
+                <img src="'.$row["url_immagine"].'" alt="music event">
+                <h4 class="descrizioneEventiT-home">'.$row["titolo"].'</h4>
+                    <time class="descrizioneEventiD-home" datetime="'.$row["data_inizio"].' - '.$row["luogo"].'</time>
+                    <p class="descrizioneEventiD-home">'.$row["categoria"].'</p>
+                </div>
+            </div>';
 
 
 $pEventi = getProssimiEventi($conn);
