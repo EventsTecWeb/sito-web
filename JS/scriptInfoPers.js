@@ -139,10 +139,8 @@ function aggiornaDataNascita() {
 function salvaModificheEmail() {
     var campoEmail = document.getElementById('campoEmail-ip');
     var nuovoNome = campoEmail.value;
-
     // Simula il salvataggio del nuovo nome (puoi inviarlo al server qui se necessario)
     alert("Confermare le modifiche? La nuova email è: " + nuovoNome);
-
     // Imposta il campo come solo lettura e aggiorna il valore visualizzato
     campoEmail.readOnly = true;
     campoEmail.value = nuovoNome;

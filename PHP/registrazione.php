@@ -15,9 +15,20 @@ foreach ($required_fields as $field) {
     }
 }
 
-// Controllo se le password coincidono
-if ($_POST['password'] !== $_POST['password_confirm']) {
-    $registration_feedback .= "<p class='signin-error'>Le password non corrispondono</p>";
+if (isset($_POST['password'], $_POST['password_confirm'])) {
+    // Le chiavi 'password' e 'password_confirm' esistono nell'array $_POST
+
+    $password = $_POST['password'];
+    $password_confirm = $_POST['password_confirm'];
+
+    // Controllo se le password coincidono
+    if ($password !== $password_confirm) {
+        $registration_feedback .= "<p class='signin-error'>Le password non corrispondono</p>";
+        $error_count++;
+    }
+} else {
+    // Se una delle chiavi manca nell'array $_POST, aggiungi un messaggio di errore
+    $registration_feedback .= "<p class='signin-error'>Campi password mancanti nel modulo</p>";
     $error_count++;
 }
 
@@ -48,7 +59,7 @@ if ($error_count === 0) {
                 exit();
             }else{
                 $_SESSION['user_id'] = $res['utente_id'];
-                header('Location: ../php/eventi_salvati.php');
+                header('Location: ../php/accessNav.php');
             }
         }else{
             header('Location: 404.php');

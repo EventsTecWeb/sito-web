@@ -24,6 +24,19 @@ if(isset($_SESSION['username']) || isset($_SESSION['email'])) {
         // Ottieni la nuova email dall'input del modulo
         $newEmail = clearInput($_POST["email"]);
         
+        // Verifica se la nuova email è diversa dall'email attuale dell'utente
+        $currentUserEmail = isset($_SESSION['email']) ? $_SESSION['email'] : $_SESSION['username'];
+        if ($newEmail !== $currentUserEmail) {
+            // La nuova email è diversa dall'email attuale dell'utente
+            // Verifica se la nuova email è già stata utilizzata da altri utenti
+            $existingUser = getUserByMailOrUsername($conn, $newEmail);
+            if($existingUser) {
+                // Messaggio di errore
+                echo "<script>alert('Questa email è già associata a un altro utente. Si prega di scegliere un\'altra email.');</script>";
+                exit(); // Termina lo script per evitare ulteriori operazioni
+            }
+        }
+    
         // Chiama la funzione per aggiornare l'email dell'utente nel database
         updateUserEmail($conn, $_SESSION['user_id'], $newEmail);
         

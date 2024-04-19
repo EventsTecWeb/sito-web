@@ -36,10 +36,10 @@ function logout() {
     }
 
     session_destroy();
-
-    header("Location: accesso.php");
+    header("Location: ../PHP/accessNav.php");
     exit();
 }
+
 
 function getProfilePhoto($conn, $userId) {
     $sql = "SELECT foto_profilo FROM Utenti WHERE utente_id = ?";
@@ -282,14 +282,12 @@ function updateUserEmail($conn, $userId, $newEmail) {
     $stmt->bind_param("si", $newEmail, $userId);
     // Eseguiamo la query preparata
     $stmt->execute();
-    
     // Controlliamo se l'aggiornamento ha avuto successo
     if ($stmt->affected_rows > 0) {
         echo "L'indirizzo email è stato aggiornato con successo.";
     } else {
         echo "Errore nell'aggiornamento dell'email o nessuna modifica apportata.";
     }
-    
     // Chiudiamo lo statement
     $stmt->close();
 }
@@ -392,7 +390,6 @@ function getPermessiByUsername($conn, $user){
 }
 
 
-
 function effettuaRegistrazione($conn, $email, $username, $nome, $cognome, $password,$genere){
     $sql = "INSERT INTO Utenti (nome, cognome, genere, username, permessi, email, password) VALUES (?, ?, ?, ?, 0, ?, ?)";
     $stmt = $conn->prepare($sql);
@@ -402,5 +399,4 @@ function effettuaRegistrazione($conn, $email, $username, $nome, $cognome, $passw
     $stmt->close();
 	return $result;
 }
-
 

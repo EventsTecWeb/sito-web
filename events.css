@@ -273,6 +273,7 @@ header:after {
 
 
 @media screen and (max-width: 980px) {
+
     #searchBar {
         width: 40vh; 
         height: 6vh; 
@@ -291,6 +292,13 @@ header:after {
 }
 
 @media screen and (max-width: 830px) {
+
+    .bottoneStar {
+        position: relative;
+        margin-left: 13vw;
+        margin-bottom: -1vh;
+    }
+
     header h1{
         padding-top: 0.5vh;
         background-size: 50%;
@@ -462,8 +470,6 @@ nav[aria-label="breadcrumb"] {
 }
 
 /*.returnBread è la classe che utilizzo su tutti i link presenti nella breadcrumb in modo da poterli trattare tutti insieme e più velocemente*/
-
-/*dò la classe .returnBread a tutti i link nella breadcrumb*/
   
 .returnBread{
     color: black;
@@ -485,16 +491,14 @@ nav[aria-label="breadcrumb"] {
 
 input[type="text"] {
     font-family: Poppins, sans-serif;
-    border: none; /* Rimuove il bordo */
-    border-bottom: 1px solid black; /* Aggiunge una linea inferiore */
-    background-color: transparent; /* Sfondo trasparente */
-    padding: 5px; /* Spazio interno per migliorare la leggibilità */
-    outline: none; /* Rimuove il bordo quando l'input è in focus */
+    border: none;
+    border-bottom: 1px solid black; 
+    background-color: transparent; 
+    padding: 5px; 
+    outline: none; 
     width:100%;
 }
   
-
-/* Rimuove i bordi del focus sugli input di tipo text */
 input[type="text"]:focus {
     outline: none;
 }
@@ -513,11 +517,11 @@ input[type="text"]:focus {
   
   input[type="text"] {
     font-family: Poppins, sans-serif;
-    border: none; /* Rimuove il bordo */
-    border-bottom: 1px solid black; /* Aggiunge una linea inferiore */
-    background-color: transparent; /* Sfondo trasparente */
-    padding: 5px; /* Spazio interno per migliorare la leggibilità */
-    outline: none; /* Rimuove il bordo quando l'input è in focus */
+    border: none; 
+    border-bottom: 1px solid black; 
+    background-color: transparent; 
+    padding: 5px; 
+    outline: none; 
     width:100%;
   }
   
@@ -531,7 +535,6 @@ input[type="text"]:focus {
     width: 100%;
   }
   
-  /* Rimuove i bordi del focus sugli input di tipo text */
   input[type="text"]:focus {
     outline: none;
   }
@@ -541,11 +544,11 @@ input[type="text"]:focus {
   }  
   input[type="text"] {
     font-family: Poppins, sans-serif;
-    border: none; /* Rimuove il bordo */
-    border-bottom: 1px solid black; /* Aggiunge una linea inferiore */
-    background-color: transparent; /* Sfondo trasparente */
-    padding: 5px; /* Spazio interno per migliorare la leggibilità */
-    outline: none; /* Rimuove il bordo quando l'input è in focus */
+    border: none; 
+    border-bottom: 1px solid black; 
+    background-color: transparent;
+    padding: 5px; 
+    outline: none; 
     width:100%;
   }
   
@@ -559,7 +562,6 @@ input[type="text"]:focus {
     width: 100%;
   }
   
-  /* Rimuove i bordi del focus sugli input di tipo text */
   input[type="text"]:focus {
     outline: none;
   }
@@ -578,9 +580,7 @@ input[type="text"]:focus {
 
 
 /*------------------------------/MENU SINISTRO------------------------------------------------*/
-/*vado a definire un css generico per tutte quelle pagine che presentano un menù a bottoni a sinistra, che permette di muoversi da una pagina all'altra quando si preme sul bottone con la foto profilo dell'utente*/
 
-/*bisogna cambiare il nome di uno dei bottoni di sinistra, cioè Profilo in "Creazione Eventi"*/
 
 #menuleft {
     float: left;
@@ -704,12 +704,11 @@ input[type="text"]:focus {
 /*--------------CSS SPECIFICO PAG. IMPOSTAZIONI E SICUREZZA----------------------------*/
 /*ImpoSicu.html*/
 
-/*Vado a colorare le scritte Elimina ed Esci*/
+
 .titolini-sicu{
     color: red;
 }
 
-/*ho sostituito la class setting con l'id settings dato che viene utilizzato solo una volta nel file impoSicu.html*/
 #settings-sicu {
     float: right;
     width: 80%; 
@@ -723,12 +722,11 @@ input[type="text"]:focus {
     font-family: Inter, sans-serif;
 }
   
-/*ho sostituito la class setting con l'id settings dato che viene utilizzato solo una volta nel file impoSicu.html*/
+
 #settings-sicu h2 {
     margin-bottom: 20px;
 }
 
-/* Stile del menu a tendina */
 .option-sicu {
     display: flex;
     justify-content: space-between;
@@ -744,22 +742,22 @@ input[type="text"]:focus {
     transition: transform 0.3s ease;
 }
   
-  /* Effetto di transizione sull'icona a tendina */
+
 .option-sicu.open img {
     transform: rotate(180deg);
 }
   
-  /* Nascondi il testo del menu a tendina per default */
+
 .option-sicu span:nth-child(2) {
     display: none;
 }
   
-  /* Stile del testo del menu a tendina quando è aperto */
+
 .option-sicu.open span:nth-child(2) {
     display: inline-block;
 }
 
-/*Codice per la tendina della privacy*/
+
 #privacy-sicu {
     border: 1px solid #ccc;
     border-radius: 50px;
@@ -769,7 +767,6 @@ input[type="text"]:focus {
     margin: 2vh auto;
 }
 
-/*Codice per la tendina della privacy*/
 .p_privacy-sicu{
     margin-bottom: -0.5vh;
 }
@@ -779,7 +776,6 @@ input[type="text"]:focus {
     font-weight:bold;
 }
 
-/*privacy-settings viene cambiato da class a id perché utilizzato solo una volta*/
 #privacy-settings-sicu {
     display: flex;
     flex-direction: column;
@@ -790,35 +786,33 @@ input[type="text"]:focus {
 .separator-sicu {
     width: 100%;
     border-bottom: 1px solid #ccc;
-    margin-bottom: 20px; /* Spazio tra la linea e gli elementi successivi */
+    margin-bottom: 20px; 
 }
 
 .separator-sicu {
     width: 100%;
     border-bottom: 1px solid #ccc;
-    margin-bottom: 20px; /* Spazio tra la linea e gli elementi successivi */
+    margin-bottom: 20px; 
 }
 
-/*left-align viene cambiato da class a id perché utilizzato solo una volta e inoltre cambia il nome in left-align-privacy*/
 #left-align-privacy-sicu {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-/*center-align viene cambiato da class a id perché utilizzato solo una volta e inoltre cambia il nome in center-align-privacy*/
 #center-align-privacy-sicu {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/*info-text-privacy viene cambiato da class a id perché utilizzato solo una volta e inoltre cambia il nome in info-text-privacy*/
+
 #info-text-privacy-sicu {
     margin-bottom: 20px; 
 }
 
-/*codice per i bottoni blu con la scritta Salva*/
+
 .button-impo-sicu{
     background-color: rgba(114, 162, 233, 1);
     color: white;
@@ -833,12 +827,10 @@ input[type="text"]:focus {
     border-radius: 16px;
 }
 
-/*codice per i bottoni blu con la scritta Salva*/
 .button-impo-sicu:hover{
     background-color: rgba(14, 31, 187, 1);
 }
 
-/*codice per la parte della password*/
 #modPass-sicu {
     border: 1px solid #ccc;
     border-radius: 50px;
@@ -852,12 +844,12 @@ input[type="text"]:focus {
     text-align: center; 
 }
 
-/*codice per la parte della password*/
+
 #modPass-sicu h2 {
     font-family: Inter, sans-serif;
 }
 
-/*codice per la parte della password*/
+
 #modPass-sicu p {
     text-align: justify;
     /*metto prima lo stile testuale per il fallback*/
@@ -865,7 +857,7 @@ input[type="text"]:focus {
     font-family: Inter, sans-serif;
 }
 
-/*codice per la parte della password*/
+
 #modPass-sicu input[type="password"] {
     border: none; 
     border-bottom: 1px solid black; 
@@ -886,17 +878,14 @@ input[type="text"]:focus {
     margin-bottom:-0.2vh;
 }
 
-/*questo codice tocca i bottoni salva della password e di elimina e si cambia il nome da .button-container a .button-container-impo*/
 .button-container-impo-sicu {
     margin-top: 20px; 
 }
 
-/*questo codice tocca i bottoni salva della password e di elimina e si cambia il nome da .button-container a .button-container-impo*/
 .button-container-impo-sicu {
     margin-top: 20px;
 }
 
-/*parte riguardante l'eliminazione dell'account*/
 #eliAcc-sicu {
     border: 1px solid #ccc;
     border-radius: 50px;
@@ -913,7 +902,6 @@ input[type="text"]:focus {
     font-family: Inter, sans-serif;
 }
 
-/*warning viene cambiato da class a id perché utilizzato solo una volta e inoltre cambia il nome in warning-password*/
 #warning-sicu {
     border: 3px solid red;
     margin: 10px;
@@ -924,7 +912,6 @@ input[type="text"]:focus {
     text-align: center; 
 }
 
-/*warning-icon viene cambiato da class a id perché utilizzato solo una volta e inoltre cambia il nome in warning-icon-password*/
 .warning-icon-password-sicu {
     color: red;
 }
@@ -960,7 +947,6 @@ input[type="text"]:focus {
     background-color: red;
 }
 
-/*vertical-center viene cambiato da class a id perché utilizzato solo una volta e inoltre cambia il nome in vertical-center-password*/
 #vertical-center-password-sicu {
     /* Impostazioni per centrare verticalmente */
     display: flex;
@@ -969,7 +955,7 @@ input[type="text"]:focus {
     align-items: center;
 }
 
-/*codice che riguarda la parte esci*/
+
 #esciAcc-sicu {
     border: 1px solid #ccc;
     border-radius: 50px;
@@ -995,7 +981,7 @@ input[type="text"]:focus {
     padding: 2vh;
 }
 
-/*tratto separatamente questo bottone, perché non è sempre utilizzabile, cosa che invece gli altri sono*/
+
 #esciAcc-sicu #esciButton-sicu {
     background-color: rgba(114, 162, 233, 1);
     color: white;
@@ -1010,7 +996,7 @@ input[type="text"]:focus {
     border-radius: 16px;
 }
 
-/*tratto separatamente questo bottone, perché non è sempre utilizzabile, cosa che invece gli altri sono*/
+
 #esciAcc-sicu #esciButton-sicu:hover {
     background-color: rgba(14, 31, 187, 1);
 }
@@ -1037,7 +1023,6 @@ input[type="text"]:focus {
 /*index.html*/
 
 
-/*Codice del contenitore che contiene al suo interno tutti gli elementi della pagina*/
 #index {
     height: 100%;
     margin-top: 10vh;
@@ -1046,7 +1031,7 @@ input[type="text"]:focus {
     align-items: center;
   }
 
-/*DescrizioneConBottoni viene cambiato da class a id perché utilizzato solo una volta e inoltre cambia il nome in DescizioneConBottoniIndex*/
+
 #DescizioneConBottoniIndex {
     position: relative;
     text-align: center;
@@ -1064,7 +1049,7 @@ input[type="text"]:focus {
     
   }
 
-/*image-container viene cambiato da class a id perché utilizzato solo una volta e inoltre cambia il nome in image-container-index*/
+
 #DescizioneConBottoniIndex #image-container-index {
     background-image: url('Images/eventsLogoRid.png'); 
     background-size: contain;
@@ -1080,9 +1065,6 @@ input[type="text"]:focus {
     margin-top: 0vh;
   }
 
-  
-
-/* Codice riguardante i link dell'indice */
 .ContainerBottoniIndex {
     display: flex;
     flex-direction: column;
@@ -1098,7 +1080,7 @@ input[type="text"]:focus {
     color: white;
     font-size: 2.5vh;
     font-weight: bold;
-    text-decoration: none; /* Aggiunta per rimuovere sottolineatura */
+    text-decoration: none; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1174,21 +1156,19 @@ input[type="text"]:focus {
 }
 
 #profile-ev .cardSalvato-es {
-    margin-right: 20px; /* Aggiungi il margine a destra desiderato */
+    margin-right: 20px; 
 }
 
-/*contenitore totale della pagina*/
 #profile-ev {
     width: 100%; 
     padding: 3%; 
     padding-left: 10%;
     padding-right: 15%;
     box-sizing: border-box;
-    margin-left: auto; /* Center the element */
-    margin-right: auto; /* Center the element */
+    margin-left: auto; 
+    margin-right: auto; 
 }
 
-/*contenitore totale della pagina*/
 #profile-ev{
     /*metto prima lo stile testuale per il fallback*/
     font-family: Arial, Helvetica, sans-serif;
@@ -1200,7 +1180,6 @@ input[type="text"]:focus {
     align-items: center;
 }
 
-/*contenitore foto profilo e informazioni*/
 #info-ev{
     align-content: center;
     display: flex;
@@ -1209,7 +1188,6 @@ input[type="text"]:focus {
     align-items: center;
 }
 
-/*contenitore informazioni*/
 #nomiVari-ev{
     align-content: center;
     display: flex;
@@ -1224,7 +1202,6 @@ input[type="text"]:focus {
 }
 
 
-/*codice per la foto profilo*/
 .avatar-ev {
     width: 100px;
     height: 100px; 
@@ -1251,7 +1228,7 @@ input[type="text"]:focus {
 
 .button-container-ev {
     width: 10%;
-    margin-top: 20px; /* Aggiunto spazio tra i bottoni e gli elementi sopra */
+    margin-top: 20px;
 }
 
 #fraseEventiCreati-ev{
@@ -1269,21 +1246,20 @@ input[type="text"]:focus {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 15px 25px; /* Dimensioni del bottone */
+    padding: 15px 25px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
     background-color: #f0f0f0;
-    background-image: url('../Images/add.png'); /* Immagine come sfondo */
+    background-image: url('../Images/add.png');
     background-repeat: no-repeat;
-    background-position: center; /* Centra l'immagine */
-    background-size: 50%; /* Riduci le dimensioni dell'immagine di sfondo al 50% della grandezza del bottone */
-    font-size: 18px; /* Dimensione del testo */
+    background-position: center; 
+    background-size: 50%; 
+    font-size: 18px; 
 }
 
-/* Effetto al passaggio del mouse per il bottone */
 #creaEvento-ev:hover {
-    opacity: 0.8; /* Riduci leggermente l'opacità al passaggio del mouse */
+    opacity: 0.8; 
 }
 
 
@@ -1312,9 +1288,9 @@ input[type="text"]:focus {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     text-align: left;
-    width: 30vw; /* Imposta la larghezza in unità relative */
-    height: 30vh; /* Imposta l'altezza in unità relative */
-    max-width: 100%; /* Imposta la larghezza massima al 100% del contenitore genitore */
+    width: 30vw;
+    height: 30vh; 
+    max-width: 100%; 
     max-height: 100%; 
     flex-grow: 1;
     flex: 0 1 calc(30% - 20px);
@@ -1347,7 +1323,7 @@ input[type="text"]:focus {
 .descrizioneEventiD-ev {
     font-size: 1em;
     white-space: pre-wrap;
-    line-height: 1.5em; /* Aggiunto line-height */
+    line-height: 1.5em; 
 }
 
 .container-immagini-eventi-ev {
@@ -1361,12 +1337,12 @@ input[type="text"]:focus {
     /*metto prima lo stile testuale per il fallback*/
     font-family: Arial, Helvetica, sans-serif;
     font-family: 'Roboto', sans-serif;
-    color: rgb(0, 0, 0); /* Colore specifico */
+    color: rgb(0, 0, 0); 
     text-decoration: underline;
 }
 
 .NomiLinkCreati-ev:hover {
-    text-decoration: none; /* Rimuove la sottolineatura al passaggio sopra */
+    text-decoration: none;
 }
 
 
@@ -1398,14 +1374,14 @@ input[type="text"]:focus {
     }
 
     .descrizioneEventiT-ev {
-        font-size: 1.1em; /* Regola la dimensione del testo in modo da mantenerlo leggibile */
+        font-size: 1.1em; 
     }
     
     .descrizioneEventiD-ev {
-        font-size: 1.1em; /* Aumenta la dimensione del testo */
-        overflow: hidden; /* Nasconde il testo che esce dalla carta */
-        text-overflow: ellipsis; /* Aggiunge "..." per indicare che il testo è troncato */
-        white-space: nowrap; /* Impedisce al testo di andare a capo */
+        font-size: 1.1em; 
+        overflow: hidden; 
+        text-overflow: ellipsis; 
+        white-space: nowrap; 
     }
 
 }
@@ -1417,8 +1393,8 @@ input[type="text"]:focus {
 @media screen and (max-width: 950px) {
 
     .container-immagini-eventi-ev {
-        max-width: 100%; /* Impedisce alle immagini di superare la larghezza della carta */
-        height: auto; /* Regola l'altezza delle immagini in modo che si adattino proporzionalmente alla larghezza massima consentita */
+        max-width: 100%; 
+        height: auto; 
     }
 }
   
@@ -1426,14 +1402,14 @@ input[type="text"]:focus {
 @media screen and (max-width: 900px) {
 
     .descrizioneEventiT-ev {
-        font-size: 1.3em; /* Regola la dimensione del testo in modo da mantenerlo leggibile */
+        font-size: 1.3em; 
     }
 
     .descrizioneEventiD-ev {
-        font-size: 1.1em; /* Aumenta la dimensione del testo */
-        overflow: hidden; /* Nasconde il testo che esce dalla carta */
-        text-overflow: ellipsis; /* Aggiunge "..." per indicare che il testo è troncato */
-        white-space: nowrap; /* Impedisce al testo di andare a capo */
+        font-size: 1.1em; 
+        overflow: hidden; 
+        text-overflow: ellipsis; 
+        white-space: nowrap;
     }
       
 }
@@ -1443,8 +1419,8 @@ input[type="text"]:focus {
     .wrapper {
         padding-top: 3vh;
         display: flex;
-        flex-direction: column; /* Disponi gli elementi in colonna */
-        align-items: center; /* Allinea gli elementi verticalmente al centro */
+        flex-direction: column;
+        align-items: center;
     }
 
     .rowProfiloEv .containerProfiloEv{
@@ -1453,14 +1429,14 @@ input[type="text"]:focus {
     }
 
     .descrizioneEventiT {
-        font-size: 1.3em; /* Regola la dimensione del testo in modo da mantenerlo leggibile */
+        font-size: 1.3em;
     }
 
     .descrizioneEventiD {
-        font-size: 1.1em; /* Aumenta la dimensione del testo */
-        overflow: hidden; /* Nasconde il testo che esce dalla carta */
-        text-overflow: ellipsis; /* Aggiunge "..." per indicare che il testo è troncato */
-        white-space: nowrap; /* Impedisce al testo di andare a capo */
+        font-size: 1.1em;
+        overflow: hidden; 
+        text-overflow: ellipsis; 
+        white-space: nowrap;
     }
     
     .wrapper #menuleft {
@@ -1494,16 +1470,16 @@ input[type="text"]:focus {
       
       .menu-orizzontale a {
         display: inline-block;
-        padding: 4px 8px; /* Riduci ulteriormente il padding */
+        padding: 4px 8px; 
         text-align: center;
         text-decoration: none;
         font-family: 'Roboto', sans-serif;
         color: black;
         font-weight: bold;
         text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
-        font-size: 3vw; /* Riduci ulteriormente la dimensione del testo */
-        border: 1px solid black; /* Modifica lo spessore del bordo se necessario */
-        border-radius: 3px; /* Regola la curvatura del bordo */
+        font-size: 3vw; 
+        border: 1px solid black; 
+        border-radius: 3px; 
         transition: all 0.3s ease;
         margin-left:1.3vw;
         
@@ -1561,7 +1537,7 @@ input[type="text"]:focus {
   #pannello-principale-reg {
     display: flex;
     justify-content: center;
-    width: 80%; /* Puoi modificare questa percentuale in base alle tue esigenze */
+    width: 80%; 
     margin: 0 auto;
     padding-top: 3vw;
   }
@@ -1636,7 +1612,7 @@ input[type="text"]:focus {
   #container-destro-reg form,
   #container-destro-reg label,
   #container-destro-reg button {
-    margin-bottom: 15px; /* Aggiunge uno spazio di 15px tra i form, le label e il button */
+    margin-bottom: 15px; 
   }
   
   #ricordamiLabel-reg{
@@ -1717,7 +1693,7 @@ input[type="text"]:focus {
     color: white;
     font-size: 2.5vh;
     font-weight: bold;
-    text-decoration: none; /* Aggiunta per rimuovere sottolineatura */
+    text-decoration: none; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1835,6 +1811,11 @@ input[type="text"]:focus {
 
 
 @media screen and (max-width: 730px) {
+
+    .buttonSubmit{
+        width: 16vw;
+        height: 4vh;
+    }
  
     .image-container-ragComp-acc {
         background-image: url('Images/people.png');
@@ -2007,14 +1988,14 @@ input[type="text"]:focus {
     background-color: #f0f0f0;
 }
 
-/* Opzioni di impostazioni e sicurezza */
+
 .settings-sicu {
     float: right;
-    width: 80%; /* Usa una larghezza relativa */
-    padding: 3%; /* Utilizza padding relativo rispetto alla larghezza */
+    width: 80%; 
+    padding: 3%; 
     padding-left: 10%;
     padding-right: 15%;
-    margin-top: 1%; /* Margine superiore relativo */
+    margin-top: 1%; 
     box-sizing: border-box;
 }
   
@@ -2022,7 +2003,7 @@ input[type="text"]:focus {
     margin-bottom: 20px;
   }
   
-  /* Stile del menu a tendina */
+
   .option-sicu {
     display: flex;
     justify-content: space-between;
@@ -2038,17 +2019,15 @@ input[type="text"]:focus {
     transition: transform 0.3s ease;
   }
   
-  /* Effetto di transizione sull'icona a tendina */
+
   .option-sicu.open img {
     transform: rotate(180deg);
   }
   
-  /* Nascondi il testo del menu a tendina per default */
   .option-sicu span:nth-child(2) {
     display: none;
   }
   
-  /* Stile del testo del menu a tendina quando è aperto */
   .option-sicu.open span:nth-child(2) {
     display: inline-block;
   }
@@ -2056,7 +2035,6 @@ input[type="text"]:focus {
   .wrapper {
     display: flex;
     justify-content: space-between;
-    /* Aggiungi altri stili se necessario */
    }
 
    .settings-sicu{
@@ -2086,14 +2064,12 @@ input[type="text"]:focus {
 .privacy-settings-sicu {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    /* text-align: center; */
 }
 
 .separator-sicu {
     width: 100%;
     border-bottom: 1px solid #ccc;
-    margin-bottom: 20px; /* Spazio tra la linea e gli elementi successivi */
+    margin-bottom: 20px; 
 }
 
 .left-align-sicu {
@@ -2156,7 +2132,7 @@ input[type="text"]:focus {
 .separator-sicu {
     width: 100%;
     border-bottom: 1px solid #ccc;
-    margin-bottom: 20px; /* Spazio tra la linea e gli elementi successivi */
+    margin-bottom: 20px;
 }
 
 #modPass-sicu p {
@@ -2169,11 +2145,11 @@ input[type="text"]:focus {
 }
 
 #modPass-sicu input[type="password"] {
-    border: none; /* Rimuove il bordo */
-    border-bottom: 1px solid black; /* Aggiunge una linea inferiore */
-    background-color: transparent; /* Sfondo trasparente */
-    padding: 5px; /* Spazio interno per migliorare la leggibilità */
-    outline: none; /* Rimuove il bordo quando l'input è in focus */
+    border: none; 
+    border-bottom: 1px solid black; 
+    background-color: transparent;
+    padding: 5px;
+    outline: none; 
     width:70%;
     margin-bottom: 1.5vh;
 }
@@ -2233,7 +2209,7 @@ input[type="text"]:focus {
 .separator-sicu {
     width: 100%;
     border-bottom: 1px solid #ccc;
-    margin-bottom: 20px; /* Spazio tra la linea e gli elementi successivi */
+    margin-bottom: 20px; 
 }
 
 .warning-sicu {
@@ -2271,7 +2247,6 @@ input[type="text"]:focus {
 }
 
 .vertical-center-sicu {
-    /* Impostazioni per centrare verticalmente */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -2362,7 +2337,7 @@ input[type="text"]:focus {
         padding: 0;
         margin: 0;
         display: flex;
-        justify-content: center; /* Centra il menu orizzontale */
+        justify-content: center; 
     }
       
     .menu-orizzontale li {
@@ -2375,7 +2350,7 @@ input[type="text"]:focus {
       
     .menu-orizzontale a {
         display: inline-block;
-        padding: 2vh 3vh; /* Aumenta il padding per rendere i pulsanti più grandi */
+        padding: 2vh 3vh; 
         text-align: center;
         text-decoration: none;
         font-family: 'Roboto', sans-serif;
@@ -2426,13 +2401,13 @@ input[type="text"]:focus {
 }
 
 #error-container h1 {
-    color: #ff0000; /* Rosso */
+    color: #ff0000; 
     font-size: 36px;
     margin-bottom: 10px;
 }
 
 #error-container a {
-    color: #007bff; /* Blu */
+    color: #007bff;
     text-decoration: none;
 }
 
@@ -2512,14 +2487,14 @@ input[type="text"]:focus {
 
 .container_sx-pe {
     align-items: flex-start;
-    flex: 2.5; /* Occupa tutto lo spazio disponibile */
-    padding-left: 4vh; /* Aggiungi padding per spaziare il contenuto */
-    margin-top: 0; /* Riduci o imposta a zero il margine superiore */
+    flex: 2.5; 
+    padding-left: 4vh; 
+    margin-top: 0; 
 }
 
 .containerPrincipale-pe .container_sx-pe .dataEvento-pe{
     font-weight: bold;
-    color: red;
+    color: rgb(45, 45, 45);
 }
 
 .container_dx-pe {
@@ -2527,18 +2502,18 @@ input[type="text"]:focus {
     padding: 20px;
     margin-top: 0;
     display: flex;
-    align-items: center; /* Centra verticalmente il contenuto */
+    align-items: center; 
     justify-content: flex-end;
 }
 
 .container_dx-pe .sonoInteressato-pe {
     margin-right: 2vh;
-    padding: 2vh 4vh; /* Padding interno al pulsante */
-    background-color: #4b4b4b; /* Colore di sfondo del pulsante */
-    color: #fff; /* Colore del testo */
-    border-radius: 1vh; /* Bordo arrotondato */
-    cursor: pointer; /* Cambia il cursore al passaggio del mouse */
-    font-size: 2.6vh; /* Dimensione del carattere */
+    padding: 2vh 4vh; 
+    background-color: #4b4b4b; 
+    color: #fff; 
+    border-radius: 1vh;
+    cursor: pointer;
+    font-size: 2.6vh;
     transition: background-color 0.3s ease;
 }
 
@@ -2560,12 +2535,12 @@ input[type="text"]:focus {
 }
 
 .accountEvento-pe img {
+    margin-left: 2.5vh;
     padding-right: 3vh;
-    width: 12vb;
-    height: 12vb;
+    width: 9vh;
+    height: 9vh;
     border: none;
     object-fit: cover;
-    border-radius: 50%;
 }
 
 .personeInteressate-pe {
@@ -2577,8 +2552,8 @@ input[type="text"]:focus {
 .personeInteressate-pe img {
     margin-left: 2.5vh;
     padding-right: 3.5vh;
-    width: 9vb;
-    height: 9vb;
+    width: 9vh;
+    height: 9vh;
     border: none;
     object-fit: cover;
     border-radius: 50%;
@@ -2599,8 +2574,8 @@ input[type="text"]:focus {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Imposta l'altezza al 100% della viewport */
-    padding-top: 1vh; /* Aggiungi il padding desiderato sopra l'elemento */
+    height: 100vh; 
+    padding-top: 1vh; 
 }
   
 }
@@ -2635,18 +2610,14 @@ input[type="text"]:focus {
 
 #container_risultati_ricerca { 
     width: 100%; 
-    /* text-align: center;  */
     display: flex; 
     flex-wrap:wrap; 
     justify-content: space-between; 
-    /* border-bottom: 3px solid rgb(232, 231, 231);  */
 } 
 
 
 #containerFraseEventiCreati {
-    /* Aligns the text to the center */
     text-align: center;
-    /* Adds some space at the bottom */
     margin-bottom: 20px;
 }
 
@@ -2664,16 +2635,9 @@ input[type="text"]:focus {
 
 
 #container_risultati_ricerca {
-    /* Turns on flexbox */
     display: flex;
-    /* Wraps the items onto the next line if they run out of space */
     flex-wrap: wrap;
-    /* Centers the items horizontally */
     justify-content: center;
-    /* Centers the items vertically */
-    /* align-items: center; */
-    /* Adds some space between the items */
-    /* gap: 20px; */
 }
 
 #pannello-principale-se::before{
@@ -2893,16 +2857,16 @@ label {
     position: relative;
     border: 2px dashed #ccc;
     text-align: center;
-    overflow: hidden; /* Evita che l'immagine vada oltre il bordo del contenitore */
+    overflow: hidden; 
 }
 
 #image-preview {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Assicura che l'immagine copra completamente il contenitore mantenendo le proporzioni */
+    object-fit: cover; 
     display: block;
-    margin: 0 auto; /* Centra l'immagine all'interno del contenitore */
-    visibility: hidden; /* Nasconde l'immagine inizialmente */
+    margin: 0 auto;
+    visibility: hidden; 
     border: none;
 }
 
@@ -3055,17 +3019,6 @@ textarea {
 
 
 
-/*-------------------------------------HOME----------------------------------------------*/
-
-
-
-/*-------------------------------------HOME----------------------------------------------*/
-
-
-
-
-
-
 /*-------------------------------------CHI SIAMO----------------------------------------------*/
  
 
@@ -3134,14 +3087,14 @@ textarea {
     color: white;
 }
 
-/* Opzioni di impostazioni e sicurezza */
+
 .settings-ip {
     float: right;
-    width: 80%; /* Usa una larghezza relativa */
-    padding: 3%; /* Utilizza padding relativo rispetto alla larghezza */
+    width: 80%; 
+    padding: 3%; 
     padding-left: 10%;
     padding-right: 15%;
-    margin-top: 1%; /* Margine superiore relativo */
+    margin-top: 1%;
     box-sizing: border-box;
 }
   
@@ -3150,7 +3103,7 @@ textarea {
     text-align: center;
   }
   
-  /* Stile del menu a tendina */
+ 
   .option-ip {
     display: flex;
     justify-content: space-between;
@@ -3176,18 +3129,14 @@ textarea {
     text-align: center;
 }
 
-  
-  /* Effetto di transizione sull'icona a tendina */
   .option-ip.open img {
     transform: rotate(180deg);
   }
   
-  /* Nascondi il testo del menu a tendina per default */
   .option-ip span:nth-child(2) {
     display: none;
   }
   
-  /* Stile del testo del menu a tendina quando è aperto */
   .option-ip.open span:nth-child(2) {
     display: inline-block;
   }
@@ -3222,7 +3171,7 @@ textarea {
 
 #campoNome-ip {
     width: 100%;
-    margin-bottom: 10px; /* Aggiunge spazio tra il campo Nome e il testo successivo */
+    margin-bottom: 10px; 
 }
 
 #frecciaEdit-ip{
@@ -3263,7 +3212,7 @@ textarea {
 .separator-ip {
     width: 100%;
     border-bottom: 1px solid #ccc;
-    margin-bottom: 20px; /* Spazio tra la linea e gli elementi successivi */
+    margin-bottom: 20px;
 }
 
 .left-align-ip {
@@ -3339,7 +3288,7 @@ textarea {
 .separator-ip {
     width: 100%;
     border-bottom: 1px solid #ccc;
-    margin-bottom: 20px; /* Spazio tra la linea e gli elementi successivi */
+    margin-bottom: 20px; 
 }
 
 #modNick-ip p, #modTel-ip p {
@@ -3385,11 +3334,10 @@ textarea {
 .separator-ip {
     width: 100%;
     border-bottom: 1px solid #ccc;
-    margin-bottom: 20px; /* Spazio tra la linea e gli elementi successivi */
+    margin-bottom: 20px; 
 }
 
 .vertical-center-ip {
-    /* Impostazioni per centrare verticalmente */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -3454,9 +3402,6 @@ textarea {
 #mod-data-ip .salva-ip:hover {
     background-color: rgba(14, 31, 187, 1);
 }
-  
-
-  
 
 @media screen and (max-width: 700px) {
     .settings-ip h2 {
@@ -3521,7 +3466,7 @@ textarea {
     position: fixed;
     z-index: 1;
     top: 0;
-    right: 0; /* Cambia da 'left' a 'right' */
+    right: 0; 
     background-color: #313131;
     overflow-x: hidden;
     transition: 0.5s;
@@ -3546,7 +3491,7 @@ textarea {
     position: absolute;
     top: 0;
     right: 25px;
-    font-size: 8vh; /* Cambia da 6vh a 8vh */
+    font-size: 8vh; 
     margin-left: 50px;
 }
 
@@ -3580,7 +3525,6 @@ textarea {
 
 
 /*-------------------------------------HOME2----------------------------------------------*/
-/* Parte superiore della pagina */
 .home-body-box {
     display: flex;
     justify-content: space-between;
@@ -3630,7 +3574,6 @@ textarea {
     text-align: center;
 }
 
-/* Parte inferiore della pagina */
 .home-consigliati-box {
     height: 100%;
     width: 100%;
@@ -3676,8 +3619,8 @@ textarea {
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    width: 70%; /* Modifica qui per rendere la card più piccola */
-    margin: auto; /* Aggiunto qui per centrare la card */
+    width: 70%; 
+    margin: auto; 
     border: 1px solid #ccc;
     box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
     flex: 0 1 auto;
@@ -3728,18 +3671,18 @@ textarea {
 }
 
 .descrizioneEventiT-home, .descrizioneEventiD-home, .descrizioneEventiG-home {
-    margin: 10px 5%; /* Modificato qui per applicare il margine su entrambi i lati */
+    margin: 10px 5%;
     word-wrap: break-word;
     overflow-wrap: break-word;
-    width: 80%; /* Modificato qui per compensare l'aggiunta del margine */
+    width: 80%; 
 }
 
 .descrizioneEventiG-home, .descrizioneEventiL-home{
     margin: 10px 0;
     word-wrap: break-word;
     overflow-wrap: break-word;
-    width: 80%; /* Aggiunto qui per ridurre la larghezza del box */
-    padding: 0 5%; /* Aggiunto qui per aggiungere un po' di padding */
+    width: 80%; 
+    padding: 0 5%; 
     color: #767676;
 }
 
@@ -3787,7 +3730,7 @@ textarea {
 
     .column-home, .column-home-e {
         width: 100%;
-        margin: 15px 0; /* Modificato per rimuovere il margine laterale */
+        margin: 15px 0; 
     }
 
     .container-home-evidenza-e img, .container-home-evidenza img {
@@ -3795,7 +3738,7 @@ textarea {
     }
 
     .descrizioneEventiT-home, .descrizioneEventiD-home, .descrizioneEventiG-home {
-        width: 90%; /* Modificato per compensare l'aggiunta del margine */
+        width: 90%;
         font-size: large;
     }
 }
@@ -4001,7 +3944,7 @@ textarea {
     font-size: 20px;
     font-weight: bold;
     margin-top: 10px;
-    word-wrap: break-word; /* Add this line */
+    word-wrap: break-word; 
 }
 
 .descrizioneEventiRicD,
@@ -4012,5 +3955,5 @@ textarea {
     font-size: 16px;
     color: #666;
     margin-top: 5px;
-    word-wrap: break-word; /* Add this line */
+    word-wrap: break-word; 
 }

@@ -1,11 +1,9 @@
 <?php
 session_start();
 require_once 'queries.php';
-$template = file_get_contents("../HTML/impoSicu.html");
-echo $template;
-
 include 'user_session.php';
 $accedi_stringa = gestisciAccesso($conn);
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(isset($_SESSION['username']) || isset($_SESSION['email'])) {
@@ -53,15 +51,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if ($stmt->execute()) {
                     echo "Account eliminato con successo.";
                     logout();
-                    header("Location: ../HTML/index.html"); // Reindirizza alla pagina index
                     exit;
                 } else {
                     echo "Errore nell'eliminazione dell'account: " . $stmt->error;
                 }
                 $stmt->close();
-            } elseif (isset($_POST['logout'])) {
+            } elseif (isset($_POST['logout'])) { 
                 logout();
-                header("Location: ../HTML/index.html"); // Reindirizza alla pagina index
                 exit;
             }
         } else {
@@ -72,4 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 $conn->close();
+
+
+include "../HTML/impoSicu.html";
 ?>
