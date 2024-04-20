@@ -70,6 +70,18 @@ function getItalianMonth($month) {
 $data_inizio = strftime("%d", strtotime($row['data_inizio'])) . ' ' . getItalianMonth(strftime("%B", strtotime($row['data_inizio']))) . strftime(" %Y", strtotime($row['data_inizio']));
 $orario_inizio = strftime("%H:%M", strtotime($row['orario_inizio']));
 
+if($row['data_fine'] == null){
+    $data_fine = $data_inizio;
+}else{
+    $data_fine = strftime("%d", strtotime($row['data_fine'])) . ' ' . getItalianMonth(strftime("%B", strtotime($row['data_fine']))) . strftime(" %Y", strtotime($row['data_fine']));
+}
+
+if($row['orario_fine'] == null){
+    $orario_fine = $orario_inizio;
+}else{
+    $orario_fine = strftime("%H:%M", strtotime($row['orario_fine']));
+}
+
 $evento = '<div id="pannello-principale-pe">
     <div class="boxImage-pe">
         <div class="imgEvent-pe">
@@ -79,8 +91,10 @@ $evento = '<div id="pannello-principale-pe">
     <div class="containerPrincipale-pe">
         <div class="container_sx-pe">
             <h2>' . $row['titolo'] . '</h2>
-            <p class="dataEvento-pe"><time datetime="' . $row['data_inizio'] . '">' . $data_inizio . ' alle ore ' . $orario_inizio . '</time></p>
-            <p>' . $row['luogo'] . '</p>
+            <p class="dataEvento-pe">Inizio: <time datetime="' . $row['data_inizio'] . '">' . $data_inizio . ' alle ore ' . $orario_inizio . '</time></p>
+            <p class="dataEvento-pe">Fine: <time datetime="' . $row['data_fine'] . '">' . $data_fine . ' alle ore ' . $orario_fine . '</time></p>
+            <p>Luogo: ' . $row['luogo'] . '</p>
+            <p>Prezzo: ' . $row['costo'] . '</p>
         </div>
         <div class="container_dx-pe">
             <button class="sonoInteressato-pe"> Sono Interessato</button>

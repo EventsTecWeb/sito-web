@@ -233,7 +233,8 @@ input[type="text" ] #searchBar {
   
 /*Modifica e.g. searchBarRegistrati, searchButtonRegistrati */
 #searchButton {
-    margin-left: 5vh;
+    /* margin-left: 0.4vh; */
+    margin-right: 1vh;
     border-radius: 50%; 
     width: 7vh; 
     height: 7vh; 
@@ -255,8 +256,8 @@ input[type="text" ] #searchBar {
     position: relative;
     /* margin-left: -1.5vw; */
     margin-bottom: -6vh;
-    transition: width 0.3s ease, height 0.3s ease;
-    transition: margin-top 0.5s ease, width 0.5s ease, height 0.5s ease; 
+    /* transition: width 0.3s ease, height 0.3s ease;
+    transition: margin-top 0.5s ease, width 0.5s ease, height 0.5s ease;  */
 }
 
 .bottoneStar{
@@ -271,14 +272,22 @@ header:after {
     margin-top: 10px; 
 }
 
-
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 1100px) {
 
     #searchBar {
         width: 40vh; 
         height: 6vh; 
         transition: width 1s ease-in-out;
     }
+}
+
+@media screen and (max-width: 980px) {
+
+    #searchButton, .bottoneStar {
+        height: 5vh;
+        width: 5vh;
+    }
+
 
     ul.linkPagina li {
         white-space: nowrap;
@@ -290,6 +299,7 @@ header:after {
         text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
     }
 }
+
 
 @media screen and (max-width: 830px) {
 
@@ -340,6 +350,11 @@ header:after {
         background-color: rgba(217, 217, 217, 1);
       }  
   
+    .bottoneStar{
+        margin: auto;
+        width: 6vh; 
+        height: 6vh; 
+      }
     /* Modifica e.g. searchBarRegistrati, searchButtonRegistrati */
     #searchButton {
         width: 6vh; 
@@ -723,8 +738,9 @@ input[type="text"]:focus {
 }
   
 
-#settings-sicu h2 {
+.settings-sicu h2 {
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .option-sicu {
@@ -2001,6 +2017,7 @@ input[type="text"]:focus {
   
   .settings-sicu h2 {
     margin-bottom: 20px;
+    text-align: center;
   }
   
 
@@ -3029,6 +3046,11 @@ textarea {
     font-family: 'Poppins', sans-serif;
 }
 
+#chi_siamo_main p{
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
 #chi_siamo_main h2{
         font-size: 2em;
         margin-bottom: 0.5em;
@@ -3659,7 +3681,7 @@ textarea {
 }
 
 .container-home-evidenza {
-    padding: 15px;
+    padding: 5%;
     width: 100%;
     height: auto;
 }
@@ -3671,7 +3693,7 @@ textarea {
 }
 
 .descrizioneEventiT-home, .descrizioneEventiD-home, .descrizioneEventiG-home {
-    margin: 10px 5%;
+    /* margin: 10px 5%; */
     word-wrap: break-word;
     overflow-wrap: break-word;
     width: 80%; 
@@ -3682,7 +3704,7 @@ textarea {
     word-wrap: break-word;
     overflow-wrap: break-word;
     width: 80%; 
-    padding: 0 5%; 
+    /* padding: 0 5%;  */
     color: #767676;
 }
 
@@ -3820,7 +3842,7 @@ textarea {
 
 
 
-/*-------------------------------------TEST Eventi Creati----------------------------------------------*/
+/*-------------------------------------Eventi Creati----------------------------------------------*/
 
 
 
@@ -3905,9 +3927,15 @@ textarea {
 }
 }
 
+/*-------------------------------------Eventi Creati----------------------------------------------*/
 
 
 
+
+
+
+
+/*-------------------------------------Risultati Ricerca----------------------------------------------*/
 
 
 
@@ -3957,3 +3985,14 @@ textarea {
     margin-top: 5px;
     word-wrap: break-word; 
 }
+
+@media screen and (max-width: 1000px) 
+{ 
+    #container_risultati_ricerca { 
+    padding-left: 15%;
+    width: 70%;
+     
+}
+}
+
+/*-------------------------------------Risultati Ricerca----------------------------------------------*/
