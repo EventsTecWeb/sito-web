@@ -165,10 +165,9 @@
                         Quando elimini il tuo account Events, non potrai recuperare i contenuti o le informazioni che hai condiviso su Events. Anche il tuo profilo principale, i tuoi eventi ed i tuoi inviti andranno perduti in via definitiva.
                     </div>
                     <div class="checkbox-sicu">
-                        <input type="checkbox" id="read-sicu" name="read" value="read" onclick="enableButtonElimina()">
-                        <label for="read">Ho letto e desidero continuare</label>
+                        <label for="read"><input type="checkbox" id="read-sicu" name="read" value="read" onchange="document.getElementById('eliminaButton-sicu').disabled = !this.checked;">Ho letto e desidero continuare</label>
                     </div>
-                    <button type="submit" id="eliminaButton-sicu" name="elimina-account">Elimina</button>
+                    <button type="submit" id="eliminaButton-sicu" name="elimina-account" disabled="disabled">Elimina</button>
                 </div>
             </div>
         </form>
@@ -185,11 +184,10 @@
                     <div class="separator-sicu"></div>
                     <p>Vuoi davvero uscire dall'account? Il tuo account verrà disconnesso da questo dispositivo e quindi sarà necessario effettuare nuovamente l’accesso per potervi entrare.</p>
                     <div class="checkbox-sicu">
-                        <input type="checkbox" id="read-sicu" name="read" value="read" onclick="enableButtonEsci()">
-                        <label for="read">Si, voglio uscire dall'account corrente.</label>
+                        <label for="read"><input type="checkbox" id="read-sicu" name="read" value="read" onchange="document.getElementById('esciButton-sicu').disabled = !this.checked;">Si, voglio uscire dall'account corrente.</label>
                     </div>
                     <div class="button-container-sicu">
-                        <button type="submit" id="esciButton-sicu" name="logout">Esci</button>
+                        <button type="submit" id="esciButton-sicu" name="logout" disabled="disabled">Esci</button>
                     </div>
                 </div>
             </div>

@@ -13,26 +13,4 @@ $(document).ready(function(){
         
         $(this).next('.content-sicu').slideToggle("slow");
     });
-});
-
-/*funzione per non permettere di premere il bottone elimina senza aver riempito la checkbox*/
-function enableButtonElimina() {
-    var checkBox = document.getElementById("read-sicu");
-    var button = document.getElementById("eliminaButton-sicu");
-    if (checkBox.checked == true){
-        button.disabled = false;
-    } else {
-        button.disabled = true;
-    }
-}
-
-/*funzione per non permettere di premere il bottone esci senza aver riempito la checkbox*/
-function enableButtonEsci() {
-    var checkBox = document.getElementById("read-sicu");
-    var button = document.getElementById("esciButton-sicu");
-    if (checkBox.checked == true){
-        button.disabled = false;
-    } else {
-        button.disabled = true;
-    }
-}
+});z
