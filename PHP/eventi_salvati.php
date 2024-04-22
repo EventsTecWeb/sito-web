@@ -12,16 +12,16 @@ if (isset($_SESSION['user_id'])) {
     }else{
         while($evento = $ris->fetch_assoc()){
             $eventiSalvati.='<div class="cardSalvato-es" id="event4Salvato-es">
-                                <div class="card-body-salvati-es">
-                                    <a href="link_per_natale_a_roma.html" class="NomiLinkSalvati-es">
-                                        <h3>' . $evento["titolo"] . '</h3>
-                                    </a>
-                                    <p class="infoEventoSalvato-es">' . $evento["orario_inizio"] . ' – ' . $evento["luogo"] . '</p>
-                                    <p class="genereEventoSalvato-es">' . $evento["categoria"] . '</p>
-                                    <a href="" class="container-immagini-eventi-es">
+                                <a class="a_evento" href="../PHP/pageEvent.php" alt="premi per accedere alla pagina dell&#39evento">
+                                    <div class="card-body-salvati-es">
                                         <img src="' . $evento["url_immagine"] . '" class="container-immagini-eventi-es">
-                                    </a>
-                                </div>
+                                        <div class="NomiLinkSalvati-es">
+                                            <h3>' . $evento["titolo"] . '</h3>
+                                        </div>
+                                        <p class="infoEventoSalvato-es">' . $evento["orario_inizio"] . ' – ' . $evento["luogo"] . '</p>
+                                        <p class="genereEventoSalvato-es">' . $evento["categoria"] . '</p>
+                                    </div>
+                                </a>
                             </div>';
         }
     }

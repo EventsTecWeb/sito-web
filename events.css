@@ -318,11 +318,16 @@ header:after {
         position: relative; 
     }
 
-    .wrapper {
+    .wrapper, .wrapper_eventi {
         padding-top: 3vh;
         display: flex;
         flex-direction: column; 
         align-items: center; 
+    }
+    
+    .wrapper_eventi{
+        max-width: 75%;
+        margin-left: 12%;
     }
     
     .header-items {
@@ -646,7 +651,7 @@ input[type="text"]:focus {
     display: none;
 }
 
-.wrapper {
+.wrapper, .wrapper_eventi {
     display: flex;
     justify-content: space-between;
 }
@@ -1432,11 +1437,16 @@ input[type="text"]:focus {
 
 @media screen and (max-width: 730px) {
 
-    .wrapper {
+    .wrapper, .wrapper_eventi {
         padding-top: 3vh;
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    .wrapper_eventi{
+        max-width: 75%;
+        margin-left: 12%;
     }
 
     .rowProfiloEv .containerProfiloEv{
@@ -1455,7 +1465,7 @@ input[type="text"]:focus {
         white-space: nowrap;
     }
     
-    .wrapper #menuleft {
+    .wrapper #menuleft, .wrapper_eventi #menuleft {
         display: none;
     }
 
@@ -2049,7 +2059,7 @@ input[type="text"]:focus {
     display: inline-block;
   }
 
-  .wrapper {
+  .wrapper, .wrapper_eventi {
     display: flex;
     justify-content: space-between;
    }
@@ -2331,7 +2341,7 @@ input[type="text"]:focus {
 
 @media screen and (max-width: 830px) {
 
-    .wrapper #menuleft {
+    .wrapper #menuleft, .wrapper_eventi #menuleft {
         display: none;
     }
       
@@ -2381,7 +2391,7 @@ input[type="text"]:focus {
     }
       
     .menu-orizzontale a:hover {
-        background-color: black;
+        background-color: #818181;
         color: white;
     }
       
@@ -3996,3 +4006,15 @@ textarea {
 }
 
 /*-------------------------------------Risultati Ricerca----------------------------------------------*/
+
+
+.a_evento{
+    text-decoration: none;
+    color: black;
+}
+
+
+#mo-pulsanteSingolo{
+    color: white;
+    background-color: #454545;
+}

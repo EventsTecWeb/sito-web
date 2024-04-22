@@ -71,7 +71,14 @@ function getEventi($conn) {
 function getEventiByTitolo($conn, $titolo)
 {
     // Preparo la per selezionare gli eventi con un determinato titolo
-    $queryEventi = "SELECT * FROM Eventi WHERE titolo LIKE ?";
+    $queryEventi = "SELECT * 
+    FROM Eventi 
+    WHERE titolo LIKE ?
+    AND creatore_id IN (
+        SELECT utente_id
+        FROM utenti
+        WHERE privacy = 'Pubblico' OR privacy IS NULL
+        )";
     $stmt = $conn->prepare($queryEventi);
 
     $titolo_like = "%" . $titolo . "%"; 
@@ -256,7 +263,15 @@ function updateUserPhone($conn, $userId, $newPhone) {
 
 function getProssimiEventi($conn) {
     // Prepariamo la query SQL per selezionare i prossimi 12 eventi
-    $query = "SELECT * FROM Eventi WHERE data_inizio > NOW() ORDER BY data_inizio ASC LIMIT 12";
+    $query = "SELECT * 
+    FROM Eventi 
+    WHERE data_inizio > NOW()
+        AND creatore_id IN (
+            SELECT utente_id
+            FROM utenti
+            WHERE privacy = 'Pubblico' OR privacy IS NULL
+            ) 
+    ORDER BY data_inizio ASC LIMIT 12";
     $result = $conn->query($query);
     
     // Verifichiamo se la query ha prodotto risultati

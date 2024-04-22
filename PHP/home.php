@@ -3,7 +3,7 @@ require_once 'queries.php';
 $template = file_get_contents("../HTML/home.html");
 
 $errore = "";
-$results = getEventiByCategoria($conn, "Teatro");
+$results = getEventiByCategoria($conn, "");
 
 if ($results!=null) {
     $row = $results->fetch_assoc(); // Fetch the row
@@ -22,13 +22,15 @@ if ($results!=null) {
     header('Location:404.html');
 }
 
-$evidenza='<div class="column-home-e">
-                <div class="container-home-evidenza-e">
-                <img src="'.$row["url_immagine"].'" alt="music event">
-                <h4 class="descrizioneEventiT-home">'.$row["titolo"].'</h4>
-                    <time class="descrizioneEventiD-home" datetime="'.$row["data_inizio"].' - '.$row["luogo"].'</time>
-                    <p class="descrizioneEventiD-home">'.$row["categoria"].'</p>
-                </div>
+$evidenza=' <div class="column-home-e">
+                <a class="a_evento" href="../PHP/pageEvent.php" alt="premi per accedere alla pagina dell&#39evento">
+                    <div class="container-home-evidenza-e">
+                    <img src="'.$row["url_immagine"].'" alt="music event">
+                    <h4 class="descrizioneEventiT-home">'.$row["titolo"].'</h4>
+                        <time class="descrizioneEventiD-home" datetime="'.$row["data_inizio"].' - '.$row["luogo"].'</time>
+                        <p class="descrizioneEventiD-home">'.$row["categoria"].'</p>
+                    </div>
+                </a>
             </div>';
 
 
@@ -40,13 +42,15 @@ if (!is_null($pEventi)) {
     foreach ($pEventi as $evento) {
 		$prossimiEventi.=
 		'<div class="column-home">
-			<div class="container-home-evidenza">
-				<img src="'.$evento["url_immagine"].'" alt="music event">
-				<h4 class="descrizioneEventiT-home">'.$evento["titolo"].'</h4>
-				<time class="descrizioneEventiD-home" datetime="2023-12-11 21:00">'.$evento["data_inizio"].'</time>
-				<p class="descrizioneEventiL-home">'.$evento["luogo"].'</p>
-				<p class="descrizioneEventiG-home">'.$evento["categoria"].'</p>
-			</div>
+            <a class="a_evento" href="../PHP/pageEvent.php" alt="premi per accedere alla pagina dell&#39evento">
+                <div class="container-home-evidenza">
+                    <img src="'.$evento["url_immagine"].'" alt="music event">
+                    <h4 class="descrizioneEventiT-home">'.$evento["titolo"].'</h4>
+                    <time class="descrizioneEventiD-home" datetime="2023-12-11 21:00">'.$evento["data_inizio"].'</time>
+                    <p class="descrizioneEventiL-home">'.$evento["luogo"].'</p>
+                    <p class="descrizioneEventiG-home">'.$evento["categoria"].'</p>
+                </div>
+            </a>
 		</div>';
     }
 } else {
