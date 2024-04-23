@@ -1,4 +1,4 @@
 <?php
-$template = file_get_contents('../html/404.html');
+$template = file_get_contents('../html/error404.html');
 echo $template;
 ?>

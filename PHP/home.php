@@ -1,4 +1,14 @@
 <?php
+
+session_start();
+
+// Verifica se l'utente ha effettuato il login
+if (!isset($_SESSION['username']) && !isset($_SESSION['email'])) {
+    // Reindirizza l'utente alla pagina di accesso non autorizzato (pagina X)
+    header("Location: pagina_non_autorizzata.php");
+    exit(); // Assicura che il codice successivo non venga eseguito
+}
+
 require_once 'queries.php';
 $template = file_get_contents("../HTML/home.html");
 
@@ -23,7 +33,7 @@ if ($results!=null) {
 }
 
 $evidenza=' <div class="column-home-e">
-                <a class="a_evento" href="../PHP/pageEvent.php" alt="premi per accedere alla pagina dell&#39evento">
+<a class="a_evento" href="../PHP/pageEvent.php?evento='.$row["evento_id"].'" alt="premi per accedere alla pagina dell&#39evento">
                     <div class="container-home-evidenza-e">
                     <img src="'.$row["url_immagine"].'" alt="music event">
                     <h4 class="descrizioneEventiT-home">'.$row["titolo"].'</h4>
@@ -42,7 +52,7 @@ if (!is_null($pEventi)) {
     foreach ($pEventi as $evento) {
 		$prossimiEventi.=
 		'<div class="column-home">
-            <a class="a_evento" href="../PHP/pageEvent.php" alt="premi per accedere alla pagina dell&#39evento">
+        <a class="a_evento" href="../PHP/pageEvent.php?evento='.$evento["evento_id"].'" alt="premi per accedere alla pagina dell&#39evento">
                 <div class="container-home-evidenza">
                     <img src="'.$evento["url_immagine"].'" alt="music event">
                     <h4 class="descrizioneEventiT-home">'.$evento["titolo"].'</h4>

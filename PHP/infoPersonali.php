@@ -2,6 +2,14 @@
 require_once 'queries.php';
 session_start();
 
+// Verifica se l'utente ha effettuato il login
+if (!isset($_SESSION['username']) && !isset($_SESSION['email'])) {
+    // Reindirizza l'utente alla pagina di accesso non autorizzato (pagina X)
+    header("Location: ../HTML/index.html");
+    exit(); // Assicura che il codice successivo non venga eseguito
+}
+
+
 $template = file_get_contents('../HTML/infoPersonali.html');
 
 function formatDataNascita($data_nascita) {
@@ -33,15 +41,11 @@ if(isset($_SESSION['username']) || isset($_SESSION['email'])) {
             if($existingUser) {
                 // Messaggio di errore
                 echo "<script>alert('Questa email è già associata a un altro utente. Si prega di scegliere un\'altra email.');</script>";
-                exit(); // Termina lo script per evitare ulteriori operazioni
+            }else{
+                updateUserEmail($conn, $_SESSION['user_id'], $newEmail);        
+                $_SESSION["email"] = $newEmail;
             }
         }
-    
-        // Chiama la funzione per aggiornare l'email dell'utente nel database
-        updateUserEmail($conn, $_SESSION['user_id'], $newEmail);
-        
-        // Aggiorna anche l'email nella sessione per mantenerla coerente
-        $_SESSION["email"] = $newEmail;
     }
     if(isset($_POST["telefono"])){
         updateUserPhone($conn, $_SESSION['user_id'], clearInput($_POST["telefono"]));
@@ -50,7 +54,19 @@ if(isset($_SESSION['username']) || isset($_SESSION['email'])) {
         updateUserGender($conn, $_SESSION['user_id'], clearInput($_POST["genere"]));
     }
     if(isset($_POST["username"])){
-        updateUserUsername($conn, $_SESSION['user_id'], clearInput($_POST["username"]));
+        // Ottieni la nuova email dall'input del modulo
+        $newUsername = clearInput($_POST["username"]);
+
+        $currentUserEmail = isset($_SESSION['email']) ? $_SESSION['email'] : $_SESSION['username'];
+        if ($newUsername !== $currentUserEmail) {
+            $existingUser = getUserByMailOrUsername($conn, $newUsername);
+            if($existingUser) {
+                echo "<script>alert('Questo username è già associato a un altro utente. Si prega di scegliere un\'altro username.');</script>";
+            }else{
+                updateUserUsername($conn, $_SESSION['user_id'], clearInput($_POST["username"]));
+                $_SESSION["username"] = $newUsername;
+            }
+        }
     }
     if(isset($_POST["nome"]) && isset($_POST["cognome"])) {
         $nome = clearInput($_POST["nome"]);

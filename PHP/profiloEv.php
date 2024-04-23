@@ -1,5 +1,13 @@
 <?php
 session_start();
+
+// Verifica se l'utente ha effettuato il login
+if (!isset($_SESSION['username']) && !isset($_SESSION['email'])) {
+    // Reindirizza l'utente alla pagina di accesso non autorizzato (pagina X)
+    header("Location: ../HTML/index.html");
+    exit(); // Assicura che il codice successivo non venga eseguito
+}
+
 require_once 'queries.php';
 $eventiCreati = "";
 
@@ -14,7 +22,7 @@ if (isset($_SESSION['user_id'])) {
         while($evento = $ris->fetch_assoc()){
             $eventiCreati .= '<div class="cardCreato-ev" id="event2Salvato-es">
                                 <div class="card-body-creati-ev">
-                                <a class="a_evento" href="../PHP/pageEvent.php" alt="premi per accedere alla pagina dell&#39evento">
+                                <a class="a_evento" href="../PHP/pageEvent.php?evento='.$evento["evento_id"].'" alt="premi per accedere alla pagina dell&#39evento">
                                     <img src="' . $evento["url_immagine"] . '" class="container-immagini-eventi-ev">
                                     <div class="NomiLinkCreati-ev">
                                         <h3>'.$evento["titolo"].'</h3>

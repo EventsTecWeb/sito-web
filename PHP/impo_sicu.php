@@ -1,5 +1,14 @@
 <?php
 session_start();
+
+// Verifica se l'utente ha effettuato il login
+if (!isset($_SESSION['username']) && !isset($_SESSION['email'])) {
+    // Reindirizza l'utente alla pagina di accesso non autorizzato (pagina X)
+    header("Location: ../HTML/index.html");
+    exit(); // Assicura che il codice successivo non venga eseguito
+}
+
+
 require_once 'queries.php';
 include 'user_session.php';
 $accedi_stringa = gestisciAccesso($conn);
@@ -43,20 +52,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 } else {
                     echo "Le password non corrispondono.";
                 }
-            } elseif (isset($_POST['elimina-account'])) {
-                // Effettua l'eliminazione dell'account
-                $sql = "DELETE FROM Utenti WHERE utente_id = ?";
-                $stmt = $conn->prepare($sql);
-                $stmt->bind_param("i", $userId);
-                if ($stmt->execute()) {
-                    echo "Account eliminato con successo.";
-                    logout();
-                    exit;
+            } if (isset($_POST['elimina-account'])) {
+                // Effettua l'eliminazione degli eventi associati all'account
+                $sql_elimina_eventi = "DELETE FROM eventi WHERE creatore_id = ?";
+                $stmt_elimina_eventi = $conn->prepare($sql_elimina_eventi); // Prepara lo statement per l'eliminazione degli eventi
+                $stmt_elimina_eventi->bind_param("i", $userId); // Bind dei parametri
+                if ($stmt_elimina_eventi->execute()) { // Esegui la query per eliminare gli eventi
+                    // Se l'eliminazione degli eventi ha successo, procedi con l'eliminazione dell'account
+                    $sql_elimina_utente = "DELETE FROM Utenti WHERE utente_id = ?";
+                    $stmt_elimina_utente = $conn->prepare($sql_elimina_utente); // Prepara lo statement per l'eliminazione dell'account
+                    $stmt_elimina_utente->bind_param("i", $userId); // Bind dei parametri
+                    if ($stmt_elimina_utente->execute()) { // Esegui la query per eliminare l'account
+                        echo "Account eliminato con successo.";
+                        logout();
+                        exit;
+                    } else {
+                        echo "Errore nell'eliminazione dell'account: " . $stmt_elimina_utente->error;
+                    }
+                    $stmt_elimina_utente->close(); // Chiudi lo statement per l'eliminazione dell'account
                 } else {
-                    echo "Errore nell'eliminazione dell'account: " . $stmt->error;
+                    echo "Errore nell'eliminazione degli eventi: " . $stmt_elimina_eventi->error;
                 }
-                $stmt->close();
-            } elseif (isset($_POST['logout'])) { 
+                $stmt_elimina_eventi->close(); // Chiudi lo statement per l'eliminazione degli eventi
+            }
+             elseif (isset($_POST['logout'])) { 
                 logout();
                 exit;
             }

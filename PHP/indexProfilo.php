@@ -2,6 +2,13 @@
 require_once 'queries.php';
 session_start();
 
+// Verifica se l'utente ha effettuato il login
+if (!isset($_SESSION['username']) && !isset($_SESSION['email'])) {
+    // Reindirizza l'utente alla pagina di accesso non autorizzato (pagina X)
+    header("Location: ../HTML/index.html");
+    exit(); // Assicura che il codice successivo non venga eseguito
+}
+
 error_reporting(E_ERROR | E_PARSE);
 
 $template = file_get_contents('../HTML/indexProfilo.html');

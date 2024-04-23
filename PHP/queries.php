@@ -36,7 +36,7 @@ function logout() {
     }
 
     session_destroy();
-    header("Location: ../PHP/accessNav.php");
+    header("Location: ../HTML/index.html");
     exit();
 }
 
@@ -405,13 +405,39 @@ function getPermessiByUsername($conn, $user){
 }
 
 
-function effettuaRegistrazione($conn, $email, $username, $nome, $cognome, $password,$genere){
-    $sql = "INSERT INTO Utenti (nome, cognome, genere, username, permessi, email, password) VALUES (?, ?, ?, ?, 0, ?, ?)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssssss", $nome, $cognome, $genere, $username,$email, $password);
-    $stmt->execute();
-	$result=$stmt->get_result();
-    $stmt->close();
-	return $result;
+function effettuaRegistrazione($conn, $email, $username, $nome, $cognome, $password, $genere) {
+    // Verifica se l'email o l'username sono già presenti nel database
+    $queryCheck = "SELECT utente_id FROM Utenti WHERE email = ? OR username = ?";
+    $stmtCheck = $conn->prepare($queryCheck);
+    $stmtCheck->bind_param("ss", $email, $username);
+    $stmtCheck->execute();
+    $resultCheck = $stmtCheck->get_result();
+
+    // Se l'email o l'username sono già presenti, restituisci un messaggio di errore
+    if ($resultCheck->num_rows > 0) {
+        return "Email o username già utilizzati.";
+    } else {
+        // Se l'email e l'username non sono già presenti, procedi con l'inserimento dei dati
+        $sql = "INSERT INTO Utenti (nome, cognome, genere, username, permessi, email, password) VALUES (?, ?, ?, ?, 0, ?, ?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ssssss", $nome, $cognome, $genere, $username, $email, $password);
+        $stmt->execute();
+        $stmt->close();
+        return null; // Ritorna null se la registrazione è avvenuta con successo
+    }
 }
 
+function getUsernameById($conn, $userId) {
+    $query = "SELECT username FROM Utenti WHERE utente_id = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("i", $userId);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows == 1) {
+        $row = $result->fetch_assoc();
+        return $row['username'];
+    } else {
+        return false;
+    }
+}

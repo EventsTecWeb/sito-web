@@ -2,21 +2,22 @@
 require_once 'queries.php';
 session_start();
 
-function sanitize($input) {
-    return $input;
+// Verifica se l'utente ha effettuato il login
+if (!isset($_SESSION['username']) && !isset($_SESSION['email'])) {
+    // Reindirizza l'utente alla pagina di accesso non autorizzato (pagina X)
+    header("Location: ../HTML/index.html");
+    exit(); // Assicura che il codice successivo non venga eseguito
 }
 
-// Handle POST request
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_SESSION['username']) || isset($_SESSION['email'])) {
-        $user = isset($_SESSION['username']) ? $_SESSION['username'] : $_SESSION['email'];
-        $userData = getUserByMailOrUsername($conn, sanitize($user));
-        if ($userData) {
-            $userId = $userData['utente_id'];
-            $profile_image_path = getProfilePhoto($conn, $userId);
-            if (!$profile_image_path) {
-                $profile_image_path = '../Images/people_icon_small.png';
-            }
+
+if (isset($_SESSION['username']) || isset($_SESSION['email'])) {
+    $user = isset($_SESSION['username']) ? $_SESSION['username'] : $_SESSION['email'];
+    $userData = getUserByMailOrUsername($conn, $user);
+    if ($userData) {
+        $userId = $userData['utente_id'];
+        $profile_image_path = getProfilePhoto($conn, $userId);
+        if (!$profile_image_path) {
+            $profile_image_path = '../Images/people_icon_small.png';
         }
     }
 }
@@ -29,21 +30,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "ID dell'evento non specificato.";
     exit;
 }*/
-$evento_id=1;
+$evento_id = $_GET["evento"];
 
 $template = file_get_contents("../HTML/pageEvent.html");
 
-$row = getEventiByIdQuery($conn, sanitize($evento_id));
+$row = getEventiByIdQuery($conn, $evento_id);
 
-$resultPartecipanti = getPartecipantiEvento($conn, sanitize($evento_id));
-$frase_partecipanti = "Interessato a ";
+$resultPartecipanti = getPartecipantiEvento($conn, $evento_id);
+$frase_partecipanti = "Interessa a ";
 if ($resultPartecipanti && $resultPartecipanti->num_rows > 0) {
     while ($partecipante = $resultPartecipanti->fetch_assoc()) {
         $frase_partecipanti .= $partecipante['nome'] . " " . $partecipante['cognome'] . ", ";
     }
     $frase_partecipanti = rtrim($frase_partecipanti, ", ") . ".";
 } else {
-    $frase_partecipanti .= "nessuno al momento.";
+    $frase_partecipanti .= ": Nessuno.";
 }
 
 $mesi_italiano = array(
@@ -82,6 +83,14 @@ if($row['orario_fine'] == null){
     $orario_fine = strftime("%H:%M", strtotime($row['orario_fine']));
 }
 
+$username_creatore = getUsernameById($conn, $row['creatore_id']);
+
+$is_admin = 0;
+
+if ($userData) {
+    $is_admin = $userData['permessi'];
+}
+
 $evento = '<div id="pannello-principale-pe">
     <div class="boxImage-pe">
         <div class="imgEvent-pe">
@@ -97,15 +106,17 @@ $evento = '<div id="pannello-principale-pe">
             <p>Prezzo: ' . $row['costo'] . '</p>
         </div>
         <div class="container_dx-pe">
-            <button class="sonoInteressato-pe"> Sono Interessato</button>
-            <button class="sonoInteressato-pe"> Elimina</button>
-        </div>
+            <button class="sonoInteressato-pe"> Sono Interessato</button>';
+            if ($is_admin == 1) {
+                $evento .= '<button class="sonoInteressato-pe">Elimina</button>';
+            }
+$evento .= '</div>
     </div>
     <div class="containerSecondario-pe">
         <h2><span style="font-weight:bold;">Dettagli</span></h2>
         <div class="accountEvento-pe">
             <img src="../Images/idea.png" alt="Account">
-            <p class="accountName-pe">Evento di <span style="font-weight:bold;">' . $row['creatore_id'] . '</span></p>
+            <p class="accountName-pe">Evento di <span style="font-weight:bold;">' . $username_creatore . '</span></p>
         </div>
         <div class="personeInteressate-pe">
             <img src="../Images/people_icon_small.png" alt="Immagine persone interessate">
