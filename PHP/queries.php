@@ -11,8 +11,8 @@ function clearInput($value) {
 function getPartecipantiEvento($conn, $evento_id) {
     $sql = "SELECT Utenti.nome, Utenti.cognome 
             FROM Utenti
-            INNER JOIN Partecipazioni ON Utenti.utente_id = Partecipazioni.utente_id
-            WHERE Partecipazioni.evento_id = ?";
+            INNER JOIN eventisalvati ON Utenti.utente_id = eventisalvati.utente_id
+            WHERE eventisalvati.evento_id = ?";
 
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $evento_id);
@@ -443,9 +443,54 @@ function getUsernameById($conn, $userId) {
 }
 
 function salvaEvento($conn, $userid, $evento_id) {
+    $risultati = getEventiSalvati($conn, $userid);
+    foreach($risultati as $res){
+        if($evento_id==$res["evento_id"]){
+            return false;
+            exit();
+        }
+    }
     $query = "INSERT INTO eventisalvati (utente_id, evento_id) VALUES (?, ?)";
     $stmt = $conn->prepare($query);
     $stmt->bind_param("ii", $userid, $evento_id);
     $stmt->execute();
-    $stmt->close();
+    if ($stmt->affected_rows > 0) {
+        return true;
+    } else {
+        return false;
+    }
+
+    
+}
+
+function eliminaEvento($conn, $evento){
+    $conn->begin_transaction();
+    try {
+        // First delete from saved events
+        $query = "DELETE FROM eventisalvati WHERE evento_id = ?";
+        $stmt = $conn->prepare($query);
+        if (!$stmt) throw new Exception("Prepare failed: " . $conn->error);
+        $stmt->bind_param("i", $evento);
+        $stmt->execute();
+        if ($stmt->affected_rows === 0) {
+            // Log or handle the fact that no rows were affected in eventisalvati
+        }
+
+        // Then delete from main events table
+        $query = "DELETE FROM eventi WHERE evento_id = ?";
+        $stmt = $conn->prepare($query);
+        if (!$stmt) throw new Exception("Prepare failed: " . $conn->error);
+        $stmt->bind_param("i", $evento);
+        $stmt->execute();
+        if ($stmt->affected_rows > 0) {
+            $conn->commit();
+            return true;
+        } else {
+            throw new Exception("No rows affected in eventi");
+        }
+    } catch (Exception $e) {
+        $conn->rollback();
+        error_log($e->getMessage()); // Optionally log the error
+        return false;
+    }
 }

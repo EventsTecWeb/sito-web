@@ -107,11 +107,11 @@ $evento = '<div id="pannello-principale-pe">
             <p>Prezzo: ' . $row['costo'] . '</p>
         </div>
         <div class="container_dx-pe">
-            <form method="post" action="pageEvent.php">
+            <form method="post" action="pageEvent.php?evento='.$row["evento_id"].'"">
                 <button id="salvaEventoButton" class="sonoInteressato-pe" name="salva_evento" value="' . $row['evento_id'] . '">Sono Interessato</button>
             </form>';
             if ($is_admin == 1) {
-                $evento .= '<button class="sonoInteressato-pe">Elimina</button>';
+                $evento .= '<form method="POST" action="pageEvent.php?evento='.$row["evento_id"].'"><button name="elimina" class="sonoInteressato-pe">Elimina</button></form>';
             }
 $evento .= '</div>
     </div>
@@ -129,9 +129,6 @@ $evento .= '</div>
     </div>
 </div>';
 
-$template = str_replace('{EVENTO}', $evento, $template);
-echo $template;
-
 if (isset($_POST['salva_evento'])) {
     $evento_id = $_POST['salva_evento'];
     $userid = $_SESSION['user_id'];
@@ -144,6 +141,18 @@ if (isset($_POST['salva_evento'])) {
         echo "Si è verificato un errore durante il salvataggio dell'evento.";
     }
 }
+
+if (isset($_POST['elimina'])) {
+    if(eliminaEvento($conn, $_GET['evento'])){
+        header("Location: ../php/home.php");
+        exit();
+    }else{
+        echo "Si è verificato un errore durante l`eliminazione dell'evento.";
+    }
+}
+
+$template = str_replace('{EVENTO}', $evento, $template);
+echo $template;
 
 $conn->close();
 ?>
