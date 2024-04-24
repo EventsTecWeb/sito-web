@@ -494,3 +494,31 @@ function eliminaEvento($conn, $evento){
         return false;
     }
 }
+
+function interessato($conn, $user, $evento) {
+    $query = "SELECT 1 FROM eventisalvati WHERE evento_id = ? AND utente_id = ?";
+    $stmt = $conn->prepare($query);
+    if (!$stmt) throw new Exception("Prepare failed: " . $conn->error);
+    $stmt->bind_param("ii", $evento, $user);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    if ($result->num_rows > 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+function nonInteressato($conn, $evento , $user) {
+    $query = "DELETE FROM eventisalvati WHERE evento_id = ? AND utente_id = ?";
+    $stmt = $conn->prepare($query);
+    if (!$stmt) throw new Exception("Prepare failed: " . $conn->error);
+    $stmt->bind_param("ii", $evento, $user);
+    $stmt->execute();
+    if ($stmt->affected_rows === 0) {
+        return false;
+    } else {
+        return true;
+    }
+}

@@ -22,6 +22,32 @@ if (isset($_SESSION['username']) || isset($_SESSION['email'])) {
     }
 }
 
+if (isset($_POST['salva_evento'])) {
+    $evento_id = $_POST['salva_evento'];
+    $userid = $_SESSION['user_id'];
+    if (salvaEvento($conn, $userid, $evento_id)) {
+        echo "L'evento è stato salvato con successo.";
+    } else {
+        echo "Si è verificato un errore durante il salvataggio dell'evento.";
+    }
+}
+
+if (isset($_POST['elimina'])) {
+    if(eliminaEvento($conn, $_GET['evento'])){
+        header("Location: ../php/home.php");
+        exit();
+    }else{
+        echo "Si è verificato un errore durante l`eliminazione dell'evento.";
+    }
+}
+
+if (isset($_POST['disdici_evento'])) {
+    if(nonInteressato($conn, $_GET['evento'], $_SESSION['user_id'])) {
+        echo "Evento tolto dagli eventi salvati";
+    } else {
+        echo "Si è verificato un errore durante la rimozione dell'evento dagli eventi salvati";
+    }
+}
 
 // TODO: DA IMPLEMENTARE CON IL COLLEGAMENTO DELLE PAGINE
 /*if (isset($_GET['evento_id'])) {
@@ -106,10 +132,16 @@ $evento = '<div id="pannello-principale-pe">
             <p>Luogo: ' . $row['luogo'] . '</p>
             <p>Prezzo: ' . $row['costo'] . '</p>
         </div>
-        <div class="container_dx-pe">
-            <form method="post" action="pageEvent.php?evento='.$row["evento_id"].'"">
+        <div class="container_dx-pe">';
+            if (interessato($conn, $_SESSION['user_id'], $_GET['evento'])) {
+                $evento .= '<form method="post" action="pageEvent.php?evento='.$row["evento_id"].'"">
+                <button id="salvaEventoButton" class="sonoInteressato-pe" name="disdici_evento" value="' . $row['evento_id'] . '">Non sono interessato</button>
+            </form>';
+            }else{
+                $evento .= '<form method="post" action="pageEvent.php?evento='.$row["evento_id"].'"">
                 <button id="salvaEventoButton" class="sonoInteressato-pe" name="salva_evento" value="' . $row['evento_id'] . '">Sono Interessato</button>
             </form>';
+            }
             if ($is_admin == 1) {
                 $evento .= '<form method="POST" action="pageEvent.php?evento='.$row["evento_id"].'"><button name="elimina" class="sonoInteressato-pe">Elimina</button></form>';
             }
@@ -128,28 +160,6 @@ $evento .= '</div>
         <div class="descrizione-pe"><span style="font-weight:bold;">Descrizione: </span>' . $row['descrizione'] . '</div>
     </div>
 </div>';
-
-if (isset($_POST['salva_evento'])) {
-    $evento_id = $_POST['salva_evento'];
-    $userid = $_SESSION['user_id'];
-    if (salvaEvento($conn, $userid, $evento_id)) {
-        echo "L'evento è stato salvato con successo.";
-        // Fai una reindirizzazione dopo aver salvato l'evento
-        header("Location: ../php/home.php");
-        exit();
-    } else {
-        echo "Si è verificato un errore durante il salvataggio dell'evento.";
-    }
-}
-
-if (isset($_POST['elimina'])) {
-    if(eliminaEvento($conn, $_GET['evento'])){
-        header("Location: ../php/home.php");
-        exit();
-    }else{
-        echo "Si è verificato un errore durante l`eliminazione dell'evento.";
-    }
-}
 
 $template = str_replace('{EVENTO}', $evento, $template);
 echo $template;
