@@ -441,3 +441,11 @@ function getUsernameById($conn, $userId) {
         return false;
     }
 }
+
+function salvaEvento($conn, $userid, $evento_id) {
+    $query = "INSERT INTO eventisalvati (utente_id, evento_id) VALUES (?, ?)";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("ii", $userid, $evento_id);
+    $stmt->execute();
+    $stmt->close();
+}

@@ -22,6 +22,7 @@ if (isset($_SESSION['username']) || isset($_SESSION['email'])) {
     }
 }
 
+
 // TODO: DA IMPLEMENTARE CON IL COLLEGAMENTO DELLE PAGINE
 /*if (isset($_GET['evento_id'])) {
     $evento_id = $_GET['evento_id'];
@@ -106,7 +107,9 @@ $evento = '<div id="pannello-principale-pe">
             <p>Prezzo: ' . $row['costo'] . '</p>
         </div>
         <div class="container_dx-pe">
-            <button class="sonoInteressato-pe"> Sono Interessato</button>';
+            <form method="post" action="pageEvent.php">
+                <button id="salvaEventoButton" class="sonoInteressato-pe" name="salva_evento" value="' . $row['evento_id'] . '">Sono Interessato</button>
+            </form>';
             if ($is_admin == 1) {
                 $evento .= '<button class="sonoInteressato-pe">Elimina</button>';
             }
@@ -128,6 +131,19 @@ $evento .= '</div>
 
 $template = str_replace('{EVENTO}', $evento, $template);
 echo $template;
+
+if (isset($_POST['salva_evento'])) {
+    $evento_id = $_POST['salva_evento'];
+    $userid = $_SESSION['user_id'];
+    if (salvaEvento($conn, $userid, $evento_id)) {
+        echo "L'evento è stato salvato con successo.";
+        // Fai una reindirizzazione dopo aver salvato l'evento
+        header("Location: ../php/home.php");
+        exit();
+    } else {
+        echo "Si è verificato un errore durante il salvataggio dell'evento.";
+    }
+}
 
 $conn->close();
 ?>
