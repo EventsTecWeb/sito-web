@@ -1,6 +1,11 @@
 <?php
 session_start();
 
+$template = file_get_contents("../HTML/impoSicu.html");
+
+
+$txt_error = "";
+
 // Verifica se l'utente ha effettuato il login
 if (!isset($_SESSION['username']) && !isset($_SESSION['email'])) {
     // Reindirizza l'utente alla pagina di accesso non autorizzato (pagina X)
@@ -31,9 +36,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $stmt = $conn->prepare($sql);
                 $stmt->bind_param("si", $privacy, $userId);
                 if ($stmt->execute()) {
-                    echo "Impostazioni di privacy aggiornate con successo.";
+                    // echo "Impostazioni di privacy aggiornate con successo.";
+                    $txt_error = "Impostazioni di privacy aggiornate con successo.";
                 } else {
-                    echo "Errore nell'aggiornamento delle impostazioni di privacy: " . $stmt->error;
+                    // echo "Errore nell'aggiornamento delle impostazioni di privacy: " . $stmt->error;
+                    $txt_error = "Errore nell'aggiornamento delle impostazioni di privacy: " . $stmt->error;
+
                 }
                 $stmt->close();
             } elseif (isset($_POST['new-password']) && isset($_POST['repeat-password'])) {
@@ -44,13 +52,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $stmt = $conn->prepare($sql);
                     $stmt->bind_param("si", $newPassword, $userId);
                     if ($stmt->execute()) {
-                        echo "Password aggiornata con successo.";
+                        // echo "Password aggiornata con successo.";
+                        $txt_error = "Password aggiornata con successo.";
                     } else {
-                        echo "Errore nell'aggiornamento della password: " . $stmt->error;
+                        // echo "Errore nell'aggiornamento della password: " . $stmt->error;
+                        $txt_error = "Errore nell'aggiornamento della password: " . $stmt->error;
                     }
                     $stmt->close();
                 } else {
-                    echo "Le password non corrispondono.";
+                    // echo "Le password non corrispondono.";
+                    $txt_error = "Le password non corrispondono.";
                 }
             } if (isset($_POST['elimina-account'])) {
                 // Effettua l'eliminazione degli eventi associati all'account
@@ -63,15 +74,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $stmt_elimina_utente = $conn->prepare($sql_elimina_utente); // Prepara lo statement per l'eliminazione dell'account
                     $stmt_elimina_utente->bind_param("i", $userId); // Bind dei parametri
                     if ($stmt_elimina_utente->execute()) { // Esegui la query per eliminare l'account
-                        echo "Account eliminato con successo.";
+                        $txt_error = "Account eliminato con successo.";
+                        // echo "Account eliminato con successo.";
                         logout();
                         exit;
                     } else {
-                        echo "Errore nell'eliminazione dell'account: " . $stmt_elimina_utente->error;
+                        $txt_error = "Errore nell'eliminazione dell'account: " . $stmt_elimina_utente->error;
+                        // echo "Errore nell'eliminazione dell'account: " . $stmt_elimina_utente->error;
                     }
                     $stmt_elimina_utente->close(); // Chiudi lo statement per l'eliminazione dell'account
                 } else {
-                    echo "Errore nell'eliminazione degli eventi: " . $stmt_elimina_eventi->error;
+                    $txt_error = "Errore nell'eliminazione degli eventi: " . $stmt_elimina_eventi->error;
+                    // echo "Errore nell'eliminazione degli eventi: " . $stmt_elimina_eventi->error;
                 }
                 $stmt_elimina_eventi->close(); // Chiudi lo statement per l'eliminazione degli eventi
             }
@@ -80,14 +94,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 exit;
             }
         } else {
-            echo "Utente non trovato.";
+            $txt_error = "Utente non trovato.";
+            // echo "Utente non trovato.";
         }
     } else {
-        echo "Utente non autenticato.";
+        $txt_error = "Utente non autenticato.";
+        // echo "Utente non autenticato.";
     }
 }
+
+$errore = "<p class='impo-error'> $txt_error </p>";
+
+$template = str_replace('{ERROR}', $errore, $template);
+echo $template;
+
 $conn->close();
 
 
-include "../HTML/impoSicu.html";
+// include "../HTML/impoSicu.html";
 ?>

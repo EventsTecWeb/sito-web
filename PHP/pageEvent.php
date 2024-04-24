@@ -2,6 +2,8 @@
 require_once 'queries.php';
 session_start();
 
+$txt_error = "";
+
 // Verifica se l'utente ha effettuato il login
 if (!isset($_SESSION['username']) && !isset($_SESSION['email'])) {
     // Reindirizza l'utente alla pagina di accesso non autorizzato (pagina X)
@@ -26,9 +28,11 @@ if (isset($_POST['salva_evento'])) {
     $evento_id = $_POST['salva_evento'];
     $userid = $_SESSION['user_id'];
     if (salvaEvento($conn, $userid, $evento_id)) {
-        echo "L'evento è stato salvato con successo.";
+        // echo "L'evento è stato salvato con successo.";
+        $txt_error = "L'evento è stato salvato con successo.";
     } else {
-        echo "Si è verificato un errore durante il salvataggio dell'evento.";
+        // echo "Si è verificato un errore durante il salvataggio dell'evento.";
+        $txt_error = "Si è verificato un errore durante il salvataggio dell'evento.";
     }
 }
 
@@ -37,15 +41,18 @@ if (isset($_POST['elimina'])) {
         header("Location: ../php/home.php");
         exit();
     }else{
-        echo "Si è verificato un errore durante l`eliminazione dell'evento.";
+        $txt_error = "Si è verificato un errore durante l`eliminazione dell'evento.";
+        // echo "Si è verificato un errore durante l`eliminazione dell'evento.";
     }
 }
 
 if (isset($_POST['disdici_evento'])) {
     if(nonInteressato($conn, $_GET['evento'], $_SESSION['user_id'])) {
-        echo "Evento tolto dagli eventi salvati";
+        $txt_error = "Evento tolto dagli eventi salvati";
+        // echo "Evento tolto dagli eventi salvati";
     } else {
-        echo "Si è verificato un errore durante la rimozione dell'evento dagli eventi salvati";
+        $txt_error = "Si è verificato un errore durante la rimozione dell'evento dagli eventi salvati";
+        // echo "Si è verificato un errore durante la rimozione dell'evento dagli eventi salvati";
     }
 }
 
@@ -57,6 +64,7 @@ if (isset($_POST['disdici_evento'])) {
     echo "ID dell'evento non specificato.";
     exit;
 }*/
+
 $evento_id = $_GET["evento"];
 
 $template = file_get_contents("../HTML/pageEvent.html");
@@ -64,14 +72,14 @@ $template = file_get_contents("../HTML/pageEvent.html");
 $row = getEventiByIdQuery($conn, $evento_id);
 
 $resultPartecipanti = getPartecipantiEvento($conn, $evento_id);
-$frase_partecipanti = "Interessa a ";
+$frase_partecipanti = "Interessa a: ";
 if ($resultPartecipanti && $resultPartecipanti->num_rows > 0) {
     while ($partecipante = $resultPartecipanti->fetch_assoc()) {
         $frase_partecipanti .= $partecipante['nome'] . " " . $partecipante['cognome'] . ", ";
     }
     $frase_partecipanti = rtrim($frase_partecipanti, ", ") . ".";
 } else {
-    $frase_partecipanti .= ": Nessuno.";
+    $frase_partecipanti .= " Nessuno.";
 }
 
 $mesi_italiano = array(
@@ -135,11 +143,11 @@ $evento = '<div id="pannello-principale-pe">
         <div class="container_dx-pe">';
             if (interessato($conn, $_SESSION['user_id'], $_GET['evento'])) {
                 $evento .= '<form method="post" action="pageEvent.php?evento='.$row["evento_id"].'"">
-                <button id="salvaEventoButton" class="sonoInteressato-pe" name="disdici_evento" value="' . $row['evento_id'] . '">Non sono interessato</button>
+                <button id="salvaEventoButton" class="sonoInteressato-pe" name="disdici_evento" value="' . $row['evento_id'] . '">Non mi interessa più</button>
             </form>';
             }else{
                 $evento .= '<form method="post" action="pageEvent.php?evento='.$row["evento_id"].'"">
-                <button id="salvaEventoButton" class="sonoInteressato-pe" name="salva_evento" value="' . $row['evento_id'] . '">Sono Interessato</button>
+                <button id="salvaEventoButton" class="sonoInteressato-pe" name="salva_evento" value="' . $row['evento_id'] . '">Mi interessa!</button>
             </form>';
             }
             if ($is_admin == 1) {
@@ -161,6 +169,9 @@ $evento .= '</div>
     </div>
 </div>';
 
+$errore = "<p class='event-error'> $txt_error </p>";
+
+$template = str_replace('{ERRORE}', $errore, $template);
 $template = str_replace('{EVENTO}', $evento, $template);
 echo $template;
 

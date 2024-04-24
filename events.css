@@ -724,6 +724,13 @@ input[type="text"]:focus {
 /*--------------CSS SPECIFICO PAG. IMPOSTAZIONI E SICUREZZA----------------------------*/
 /*ImpoSicu.html*/
 
+.impo-error{
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5vh;
+    text-align: center;
+}
 
 .titolini-sicu{
     color: red;
@@ -2464,6 +2471,13 @@ input[type="text"]:focus {
 
 /*-------------------------------------PAGINA EVENTO----------------------------------------------*/
 
+.event-error {
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-size: 3vh;
+    text-align: center;
+}
 
 #pannello-principale-pe::before{
     margin-top: 2vh;
