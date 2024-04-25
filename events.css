@@ -2,19 +2,16 @@ body {
     min-width: 500px;
 }
 
-/*------------------/INTESTAZIONE---------------------------------------------------------
-/*Parte del css dedicata alla navigazione, con bottoni, searchbar, logo e la breadcrumb*/
+
+/*------------------------------------------------------------/INTESTAZIONE-------------------------------------------------------------*/
 header {
     margin-top: 0vh;
     position:relative;
 }
-  
 .header-items {
     display: flex;
     justify-content: space-around;
 }
-  
-/*Codice riguardante la breadcrumb*/
 nav[aria-label="breadcrumb"] {
     position: absolute;
     width: 100%; 
@@ -22,8 +19,6 @@ nav[aria-label="breadcrumb"] {
     font-size: small;
     text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
 }
-
-/*Codice riguardante il bottone ad hamburger per la successiva espansione del menù*/
 header .bottoneHamburger {
     border-radius: 50%; 
     width: 30px; 
@@ -33,7 +28,6 @@ header .bottoneHamburger {
     display: none;
     margin-left: 0.5vw;
 }
-/*Codice riguardante il bottone ad hamburger per la successiva espansione del menù*/  
 .bottoneHamburger img {
     padding-top: 5px;
     width: 70%; 
@@ -41,9 +35,6 @@ header .bottoneHamburger {
     border: none;
     object-fit: cover;
 }
-
-/*Codice che ci permette di inserire il logo*/
-/*Abbiamo usato l'image-replacement per osstituire il titolo 1 della pagina con il logo del nostro sito web*/
 header h1{
     text-indent: -999em;
     background-image: url("Images/eventsLogoRid.png");
@@ -54,57 +45,40 @@ header h1{
     background-repeat: no-repeat;
     background-size: 20%;
 }
-
-/*Codice riguardante i link di navigazione*/  
 ul.linkPagina {
-    display: flex; /* Usiamo flexbox per mantenere gli elementi sulla stessa riga */
+    display: flex;
     list-style: none; 
     padding: 0; 
 }
- 
-/*Codice riguardante i link di navigazione*/ 
 ul.linkPagina li {
     white-space: nowrap;
-    /*metto prima lo stile testuale per il fallback*/
     font-family: Arial, Helvetica, sans-serif;
     font-family: 'Roboto', sans-serif;
     font-size: 1.2vw;
     margin-right: 5vh; 
     text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
 }
-
-/*Codice per far cambiare il colore a link già visitati*/
 ul.linkPagina a:visited {
     color: rgb(166, 96, 166);
 }
-
-/*Codice riguardante un link di navigazione*/ 
 #ChiSiamoLink{
     text-align: center; 
     color: rgb(0, 0, 0); 
     text-decoration: underline;
     padding-right: 2.0%;
 }
-
-/*Codice riguardante un link di navigazione*/ 
 #ChiSiamoLink:hover {
     text-decoration: none; 
 }
-
-/*Codice riguardante un link di navigazione*/ 
 #PartnersLink{
     text-align: center; 
     color: rgb(0, 0, 0); 
     text-decoration: underline;
     padding-right: 2.0%;
 }
-
-/*Codice riguardante un link di navigazione*/ 
 #PartnersLink:hover {
     text-decoration: none; 
 }
-
-/*Codice riguardante un link di navigazione*/ 
 #AccediLink{
     text-align: center; 
     color: rgb(0, 0, 0); 
@@ -113,38 +87,26 @@ ul.linkPagina a:visited {
     pointer-events: none;
     cursor: default;
 }
-
-/*Codice riguardante un link di navigazione*/ 
 #returnHomeHeader{
     text-align: center; 
     color: rgb(0, 0, 0); 
     text-decoration: underline;
     padding-right: 2.0%;
 }
-
-/*Codice riguardante un link di navigazione*/ 
 #returnHomeHeader:hover {
     text-decoration: none; 
 }
-
-/*Codice riguardante un link di navigazione*/ 
 #AccediLink:hover {
     text-decoration: none; 
 }
-
-/*Codice riguardante un link di navigazione*/ 
 #RegistratiLink{
     text-align: center; 
     color: rgb(0, 0, 0); 
     text-decoration: underline;
 }
-
-/*Codice riguardante un link di navigazione*/ 
 #RegistratiLink:hover {
-    text-decoration: none; /* Rimuove la sottolineatura al passaggio sopra */
+    text-decoration: none;
 }
-  
-/*Modifica e.g. searchBarRegistrati, searchButtonRegistrati */
 input[type="text" ] #searchBar {
     border: none; 
     border-bottom: 1px solid black; 
@@ -153,8 +115,6 @@ input[type="text" ] #searchBar {
     outline: none; 
     width:30%;
 }
-  
-/* Modifica e.g. searchBarRegistrati, searchButtonRegistrati */
 #searchBar {
     width: 65vh;
     height: 7vh;
@@ -165,17 +125,14 @@ input[type="text" ] #searchBar {
     border-radius: 20px;
     border: none;
     text-indent: 10px;
-    /*metto prima lo stile testuale per il fallback*/
     font-family: Arial, Helvetica, sans-serif;
     font-family: 'Poppins', sans-serif;
     margin-right:1vw;
     transition: width 1s ease-in-out;
 }
-
 #searchBar::placeholder {
     color: rgb(111, 111, 111); 
 }
-  
 .bottoneStar {
     border-radius: 50%; 
     width: 7vh; 
@@ -183,7 +140,6 @@ input[type="text" ] #searchBar {
     overflow: hidden; 
     border: none;
 }
-  
 .bottoneStar img {
     padding-top: 5px;
     width: 80%; 
@@ -191,7 +147,6 @@ input[type="text" ] #searchBar {
     border: none; 
     object-fit: cover;
 }
-
 .bottonePlus{
     border-radius: 50%; 
     width: 7vh; 
@@ -199,7 +154,6 @@ input[type="text" ] #searchBar {
     overflow: hidden; 
     border: none;
 }
-
 .bottonePlus img{
     padding-top: 0.7vh;
     padding-left: 0.35vw;
@@ -208,7 +162,6 @@ input[type="text" ] #searchBar {
     border: none; 
     object-fit: cover;
 }
-
 .bottoneProfilo {
     display: flex;
     align-items: center;
@@ -221,7 +174,6 @@ input[type="text" ] #searchBar {
     position: relative; 
     background-color: #ccc; 
 }
-
 .bottoneProfilo img {
     position: absolute; 
     width: 100%; 
@@ -230,10 +182,7 @@ input[type="text" ] #searchBar {
     object-fit: cover; 
     border-radius: 50%; 
 }
-  
-/*Modifica e.g. searchBarRegistrati, searchButtonRegistrati */
 #searchButton {
-    /* margin-left: 0.4vh; */
     margin-right: 1vh;
     border-radius: 50%; 
     width: 7vh; 
@@ -241,8 +190,6 @@ input[type="text" ] #searchBar {
     overflow: hidden; 
     border: none;
 }
-  
-/*Modifica e.g. searchBarRegistrati, searchButtonRegistrati */
 #searchButton img{
     padding-top: 5px;
     width: 90%;
@@ -250,21 +197,13 @@ input[type="text" ] #searchBar {
     border: none; 
     object-fit: cover; 
 }
-  
-/* Modifica e.g. searchBarRegistrati, searchButtonRegistrati */
 #searchButton, .bottoneStar, .bottoneHamburger {
     position: relative;
-    /* margin-left: -1.5vw; */
     margin-bottom: -6vh;
-    /* transition: width 0.3s ease, height 0.3s ease;
-    transition: margin-top 0.5s ease, width 0.5s ease, height 0.5s ease;  */
 }
-
 .bottoneStar{
     margin-left:0.1vw;
 }
-
-/*Codice per l'inserimento di una linea di separazione grigia*/
 header:after {
     content: '';
     display: block;
@@ -272,145 +211,8 @@ header:after {
     margin-top: 10px; 
 }
 
-@media screen and (max-width: 1100px) {
 
-    #searchBar {
-        width: 40vh; 
-        height: 6vh; 
-        transition: width 1s ease-in-out;
-    }
-}
-
-@media screen and (max-width: 980px) {
-
-    #searchButton, .bottoneStar {
-        height: 5vh;
-        width: 5vh;
-    }
-
-
-    ul.linkPagina li {
-        white-space: nowrap;
-        /*metto prima lo stile testuale per il fallback*/
-        font-family: Arial, Helvetica, sans-serif; 
-        font-family: 'Roboto', sans-serif;
-        font-size: 0.8em;
-        margin-right: 5vh; 
-        text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
-    }
-}
-
-
-@media screen and (max-width: 830px) {
-
-    .bottoneStar {
-        position: relative;
-        margin-left: 13vw;
-        margin-bottom: -1vh;
-    }
-
-    header h1{
-        padding-top: 0.5vh;
-        background-size: 50%;
-    }
-  
-    header {
-        position: relative; 
-    }
-
-    .wrapper, .wrapper_eventi {
-        padding-top: 3vh;
-        display: flex;
-        flex-direction: column; 
-        align-items: center; 
-    }
-    
-    .wrapper_eventi{
-        max-width: 75%;
-        margin-left: 12%;
-    }
-    
-    .header-items {
-        margin-top: -0.7vw;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-  
-    .header-items button,
-    .header-items button .bottoneHamburger {
-        width: 6vh; 
-        height: 6vh;
-        margin: auto;
-        border-radius: 50%; 
-    }
-      
-    header::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: -1vh;
-        height: 0.1vh;
-        background-color: rgba(217, 217, 217, 1);
-      }  
-  
-    .bottoneStar{
-        margin: auto;
-        width: 6vh; 
-        height: 6vh; 
-      }
-    /* Modifica e.g. searchBarRegistrati, searchButtonRegistrati */
-    #searchButton {
-        width: 6vh; 
-        height: 6vh; 
-        margin: auto; 
-        margin-left: 6vh;
-    }
-  
-    /* Modifica e.g. searchBarRegistrati, searchButtonRegistrati */
-    header .bottoneHamburger, #searchButton,.bottoneStar, #searchBar {
-        display: inline-block; 
-        vertical-align: middle; 
-    }
-
-    ul.linkPagina li {
-        white-space: nowrap; 
-        font-family: 'Roboto', sans-serif;
-        font-size: 1.2vw;
-        margin-right: 5vh; 
-        text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
-    }
-  
-    /* Modifica e.g. searchBarRegistrati, searchButtonRegistrati */
-    #searchBar {
-        width: 35vw; 
-        max-width: 40vw; 
-        height: 4vh; 
-        left: unset; 
-        top: unset; 
-        position: relative; 
-        margin-right: 0; 
-        margin-left: auto; 
-    }
-  
-    header .bottoneHamburger {
-        display: block;
-    }
-  
-    header .linkPagina{
-        display: none;
-    }
-
-    .bottonePlus, .bottoneProfilo{
-        display: none;
-    }
-}
-
-/*------------------------------/INTESTAZIONE------------------------------------*/
-
-/*-----------------------/Skip al contenuto principale-------------------------------------*/
-
+/*------------------------------------------------------------SKIP PRINCIPALE---------------------------------------------------------*/
 .visually-hidden {
     position: absolute;
     width: 1vw; 
@@ -421,8 +223,7 @@ header:after {
     clip: rect(0, 0, 0, 0);
     border: 0;
   }
-  
-  .skip-link {
+.skip-link {
     position: absolute;
     left: 0;
     background-color: #ffffff;
@@ -431,84 +232,33 @@ header:after {
     z-index: 999;
     font-family: Arial, Helvetica, sans-serif; 
   }
-  
-
-  .skip-link, .skip-link:visited {
+.skip-link, .skip-link:visited {
     font-family: Poppins, sans-serif; 
   }
 
-  @media screen and (max-width: 950px) {
-    .skip-link {
-      position: fixed; 
-      top: 1em; 
-      left: 1em; 
-      background-color: #ffffff;
-      color: black; 
-      padding: 0.5em; 
-      font-size: 0.8em; 
-      z-index: 999;
-      font-family: Arial, Helvetica, sans-serif; 
-    }
-  
-    .skip-link:focus {
-      display: block; 
-    }
-  }
-  
-  @media screen and (max-width: 730px) {
-    .skip-link {
-      position: fixed; 
-      top: 1em; 
-      left: 1em; 
-      background-color: #ffffff;
-      color: black; 
-      padding: 0.5em; 
-      font-size: 0.8em; 
-      z-index: 999;
-      font-family: Arial, Helvetica, sans-serif; 
-    }
-  
-    .skip-link:focus {
-      display: block; 
-    }
-  }
-  
 
 
-  
-  
-  
-
-/*-------------------------------/BREADCRUMB-------------------------------------------------*/
-/*Codice riguardante la breadcrumb*/
+/*-------------------------------------------------------------/BREADCRUMB--------------------------------------------------------------*/
 nav[aria-label="breadcrumb"] {
     padding-left: 1vw;
-    /*metto prima lo stile testuale per il fallback*/
     font-family: Arial, Helvetica, sans-serif;
     font-family: Poppins, sans-serif;
     margin-top: -10px;
 }
-
-/*.returnBread è la classe che utilizzo su tutti i link presenti nella breadcrumb in modo da poterli trattare tutti insieme e più velocemente*/
-  
 .returnBread{
     color: black;
     text-decoration: underline;
 }
-  
 .returnBread:hover{
     text-decoration: none;
 }
-
 .returnBread{
     color: black;
     text-decoration: underline;
 }
-  
 .returnBread:hover{
     text-decoration: none;
 }
-
 input[type="text"] {
     font-family: Poppins, sans-serif;
     border: none;
@@ -518,24 +268,14 @@ input[type="text"] {
     outline: none; 
     width:100%;
 }
-  
 input[type="text"]:focus {
     outline: none;
 }
 
-/*-------------------------------/BREADCRUMB-------------------------------------------------*/
 
 
-
-
-
-
-
-
-/* -------------------------------/GESTIONE INPUT----------------------------- */
-
-  
-  input[type="text"] {
+/* ---------------------------------------------------------------GESTIONE INPUT------------------------------------------------------- */
+input[type="text"] {
     font-family: Poppins, sans-serif;
     border: none; 
     border-bottom: 1px solid black; 
@@ -543,9 +283,8 @@ input[type="text"]:focus {
     padding: 5px; 
     outline: none; 
     width:100%;
-  }
-  
-  input[type="password"] {
+}
+input[type="password"] {
     font-family: Poppins, sans-serif;
     border: none;
     border-bottom: 1px solid black;
@@ -553,16 +292,14 @@ input[type="text"]:focus {
     padding: 5px;
     outline: none;
     width: 100%;
-  }
-  
-  input[type="text"]:focus {
+}
+input[type="text"]:focus {
     outline: none;
-  }
-  
-  input[type="password"]:focus {
+}
+input[type="password"]:focus {
     outline: none;
-  }  
-  input[type="text"] {
+}  
+input[type="text"] {
     font-family: Poppins, sans-serif;
     border: none; 
     border-bottom: 1px solid black; 
@@ -570,9 +307,8 @@ input[type="text"]:focus {
     padding: 5px; 
     outline: none; 
     width:100%;
-  }
-  
-  input[type="password"] {
+}
+input[type="password"] {
     font-family: Poppins, sans-serif;
     border: none;
     border-bottom: 1px solid black;
@@ -580,34 +316,22 @@ input[type="text"]:focus {
     padding: 5px;
     outline: none;
     width: 100%;
-  }
-  
-  input[type="text"]:focus {
+}  
+input[type="text"]:focus {
     outline: none;
-  }
-  
-  input[type="password"]:focus {
+} 
+input[type="password"]:focus {
     outline: none;
-  }
-
-/* -------------------------------/GESTIONE INPUT----------------------------- */
+}
 
 
 
-
-
-
-
-
-/*------------------------------/MENU SINISTRO------------------------------------------------*/
-
-
+/*-------------------------------------------------------------/MENU SINISTRO-----------------------------------------------------------*/
 #menuleft {
     float: left;
     width: 25%;
     overflow: hidden;
 }
-
 #menuleft button{
     background-color: #fff;
     cursor: pointer;
@@ -618,7 +342,6 @@ input[type="text"]:focus {
     height: 3em;
     font-size: 20px;
     text-align: left;
-    /*metto prima lo stile testuale per il fallback*/
     font-family: Arial, Helvetica, sans-serif;
     font-family: 'Poppins', sans-serif;
     border-top-right-radius: 50px;
@@ -626,53 +349,42 @@ input[type="text"]:focus {
     padding-left: 1em;
     border: 1px solid #000;
 }
-
 #menuleft #buttonImpostazioniSicu{
     background-color: rgb(45, 45, 45);
     border-color: #000000;
-    color: white;}
-
+    color: white;
+}
 #menuleft #buttonRitornoProfilo{
     background-color: var(--gray);
 }
-
 #menuleft ul li button:hover,#menuleft button:focus {
     background-color: #f0f0f0;
 }
-
 #menuleft ul{
     padding: 2em 0 0 0;
 }
 #menuleft ul li{
     margin-top: 1%;
 }
-
 .menu-orizzontale{
     display: none;
 }
-
 .wrapper, .wrapper_eventi {
     display: flex;
     justify-content: space-between;
 }
 
-/*------------------------------/MENUSINISTRO------------------------------------------------*/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-/*------------------------------/ICONACLICCABILEEVENTO---------------------------------*/
-
+/*-------------------------------------------------------/ICONACLICCABILEEVENTO---------------------------------------------------------*/
+.a_evento{
+    text-decoration: none;
+    color: black;
+}
+#mo-pulsanteSingolo{
+    color: white;
+    background-color: #454545;
+}
 .column{
 	float: left;
 	width: 25%;
@@ -680,7 +392,6 @@ input[type="text"]:focus {
 	padding-right:4.15%;
 	padding-bottom:2%;
 }
-
 .containerImmagineEvento{
 	border-radius: 3% 3% 3% 3%;
 	background-color: rgb(184,184,184);
@@ -690,40 +401,22 @@ input[type="text"]:focus {
 	line-height:1%;
 	height: 30%;
 }
-
 .containerImmagineEvento:hover {
-  transform: scale(1.2);
+    transform: scale(1.2);
 }
-
 .row:after{
 	content: "";
 	display: table;
 	clear: both;
 }
-
 .GCard{
 	font-weight:bold;
 	font-size:20px;
 }
 
-/*------------------------------/ICONACLICCABILEEVENTO---------------------------------*/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-/*--------------CSS SPECIFICO PAG. IMPOSTAZIONI E SICUREZZA----------------------------*/
-/*ImpoSicu.html*/
-
+/*--------------------------------CSS SPECIFICO PAG. IMPOSTAZIONI E SICUREZZA--------------------------------------------*/
 .impo-error{
     color: red;
     font-family: Arial, Helvetica, sans-serif;
@@ -731,11 +424,9 @@ input[type="text"]:focus {
     font-size: 2.5vh;
     text-align: center;
 }
-
 .titolini-sicu{
     color: red;
 }
-
 #settings-sicu {
     float: right;
     width: 80%; 
@@ -744,17 +435,13 @@ input[type="text"]:focus {
     padding-right: 15%;
     margin-top: 1%;
     box-sizing: border-box;
-    /*metto prima lo stile testuale per il fallback*/
     font-family: Arial, Helvetica, sans-serif;
     font-family: Inter, sans-serif;
-}
-  
-
+} 
 .settings-sicu h2 {
     margin-bottom: 20px;
     text-align: center;
 }
-
 .option-sicu {
     display: flex;
     justify-content: space-between;
@@ -763,29 +450,20 @@ input[type="text"]:focus {
     padding: 10px 0;
     cursor: pointer;
 }
-  
 .option-sicu img {
     width: 12px;
     height: 12px;
     transition: transform 0.3s ease;
 }
-  
-
 .option-sicu.open img {
     transform: rotate(180deg);
 }
-  
-
 .option-sicu span:nth-child(2) {
     display: none;
 }
-  
-
 .option-sicu.open span:nth-child(2) {
     display: inline-block;
 }
-
-
 #privacy-sicu {
     border: 1px solid #ccc;
     border-radius: 50px;
@@ -794,53 +472,42 @@ input[type="text"]:focus {
     width: 80%;
     margin: 2vh auto;
 }
-
 .p_privacy-sicu{
     margin-bottom: -0.5vh;
 }
-
 #domanda-sicu{
     margin-bottom: -0.5vh;
     font-weight:bold;
 }
-
 #privacy-settings-sicu {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
-
 .separator-sicu {
     width: 100%;
     border-bottom: 1px solid #ccc;
     margin-bottom: 20px; 
 }
-
 .separator-sicu {
     width: 100%;
     border-bottom: 1px solid #ccc;
     margin-bottom: 20px; 
 }
-
 #left-align-privacy-sicu {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
-
 #center-align-privacy-sicu {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
-
 #info-text-privacy-sicu {
     margin-bottom: 20px; 
 }
-
-
 .button-impo-sicu{
     background-color: rgba(114, 162, 233, 1);
     color: white;
@@ -854,11 +521,9 @@ input[type="text"]:focus {
     cursor: pointer;
     border-radius: 16px;
 }
-
 .button-impo-sicu:hover{
     background-color: rgba(14, 31, 187, 1);
 }
-
 #modPass-sicu {
     border: 1px solid #ccc;
     border-radius: 50px;
@@ -871,21 +536,14 @@ input[type="text"]:focus {
     align-items: center;
     text-align: center; 
 }
-
-
 #modPass-sicu h2 {
     font-family: Inter, sans-serif;
 }
-
-
 #modPass-sicu p {
     text-align: justify;
-    /*metto prima lo stile testuale per il fallback*/
     font-family: Arial, Helvetica, sans-serif;
     font-family: Inter, sans-serif;
 }
-
-
 #modPass-sicu input[type="password"] {
     border: none; 
     border-bottom: 1px solid black; 
@@ -895,25 +553,19 @@ input[type="text"]:focus {
     width:70%;
     margin-bottom: 1.5vh;
 }
-
 #labelNewP-sicu, #labelRepP-sicu{
-    /*metto prima lo stile testuale per il fallback*/
     font-family: Arial, Helvetica, sans-serif;
     font-family: Inter, sans-serif;
 }
-
 #labelNewP-sicu, #labelRepP-sicu{
     margin-bottom:-0.2vh;
 }
-
 .button-container-impo-sicu {
     margin-top: 20px; 
 }
-
 .button-container-impo-sicu {
     margin-top: 20px;
 }
-
 #eliAcc-sicu {
     border: 1px solid #ccc;
     border-radius: 50px;
@@ -923,13 +575,11 @@ input[type="text"]:focus {
     margin: 2vh auto;
     align-content: center;
 }
-
 #eliAcc-sicu h2 {
     padding: 10px;
     font-size: 25px;
     font-family: Inter, sans-serif;
 }
-
 #warning-sicu {
     border: 3px solid red;
     margin: 10px;
@@ -939,21 +589,17 @@ input[type="text"]:focus {
     align-items: center;
     text-align: center; 
 }
-
 .warning-icon-password-sicu {
     color: red;
 }
-
 .checkbox-sicu {
     margin: 20px;
 }
-
 .checkbox-sicu {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
-
 #eliAcc-sicu #eliminaButton-sicu {
     background-color: darkred;
     color: white;
@@ -968,22 +614,16 @@ input[type="text"]:focus {
     border-radius: 16px;
     flex-direction: column;
     align-items: center;
-    
 }
-
 #eliAcc-sicu #eliminaButton-sicu:hover {
     background-color: red;
 }
-
 #vertical-center-password-sicu {
-    /* Impostazioni per centrare verticalmente */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-
-
 #esciAcc-sicu {
     border: 1px solid #ccc;
     border-radius: 50px;
@@ -996,20 +636,15 @@ input[type="text"]:focus {
     align-items: center;
     text-align: center;
 }
-
 #esciAcc-sicu h2 {
     font-weight: bold;
-    /*metto prima lo stile testuale per il fallback*/
     font-family: Arial, Helvetica, sans-serif;
     font-family: 'Inter', sans-serif;
 }
-
 #esciAcc-sicu p {
     font-size: 2vh;
     padding: 2vh;
 }
-
-
 #esciAcc-sicu #esciButton-sicu {
     background-color: rgba(114, 162, 233, 1);
     color: white;
@@ -1023,43 +658,20 @@ input[type="text"]:focus {
     cursor: pointer;
     border-radius: 16px;
 }
-
-
 #esciAcc-sicu #esciButton-sicu:hover {
     background-color: rgba(14, 31, 187, 1);
 }
 
-/*--------------CSS SPECIFICO PAG. IMPOSTAZIONI E SICUREZZA----------------------------*/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*--------------CSS SPECIFICO PAG. INDICE----------------------------------------------*/
-/*index.html*/
-
-
+/*----------------------------------------------CSS SPECIFICO PAG. INDICE------------------------------------------------------*/
 #index {
     height: 100%;
     margin-top: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-
-
+}
 #DescizioneConBottoniIndex {
     position: relative;
     text-align: center;
@@ -1074,10 +686,7 @@ input[type="text"]:focus {
     width: 80%;
     min-height: 50vh;
     padding-bottom: 50px;
-    
-  }
-
-
+}
 #DescizioneConBottoniIndex #image-container-index {
     background-image: url('Images/eventsLogoRid.png'); 
     background-size: contain;
@@ -1086,20 +695,17 @@ input[type="text"]:focus {
     width: 17vw; 
     height: 10vw; 
     padding-bottom:0;
-  }
-
-  #DescizioneConBottoniIndex p {
+}
+#DescizioneConBottoniIndex p {
     font-size: 16px; 
     margin-top: 0vh;
-  }
-
+}
 .ContainerBottoniIndex {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  
-  .buttonIndex {
+}
+.buttonIndex {
     width: 12vw;
     height: 7vh;
     background: #656565;
@@ -1114,23 +720,17 @@ input[type="text"]:focus {
     align-items: center;
     cursor: pointer;
     margin-bottom: 15px;
-  }
-  
-  .buttonIndex:first-child {
+}
+.buttonIndex:first-child {
     margin-top: 10px;
-  }
-  
-  .buttonIndex:last-child {
+}
+.buttonIndex:last-child {
     margin-bottom: 10px;
-  }
-  
-  .buttonIndex:hover {
+}
+.buttonIndex:hover {
     background-color: rgba(14, 31, 187, 1);
-  }
-  
-
-  #TerminiCondizioni {
-    /*metto prima lo stile testuale per il fallback*/
+}
+#TerminiCondizioni {
     font-family: Arial, Helvetica, sans-serif;
     font-family: 'Poppins';
     font-size: 2.6vh;
@@ -1139,13 +739,11 @@ input[type="text"]:focus {
     margin-top: 10px; 
     color: rgb(0, 0, 0); 
     text-decoration: underline;
-  }
-  
-  #TerminiCondizioni:hover {
+}
+#TerminiCondizioni:hover {
     text-decoration: none; 
-  }
-  
-  #footerIndex {
+}
+#footerIndex {
     text-align: center; 
     margin-top: 5px; 
     position: fixed;
@@ -1155,38 +753,17 @@ input[type="text"]:focus {
     padding: 20px 0;
 }
 
-/*--------------CSS SPECIFICO PAG. INDICE----------------------------------------------*/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*--------------CSS SPECIFICO PAG. PROFILO CREAZIONE----------------------------------------------*/
-/*ProfiloEv.html*/
-
+/*-----------------------------------------CSS SPECIFICO PAG. PROFILO CREAZIONE--------------------------------------------------------*/
 #menuleft #buttonEventiCreati{
     background-color: rgb(45, 45, 45);
     border-color: #000000;
     color: white;
 }
-
 #profile-ev .cardSalvato-es {
     margin-right: 20px; 
 }
-
 #profile-ev {
     width: 100%; 
     padding: 3%; 
@@ -1196,9 +773,7 @@ input[type="text"]:focus {
     margin-left: auto; 
     margin-right: auto; 
 }
-
 #profile-ev{
-    /*metto prima lo stile testuale per il fallback*/
     font-family: Arial, Helvetica, sans-serif;
     font-family: Inter, sans-serif;
     align-content: center;
@@ -1207,7 +782,6 @@ input[type="text"]:focus {
     justify-content: center; 
     align-items: center;
 }
-
 #info-ev{
     align-content: center;
     display: flex;
@@ -1215,7 +789,6 @@ input[type="text"]:focus {
     justify-content: center; 
     align-items: center;
 }
-
 #nomiVari-ev{
     align-content: center;
     display: flex;
@@ -1223,13 +796,9 @@ input[type="text"]:focus {
     justify-content: center; 
     align-items: center;
 }
-
-
 #nomeUtente-ev{
     margin-top: -1.5vh;
 }
-
-
 .avatar-ev {
     width: 100px;
     height: 100px; 
@@ -1237,7 +806,6 @@ input[type="text"]:focus {
     margin-right: 20px; 
     object-fit: cover; 
 }
-
 #contButEvents-ev {
     border: 1px solid #ccc;
     border-radius: 50px;
@@ -1252,24 +820,18 @@ input[type="text"]:focus {
     align-items: center;
     flex-wrap: wrap;
 }
-
-
 .button-container-ev {
     width: 10%;
     margin-top: 20px;
 }
-
 #fraseEventiCreati-ev{
     width: 80%;
-    /*metto prima lo stile testuale per il fallback*/
     font-family: Arial, Helvetica, sans-serif;
     font-family: 'Poppins', sans-serif;
     color: rgb(0, 0, 0); 
     padding-right: 25vw;
 
 }
-
-
 #creaEvento-ev {
     display: inline-flex;
     align-items: center;
@@ -1285,12 +847,9 @@ input[type="text"]:focus {
     background-size: 50%; 
     font-size: 18px; 
 }
-
 #creaEvento-ev:hover {
     opacity: 0.8; 
 }
-
-
 .visually-hidden-eventiCreati-ev {
     position: absolute;
     width: 1px;
@@ -1301,7 +860,6 @@ input[type="text"]:focus {
     clip: rect(0, 0, 0, 0);
     border: 0;
 }
-
 .columnProfiloEv-ev {
     float: left;
     width: 40%;
@@ -1309,7 +867,6 @@ input[type="text"]:focus {
     padding-right: 2.03%;
     padding-bottom: 2%;
 }
-
 .containerProfiloEv-ev {
     border-radius: 3%;
     background-color: rgb(255, 255, 255);
@@ -1323,23 +880,19 @@ input[type="text"]:focus {
     flex-grow: 1;
     flex: 0 1 calc(30% - 20px);
 }
-
 .containerProfiloEv-ev:hover {
     transform: scale(1.1);
 }
-
 .rowProfiloEv-ev:after {
     content: "";
     display: table;
     clear: both;
 }
-
 .GCard-ev {
     display: block;
     font-weight: bold;
     font-size: 25px;
 }
-
 .descrizioneEventiT-ev {
     margin-top: 2vh;
     padding-top: 2vh;
@@ -1347,213 +900,42 @@ input[type="text"]:focus {
     font-size: 1em;
     margin-bottom: 5vh;
 }
-
 .descrizioneEventiD-ev {
     font-size: 1em;
     white-space: pre-wrap;
     line-height: 1.5em; 
 }
-
 .container-immagini-eventi-ev {
     background-repeat: no-repeat;
     background-size: cover;
     height: 50%;
     border-radius: 3%;
 }
-
 .NomiLinkCreati-ev{
-    /*metto prima lo stile testuale per il fallback*/
     font-family: Arial, Helvetica, sans-serif;
     font-family: 'Roboto', sans-serif;
     color: rgb(0, 0, 0); 
     text-decoration: underline;
 }
-
 .NomiLinkCreati-ev:hover {
     text-decoration: none;
 }
-
-
 #posizione-ev {
     font-size: 20px;
     font-style: bold;
 }
-
 #posizione-ev span {
     font-size: 20px;
     font-style: bold;
     color: red;
 }
-
-
 .infoText-ev {
     padding-left: 1vh
 }
 
-
-/*---------1700px-----------*/
-
-@media screen and (max-width: 1700px) {
-
-    .columnProfiloEv-ev {
-        flex: 0 0 calc(50% - 20px);
-        max-width: calc(50% - 20px); 
-        flex-basis: calc(50% - 20px);
-    }
-
-    .descrizioneEventiT-ev {
-        font-size: 1.1em; 
-    }
-    
-    .descrizioneEventiD-ev {
-        font-size: 1.1em; 
-        overflow: hidden; 
-        text-overflow: ellipsis; 
-        white-space: nowrap; 
-    }
-
-}
-
-
-
-
-/*-----------950px----------*/
-@media screen and (max-width: 950px) {
-
-    .container-immagini-eventi-ev {
-        max-width: 100%; 
-        height: auto; 
-    }
-}
   
 
-@media screen and (max-width: 900px) {
-
-    .descrizioneEventiT-ev {
-        font-size: 1.3em; 
-    }
-
-    .descrizioneEventiD-ev {
-        font-size: 1.1em; 
-        overflow: hidden; 
-        text-overflow: ellipsis; 
-        white-space: nowrap;
-    }
-      
-}
-
-@media screen and (max-width: 730px) {
-
-    .wrapper, .wrapper_eventi {
-        padding-top: 3vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .wrapper_eventi{
-        max-width: 75%;
-        margin-left: 12%;
-    }
-
-    .rowProfiloEv .containerProfiloEv{
-        flex-direction: row;
-        align-items: center;
-    }
-
-    .descrizioneEventiT {
-        font-size: 1.3em;
-    }
-
-    .descrizioneEventiD {
-        font-size: 1.1em;
-        overflow: hidden; 
-        text-overflow: ellipsis; 
-        white-space: nowrap;
-    }
-    
-    .wrapper #menuleft, .wrapper_eventi #menuleft {
-        display: none;
-    }
-
-    #bread-ev{
-        margin-bottom: -0.5vh;
-        font-size: 12px;
-    }
-
-    #menuCenter{
-        margin-top: 10vh;
-        display:block;
-    }
-
-    .menu-orizzontale {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-      }
-      
-      .menu-orizzontale li {
-        margin-right: 1.5vw;
-      }
-      
-      .menu-orizzontale li:first-child {
-        margin-left: 0vw;
-      }
-      
-      .menu-orizzontale a {
-        display: inline-block;
-        padding: 4px 8px; 
-        text-align: center;
-        text-decoration: none;
-        font-family: 'Roboto', sans-serif;
-        color: black;
-        font-weight: bold;
-        text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
-        font-size: 3vw; 
-        border: 1px solid black; 
-        border-radius: 12px; 
-        transition: all 0.3s ease;
-        margin-left:1.3vw;
-        
-      }
-      
-      .menu-orizzontale a:hover {
-        background-color: black;
-        color: white;
-      }
-      
-      
-    .bottonePlus-ev, .bottoneProfilo{
-        display: none;
-    }
-
-    #profile-ev{
-        margin-top: 2vh;
-    }
-
-}
-
-/*--------------CSS SPECIFICO PAG. PROFILO CREAZIONE----------------------------------------------*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*-------------------------------------REGISTRAZIONE----------------------------------------------*/
-
-
+/*--------------------------------------------------REGISTRAZIONE----------------------------------------------------------*/
 .image-container-ragComp-reg {
     background-image: url('Images/person2.webp');
     background-size: contain;
@@ -1561,42 +943,34 @@ input[type="text"]:focus {
     background-repeat: no-repeat;
     height: 35vh;
 }
-  
-  div #pannello-principale-reg{
+div #pannello-principale-reg{
     position: relative;
     align-self: center;
-  }
-  
-  #pannello-principale-reg {
+}
+#pannello-principale-reg {
     display: flex;
     justify-content: center;
     width: 80%; 
     margin: 0 auto;
     padding-top: 3vw;
-  }
-  
-  .image-container-ragComp-reg img{
-      width: 20vw;
-      height: auto;
-  }
-  
-  #infoNoAccount-reg{
+} 
+.image-container-ragComp-reg img{
+    width: 20vw;
+    height: auto;
+}
+#infoNoAccount-reg{
     font-family: Poppins, sans-serif;
-  }
-  
-  #infoNoAccount-reg #linkRegistrati{
+}
+#infoNoAccount-reg #linkRegistrati{
     text-decoration: underline;
-  }
-  
-  #infoNoAccount-reg #linkRegistrati:hover{
+}
+#infoNoAccount-reg #linkRegistrati:hover{
     text-decoration: none;
-  }
-  
-  #container-sinistro-reg{
+}
+#container-sinistro-reg{
     padding-top: 8.5vh;
-  }
-  
-   #registratiScritta-reg{
+}
+#registratiScritta-reg{
     font-family: Poppins, sans-serif;
     width: 20%; 
     height: 6%; 
@@ -1604,11 +978,9 @@ input[type="text"]:focus {
     top: 15%; 
     font-weight: 600;
     font-size: 2.5em; 
-  
     line-height: 1.2; 
-  }
-  
-  #container-destro-reg button {
+}
+#container-destro-reg button {
     background: #656565;
     border: none;
     border-radius: 16px;
@@ -1626,72 +998,24 @@ input[type="text"]:focus {
     display: flex; 
     justify-content: center; 
     align-items: center; 
-  }
-  
-  #container-destro-reg button:hover {
+}
+#container-destro-reg button:hover {
     background-color: rgba(14, 31, 187, 1);
-  }
-  
-  #container-destro-reg form {
+}
+#container-destro-reg form {
     font-size:large;
-  }
-  
-  #container-destro-reg {
+}
+#container-destro-reg {
     padding-left: 2.5vw;
     height: 45vh;
     width: 45vh;
-  }
-  
-  #container-destro-reg form,
-  #container-destro-reg label,
-  #container-destro-reg button {
-    margin-bottom: 15px; 
-  }
-  
-  #ricordamiLabel-reg{
-    font-family: Poppins, sans-serif;
-  }
-
-  @media screen and (max-width: 730px) {
- 
-    .image-container-ragComp-reg {
-        background-image: url('Images/people2.png');
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-        height: 200px; 
-        width: 200px; 
-      }
-
-      #registratiScritta-reg{
-        font-family: Poppins, sans-serif;
-        width: 20%; 
-        height: 6%; 
-        left: 35%; 
-        top: 15%; 
-        font-weight: 600;
-        font-size: 2.5em; 
-        line-height: 1.2; 
-      }
-    
-      #pannello-principale-reg {
-        display: flex;
-        flex-direction: column;
-      }
-    
-      #container-destro-reg {
-        order: 1;
-      }
-    
-      #container-sinistro-reg {
-        order: 2;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
 }
-
+#container-destro-reg form, #container-destro-reg label, #container-destro-reg button {
+    margin-bottom: 15px; 
+} 
+#ricordamiLabel-reg{
+    font-family: Poppins, sans-serif;
+}
 .signin-error {
     color: red;
     font-family: Arial, Helvetica, sans-serif;
@@ -1700,23 +1024,9 @@ input[type="text"]:focus {
     text-align: center;
 }
 
-/*-------------------------------------REGISTRAZIONE----------------------------------------------*/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-/*-------------------------------------ACCESSO----------------------------------------------*/
-
+/*---------------------------------------------------------ACCESSO------------------------------------------------------------*/
 .buttonSubmit {
     width: 7vw;
     height: 4vh;
@@ -1732,60 +1042,48 @@ input[type="text"]:focus {
     align-items: center;
     cursor: pointer;
     margin-top: 2vh;
-  }
-  
-  .buttonSubmit:hover {
+}
+.buttonSubmit:hover {
     background-color: rgba(14, 31, 187, 1);
-  }
-
-
+}
 .image-container-ragComp-acc {
     background-image: url('Images/person.webp');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     height: 30vh; 
-  }
-  
-  div #pannello-principale-acc{
+}
+div #pannello-principale-acc{
     position: relative;
     align-self: center;
-  }
-  
-  #pannello-principale-acc {
+}
+#pannello-principale-acc {
     display: flex;
     justify-content: center;
     width: 80%; 
     margin: 0 auto;
     padding-top: 5vw;
-  }
-  
-  .image-container-ragComp-acc img{
-      width: 25vh;
-      height: auto;
-  }
-  
-  #infoNoAccount-acc{
+}
+.image-container-ragComp-acc img{
+    width: 25vh;
+    height: auto;
+}
+#infoNoAccount-acc{
     font-family: Poppins, sans-serif;
-  }
-  
-  #infoNoAccount-acc #linkRegistrati{
+}
+#infoNoAccount-acc #linkRegistrati{
     text-decoration: underline;
-  }
-  
-  #infoNoAccount-acc #linkRegistrati:hover{
+}
+#infoNoAccount-acc #linkRegistrati:hover{
     text-decoration: none;
-  }
-  
-  #container-sinistro-acc{
+}
+#container-sinistro-acc{
     padding-top: 4.5vh;
-  }
-
-  #container-sinistro-acc #container-destro-acc{
+}
+#container-sinistro-acc #container-destro-acc{
     width: 110%;
-  }
-  
-   #accediScritta-acc{
+}
+#accediScritta-acc{
     font-family: Poppins, sans-serif;
     width: 20%; 
     height: 6%; 
@@ -1793,11 +1091,9 @@ input[type="text"]:focus {
     top: 15%; 
     font-weight: 600;
     font-size: 2.5em; 
-  
     line-height: 1.2; 
-  }
-  
-  #container-destro-acc button {
+}
+#container-destro-acc button {
     background: #656565;
     border: none;
     border-radius: 16px;
@@ -1815,104 +1111,37 @@ input[type="text"]:focus {
     display: flex; 
     justify-content: center; 
     align-items: center; 
-  }
-  
-  #container-destro-acc button:hover {
+}
+#container-destro-acc button:hover {
     background-color: rgba(14, 31, 187, 1);
-  }
-  
-  #container-destro-acc form {
+}
+#container-destro-acc form {
     font-size:large;
-  }
-  
-  #container-destro-acc {
+}
+#container-destro-acc {
     padding-left: 2.5vw;
     height: 45vh;
     width: 35vh;
-  }
-  
-  #container-destro-acc form,
-  #container-destro-acc label,
-  #container-destro-acc button {
+}
+#container-destro-acc form, #container-destro-acc label, #container-destro-acc button {
     margin-bottom: 15px; 
-  }
-  
-  #ricordamiLabel-acc{
+}
+#ricordamiLabel-acc{
     font-family: Poppins, sans-serif;
-  }
-  
-
-
-@media screen and (max-width: 730px) {
-
-    .buttonSubmit{
-        width: 16vw;
-        height: 4vh;
-    }
- 
-    .image-container-ragComp-acc {
-        background-image: url('Images/people.png');
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;   
-        height: 200px; 
-        width: 200px; 
-    }
-
-    #pannello-principale-acc {
-        display: flex;
-        justify-content: center;
-        width: 80%; 
-        margin: 0 auto;
-        padding-top: 5vw;
-    }
-    
-      #pannello-principale-acc {
-        display: flex;
-        flex-direction: column;
-      }
-    
-      #container-destro-acc {
-        order: 1;
-        padding-left:9vw;
-      }
-      
-    
-      #container-sinistro-acc {
-        order: 2;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
 }
 
-/*-------------------------------------ACCESSO----------------------------------------------*/
 
 
-
-
-
-
-
-
-
-
-
-
-
-/*-------------------------------------EVENTI SALVATI----------------------------------------------*/
+/*-----------------------------------------------------------EVENTI SALVATI----------------------------------------------------------*/
 #menuleft #buttonEventiSalvati{
     background-color: rgba(45, 45, 45, 1);
     border-color: #000000;
     color: white;
 }
-
 #scrittaEventiSalvati{
     display: block;
     width: 100%;
 }
-
 #eventiSalvati-es { 
     width: 70%; 
     margin: 4vh; 
@@ -1927,7 +1156,6 @@ input[type="text"]:focus {
     justify-content: space-between; 
     border-bottom: 3px solid rgb(232, 231, 231); 
 } 
-
 .cardSalvato-es { 
     border: 1px solid #ddd; 
     border-radius: 10px; 
@@ -1938,15 +1166,12 @@ input[type="text"]:focus {
     transition: 0.3s; 
     margin-left: 3vh; 
 } 
-
 .cardSalvato-es:hover { 
     transform: scale(1.1); 
 } 
-
 .card-body-salvati-es { 
     padding: 15px; 
 } 
-
 .container-immagini-eventi-es { 
     background-repeat: no-repeat; 
     background-size: cover; 
@@ -1954,74 +1179,43 @@ input[type="text"]:focus {
     width: 98%; 
     border-radius: 3%; 
 } 
-
 .NomiLinkSalvati-es{ 
     font-family: Arial, Helvetica, sans-serif; 
     font-family: 'Roboto', sans-serif; 
     color: rgb(0, 0, 0); 
     text-decoration: underline; 
 } 
-
 .NomiLinkSalvati-es:hover { 
     text-decoration: none; 
 } 
-
 .infoEventoSalvato-es{ 
     font-family: Arial, Helvetica, sans-serif; 
     font-family: 'Poppins', sans-serif; 
     color: rgb(0, 0, 0); 
     font-size: 0.85em; 
 } 
-
 .genereEventoSalvato-es{ 
     font-family: Arial, Helvetica, sans-serif; 
     font-family: 'Poppins', sans-serif; 
     color: rgb(0, 0, 0); 
     font-size: 0.9em; 
 } 
-
 .meseAnnoSalvato-es{
     font-family: Arial, Helvetica, sans-serif; 
     font-family: 'Poppins', sans-serif; 
     color: rgb(0, 0, 0); 
     font-size: 1.3em; 
 } 
-@media screen and (max-width: 830px) 
-{ 
-    .cardSalvato-es { 
-    width: 100%;
-     
-}
-}
-
-/*-------------------------------------EVENTI SALVATI----------------------------------------------*/
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*-------------------------------------IMPO SICUREZZA----------------------------------------------*/
-
+/*----------------------------------------------------------IMPO SICUREZZA------------------------------------------------------------*/
 .titolini-sicu{
     color: red;
 }
-
 #menuleft ul li button:hover,#menuleft button:focus {
     background-color: #f0f0f0;
 }
-
-
 .settings-sicu {
     float: right;
     width: 80%; 
@@ -2031,52 +1225,41 @@ input[type="text"]:focus {
     margin-top: 1%; 
     box-sizing: border-box;
 }
-  
-  .settings-sicu h2 {
+.settings-sicu h2 {
     margin-bottom: 20px;
     text-align: center;
-  }
-  
-
-  .option-sicu {
+}
+.option-sicu {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #ccc;
     padding: 10px 0;
     cursor: pointer;
-  }
-  
-  .option-sicu img {
+}
+.option-sicu img {
     width: 12px;
     height: 12px;
     transition: transform 0.3s ease;
-  }
-  
-
-  .option-sicu.open img {
+}
+.option-sicu.open img {
     transform: rotate(180deg);
-  }
-  
-  .option-sicu span:nth-child(2) {
+}
+.option-sicu span:nth-child(2) {
     display: none;
-  }
-  
-  .option-sicu.open span:nth-child(2) {
+}
+.option-sicu.open span:nth-child(2) {
     display: inline-block;
-  }
-
-  .wrapper, .wrapper_eventi {
+}
+.wrapper, .wrapper_eventi {
     display: flex;
     justify-content: space-between;
-   }
-
-   .settings-sicu{
+}
+.settings-sicu{
     font-family: Inter, sans-serif;
-   }
+}
 
-/*---------------------------PRIVACY------------------------------------------------------*/
-
+/*---------------------------PRIVACY----------------------------*/
 #privacy-sicu {
     border: 1px solid #ccc;
     border-radius: 50px;
@@ -2085,43 +1268,35 @@ input[type="text"]:focus {
     width: 80%;
     margin: 2vh auto;
 }
-
 .p_privacy-sicu{
     margin-bottom: -0.5vh;
 }
-
 #domanda-sicu{
     margin-bottom: -0.5vh;
     font-weight:bold;
 }
-
 .privacy-settings-sicu {
     display: flex;
     flex-direction: column;
 }
-
 .separator-sicu {
     width: 100%;
     border-bottom: 1px solid #ccc;
     margin-bottom: 20px; 
 }
-
 .left-align-sicu {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
-
 .center-align-sicu {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
 .info-text-sicu {
     margin-bottom: 20px; 
 }
-
 #privacy-sicu button{
     background-color: rgba(114, 162, 233, 1);
     color: white;
@@ -2135,17 +1310,14 @@ input[type="text"]:focus {
     cursor: pointer;
     border-radius: 16px;
 }
-
 #privacy-sicu button:hover{
     background-color: rgba(14, 31, 187, 1);
 }
-
 #menuCenter{
     display:none;
 }
 
-   /*-------------------------PASSWORD-----------------------------------------------------*/
-
+/*-------------------------PASSWORD------------------------*/
 #modPass-sicu {
     border: 1px solid #ccc;
     border-radius: 50px;
@@ -2158,26 +1330,21 @@ input[type="text"]:focus {
     align-items: center;
     text-align: center; 
 }
-
 #modPass-sicu h2 {
     font-family: Inter, sans-serif;
 }
-
 .separator-sicu {
     width: 100%;
     border-bottom: 1px solid #ccc;
     margin-bottom: 20px;
 }
-
 #modPass-sicu p {
     text-align: justify;
     font-family: Inter, sans-serif;
 }
-
- #labelNewP-sicu, #labelRepP-sicu{
+#labelNewP-sicu, #labelRepP-sicu{
     font-family: Inter, sans-serif;
 }
-
 #modPass-sicu input[type="password"] {
     border: none; 
     border-bottom: 1px solid black; 
@@ -2187,16 +1354,12 @@ input[type="text"]:focus {
     width:70%;
     margin-bottom: 1.5vh;
 }
-
 #labelNewP-sicu{
     margin-bottom:-0.2vh;
 }
-
 #labelRepP-sicu{
     margin-bottom:-0.2vh;
 }
-
-
 #modPass-sicu button{
     background-color: rgba(114, 162, 233, 1);
     color: white;
@@ -2210,17 +1373,14 @@ input[type="text"]:focus {
     cursor: pointer;
     border-radius: 16px;
 }
-
 #modPass-sicu button:hover{
     background-color: rgba(14, 31, 187, 1);
 }
-
 .button-container-sicu {
     margin-top: 20px; 
 }
 
-/*---------------------------ELIMINA---------------------------------------------------------*/
-
+/*---------------------------ELIMINA---------------------------*/
 #eliAcc-sicu {
     border: 1px solid #ccc;
     border-radius: 50px;
@@ -2233,19 +1393,16 @@ input[type="text"]:focus {
     align-items: center;
     text-align: center; 
 }
-
 #eliAcc-sicu h2 {
     padding: 10px;
     font-size: 25px;
     font-family: Inter, sans-serif;
 }
-
 .separator-sicu {
     width: 100%;
     border-bottom: 1px solid #ccc;
     margin-bottom: 20px; 
 }
-
 .warning-sicu {
     border: 3px solid red;
     margin: 10px;
@@ -2261,7 +1418,6 @@ input[type="text"]:focus {
 .checkbox-sicu {
     margin: 20px;
 }
-
 #eliAcc-sicu #eliminaButton-sicu {
     background-color: darkred;
     color: white;
@@ -2275,11 +1431,9 @@ input[type="text"]:focus {
     cursor: pointer;
     border-radius: 16px;
 }
-
 #eliAcc-sicu #eliminaButton-sicu:hover {
     background-color: red;
 }
-
 .vertical-center-sicu {
     display: flex;
     flex-direction: column;
@@ -2287,8 +1441,7 @@ input[type="text"]:focus {
     align-items: center;
 }
 
-
-/*---------------------------ESCI---------------------------------------------------------*/
+/*---------------------------ESCI-----------------------------*/
 #esciAcc-sicu {
     border: 1px solid #ccc;
     border-radius: 50px;
@@ -2301,33 +1454,27 @@ input[type="text"]:focus {
     align-items: center;
     text-align: center;
 }
-
 #esciAcc-sicu h2 {
     font-weight: bold;
     font-family: 'Inter', sans-serif;
 }
-
 .separator-sicu {
     width: 100%;
     border-bottom: 1px solid #ccc;
     margin-bottom: 20px;
 }
-
 #esciAcc-sicu p {
     font-size: 2vh;
     padding: 2vh;
 }
-
 .checkbox-sicu {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
-
 .button-container-sicu {
     margin-top: 20px;
 }
-
 #esciAcc-sicu #esciButton-sicu {
     background-color: rgba(114, 162, 233, 1);
     color: white;
@@ -2341,87 +1488,13 @@ input[type="text"]:focus {
     cursor: pointer;
     border-radius: 16px;
 }
-
 #esciAcc-sicu #esciButton-sicu:hover {
     background-color: rgba(14, 31, 187, 1);
 }
 
-@media screen and (max-width: 830px) {
-
-    .wrapper #menuleft, .wrapper_eventi #menuleft {
-        display: none;
-    }
-      
-    .settings-sicu h2 {
-        text-align: center;
-    }
-
-    #bread{
-        margin-bottom: -0.5vh;
-        font-size: 12px;
-    }
-
-    #menuCenter{
-        margin-top: 10vh;
-        display:block;
-    }
-
-    .menu-orizzontale {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        justify-content: center; 
-    }
-      
-    .menu-orizzontale li {
-        margin-right: 1.5vw;
-    }
-      
-    .menu-orizzontale li:first-child {
-        margin-left: 0vw;
-    }
-      
-    .menu-orizzontale a {
-        display: inline-block;
-        padding: 2vh 3vh; 
-        text-align: center;
-        text-decoration: none;
-        font-family: 'Roboto', sans-serif;
-        color: black;
-        font-weight: bold;
-        text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
-        font-size: 1.7vh;
-        border: 1px solid black;
-        border-radius: 12px;
-        transition: all 0.3s ease;
-    }
-      
-    .menu-orizzontale a:hover {
-        background-color: #818181;
-        color: white;
-    }
-      
-    .bottonePlus, .bottoneProfilo{
-        display: none;
-    }
-}
-/*-------------------------------------IMPO SICUREZZA----------------------------------------------*/
 
 
-
-
-
-
-
-
-
-
-
-
-
-/*-------------------------------------ERRORS----------------------------------------------*/
-
+/*---------------------------------------------------------------ERRORS----------------------------------------------------------------*/
 #error-container {
     text-align: center;
     margin: 8vh auto;
@@ -2433,111 +1506,71 @@ input[type="text"]:focus {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
 #error-container h1 {
     color: #ff0000; 
     font-size: 36px;
     margin-bottom: 10px;
 }
-
 #error-container a {
     color: #007bff;
     text-decoration: none;
 }
-
 #error-container a:hover {
     text-decoration: underline;
 }
 
 
 
-/*-------------------------------------ERRORS----------------------------------------------*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*-------------------------------------PAGINA EVENTO----------------------------------------------*/
-
+/*--------------------------------------------------------PAGINA EVENTO----------------------------------------------------------------*/
 .event-error {
+    margin-top: 5vh;
     color: red;
     font-family: Arial, Helvetica, sans-serif;
     font-family: 'Poppins', sans-serif;
     font-size: 3vh;
     text-align: center;
 }
-
 #pannello-principale-pe::before{
     margin-top: 2vh;
 }
-
 #pannello-principale-pe {
+     margin-top: 2vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 6vh;
-    flex-direction: column;
-    height: 100vh;
+    flex-direction: column; 
     font-family: 'Poppins', sans-serif;
 }
-
 .boxImage-pe {
-    height: 70vh;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
-.boxImage-pe .imgEvent-pe {
-    width: 100%;
-    height: 100%;
-}
-
 .boxImage-pe .imgEvent-pe img {
-    max-width: 100%;
-    max-height: 100%;
-    height: 100%;
-    width: auto;
-    object-fit: contain;
+    margin-top: 6vh;
+    height: 45vh;
+    object-fit: contain; 
 }
-
 .containerPrincipale-pe {
     display: flex;
     width: 100%;
     position: relative;
 }
-
 .containerSecondario-pe {
     margin-left: 4vb;
     align-self: flex-start;
 }
-
-
 .container_sx-pe {
     align-items: flex-start;
     flex: 2.5; 
     padding-left: 4vh; 
     margin-top: 0; 
 }
-
 .containerPrincipale-pe .container_sx-pe .dataEvento-pe{
     font-weight: bold;
     color: rgb(45, 45, 45);
 }
-
 .container_dx-pe {
     flex: 1;
     padding-left: 6%;
@@ -2546,7 +1579,6 @@ input[type="text"]:focus {
     align-items: center; 
     justify-content: flex-end;
 }
-
 .container_dx-pe .sonoInteressato-pe {
     margin-right: 2vh;
     padding: 2vh 4vh; 
@@ -2557,7 +1589,6 @@ input[type="text"]:focus {
     font-size: 2.6vh;
     transition: background-color 0.3s ease;
 }
-
 .containerPrincipale-pe::after {
     content: '';
     position: absolute;
@@ -2568,13 +1599,11 @@ input[type="text"]:focus {
     height: 0.4vh;
     background-color: rgba(217, 217, 217, 1);
 }
-
 .accountEvento-pe {
     padding-bottom: 2vh;
     display: flex;
     align-items: center;
 }
-
 .accountEvento-pe img {
     margin-left: 2.5vh;
     padding-right: 3vh;
@@ -2583,13 +1612,11 @@ input[type="text"]:focus {
     border: none;
     object-fit: cover;
 }
-
 .personeInteressate-pe {
     padding-bottom: 2vh;
     display: flex;
     align-items: center;
 }
-
 .personeInteressate-pe img {
     margin-left: 2.5vh;
     padding-right: 3.5vh;
@@ -2599,88 +1626,26 @@ input[type="text"]:focus {
     object-fit: cover;
     border-radius: 50%;
 }
-
 .containerSecondario-pe{
     padding-bottom: 4vh;
 }
-
-
 .sonoInteressato-pe:hover {
     background-color: rgba(14, 31, 187, 1);
-  }
-
-@media screen and (max-width: 800px) {
-    .boxImage-pe .imgEvent-pe img {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 730px) {
-
-    #pannello-principale-pe {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; 
-    padding-top: 1vh; 
-}
-  
-}
-
-@media screen and (max-width: 620px) {
-
-    .container_dx-pe {
-        flex: 1;
-        display: flex;
-        justify-content: space-evenly;
-        align-content: flex-start;
-        flex-wrap: nowrap;
-        flex-direction: column;
-    }
-  
 }
 
 
-/*-------------------------------------PAGINA EVENTO----------------------------------------------*/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*-------------------------------------RICERCA EVENTO----------------------------------------------*/
-
+/*--------------------------------------------------------------RICERCA EVENTO---------------------------------------------------------*/
 #container_risultati_ricerca { 
     width: 100%; 
     display: flex; 
     flex-wrap:wrap; 
     justify-content: space-between; 
 } 
-
-
 #containerFraseEventiCreati {
     text-align: center;
     margin-bottom: 20px;
 }
-
 #nameSearched-se{
     margin-top: 2vh;
     margin-bottom: 2vh;
@@ -2692,18 +1657,14 @@ input[type="text"]:focus {
     align-items: center;
     font-family: 'Poppins', sans-serif;
 }
-
-
 #container_risultati_ricerca {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-
 #pannello-principale-se::before{
     margin-top: 2vh;
 }
-
 #pannello-principale-se {
     display: flex;
     justify-content: center;
@@ -2713,8 +1674,6 @@ input[type="text"]:focus {
     height: 100vh;
     font-family: 'Poppins', sans-serif;
 }
-
-
 .column-se{
 	float: left;
 	width: 29.25%;
@@ -2722,7 +1681,6 @@ input[type="text"]:focus {
 	padding-right:2.03%;
 	padding-bottom:2%;
 }
-
 .container-se{
 	border-radius: 3% 3% 3% 3%;
 	background-color: rgb(184,184,184);
@@ -2733,23 +1691,19 @@ input[type="text"]:focus {
 	width:28.5vw;
 	height: 18.5vw;
 }
-
 .container-se:hover{
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
-
 .row-se:after{
 	content: "";
 	display: table;
 	clear: both;
 }
-
 .GCard-se{
 	display:block;
 	font-weight:bold;
 	font-size:25px;
 }
-
 .descrizioneEventiT-se{
 	font-style:bold;
 	font-size:1.2vw;
@@ -2757,125 +1711,48 @@ input[type="text"]:focus {
 .descrizioneEventiD-se{
 	font-size:1vw;
 }
-
-
 #posizione-se{
 	font-size:20px;
 	font-style:bold;
 }
-
-
 #posizione-se span{
 	font-size:20px;
 	font-style:bold;
 	color:red;
 }
-
 .infoText-se {
     padding-left: 1vh
 }
 
 
-@media screen and (max-width: 900px){
 
-    .topnav-se a, .topnav-se input[type=text]{
-        float: none;
-        display: block;
-        text-align: left;
-        width: 100%;
-        margin: 0;
-        padding: 14px;
-    }
-
-    .topnav-se input[type=text]{
-        border: 1px solid #ccc;
-    }
-
-    .column-se{
-        float: center;
-        width: 81%;
-        padding-left:9.5%;
-        padding-right:9.5%;
-        padding-bottom:2%;
-    }
-
-    div img{
-        width:75vw;
-        height:35vw;
-    }
-
-    .container-se{
-        border-radius: 3% 3% 3% 3%;
-        background-color: rgb(184,184,184);
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-        transition: 0.3s;
-        text-align: left;
-        line-height:1%;
-        width:75vw;
-        height:55vw;
-    }
-    
-    .descrizioneEventiT-se{
-        font-style:bold;
-        font-size:3.2vw;
-    }
-
-    .descrizioneEventiD-se{
-        font-size:2.5vw;
-    }
-
-    .container-se:hover {
-        transform: scale(1.05);
-    }
-}
-
-/*-------------------------------------RICERCA EVENTO----------------------------------------------*/
-
-
-
-
-
-
-
-
-
-
-/*-------------------------------------PROFILO----------------------------------------------*/
-
-
-
+/*-----------------------------------------------------------PROFILO-----------------------------------------------------------------*/
 #profile-info-container {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
-
 #immagineProfilo {
     width: 120px;
     height: 120px;
     border-radius: 60px;
     margin-right: 1em;
 }
-
 #descrizioneProfilo {
     list-style: none;
     padding: 0;
     margin: 0;
 }
-
 #descrizioneProfilo li {
     font-family: 'Poppins', sans-serif;
     padding: 5px;
 }
-
 #NomeCompleto {
     font-size: 25px;
 }
-
 #Amici {
     color: #3f3f3f;
 }
-
 #box{
     margin-left: -10%;
     margin-top: 2em;
@@ -2888,8 +1765,6 @@ input[type="text"]:focus {
 #profile-info-container{
     order: 1;
 }
-
-
 #box form {
     background-color: #fff;
     padding: 1em;
@@ -2899,26 +1774,22 @@ input[type="text"]:focus {
     margin-top: 20px;
     order: 2;
 }
-
 label {
     display: block;
     margin-bottom: 8px;
 }
-
 #box input, #box select {
     width: 100%;
     padding: 8px;
     margin-bottom: 16px;
     box-sizing: border-box;
 }
-
 #image-container {
     position: relative;
     border: 2px dashed #ccc;
     text-align: center;
     overflow: hidden; 
 }
-
 #image-preview {
     width: 100%;
     height: 100%;
@@ -2928,25 +1799,19 @@ label {
     visibility: hidden; 
     border: none;
 }
-
 .drag-drop-text {
     margin-bottom: 10px;
 }
-
 .drag-drop-text {
     text-align: center;
 }
-
-
 .form-group {
     display: flex;
     justify-content: space-between;
 }
-
 .form-group > div {
     width: 48%;
 }
-
 textarea {
     width: 100%;
     height: 80px;
@@ -2955,7 +1820,6 @@ textarea {
     margin-bottom: 16px;
     resize: none;
 }
-
 #invia {
     background-color: rgba(114, 162, 233, 1);
     color: #fff;
@@ -2968,28 +1832,13 @@ textarea {
     margin-left: 20%;
     font-size: 20px;
 }
-
 #invia:hover{
     background-color: rgba(14, 31, 187, 1);
 }
 
 
-/*-------------------------------------PROFILO----------------------------------------------*/
 
-
-
-
-
-
-
-
-
-
-
-
-/*-------------------------------------PAGINA DI VERIFICA----------------------------------------------*/
-
-
+/*----------------------------------------------------------PAGINA DI VERIFICA--------------------------------------------------------*/
 #pannello-principale-ver {
     display: flex;
     flex-direction: column;
@@ -2997,16 +1846,13 @@ textarea {
     justify-content: space-around;
     font-family: 'Poppins', sans-serif;
 }
-
 .userInformations-ver {
     text-align: center;
 }
-
 .userInformations-ver h2{
     font-size: 4vh;
     font-weight: bolder;
 }
-
 .userAccount-ver {
     background-color: white;
     border-radius: 6vh;
@@ -3014,8 +1860,6 @@ textarea {
     align-items: center;
     border: 0.3vh solid black;
 }
-
-
 .userImage-ver img {
     width: 8vh;
     height: 8vh;
@@ -3024,26 +1868,19 @@ textarea {
     margin-right: 2vh;
     margin-left: 2vh;
 }
-
 .userEmail-ver {
     font-size: 3vh;
     font-weight: 500;
     margin-right: 4vh;
 }
-
-
 .infoText-ver{
     font-size: 2.5vh;
     text-align: center;
 }
-
-
 #showPasswordLabel-ver{
     font-size: 2.6vh;
     font-family: 'Poppins', sans-serif;
 }
-
-
 .continueButton-ver {
     margin-top: 4vh;
     background: #656565;
@@ -3064,49 +1901,33 @@ textarea {
     justify-content: center; 
     align-items: center; 
 }
-
 .continueButton-ver:hover{
     background-color: rgba(14, 31, 187, 1);
 }
 
 
 
-/*-------------------------------------PAGINA DI VERIFICA----------------------------------------------*/
-
-
-
-
-
-
-/*-------------------------------------CHI SIAMO----------------------------------------------*/
- 
-
-
+/*-------------------------------------------------------------CHI SIAMO--------------------------------------------------------------*/
 #chi_siamo_main{
     text-align: left;
     padding: 4em 1em 2px 4em;
     font-family: 'Poppins', sans-serif;
 }
-
 #chi_siamo_main p{
     font-size: 1.2em;
     margin-bottom: 1em;
 }
-
 #chi_siamo_main h2{
         font-size: 2em;
         margin-bottom: 0.5em;
         font-weight: bold;
 }
-
 .chi_siamo{
     padding: 0 2em 2.5em 0;
 }
-
 #contenitore-cs {
     overflow: hidden;
 }
-  
 #contenitore-cs >  img {
     width: 30%;
     height: auto;
@@ -3115,43 +1936,13 @@ textarea {
 }
 
 
-@media (max-width: 800px) {
 
-    #contenitore-cs >  img {
-        width: 60%;
-        margin-left: 20%;
-        height: auto;
-        float:none;
-        margin-bottom: 0.5em;
-    }
-
-}
-
-/*-------------------------------------CHI SIAMO----------------------------------------------*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*-------------------------------------INFO PERSONALI----------------------------------------------*/
-
+/*-------------------------------------------------------INFO PERSONALI----------------------------------------------------------*/
 #menuleft #buttonInfoPersonali{
     background-color: rgb(45, 45, 45);
     border-color: #000000;
     color: white;
 }
-
-
 .settings-ip {
     float: right;
     width: 80%; 
@@ -3161,57 +1952,46 @@ textarea {
     margin-top: 1%;
     box-sizing: border-box;
 }
-  
-  .settings-ip h2 {
+.settings-ip h2 {
     margin-bottom: 20px;
     text-align: center;
-  }
-  
- 
-  .option-ip {
+}
+.option-ip {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #ccc;
     padding: 10px 0;
     cursor: pointer;
-  }
-  
-  .option-ip img {
+}
+.option-ip img {
     width: 12px;
     height: 12px;
     transition: transform 0.3s ease;
-  }
+}
   .option-ip span {
     width: 30%;
-  }
-  
+}
 #nome-ip, #username-ip, #genere-ip, #data-ip, #email-ip, #numero-ip{
     padding: 0;
     margin: 0;
     margin-left: -30%;
     text-align: center;
 }
-
-  .option-ip.open img {
+.option-ip.open img {
     transform: rotate(180deg);
-  }
-  
-  .option-ip span:nth-child(2) {
+}
+.option-ip span:nth-child(2) {
     display: none;
-  }
-  
-  .option-ip.open span:nth-child(2) {
+}
+.option-ip.open span:nth-child(2) {
     display: inline-block;
-  }
-
-   .settings-ip{
+}
+.settings-ip{
     font-family: Inter, sans-serif;
-   }
+}
 
-/*---------------------------PRIVACY------------------------------------------------------*/
-
-
+/*---------------------------PRIVACY-----------------------------*/
 #privacy-ip {
     border: 1px solid #ccc;
     border-radius: 50px;
@@ -3220,82 +2000,67 @@ textarea {
     width: 80%;
     margin: 2vh auto;
 }
-
 #domanda-ip{
     margin-bottom: -0.5vh;
     font-weight:bold;
 }
-
 .mod-nome-ip {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
-
 #campoNome-ip {
     width: 100%;
     margin-bottom: 10px; 
 }
-
 #frecciaEdit-ip{
     width: 20px;
     height: 20px;
     cursor: pointer;
     margin-right: 3vh;
 }
-
 #EditNome-ip{
     display: flex;
     flex-direction: row;
     padding: 0 0 1.5em 0;
 }
-
 #bandierina-ip, .Lock-ip, .publicInfo-ip{
     width: 20px;
     height: 20px;
     margin-top: 5px;
     margin-bottom: 5px;
 }
-
 .date-input-ip {
     display: flex;
     width: 100%;
 }
-
-.date-input-ip input,
-.date-input-ip select {
+.date-input-ip input, .date-input-ip select {
     width: 30%;
     height: 3em;
     margin: 1.5em;
     box-sizing: border-box;
     text-align: center;
 }
-
-
 .separator-ip {
     width: 100%;
     border-bottom: 1px solid #ccc;
     margin-bottom: 20px;
 }
-
 .left-align-ip {
     width: 100%;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
 }
-
 .center-align-ip {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
 .info-text-ip {
     margin-bottom: 20px; 
 }
-
 #privacy-ip button{
     background-color: rgba(114, 162, 233, 1);
     color: white;
@@ -3309,7 +2074,6 @@ textarea {
     cursor: pointer;
     border-radius: 16px;
 }
-
 #privacy-ip button:hover{
     background-color: rgba(14, 31, 187, 1);
 }
@@ -3319,19 +2083,15 @@ textarea {
     flex-direction: column;
     justify-content: center;
 }
-
-
 #elenco-genere-ip input {
     margin: 0;
     padding: 0;
 }
-
 #menuCenter-ip{
     display:none;
 }
 
-   /*-------------------------PASSWORD-----------------------------------------------------*/
-
+/*-------------------------PASSWORD----------------------------*/
 #modNick-ip, #modTel-ip {
     border: 1px solid #ccc;
     border-radius: 50px;
@@ -3344,34 +2104,27 @@ textarea {
     align-items: center;
     text-align: center; 
 }
-
 #modNick-ip h2, #modTel-ip h2 {
     font-family: Inter, sans-serif;
 }
-
 .separator-ip {
     width: 100%;
     border-bottom: 1px solid #ccc;
     margin-bottom: 20px; 
 }
-
 #modNick-ip p, #modTel-ip p {
     text-align: justify;
     font-family: Inter, sans-serif;
 }
-
- #labelNewP-ip, #labelRepP-ip{
+#labelNewP-ip, #labelRepP-ip{
     font-family: Inter, sans-serif;
 }
 #labelNewP-ip{
     margin-bottom:-0.2vh;
 }
-
 #labelRepP-ip{
     margin-bottom:-0.2vh;
 }
-
-
 #modNick-ip button, #modTel-ip button{
     background-color: rgba(114, 162, 233, 1);
     color: white;
@@ -3385,22 +2138,19 @@ textarea {
     cursor: pointer;
     border-radius: 16px;
 }
-
 #modNick-ip button:hover, #modTel-ip button:hover{
     background-color: rgba(14, 31, 187, 1);
 }
-
 .button-container-ip {
     margin-top: 20px; 
 }
 
-/*---------------------------ELIMINA---------------------------------------------------------*/
+/*---------------------------ELIMINA------------------------*/
 .separator-ip {
     width: 100%;
     border-bottom: 1px solid #ccc;
     margin-bottom: 20px; 
 }
-
 .vertical-center-ip {
     display: flex;
     flex-direction: column;
@@ -3408,8 +2158,7 @@ textarea {
     align-items: center;
 }
 
-
-/*---------------------------ESCI---------------------------------------------------------*/
+/*---------------------------ESCI---------------------------*/
 #mod-data-ip {
     border: 1px solid #ccc;
     border-radius: 50px;
@@ -3422,33 +2171,27 @@ textarea {
     align-items: center;
     text-align: center;
 }
-
 #mod-data-ip h2 {
     font-weight: bold;
     font-family: 'Inter', sans-serif;
 }
-
 .separator-ip {
     width: 100%;
     border-bottom: 1px solid #ccc;
     margin-bottom: 20px;
 }
-
 #mod-data-ip p {
     font-size: 2vh;
     padding: 2vh;
 }
-
 .checkbox-ip {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
-
 .button-container-ip {
     margin-top: 20px;
 }
-
 #mod-data-ip .salva-ip {
     background-color: rgba(114, 162, 233, 1);
     color: white;
@@ -3462,25 +2205,13 @@ textarea {
     cursor: pointer;
     border-radius: 16px;
 }
-
 #mod-data-ip .salva-ip:hover {
     background-color: rgba(14, 31, 187, 1);
 }
 
-@media screen and (max-width: 700px) {
-    .settings-ip h2 {
-        text-align: center;
-    }
-  
-}
 
 
-
-/*-------------------------------------INFO PERSONALI----------------------------------------------*/
-
-/*-------------------------------------PARTNERS----------------------------------------------*/
-
-
+/*----------------------------------------------------------PARTNERS------------------------------------------------------------*/
 #partner-container {
     margin-top: 20px;
     width: 80%;
@@ -3489,41 +2220,36 @@ textarea {
     font-family: Arial, Helvetica, sans-serif;
     font-family: Poppins, sans-serif;
 }
-
 #partner-container h1 {
     font-size: 2em;
     color: #333;
     text-align: center;
     margin-bottom: 20px;
 }
-
 #partner-container .partner-text-why {
     font-size: 1.4em;
     color: #2b2b2b;
     text-align: center;
     padding: 10px 0;
 }
-
 #partners-logos {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     margin-top: 20px;
 }
-
 .partner-image {
     width: 30%;
     text-align: center;
 }
-
 .partner-image img {
     max-width: 100%;
     height: auto;
 }
 
-  /*-------------------------------------PARTNERS----------------------------------------------*/
 
-  /*-------------------------------------SIDE MENU----------------------------------------------*/
+
+/*-----------------------------------------------------------SIDE MENU--------------------------------------------------------------*/
 .side-menu {
     height: 100%;
     width: 0;
@@ -3546,11 +2272,9 @@ textarea {
     display: block;
     transition: 0.3s;
 }
-
 .side-menu a:hover {
     color: #f1f1f1;
 }
-
 .closebtn {
     position: absolute;
     top: 0;
@@ -3558,8 +2282,6 @@ textarea {
     font-size: 8vh; 
     margin-left: 50px;
 }
-
-
 .overlay {
     height: 100%;
     width: 0;
@@ -3572,23 +2294,9 @@ textarea {
     transition: 0.5s;
 }
 
-/*-------------------------------------SIDE MENU----------------------------------------------*/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*-------------------------------------HOME2----------------------------------------------*/
+/*----------------------------------------------------------HOME v2.0-------------------------------------------------------------*/
 .home-body-box {
     display: flex;
     justify-content: space-between;
@@ -3596,25 +2304,21 @@ textarea {
     font-family: Arial, Helvetica, sans-serif;
     font-family: 'Poppins', sans-serif;
 }
-
 .home-evidenza-box {
     position: sticky;
     display: flex;
     flex-direction: column;
     width: 50%;
 }
-
 .home-evidenza-generi-box, .home-evidenza-eventi-box {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
 .home-evidenza-generi {
     display: flex;
     justify-content: space-around;
 }
-
 .home-evidenza-generi a {
     text-align: center;
 }
@@ -3622,28 +2326,23 @@ textarea {
     font-size: 2.5vh;
     font-weight: bold;
 }
-
 .home-evidenza-eventi-title{
     font-size: 2.5vh;
     font-weight: bold;
 }
-
 .home-consigliati-title{
     font-size: 2.5vh;
     font-weight: bold;
 
 }
-
 .home-consigliati-title{
     text-align: center;
 }
-
 .home-consigliati-box {
     height: 100%;
     width: 100%;
     padding: 20px;
 }
-
 .generiImmagini-home{
     background-color: rgb(184,184,184);
     border: none;
@@ -3657,29 +2356,23 @@ textarea {
     margin: 1vh;
     border-radius: 75%;
     transition:0.3s;
-  }
-  
-  .generiImmagini-home:hover{
+}
+.generiImmagini-home:hover{
     transform: scale(1.2);
-  }
-
-  .home-consigliati{
+}
+.home-consigliati{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-  }
-
-  .descrizioneEventiT-home, .descrizioneEventiD-home {
+}
+.descrizioneEventiT-home, .descrizioneEventiD-home {
     margin: 10px 0;
     word-wrap: break-word;
 }
-
 .descrizioneEventiD-home{
     color:#767676;
 }
-
-
-  .column-home-e {
+.column-home-e {
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -3689,13 +2382,11 @@ textarea {
     box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
     flex: 0 1 auto;
 }
-
 .container-home-evidenza-e {
     padding: 15px;
     width: 100%;
     height: auto;
 }
-
 .container-home-evidenza-e img {
     border-radius: 10px;
     width: 87%;
@@ -3705,12 +2396,9 @@ textarea {
     margin-left: 0.5vw;
     margin-right: 0.8vw;
 }
-
 .column-home-e:hover {
     transform: scale(1.1);
 }
-
-
 .column-home {
     border-radius: 10px;
     display: flex;
@@ -3719,118 +2407,59 @@ textarea {
     margin: 15px;
     border: 1px solid #ccc;
     box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
-    flex: 0 1 auto; /* Modificato qui */
+    flex: 0 1 auto;
 }
-
 .container-home-evidenza {
     padding: 5%;
     width: 100%;
     height: auto;
 }
-
 .container-home-evidenza img {
     border-radius: 10px;
     width: 90%;
     height: auto;
 }
-
 .descrizioneEventiT-home, .descrizioneEventiD-home, .descrizioneEventiG-home {
-    /* margin: 10px 5%; */
     word-wrap: break-word;
     overflow-wrap: break-word;
     width: 80%; 
 }
-
 .descrizioneEventiG-home, .descrizioneEventiL-home{
     margin: 10px 0;
     word-wrap: break-word;
     overflow-wrap: break-word;
     width: 80%; 
-    /* padding: 0 5%;  */
     color: #767676;
 }
-
 .container-home img {
     border-radius: 10px;
     margin:3vh;
     width: 100%;  
     display: block; 
 }
-
-
 .column-home:hover {
     transform: scale(1.1);
 }
-
-#ricerca-genere-musica,
-#ricerca-genere-arte,
-#ricerca-genere-sport,
-#ricerca-genere-teatro{
+#ricerca-genere-musica, #ricerca-genere-arte, #ricerca-genere-sport, #ricerca-genere-teatro{
     color: #000000;
 }
 
 
-@media screen and (max-width: 1000px) {
 
-    .home-evidenza-generi-title, .home-evidenza-eventi-title{
-        text-align: center;
-    }
-
-
-
-    .generiImmagini-home{
-        width: 15vw;
-        height: 15vw;
-      }
-
-    .home-body-box {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .home-evidenza-box, .home-consigliati-box {
-        width: 50%;
-    }
-
-    .column-home, .column-home-e {
-        width: 100%;
-        margin: 15px 0; 
-    }
-
-    .container-home-evidenza-e img, .container-home-evidenza img {
-        width: 90%;
-    }
-
-    .descrizioneEventiT-home, .descrizioneEventiD-home, .descrizioneEventiG-home {
-        width: 90%;
-        font-size: large;
-    }
-}
-
-/*-------------------------------------HOME2----------------------------------------------*/
-
-
-
-
-
-/*-------------------------------------TERMINI----------------------------------------------*/
-
+/*------------------------------------------------------------TERMINI------------------------------------------------------------------*/
 .text_termini{
     font-size: 2.5vh;
     text-align: left;
 }
-
 .text_termini_final{
     margin-top: 4vh;
     margin-bottom: 4vh;
     font-size: 2vh;
     text-align: center;
 }
-
 .titolo_termini{
     font-size: 4vh;
 }
-
 #termini-box{
     position: relative;
     text-align: center;
@@ -3848,23 +2477,18 @@ textarea {
 }
 
 
-/*-------------------------------------TERMINI----------------------------------------------*/
 
-
-
+/*-------------------------------------------------------------EVENTI CREATI-----------------------------------------------------------*/
 .containerEventiCreati {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-
-
 .containerSalvati { 
     width: 80%;
     margin: 8vh;
 } 
-
 .nessunEventoTrovatoImpo{
     font-family: Arial, Helvetica, sans-serif; 
     font-family: 'Poppins', sans-serif; 
@@ -3872,22 +2496,6 @@ textarea {
     font-size: 1.3em; 
     margin: 5vh;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-/*-------------------------------------Eventi Creati----------------------------------------------*/
-
-
-
 #eventiCreati-ev { 
     width: 70%; 
     margin: 4vh; 
@@ -3902,7 +2510,6 @@ textarea {
     justify-content: space-between; 
     border-bottom: 3px solid rgb(232, 231, 231); 
 } 
-
 .cardCreato-ev { 
     border: 1px solid #ddd; 
     border-radius: 10px; 
@@ -3913,15 +2520,12 @@ textarea {
     transition: 0.3s; 
     margin-left: 3vh; 
 } 
-
 .cardCreato-ev:hover { 
     transform: scale(1.1); 
 } 
-
 .card-body-creati-ev { 
     padding: 15px; 
 } 
-
 .container-immagini-eventi-ev { 
     background-repeat: no-repeat; 
     background-size: cover; 
@@ -3929,66 +2533,43 @@ textarea {
     width: 98%; 
     border-radius: 3%; 
 } 
-
 .NomiLinkCreati-ev{ 
     font-family: Arial, Helvetica, sans-serif; 
     font-family: 'Roboto', sans-serif; 
     color: rgb(0, 0, 0); 
     text-decoration: underline; 
 } 
-
 .NomiLinkCreati-ev:hover { 
     text-decoration: none; 
 } 
-
 .infoEventoCreato-ev{ 
     font-family: Arial, Helvetica, sans-serif; 
     font-family: 'Poppins', sans-serif; 
     color: rgb(0, 0, 0); 
     font-size: 0.85em; 
 } 
-
 .genereEventoCreato-ev{ 
     font-family: Arial, Helvetica, sans-serif; 
     font-family: 'Poppins', sans-serif; 
     color: rgb(0, 0, 0); 
     font-size: 0.9em; 
 } 
-
 .meseAnnoCreato-ev{
     font-family: Arial, Helvetica, sans-serif; 
     font-family: 'Poppins', sans-serif; 
     color: rgb(0, 0, 0); 
     font-size: 1.3em; 
 } 
-@media screen and (max-width: 830px) 
-{ 
-    .cardCreato-ev { 
-    width: 100%;
-     
-}
-}
-
-/*-------------------------------------Eventi Creati----------------------------------------------*/
 
 
 
-
-
-
-
-/*-------------------------------------Risultati Ricerca----------------------------------------------*/
-
-
-
+/*--------------------------------------------------------------RISULTATI RICERCA-------------------------------------------------------*/
 .container-risultati-ricerca {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-
-
 .container-evento-box {
     width: 100%;
     display: flex;
@@ -3997,17 +2578,14 @@ textarea {
     border-radius: 4px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
-
 .container-evento-r {
     width: 90%;
     padding: 20px;
 }
-
 .container-evento-r img {
     width: 100%;
     height: auto;
 }
-
 .descrizioneEventiRic {
     width: 86%;
     font-family: 'Poppins', sans-serif; 
@@ -4016,10 +2594,7 @@ textarea {
     margin-top: 10px;
     word-wrap: break-word; 
 }
-
-.descrizioneEventiRicD,
-.descrizioneEventiRicL,
-.descrizioneEventiRicG {
+.descrizioneEventiRicD, .descrizioneEventiRicL, .descrizioneEventiRicG {
     width: 86%;
     font-family: 'Poppins', sans-serif; 
     font-size: 16px;
@@ -4028,25 +2603,523 @@ textarea {
     word-wrap: break-word; 
 }
 
+
+
+
+@media screen and (max-width: 620px) {
+    /*---------------------------PAGINA EVENTO---------------------------*/
+    .container_dx-pe {
+        flex: 1;
+        display: flex;
+        justify-content: space-evenly;
+        align-content: flex-start;
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    /*---------------------------INFO PERSONALI--------------------------*/
+    .settings-ip h2 {
+        text-align: center;
+    }
+}
+
+
+@media screen and (max-width: 730px) {
+    /*---------------------------PAGINA EVENTO---------------------------*/
+    #pannello-principale-pe {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 1vh; 
+    }
+    /*------------------------------ACCESSO------------------------------*/
+    .buttonSubmit{
+        width: 16vw;
+        height: 4vh;
+    }
+    .image-container-ragComp-acc {
+        background-image: url('Images/people.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;   
+        height: 200px; 
+        width: 200px; 
+    }
+    #pannello-principale-acc {
+        display: flex;
+        justify-content: center;
+        width: 80%; 
+        margin: 0 auto;
+        padding-top: 5vw;
+    }
+    #pannello-principale-acc {
+        display: flex;
+        flex-direction: column;
+    }
+    #container-destro-acc {
+        order: 1;
+        padding-left:9vw;
+    }
+    #container-sinistro-acc {
+        order: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    /*---------------------------REGISTRAZIONE--------------------------*/
+    .image-container-ragComp-reg {
+        background-image: url('Images/people2.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 200px; 
+        width: 200px; 
+    }
+    #registratiScritta-reg{
+        font-family: Poppins, sans-serif;
+        width: 20%; 
+        height: 6%; 
+        left: 35%; 
+        top: 15%; 
+        font-weight: 600;
+        font-size: 2.5em; 
+        line-height: 1.2; 
+    }
+    #pannello-principale-reg {
+        display: flex;
+        flex-direction: column;
+    }
+    #container-destro-reg {
+        order: 1;
+    }
+    #container-sinistro-reg {
+        order: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    /*---------------------------PROFILO CREAZIONE--------------------------*/
+    .wrapper, .wrapper_eventi {
+        padding-top: 3vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .wrapper_eventi{
+        max-width: 75%;
+        margin-left: 12%;
+    }
+    .rowProfiloEv .containerProfiloEv{
+        flex-direction: row;
+        align-items: center;
+    }
+    .descrizioneEventiT {
+        font-size: 1.3em;
+    }
+    .descrizioneEventiD {
+        font-size: 1.1em;
+        overflow: hidden; 
+        text-overflow: ellipsis; 
+        white-space: nowrap;
+    }
+    .wrapper #menuleft, .wrapper_eventi #menuleft {
+        display: none;
+    }
+    #bread-ev{
+        margin-bottom: -0.5vh;
+        font-size: 12px;
+    }
+    #menuCenter{
+        margin-top: 10vh;
+        display:block;
+    }
+    .menu-orizzontale {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+    }
+    .menu-orizzontale li {
+        margin-right: 1.5vw;
+    }
+    .menu-orizzontale li:first-child {
+        margin-left: 0vw;
+    }
+    .menu-orizzontale a {
+        display: inline-block;
+        padding: 4px 8px; 
+        text-align: center;
+        text-decoration: none;
+        font-family: 'Roboto', sans-serif;
+        color: black;
+        font-weight: bold;
+        text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+        font-size: 3vw; 
+        border: 1px solid black; 
+        border-radius: 12px; 
+        transition: all 0.3s ease;
+        margin-left:1.3vw;
+    }
+    .menu-orizzontale a:hover {
+        background-color: black;
+        color: white;
+    }
+    .bottonePlus-ev, .bottoneProfilo{
+        display: none;
+    }
+    #profile-ev{
+        margin-top: 2vh;
+    }
+    /*---------------------------SKIP PRINCIPALE---------------------------*/
+    .skip-link {
+        position: fixed; 
+        top: 1em; 
+        left: 1em; 
+        background-color: #ffffff;
+        color: black; 
+        padding: 0.5em; 
+        font-size: 0.8em; 
+        z-index: 999;
+        font-family: Arial, Helvetica, sans-serif; 
+    }
+    .skip-link:focus {
+        display: block; 
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    /*---------------------------PAGINA EVENTO---------------------------*/
+    .boxImage-pe .imgEvent-pe img {
+        display: none;
+    }
+    .event-error {
+        margin-top: 8vh;
+    }
+
+    /*-----------------------------CHI SIAMO----------------------------*/
+    #contenitore-cs >  img {
+        width: 60%;
+        margin-left: 20%;
+        height: auto;
+        float:none;
+        margin-bottom: 0.5em;
+    }
+}
+
+
+@media screen and (max-width: 830px) 
+{ 
+    /*---------------------------INTESTAZIONE---------------------------*/
+    .bottoneStar {
+        position: relative;
+        margin-left: 13vw;
+        margin-bottom: -1vh;
+    }
+    header h1{
+        padding-top: 0.5vh;
+        background-size: 50%;
+    }
+    header {
+        position: relative; 
+    }
+    .wrapper, .wrapper_eventi {
+        padding-top: 3vh;
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+    }
+    .wrapper_eventi{
+        max-width: 75%;
+        margin-left: 12%;
+    }
+    .header-items {
+        margin-top: -0.7vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .header-items button, .header-items button .bottoneHamburger {
+        width: 6vh; 
+        height: 6vh;
+        margin: auto;
+        border-radius: 50%; 
+    }
+    header::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -1vh;
+        height: 0.1vh;
+        background-color: rgba(217, 217, 217, 1);
+      }  
+    .bottoneStar{
+        margin: auto;
+        width: 6vh; 
+        height: 6vh; 
+    }
+    #searchButton {
+        width: 6vh; 
+        height: 6vh; 
+        margin: auto; 
+        margin-left: 6vh;
+    }
+    header .bottoneHamburger, #searchButton,.bottoneStar, #searchBar {
+        display: inline-block; 
+        vertical-align: middle; 
+    }
+    ul.linkPagina li {
+        white-space: nowrap; 
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.2vw;
+        margin-right: 5vh; 
+        text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+    }
+    #searchBar {
+        width: 35vw; 
+        max-width: 40vw; 
+        height: 4vh; 
+        left: unset; 
+        top: unset; 
+        position: relative; 
+        margin-right: 0; 
+        margin-left: auto; 
+    }
+    header .bottoneHamburger {
+        display: block;
+    }
+    header .linkPagina{
+        display: none;
+    }
+    .bottonePlus, .bottoneProfilo{
+        display: none;
+    }
+    /*---------------------------EVENTI CREATI---------------------------*/
+    .cardCreato-ev { 
+        width: 100%;
+    }
+    /*---------------------------IMPO SICUREZZA--------------------------*/
+    .wrapper #menuleft, .wrapper_eventi #menuleft {
+        display: none;
+    }
+    .settings-sicu h2 {
+        text-align: center;
+    }
+    #bread{
+        margin-bottom: -0.5vh;
+        font-size: 12px;
+    }
+    #menuCenter{
+        margin-top: 10vh;
+        display:block;
+    }
+    .menu-orizzontale {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center; 
+    }
+    .menu-orizzontale li {
+        margin-right: 1.5vw;
+    }
+    .menu-orizzontale li:first-child {
+        margin-left: 0vw;
+    }
+    .menu-orizzontale a {
+        display: inline-block;
+        padding: 2vh 3vh; 
+        text-align: center;
+        text-decoration: none;
+        font-family: 'Roboto', sans-serif;
+        color: black;
+        font-weight: bold;
+        text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+        font-size: 1.7vh;
+        border: 1px solid black;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+    }
+    .menu-orizzontale a:hover {
+        background-color: #818181;
+        color: white;
+    }
+    .bottonePlus, .bottoneProfilo{
+        display: none;
+    }
+    /*---------------------------EVENTI SALVATI---------------------------*/
+    .cardSalvato-es { 
+        width: 100%;
+         
+    }
+}
+
+
+@media screen and (max-width: 900px){
+    /*---------------------------RICERCA EVENTO---------------------------*/
+    .topnav-se a, .topnav-se input[type=text]{
+        float: none;
+        display: block;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 14px;
+    }
+    .topnav-se input[type=text]{
+        border: 1px solid #ccc;
+    }
+    .column-se{
+        float: center;
+        width: 81%;
+        padding-left:9.5%;
+        padding-right:9.5%;
+        padding-bottom:2%;
+    }
+    div img{
+        width:75vw;
+        height:35vw;
+    }
+    .container-se{
+        border-radius: 3% 3% 3% 3%;
+        background-color: rgb(184,184,184);
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        text-align: left;
+        line-height:1%;
+        width:75vw;
+        height:55vw;
+    } 
+    .descrizioneEventiT-se{
+        font-style:bold;
+        font-size:3.2vw;
+    }
+    .descrizioneEventiD-se{
+        font-size:2.5vw;
+    }
+    .container-se:hover {
+        transform: scale(1.05);
+    }
+    /*---------------------------PROFILO CREAZIONE--------------------------*/
+    .descrizioneEventiT-ev {
+        font-size: 1.3em; 
+    }
+    .descrizioneEventiD-ev {
+        font-size: 1.1em; 
+        overflow: hidden; 
+        text-overflow: ellipsis; 
+        white-space: nowrap;
+    }
+}
+
+
+@media screen and (max-width: 950px) {
+    /*---------------------------PROFILO CREAZIONE--------------------------*/
+    .container-immagini-eventi-ev {
+        max-width: 100%; 
+        height: auto; 
+    }
+
+    /*---------------------------SKIP PRINCIPALE---------------------------*/
+    .skip-link {
+        position: fixed; 
+        top: 1em; 
+        left: 1em; 
+        background-color: #ffffff;
+        color: black; 
+        padding: 0.5em; 
+        font-size: 0.8em; 
+        z-index: 999;
+        font-family: Arial, Helvetica, sans-serif; 
+    }
+    .skip-link:focus {
+        display: block; 
+    }
+}
+
+
+@media screen and (max-width: 980px) {
+    /*---------------------------INTESTAZIONE--------------------------*/
+    #searchButton, .bottoneStar {
+        height: 5vh;
+        width: 5vh;
+    }
+    ul.linkPagina li {
+        white-space: nowrap;
+        font-family: Arial, Helvetica, sans-serif; 
+        font-family: 'Roboto', sans-serif;
+        font-size: 0.8em;
+        margin-right: 5vh; 
+        text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+    }
+}
+
+
 @media screen and (max-width: 1000px) 
 { 
+    /*-------------------------RISULTATI RICERCA------------------------*/
     #container_risultati_ricerca { 
-    padding-left: 15%;
-    width: 70%;
-     
+        padding-left: 15%;
+        width: 70%;
+    }
+    /*-----------------------------HOME v2.0----------------------------*/
+    .home-evidenza-generi-title, .home-evidenza-eventi-title{
+        text-align: center;
+    }
+    .generiImmagini-home{
+        width: 15vw;
+        height: 15vw;
+    }
+    .home-body-box {
+        flex-direction: column;
+        align-items: center;
+    }
+    .home-evidenza-box, .home-consigliati-box {
+        width: 50%;
+    }
+    .column-home, .column-home-e {
+        width: 100%;
+        margin: 15px 0; 
+    }
+    .container-home-evidenza-e img, .container-home-evidenza img {
+        width: 90%;
+    }
+    .descrizioneEventiT-home, .descrizioneEventiD-home, .descrizioneEventiG-home {
+        width: 90%;
+        font-size: large;
+    }
 }
+
+
+@media screen and (max-width: 1100px) {
+    /*----------------------------INTESTAZIONE--------------------------*/
+    #searchBar {
+        width: 40vh; 
+        height: 6vh; 
+        transition: width 1s ease-in-out;
+    }
 }
 
-/*-------------------------------------Risultati Ricerca----------------------------------------------*/
 
-
-.a_evento{
-    text-decoration: none;
-    color: black;
-}
-
-
-#mo-pulsanteSingolo{
-    color: white;
-    background-color: #454545;
+@media screen and (max-width: 1700px) {
+    /*------------------------PROFILO CREAZIONE-------------------------*/
+    .columnProfiloEv-ev {
+        flex: 0 0 calc(50% - 20px);
+        max-width: calc(50% - 20px); 
+        flex-basis: calc(50% - 20px);
+    }
+    .descrizioneEventiT-ev {
+        font-size: 1.1em; 
+    }
+    .descrizioneEventiD-ev {
+        font-size: 1.1em; 
+        overflow: hidden; 
+        text-overflow: ellipsis; 
+        white-space: nowrap; 
+    }
 }

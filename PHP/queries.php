@@ -13,20 +13,15 @@ function getPartecipantiEvento($conn, $evento_id) {
             FROM Utenti
             INNER JOIN eventisalvati ON Utenti.utente_id = eventisalvati.utente_id
             WHERE eventisalvati.evento_id = ?";
-
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $evento_id);
-    
     $stmt->execute();
-
     $result = $stmt->get_result();
-    
     return $result;
 }
 
 function logout() {
     $_SESSION = array();
-
     if (ini_get("session.use_cookies")) {
         $params = session_get_cookie_params();
         setcookie(session_name(), '', time() - 42000,
@@ -34,12 +29,10 @@ function logout() {
             $params["secure"], $params["httponly"]
         );
     }
-
     session_destroy();
     header("Location: ../HTML/index.html");
     exit();
 }
-
 
 function getProfilePhoto($conn, $userId) {
     $sql = "SELECT foto_profilo FROM Utenti WHERE utente_id = ?";
@@ -47,7 +40,6 @@ function getProfilePhoto($conn, $userId) {
     $stmt->bind_param("i", $userId);
     $stmt->execute();
     $result = $stmt->get_result();
-
     if ($result->num_rows == 1) {
         $row = $result->fetch_assoc();
         return $row['foto_profilo'];
@@ -57,10 +49,8 @@ function getProfilePhoto($conn, $userId) {
 }
 
 function getEventi($conn) {
-    //Mi creo la query per selezionare tutti i campi della tabella eventi
     $sql = "SELECT * FROM Eventi";
     $result = $conn->query($sql);
-    // Verifico se la query è stata eseguita correttamente
     if (!$result) {
         header('Location: ../php/500.php');
         exit();
@@ -70,7 +60,6 @@ function getEventi($conn) {
 
 function getEventiByTitolo($conn, $titolo)
 {
-    // Preparo la per selezionare gli eventi con un determinato titolo
     $queryEventi = "SELECT * 
     FROM Eventi 
     WHERE titolo LIKE ?
@@ -99,21 +88,13 @@ function getEventiByTitolo($conn, $titolo)
 
 function getEventiByCategoria($conn, $categoria)
 {
-    // Mi preparo la query per selezionare gli eventi con una determinata categoria
     $queryEventi = "SELECT * FROM Eventi WHERE categoria LIKE ?";
     $categoria = "%" . $categoria . "%"; 
-
     $stmt = $conn->prepare($queryEventi);
-
     $stmt->bind_param("s", $categoria);
-
     $stmt->execute();
-
     $resultEventi = $stmt->get_result();
-
-
     $stmt->close();
-
     if ($resultEventi && $resultEventi->num_rows > 0) {
         return $resultEventi;
     } else {
@@ -123,19 +104,12 @@ function getEventiByCategoria($conn, $categoria)
 
 function getEventiByDate($conn, $month)
 {
-    // Mi preparo la query per selezionare gli eventi con una determinata categoria
     $queryEventi = "SELECT * FROM Eventi WHERE data_inizio > ?";
     $stmt = $conn->prepare($queryEventi);
-
     $stmt->bind_param("s", $month);
-
     $stmt->execute();
-
     $resultEventi = $stmt->get_result();
-
-
     $stmt->close();
-
     if ($resultEventi && $resultEventi->num_rows > 0) { 
         return $resultEventi;
     } else {
@@ -146,45 +120,33 @@ function getEventiByDate($conn, $month)
 
 function getEventiSalvati($conn, $id)
 {
-    // Prepare the query to select events saved by a specific user
     $queryEventi = "SELECT Eventi.*
     FROM Eventi
     JOIN eventisalvati ON Eventi.evento_id = eventisalvati.evento_id
     JOIN utenti ON eventisalvati.utente_id = utenti.utente_id
     WHERE utenti.utente_id = ?";
     $stmt = $conn->prepare($queryEventi);
-
-    $stmt->bind_param("i", $id); // Use "i" for integer parameter
-
+    $stmt->bind_param("i", $id);
     $stmt->execute();
-
     $resultEventi = $stmt->get_result();
-
     $stmt->close();
-
     if ($resultEventi && $resultEventi->num_rows > 0) {
         return $resultEventi;
     } else {
-        return false; // No need for (bool) conversion
+        return false; 
     }
 }
-
 function getEventiCreati($conn, $id)
 {   
     $queryEventi = "SELECT Eventi.*
-    FROM Eventi
-    JOIN utenti ON Eventi.creatore_id = utenti.utente_id
-    WHERE utenti.utente_id = ?";
+        FROM Eventi
+        JOIN utenti ON Eventi.creatore_id = utenti.utente_id
+        WHERE utenti.utente_id = ?";
     $stmt = $conn->prepare($queryEventi);
-
     $stmt->bind_param("i", $id);
-
     $stmt->execute();
-
     $resultEventi = $stmt->get_result();
-
     $stmt->close();
-
     if ($resultEventi && $resultEventi->num_rows > 0) {
         return $resultEventi;
     } else {
@@ -202,67 +164,45 @@ function updateUserName($conn, $userId, $nome, $cognome) {
 
 
 function updateUserUsername($conn, $userId, $newUsername) {
-    // Prepariamo la query SQL per aggiornare lo username dell'utente
     $query = "UPDATE Utenti SET username = ? WHERE utente_id = ?";
     $stmt = $conn->prepare($query);
-    // Associamo i parametri (i valori delle variabili $newUsername e $userId) ai posti dei segnaposto nella query
     $stmt->bind_param("si", $newUsername, $userId);
-    // Eseguiamo la query preparata
     $stmt->execute();
-    
-    // Controlliamo se l'aggiornamento ha avuto successo
     if ($stmt->affected_rows > 0) {
         echo "Lo username è stato aggiornato con successo.";
     } else {
         echo "Errore nell'aggiornamento dello username o nessuna modifica apportata.";
     }
-    
-    // Chiudiamo lo statement
     $stmt->close();
 }
 
 function updateUserGender($conn, $userId, $newGender) {
-    // Prepariamo la query SQL per aggiornare il genere dell'utente
     $query = "UPDATE Utenti SET genere = ? WHERE utente_id = ?";
     $stmt = $conn->prepare($query);
-    // Associamo i parametri (i valori delle variabili $newGender e $userId) ai posti dei segnaposto nella query
     $stmt->bind_param("si", $newGender, $userId);
-    // Eseguiamo la query preparata
     $stmt->execute();
-    
-    // Controlliamo se l'aggiornamento ha avuto successo
     if ($stmt->affected_rows > 0) {
         echo "Il genere è stato aggiornato con successo.";
     } else {
         echo "Errore nell'aggiornamento del genere o nessuna modifica apportata.";
     }
-    
-    // Chiudiamo lo statement
     $stmt->close();
 }
 
 function updateUserPhone($conn, $userId, $newPhone) {
-    // Prepariamo la query SQL per aggiornare il numero di telefono dell'utente
     $query = "UPDATE Utenti SET telefono = ? WHERE utente_id = ?";
     $stmt = $conn->prepare($query);
-    // Associamo i parametri (i valori delle variabili $newPhone e $userId) ai posti dei segnaposto nella query
     $stmt->bind_param("si", $newPhone, $userId);
-    // Eseguiamo la query preparata
     $stmt->execute();
-    
-    // Controlliamo se l'aggiornamento ha avuto successo
     if ($stmt->affected_rows > 0) {
         echo "Il numero di telefono è stato aggiornato con successo.";
     } else {
         echo "Errore nell'aggiornamento del numero di telefono o nessuna modifica apportata.";
     }
-    
-    // Chiudiamo lo statement
     $stmt->close();
 }
 
 function getProssimiEventi($conn) {
-    // Prepariamo la query SQL per selezionare i prossimi 12 eventi
     $query = "SELECT * 
     FROM Eventi 
     WHERE data_inizio > NOW()
@@ -273,57 +213,43 @@ function getProssimiEventi($conn) {
             ) 
     ORDER BY data_inizio ASC LIMIT 12";
     $result = $conn->query($query);
-    
-    // Verifichiamo se la query ha prodotto risultati
     if ($result->num_rows > 0) {
-        // Creiamo un array per contenere gli eventi
         $eventi = array();
-        // Iteriamo sui risultati e li aggiungiamo all'array
         while($row = $result->fetch_assoc()) {
             $eventi[] = $row;
         }
         return $eventi;
     } else {
-        // Restituiamo null se non ci sono eventi futuri
         return null;
     }
 }
 
 function updateUserEmail($conn, $userId, $newEmail) {
-    // Prepariamo la query SQL per aggiornare l'email dell'utente
     $query = "UPDATE Utenti SET email = ? WHERE utente_id = ?";
     $stmt = $conn->prepare($query);
-    // Associamo i parametri (i valori delle variabili $newEmail e $userId) ai posti dei segnaposto nella query
     $stmt->bind_param("si", $newEmail, $userId);
-    // Eseguiamo la query preparata
     $stmt->execute();
-    // Controlliamo se l'aggiornamento ha avuto successo
     if ($stmt->affected_rows > 0) {
         echo "L'indirizzo email è stato aggiornato con successo.";
     } else {
         echo "Errore nell'aggiornamento dell'email o nessuna modifica apportata.";
     }
-    // Chiudiamo lo statement
     $stmt->close();
 }
 
 function insertUserDateOfBirth($conn, $userId, $dateOfBirth) {
-    // Check if the user already has a date of birth set and update it if so, or insert a new record otherwise
     $query = "SELECT utente_id FROM Utenti WHERE utente_id = ?";
     $stmt = $conn->prepare($query);
     $stmt->bind_param("i", $userId);
     $stmt->execute();
     $result = $stmt->get_result();
-
     if ($result->num_rows > 0) {
-        // User exists, update their date of birth
         $updateQuery = "UPDATE Utenti SET data_nascita = ? WHERE utente_id = ?";
         $updateStmt = $conn->prepare($updateQuery);
         $updateStmt->bind_param("si", $dateOfBirth, $userId);
         $updateStmt->execute();
         $updateStmt->close();
     } else {
-        // User does not exist, optional: handle this case according to your application's logic
         echo "User not found.";
     }
 
@@ -332,18 +258,12 @@ function insertUserDateOfBirth($conn, $userId, $dateOfBirth) {
 
 function getEventiByIdQuery($conn, $idEvento)
 {
-    // Mi perparo la query per selezionare un evento dato il suo ID
     $queryEventi = "SELECT * FROM Eventi WHERE evento_id = ?";
     $stmt = $conn->prepare($queryEventi);
-
     $stmt->bind_param("i", $idEvento);
-
     $stmt->execute();
-
     $resultEvento = $stmt->get_result();
-
     $stmt->close();
-
     if ($resultEvento && $resultEvento->num_rows > 0) {
         return $resultEvento->fetch_assoc();
     } else {
@@ -356,25 +276,21 @@ function getUserByMailOrUsername($conn, $user){
     $query = "SELECT * 
                 FROM Utenti 
                 WHERE username = ? OR email = ?";
-
     $stmt = $conn->prepare($query);
     $stmt->bind_param("ss", $user , $user);
     $stmt->execute();
     $result = $stmt->get_result();
-
     if($result->num_rows == 0){
         return (bool) false;
     }else{
         return $result->fetch_assoc();
     }
     $stmt->close();
-
 }
 
 function getCategorie($conn){
     $querySql = "SELECT categoria FROM Eventi";
     $resultCategoria = $conn->prepare($querySql);
-
     if(!$resultCategoria){
         header('Location: ../php/500.php');
         exit();
@@ -386,44 +302,35 @@ function getPermessiByUsername($conn, $user){
     $query = "SELECT U.permessi 
             FROM Utenti AS U 
             WHERE U.email = ?";
-
     $stmt = $conn->prepare($query);
     $stmt->bind_param("s", $user);
     $stmt->execute();
-
     $result = $stmt->get_result();
-
     if ($result->num_rows == 0) {
         header('Location: ../php/500.php');
         exit();
     }
-
     $row = $result->fetch_assoc();
     $stmt->close();
-
     return (bool) $row['permessi'];
 }
 
 
 function effettuaRegistrazione($conn, $email, $username, $nome, $cognome, $password, $genere) {
-    // Verifica se l'email o l'username sono già presenti nel database
     $queryCheck = "SELECT utente_id FROM Utenti WHERE email = ? OR username = ?";
     $stmtCheck = $conn->prepare($queryCheck);
     $stmtCheck->bind_param("ss", $email, $username);
     $stmtCheck->execute();
     $resultCheck = $stmtCheck->get_result();
-
-    // Se l'email o l'username sono già presenti, restituisci un messaggio di errore
     if ($resultCheck->num_rows > 0) {
         return "Email o username già utilizzati.";
     } else {
-        // Se l'email e l'username non sono già presenti, procedi con l'inserimento dei dati
         $sql = "INSERT INTO Utenti (nome, cognome, genere, username, permessi, email, password) VALUES (?, ?, ?, ?, 0, ?, ?)";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("ssssss", $nome, $cognome, $genere, $username, $email, $password);
         $stmt->execute();
         $stmt->close();
-        return null; // Ritorna null se la registrazione è avvenuta con successo
+        return null;
     }
 }
 
@@ -433,7 +340,6 @@ function getUsernameById($conn, $userId) {
     $stmt->bind_param("i", $userId);
     $stmt->execute();
     $result = $stmt->get_result();
-
     if ($result->num_rows == 1) {
         $row = $result->fetch_assoc();
         return $row['username'];
@@ -459,24 +365,18 @@ function salvaEvento($conn, $userid, $evento_id) {
     } else {
         return false;
     }
-
-    
 }
 
 function eliminaEvento($conn, $evento){
     $conn->begin_transaction();
     try {
-        // First delete from saved events
         $query = "DELETE FROM eventisalvati WHERE evento_id = ?";
         $stmt = $conn->prepare($query);
         if (!$stmt) throw new Exception("Prepare failed: " . $conn->error);
         $stmt->bind_param("i", $evento);
         $stmt->execute();
         if ($stmt->affected_rows === 0) {
-            // Log or handle the fact that no rows were affected in eventisalvati
         }
-
-        // Then delete from main events table
         $query = "DELETE FROM eventi WHERE evento_id = ?";
         $stmt = $conn->prepare($query);
         if (!$stmt) throw new Exception("Prepare failed: " . $conn->error);
@@ -490,7 +390,7 @@ function eliminaEvento($conn, $evento){
         }
     } catch (Exception $e) {
         $conn->rollback();
-        error_log($e->getMessage()); // Optionally log the error
+        error_log($e->getMessage());
         return false;
     }
 }
@@ -508,7 +408,6 @@ function interessato($conn, $user, $evento) {
         return false;
     }
 }
-
 
 function nonInteressato($conn, $evento , $user) {
     $query = "DELETE FROM eventisalvati WHERE evento_id = ? AND utente_id = ?";

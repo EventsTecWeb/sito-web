@@ -1,5 +1,5 @@
 <?php
-// Avvia la sessione
+
 require_once 'queries.php';
 session_start();
 

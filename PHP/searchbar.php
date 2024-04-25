@@ -2,13 +2,10 @@
 require_once 'queries.php';
 session_start();
 
-// Verifica se l'utente ha effettuato il login
 if (!isset($_SESSION['username']) && !isset($_SESSION['email'])) {
-    // Reindirizza l'utente alla pagina di accesso non autorizzato (pagina X)
     header("Location: ../HTML/index.html");
-    exit(); // Assicura che il codice successivo non venga eseguito
+    exit();
 }
-
 function generateSearchResultItem($evento) {
     return '<div class="column-home">
     <a class="a_evento" href="../PHP/pageEvent.php?evento='.$evento["evento_id"].'" alt="premi per accedere alla pagina dell&#39evento">
@@ -22,7 +19,6 @@ function generateSearchResultItem($evento) {
                 </a>
             </div>';
 }
-
 $template = file_get_contents("../HTML/searchPage.html");
 $ricercaris="";
 $ricerca="";
@@ -38,29 +34,23 @@ if(isset($_POST["cerca_evento"])){
 } else {
     $results = getProssimiEventi($conn);
 }
-
 if($results == "empty") {
     $ricerca = "<p>Inserisci un termine di ricerca</p>";
 } else if($results == false && $resultsC == false) {
     $ricerca = "<p>Nessun risultato trovato per &#34" .$ricerca ."&#34</p>";
 } else {
-    $ricerca = "<p>Risultati per: &#34" . $ricerca . "&#34</p>"; // Add "Risultati per" before the search term
-    
-    // Se ci sono risultati dalla ricerca per titolo, aggiungili all'output
+    $ricerca = "<p>Risultati per: &#34" . $ricerca . "&#34</p>";
     if($results != false) {
         foreach ($results as $evento) {
             $ricercaris .= generateSearchResultItem($evento);
         }
     }
-    
-    // Se ci sono risultati dalla ricerca per categoria, aggiungili all'output
     if($resultsC != false) {
         foreach ($resultsC as $evento) {
             $ricercaris .= generateSearchResultItem($evento);
         }
     }
 }
-
 
 $template = str_replace('{RICERCA}', $ricerca, $template);
 $template = str_replace('{RISULTATI}', $ricercaris, $template);

@@ -2,11 +2,9 @@
 
 session_start();
 
-// Verifica se l'utente ha effettuato il login
 if (!isset($_SESSION['username']) && !isset($_SESSION['email'])) {
-    // Reindirizza l'utente alla pagina di accesso non autorizzato (pagina X)
     header("Location: pagina_non_autorizzata.php");
-    exit(); // Assicura che il codice successivo non venga eseguito
+    exit();
 }
 
 require_once 'queries.php';
@@ -16,7 +14,7 @@ $errore = "";
 $results = getEventiByCategoria($conn, "");
 
 if ($results!=null) {
-    $row = $results->fetch_assoc(); // Fetch the row
+    $row = $results->fetch_assoc();
     if ($row) {
         $template = file_get_contents('../HTML/home.html');
         $titolo=$row['titolo'];
@@ -48,7 +46,6 @@ $pEventi = getProssimiEventi($conn);
 
 $prossimiEventi="";
 if (!is_null($pEventi)) {
-    // Ciclo foreach per iterare su ogni evento restituito
     foreach ($pEventi as $evento) {
 		$prossimiEventi.=
 		'<div class="column-home">

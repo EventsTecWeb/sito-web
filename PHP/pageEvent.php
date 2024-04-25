@@ -4,13 +4,10 @@ session_start();
 
 $txt_error = "";
 
-// Verifica se l'utente ha effettuato il login
 if (!isset($_SESSION['username']) && !isset($_SESSION['email'])) {
-    // Reindirizza l'utente alla pagina di accesso non autorizzato (pagina X)
     header("Location: ../HTML/index.html");
-    exit(); // Assicura che il codice successivo non venga eseguito
+    exit();
 }
-
 
 if (isset($_SESSION['username']) || isset($_SESSION['email'])) {
     $user = isset($_SESSION['username']) ? $_SESSION['username'] : $_SESSION['email'];
@@ -28,10 +25,8 @@ if (isset($_POST['salva_evento'])) {
     $evento_id = $_POST['salva_evento'];
     $userid = $_SESSION['user_id'];
     if (salvaEvento($conn, $userid, $evento_id)) {
-        // echo "L'evento è stato salvato con successo.";
         $txt_error = "L'evento è stato salvato con successo.";
     } else {
-        // echo "Si è verificato un errore durante il salvataggio dell'evento.";
         $txt_error = "Si è verificato un errore durante il salvataggio dell'evento.";
     }
 }
@@ -42,28 +37,16 @@ if (isset($_POST['elimina'])) {
         exit();
     }else{
         $txt_error = "Si è verificato un errore durante l`eliminazione dell'evento.";
-        // echo "Si è verificato un errore durante l`eliminazione dell'evento.";
     }
 }
 
 if (isset($_POST['disdici_evento'])) {
     if(nonInteressato($conn, $_GET['evento'], $_SESSION['user_id'])) {
         $txt_error = "Evento tolto dagli eventi salvati";
-        // echo "Evento tolto dagli eventi salvati";
     } else {
         $txt_error = "Si è verificato un errore durante la rimozione dell'evento dagli eventi salvati";
-        // echo "Si è verificato un errore durante la rimozione dell'evento dagli eventi salvati";
     }
 }
-
-// TODO: DA IMPLEMENTARE CON IL COLLEGAMENTO DELLE PAGINE
-/*if (isset($_GET['evento_id'])) {
-    $evento_id = $_GET['evento_id'];
-} else {
-    // Handle the case where the event ID is not provided
-    echo "ID dell'evento non specificato.";
-    exit;
-}*/
 
 $evento_id = $_GET["evento"];
 
@@ -97,7 +80,6 @@ $mesi_italiano = array(
     'December' => 'Dicembre'
 );
 
-// Funzione per ottenere il nome del mese in italiano
 function getItalianMonth($month) {
     global $mesi_italiano;
     return $mesi_italiano[$month];
@@ -126,12 +108,13 @@ if ($userData) {
     $is_admin = $userData['permessi'];
 }
 
+$immagine = '<div class="boxImage-pe">
+<div class="imgEvent-pe">
+    <img src="' . $row['url_immagine'] . '" alt="immagine evento">
+</div>
+</div>';
+
 $evento = '<div id="pannello-principale-pe">
-    <div class="boxImage-pe">
-        <div class="imgEvent-pe">
-            <img src="' . $row['url_immagine'] . '" alt="immagine evento">
-        </div>
-    </div>
     <div class="containerPrincipale-pe">
         <div class="container_sx-pe">
             <h2>' . $row['titolo'] . '</h2>
@@ -171,6 +154,7 @@ $evento .= '</div>
 
 $errore = "<p class='event-error'> $txt_error </p>";
 
+$template = str_replace('{IMMAGINE}', $immagine, $template);
 $template = str_replace('{ERRORE}', $errore, $template);
 $template = str_replace('{EVENTO}', $evento, $template);
 echo $template;

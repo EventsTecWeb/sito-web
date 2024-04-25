@@ -12,17 +12,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $template = str_replace('{ERRORE}', $errore_credenziali, $template);
         echo $template;
     }
-
     $utente = clearInput($_POST['username']); 
     $password = clearInput($_POST['password']);
-
     $user = getUserByMailOrUsername($conn, $utente);
     $conn->close();
     if ($user === false) {
         $errore_credenziali="<p class='signin-error'>L'username che è stato inserito oppure la password sono errate, si prega di ricontrolare i valori inseriti nei campi.</p>";
     } else {
         $mail = $user['email'];
-
         if ($password == $user['password'] && $mail == $user['email']) {
             $_SESSION['email'] = $user['email'];
             $_SESSION['logged_in'] = true;
