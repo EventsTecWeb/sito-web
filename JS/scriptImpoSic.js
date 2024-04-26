@@ -13,4 +13,4 @@ $(document).ready(function(){
         
         $(this).next('.content-sicu').slideToggle("slow");
     });
-});z
+});
