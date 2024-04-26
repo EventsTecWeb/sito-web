@@ -3,9 +3,9 @@
 <head> 
   <meta charset="UTF-8">
   <title>Impostazioni e sicurezza - Events</title>
-  <meta name="description" content= "Questa è la pagina delle impostazioni del profilo events. Gli utenti possono modificare le loro informazioni personali, preferenze per gli eventi e impostazioni di privacy e sicurezza." />
+  <meta name="description" content= "Questa è la pagina delle impostazioni del profilo events. Gli utenti possono modificare le loro informazioni personali, preferenze per gli eventi e impostazioni di privacy e sicurezza.">
   <meta name="keywords" content="Events, eventi, concerti, cultura, mostre, spettacoli,impostazioni profilo, informazioni sicurezza, privacy, sicurezza, gestione account">
-  <link rel="stylesheet" href="../events.css"/>
+  <link rel="stylesheet" href="../events.css">
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,400&display=swap">
   <link rel="shortcut icon" href="../Images/events_logo_site_e.png">
@@ -17,7 +17,7 @@
 <body>
     <a class="skip-link visually-hidden" href="#privacy-sicu" id="skipLink">Salta al contenuto principale</a>
     <header>
-        <a href="../PHP/home.php" alt="ritorna alla homepage">
+        <a href="../PHP/home.php">
             <h1>Events</h1>
         </a>
         <div class="header-items">
@@ -26,7 +26,7 @@
                     <form id="searchBarA" action="../PHP/searchbar.php" role="search" method="POST">
                         <input type="text" id="searchBar" name="cerca_evento" placeholder="Cerca...">
                         <button type="submit" id="searchButton">
-                            <img src="../Images/search.png" alt="Icona Cerca">
+                            <img src="../Images/search.png" alt="Pulsante per eseguire la ricerca">
                         </button>
                     </form>
                 </div>
@@ -37,9 +37,7 @@
                 });
             </script>
                 <a href="../PHP/eventi_salvati.php" class="bottoneStar">
-                    <button class="bottoneStar">
-                        <img src="../Images/star_full.png" alt="Eventi Salvati">
-                    </button>                
+                    <img src="../Images/star_full.png" alt="Pulsante per portarti alla pagina contenente i tuoi eventi salvati">
                 </a>
         <button class="bottoneHamburger">
             <img src="../Images/menu-button-of-three-horizontal-lines.png" alt="Bottone per link nascosti in formato cellulare">
@@ -97,104 +95,105 @@
                 <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">
             </div>
             <div class="content-sicu">
-                
+                <form action="../PHP/impo_sicu.php" method="POST">
+                    <div id="privacy-sicu">
+                        <div class="privacy-settings-sicu">
+                            <h2>Privacy dell'account</h2>
+                            <div class="separator-sicu"></div>
+                                <div class="left-align-sicu">
+                                    <label>
+                                        <input type="radio" name="privacy" value="Pubblico">
+                                        <span class="p_privacy-sicu">Pubblico</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="privacy" value="Privato">
+                                        <span class="p_privacy-sicu">Privato</span>
+                                    </label>
+                                </div>
+                                <p id="domanda-sicu">Chi può vedere i tuoi contenuti?</p>
+                                <div class="center-align-sicu">
+                                    <p class="info-text-sicu">La configurazione di un profilo come pubblico su Events implica la visibilità delle attività salvate e degli eventi creati da te da parte di altri utenti. Al contrario, se il profilo è impostato come privato, queste informazioni saranno nascoste agli altri utenti.</p>
+                                    <button type="submit" name="update-password" class="button-impo-sicu">Salva</button>
+                                </div>
+                        </div>            
+                    </div>
+                </form>
+            </div>
             <form action="../PHP/impo_sicu.php" method="POST">
-            <div id="privacy-sicu">
-                <div class="privacy-settings-sicu">
-                    <h2>Privacy dell'account</h2>
-                    <div class="separator-sicu"></div>
-                    <form>
-                        <div class="left-align-sicu">
-                            <label>
-                                <p class="p_privacy-sicu">Pubblico</p>
-                                <input type="radio" name="privacy" value="Pubblico">
-                            </label>
-                            <label>
-                                <p class="p_privacy-sicu">Privato</p>
-                                <input type="radio" name="privacy" value="Privato" checked>
-                            </label>
-                        </div>
-                        <p id="domanda-sicu">Chi può vedere i tuoi contenuti?</p>
-                        <div class="center-align-sicu">
-                            <p class="info-text-sicu">La configurazione di un profilo come pubblico su Events implica la visibilità delle attività salvate e degli eventi creati da te da parte di altri utenti. Al contrario, se il profilo è impostato come privato, queste informazioni saranno nascoste agli altri utenti.</p>
+                    <div class="option-sicu">
+                    <span>Password</span>
+                    <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">
+                </div>
+                <div class="content-sicu">
+                    <div id="modPass-sicu">
+                        <h2>Modifica password</h2>
+                        <div class="separator-sicu"></div>
+                        <p>Scegli una nuova password per il tuo profilo.</p>
+                        
+                        <label id="labelNewP-sicu" for="new-password-sicu">Nuova password:</label>
+                        <input type="password" id="new-password-sicu" name="new-password">
+                                                
+                        <label id="labelRepP-sicu" for="repeat-password-sicu">Ripeti password:</label>
+                        <input type="password" id="repeat-password-sicu" name="repeat-password">
+                                                
+                        <div class="button-container-sicu">
                             <button type="submit" name="update-password" class="button-impo-sicu">Salva</button>
                         </div>
-                    </form>
-                </div>            
-            </div>
-        </form>
-        </div>
-        <form action="../PHP/impo_sicu.php" method="POST">
+                    </div>
+                </div>
+            </form>
+            <form action="../PHP/impo_sicu.php" method="POST">
                 <div class="option-sicu">
-                <span>Password</span>
-                <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">
-            </div>
-            <div class="content-sicu">
-                <div id="modPass-sicu">
-                    <h2>Modifica password</h2>
-                    <div class="separator-sicu"></div>
-                    <p>Scegli una nuova password per il tuo profilo.</p>
-                    
-                    <label id="labelNewP-sicu" for="new-password">Nuova password:</label>
-                    <input type="password" id="new-password-sicu" name="new-password">
-                    
-                    <label id="labelRepP-sicu" for="repeat-password">Ripeti password:</label>
-                    <input type="password" id="repeat-password-sicu" name="repeat-password">
-                    
-                    <div class="button-container-sicu">
-                        <button type="submit" name="update-password" class="button-impo-sicu">Salva</button>
+                    <span class="titolini-sicu">Elimina</span>
+                    <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">
+                </div>
+                <div class="content-sicu">
+                    <!-- Contenuto da mostrare/nascondere per la seconda opzione -->
+                    <div id="eliAcc-sicu" class="vertical-center">
+                        <h2>Elimina <span lang="en">account</span></h2>
+                        <div class="separator-sicu"></div>
+                        <div class="warning-sicu">
+                            <span class="warning-icon-sicu">⚠️</span>
+                            Se non leggi questo accadranno delle brutte cose inaspettate!
+                            <br>
+                            L'eliminazione del tuo account è definitiva. 
+                            <br>
+                            Quando elimini il tuo account Events, non potrai recuperare i contenuti o le informazioni che hai condiviso su Events. Anche il tuo profilo principale, i tuoi eventi ed i tuoi inviti andranno perduti in via definitiva.
+                        </div>
+                        <div class="checkbox-sicu">
+                            <label for="read-sicu">
+                                <input type="checkbox" id="read-sicu" name="read" value="read" onchange="document.getElementById('eliminaButton-sicu').disabled = !this.checked;">Ho letto e desidero continuare
+                            </label>                        
+                        </div>
+                        <button type="submit" id="eliminaButton-sicu" name="elimina-account" disabled="disabled">Elimina</button>
                     </div>
                 </div>
-            </div>
-        </form>
-        <form action="../PHP/impo_sicu.php" method="POST">
-            <div class="option-sicu">
-                <span class="titolini-sicu">Elimina</span>
-                <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">
-            </div>
-            <div class="content-sicu">
-                <!-- Contenuto da mostrare/nascondere per la seconda opzione -->
-                <div id="eliAcc-sicu" class="vertical-center">
-                    <h2>Elimina <span lang="en">account</span></h2>
-                    <div class="separator-sicu"></div>
-                    <div class="warning-sicu">
-                        <span class="warning-icon-sicu">⚠️</span>
-                        Se non leggi questo accadranno delle brutte cose inaspettate!
-                        <pr></pr>
-                        L'eliminazione del tuo account è definitiva. 
-                        <br>
-                        Quando elimini il tuo account Events, non potrai recuperare i contenuti o le informazioni che hai condiviso su Events. Anche il tuo profilo principale, i tuoi eventi ed i tuoi inviti andranno perduti in via definitiva.
-                    </div>
-                    <div class="checkbox-sicu">
-                        <label for="read"><input type="checkbox" id="read-sicu" name="read" value="read" onchange="document.getElementById('eliminaButton-sicu').disabled = !this.checked;">Ho letto e desidero continuare</label>
-                    </div>
-                    <button type="submit" id="eliminaButton-sicu" name="elimina-account" disabled="disabled">Elimina</button>
+            </form>
+            
+            <form action="../PHP/impo_sicu.php" method="POST">
+                <div class="option-sicu">
+                    <span class="titolini-sicu">Esci dall'<span lang="en">account</span></span>
+                    <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">
                 </div>
-            </div>
-        </form>
-        
-        <form action="../PHP/impo_sicu.php" method="POST">
-            <div class="option-sicu">
-                <span class="titolini-sicu">Esci dall'<span lang="en">account</span></span>
-                <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">
-            </div>
-            <div class="content-sicu">
-                <!-- Contenuto da mostrare/nascondere per la seconda opzione -->
-                <div id="esciAcc-sicu">
-                    <h2>Esci dall' <span lang="en">account</span></h2>
-                    <div class="separator-sicu"></div>
-                    <p>Vuoi davvero uscire dall'account? Il tuo account verrà disconnesso da questo dispositivo e quindi sarà necessario effettuare nuovamente l’accesso per potervi entrare.</p>
-                    <div class="checkbox-sicu">
-                        <label for="read"><input type="checkbox" id="read-sicu" name="read" value="read" onchange="document.getElementById('esciButton-sicu').disabled = !this.checked;">Si, voglio uscire dall'account corrente.</label>
-                    </div>
-                    <div class="button-container-sicu">
-                        <button type="submit" id="esciButton-sicu" name="logout" disabled="disabled">Esci</button>
+                <div class="content-sicu">
+                    <!-- Contenuto da mostrare/nascondere per la seconda opzione -->
+                    <div id="esciAcc-sicu">
+                        <h2>Esci dall' <span lang="en">account</span></h2>
+                        <div class="separator-sicu"></div>
+                        <p>Vuoi davvero uscire dall'account? Il tuo account verrà disconnesso da questo dispositivo e quindi sarà necessario effettuare nuovamente l’accesso per potervi entrare.</p>
+                        <div class="checkbox-sicu">
+                            <label for="read-sicu-checkbox">
+                                <input type="checkbox" id="read-sicu-checkbox" name="read" value="read" onchange="document.getElementById('esciButton-sicu').disabled = !this.checked;">
+                                Si, voglio uscire dall'account corrente.
+                            </label>
+                        </div>
+                        <div class="button-container-sicu">
+                            <button type="submit" id="esciButton-sicu" name="logout" disabled="disabled">Esci</button>
+                        </div>
                     </div>
                 </div>
-            </div>
             </form>
         </div>
     </div>
-</div>
 </body>
 </html>

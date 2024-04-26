@@ -237,7 +237,6 @@ header:after {
   }
 
 
-
 /*-------------------------------------------------------------/BREADCRUMB--------------------------------------------------------------*/
 nav[aria-label="breadcrumb"] {
     padding-left: 1vw;
@@ -271,7 +270,6 @@ input[type="text"] {
 input[type="text"]:focus {
     outline: none;
 }
-
 
 
 /* ---------------------------------------------------------------GESTIONE INPUT------------------------------------------------------- */
@@ -325,7 +323,6 @@ input[type="password"]:focus {
 }
 
 
-
 /*-------------------------------------------------------------/MENU SINISTRO-----------------------------------------------------------*/
 #menuleft {
     float: left;
@@ -375,7 +372,6 @@ input[type="password"]:focus {
 }
 
 
-
 /*-------------------------------------------------------/ICONACLICCABILEEVENTO---------------------------------------------------------*/
 .a_evento{
     text-decoration: none;
@@ -413,7 +409,6 @@ input[type="password"]:focus {
 	font-weight:bold;
 	font-size:20px;
 }
-
 
 
 /*--------------------------------CSS SPECIFICO PAG. IMPOSTAZIONI E SICUREZZA--------------------------------------------*/
@@ -663,7 +658,6 @@ input[type="password"]:focus {
 }
 
 
-
 /*----------------------------------------------CSS SPECIFICO PAG. INDICE------------------------------------------------------*/
 #index {
     height: 100%;
@@ -752,7 +746,6 @@ input[type="password"]:focus {
     background-color: #f0f0f0;
     padding: 20px 0;
 }
-
 
 
 /*-----------------------------------------CSS SPECIFICO PAG. PROFILO CREAZIONE--------------------------------------------------------*/
@@ -896,7 +889,7 @@ input[type="password"]:focus {
 .descrizioneEventiT-ev {
     margin-top: 2vh;
     padding-top: 2vh;
-    font-style: bold;
+    /* font-style: bold; */
     font-size: 1em;
     margin-bottom: 5vh;
 }
@@ -922,18 +915,17 @@ input[type="password"]:focus {
 }
 #posizione-ev {
     font-size: 20px;
-    font-style: bold;
+    /* font-style: bold; */
 }
 #posizione-ev span {
     font-size: 20px;
-    font-style: bold;
+    /* font-style: bold; */
     color: red;
 }
 .infoText-ev {
     padding-left: 1vh
 }
 
-  
 
 /*--------------------------------------------------REGISTRAZIONE----------------------------------------------------------*/
 .image-container-ragComp-reg {
@@ -1023,7 +1015,6 @@ div #pannello-principale-reg{
     font-size: small;
     text-align: center;
 }
-
 
 
 /*---------------------------------------------------------ACCESSO------------------------------------------------------------*/
@@ -1131,7 +1122,6 @@ div #pannello-principale-acc{
 }
 
 
-
 /*-----------------------------------------------------------EVENTI SALVATI----------------------------------------------------------*/
 #menuleft #buttonEventiSalvati{
     background-color: rgba(45, 45, 45, 1);
@@ -1206,7 +1196,6 @@ div #pannello-principale-acc{
     color: rgb(0, 0, 0); 
     font-size: 1.3em; 
 } 
-
 
 
 /*----------------------------------------------------------IMPO SICUREZZA------------------------------------------------------------*/
@@ -1493,7 +1482,6 @@ div #pannello-principale-acc{
 }
 
 
-
 /*---------------------------------------------------------------ERRORS----------------------------------------------------------------*/
 #error-container {
     text-align: center;
@@ -1518,7 +1506,6 @@ div #pannello-principale-acc{
 #error-container a:hover {
     text-decoration: underline;
 }
-
 
 
 /*--------------------------------------------------------PAGINA EVENTO----------------------------------------------------------------*/
@@ -1595,7 +1582,7 @@ div #pannello-principale-acc{
     left: 0;
     right: 0;
     bottom: -1vh;
-    padding: auto;
+    /* padding: auto; */
     height: 0.4vh;
     background-color: rgba(217, 217, 217, 1);
 }
@@ -1632,7 +1619,6 @@ div #pannello-principale-acc{
 .sonoInteressato-pe:hover {
     background-color: rgba(14, 31, 187, 1);
 }
-
 
 
 /*--------------------------------------------------------------RICERCA EVENTO---------------------------------------------------------*/
@@ -1705,7 +1691,7 @@ div #pannello-principale-acc{
 	font-size:25px;
 }
 .descrizioneEventiT-se{
-	font-style:bold;
+	/* font-style:bold; */
 	font-size:1.2vw;
 }
 .descrizioneEventiD-se{
@@ -1713,17 +1699,16 @@ div #pannello-principale-acc{
 }
 #posizione-se{
 	font-size:20px;
-	font-style:bold;
+	/* font-style:bold; */
 }
 #posizione-se span{
 	font-size:20px;
-	font-style:bold;
+	/* font-style:bold; */
 	color:red;
 }
 .infoText-se {
     padding-left: 1vh
 }
-
 
 
 /*-----------------------------------------------------------PROFILO-----------------------------------------------------------------*/
@@ -1837,7 +1822,6 @@ textarea {
 }
 
 
-
 /*----------------------------------------------------------PAGINA DI VERIFICA--------------------------------------------------------*/
 #pannello-principale-ver {
     display: flex;
@@ -1906,7 +1890,6 @@ textarea {
 }
 
 
-
 /*-------------------------------------------------------------CHI SIAMO--------------------------------------------------------------*/
 #chi_siamo_main{
     text-align: left;
@@ -1934,7 +1917,6 @@ textarea {
     margin-right: 1em;
     float: right;
 }
-
 
 
 /*-------------------------------------------------------INFO PERSONALI----------------------------------------------------------*/
@@ -1992,7 +1974,7 @@ textarea {
 }
 
 /*---------------------------PRIVACY-----------------------------*/
-#privacy-ip {
+.privacy-ip {
     border: 1px solid #ccc;
     border-radius: 50px;
     padding: 60px;
@@ -2000,7 +1982,7 @@ textarea {
     width: 80%;
     margin: 2vh auto;
 }
-#domanda-ip{
+.domanda-ip{
     margin-bottom: -0.5vh;
     font-weight:bold;
 }
@@ -2014,7 +1996,7 @@ textarea {
     width: 100%;
     margin-bottom: 10px; 
 }
-#frecciaEdit-ip{
+.frecciaEdit-ip{
     width: 20px;
     height: 20px;
     cursor: pointer;
@@ -2061,7 +2043,7 @@ textarea {
 .info-text-ip {
     margin-bottom: 20px; 
 }
-#privacy-ip button{
+.privacy-ip button{
     background-color: rgba(114, 162, 233, 1);
     color: white;
     border: none;
@@ -2074,7 +2056,7 @@ textarea {
     cursor: pointer;
     border-radius: 16px;
 }
-#privacy-ip button:hover{
+.privacy-ip button:hover{
     background-color: rgba(14, 31, 187, 1);
 }
 #elenco-genere-ip {
@@ -2210,7 +2192,6 @@ textarea {
 }
 
 
-
 /*----------------------------------------------------------PARTNERS------------------------------------------------------------*/
 #partner-container {
     margin-top: 20px;
@@ -2246,7 +2227,6 @@ textarea {
     max-width: 100%;
     height: auto;
 }
-
 
 
 /*-----------------------------------------------------------SIDE MENU--------------------------------------------------------------*/
@@ -2293,7 +2273,6 @@ textarea {
     overflow-x: hidden;
     transition: 0.5s;
 }
-
 
 
 /*----------------------------------------------------------HOME v2.0-------------------------------------------------------------*/
@@ -2393,7 +2372,6 @@ textarea {
     height: auto;
     display: block; 
     object-fit: contain;
-    margin-left: 0.5vw;
     margin-right: 0.8vw;
 }
 .column-home-e:hover {
@@ -2445,7 +2423,6 @@ textarea {
 }
 
 
-
 /*------------------------------------------------------------TERMINI------------------------------------------------------------------*/
 .text_termini{
     font-size: 2.5vh;
@@ -2475,7 +2452,6 @@ textarea {
     min-height: 50vh;
     padding-bottom: 50px;
 }
-
 
 
 /*-------------------------------------------------------------EVENTI CREATI-----------------------------------------------------------*/
@@ -2562,7 +2538,6 @@ textarea {
 } 
 
 
-
 /*--------------------------------------------------------------RISULTATI RICERCA-------------------------------------------------------*/
 .container-risultati-ricerca {
     width: 100%;
@@ -2602,7 +2577,6 @@ textarea {
     margin-top: 5px;
     word-wrap: break-word; 
 }
-
 
 
 
@@ -2975,7 +2949,7 @@ textarea {
         border: 1px solid #ccc;
     }
     .column-se{
-        float: center;
+        /* float: center; */
         width: 81%;
         padding-left:9.5%;
         padding-right:9.5%;
@@ -2996,7 +2970,7 @@ textarea {
         height:55vw;
     } 
     .descrizioneEventiT-se{
-        font-style:bold;
+        /* font-style:bold; */
         font-size:3.2vw;
     }
     .descrizioneEventiD-se{

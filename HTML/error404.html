@@ -17,7 +17,7 @@
 <body>
     <a class="skip-link visually-hidden" href="#error-container" id="skipLink">Salta al contenuto principale</a>
     <header>
-        <a href="../PHP/home.php" alt="ritorna alla homepage">
+        <a href="../PHP/home.php">
             <h1>Events</h1>
         </a>
         <div class="header-items">
@@ -25,14 +25,12 @@
                 <form id="searchBarA" action="../PHP/searchbar.php" role="search" method="POST">
                     <input type="text" id="searchBar" name="cerca_evento" placeholder="Cerca...">
                     <button type="submit" id="searchButton">
-                        <img src="../Images/search.png" alt="Icona Cerca">
+                        <img src="../Images/search.png" alt="Pulsante per eseguire la ricerca">
                     </button>
                 </form>
             </div>
             <a href="../PHP/eventi_salvati.php" class="bottoneStar">
-                <button class="bottoneStar">
-                    <img src="../Images/star_full.png" alt="Eventi Salvati">
-                </button>                
+                <img src="../Images/star_full.png" alt="Pulsante per portarti alla pagina contenente i tuoi eventi salvati">
             </a>
             <button class="bottoneHamburger">
                 <img src="../Images/menu-button-of-three-horizontal-lines.png" alt="Bottone per link nascosti in formato cellulare">
@@ -54,7 +52,6 @@
                 <p>Ti trovi in: <span lang="en"><a id="returnHome" href="../PHP/home.php">Home</a></span> >> Errore 404 </p>
             </nav>
         </div>
-    </div>
 </header>
     <div id="overlay" class="overlay"></div>
         <div id="sideMenu" class="side-menu">
@@ -68,13 +65,11 @@
     <main>
         <div id="error-container">
             <h1>Errore 404</h1>
-            <body>
-                <p id="subtitle-error">Ops! Sembra che gli eventi siano svaniti nel nulla!</p>
-                <p>Ci dispiace informarti che la pagina che stavi cercando di raggiungere su Events non è disponibile o è stata spostata.</p>
-                <p>Tuttavia, vogliamo assicurarti che i tuoi dati personali e i tuoi eventi salvati sono al sicuro e non sono stati compromessi.</p>
-                <p>Ti invitiamo cortesemente a tornare alla nostra <a href="../PHP/home.php">Homepage</a> per continuare la tua esperienza di navigazione.</p>
-                <p>Ci scusiamo per l'inconveniente e ti ringraziamo per la tua comprensione.</p>
-            </body>
+            <p id="subtitle-error">Ops! Sembra che gli eventi siano svaniti nel nulla!</p>
+            <p>Ci dispiace informarti che la pagina che stavi cercando di raggiungere su Events non è disponibile o è stata spostata.</p>
+            <p>Tuttavia, vogliamo assicurarti che i tuoi dati personali e i tuoi eventi salvati sono al sicuro e non sono stati compromessi.</p>
+            <p>Ti invitiamo cortesemente a tornare alla nostra <a href="../PHP/home.php">Homepage</a> per continuare la tua esperienza di navigazione.</p>
+            <p>Ci scusiamo per l'inconveniente e ti ringraziamo per la tua comprensione.</p>
         </div>
     </main>
 </body>

@@ -3,9 +3,9 @@
 <head> 
   <meta charset="UTF-8">
   <title>Informazioni personali - Events</title>
-  <meta name="description" content= "Gestisci le tue informazioni personali su Events, il social network per gli amanti degli eventi. Aggiorna il tuo profilo, modifica le impostazioni della privacy e personalizza la tua esperienza utente." />
+  <meta name="description" content= "Gestisci le tue informazioni personali su Events, il social network per gli amanti degli eventi. Aggiorna il tuo profilo, modifica le impostazioni della privacy e personalizza la tua esperienza utente.">
   <meta name="keywords" content="events, eventi, concerti, cultura, mostre, spettacoli, accesso utente events, profilo utente events, accesso privato events">
-  <link rel="stylesheet" href="../events.css"/>
+  <link rel="stylesheet" href="../events.css">
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,400&display=swap">
   <link rel="shortcut icon" href="../Images/events_logo_site_e.png">
@@ -18,7 +18,7 @@
 <body>
     <a class="skip-link visually-hidden" href="#nome-ip" id="skipLink">Salta al contenuto principale</a>
     <header>
-        <a href="../PHP/home.php" alt="ritorna alla homepage">
+        <a href="../PHP/home.php">
             <h1>Events</h1>
         </a>
         <div class="header-items">
@@ -26,14 +26,12 @@
                 <form id="searchBarA" action="../PHP/searchbar.php" role="search" method="POST">
                     <input type="text" id="searchBar" name="cerca_evento" placeholder="Cerca...">
                     <button type="submit" id="searchButton">
-                        <img src="../Images/search.png" alt="Icona Cerca">
+                        <img src="../Images/search.png" alt="Pulsante per eseguire la ricerca">
                     </button>
                 </form>
             </div>
             <a href="../PHP/eventi_salvati.php" class="bottoneStar">
-                <button class="bottoneStar">
-                    <img src="../Images/star_full.png" alt="Eventi Salvati">
-                </button>                
+                <img src="../Images/star_full.png" alt="Pulsante per portarti alla pagina contenente i tuoi eventi salvati">
             </a>
             <button class="bottoneHamburger">
                 <img src="../Images/menu-button-of-three-horizontal-lines.png" alt="Bottone per link nascosti in formato cellulare">
@@ -90,22 +88,23 @@
                     <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">
                 </div>
                 <div class="content-ip">
-                    <div id="privacy-ip">
+                    <div class="privacy-ip">
                         <form action="../PHP/infoPersonali.php" method="POST">
                             <div class="mod-nome-ip">
                                 <h2>Modifica Nome e Cognome</h2>
                                 <div class="separator-ip"></div>
                                 <div class="left-align-ip">
                                     <input type="text" id="campoNome-ip" name="nome" placeholder="Nome">
-                                    <img id="frecciaEdit-ip" src="../Images/pencil.png" alt="Modifica" tabindex="0" onclick="ModificaNome()">
+                                    <img class="frecciaEdit-ip" src="../Images/pencil.png" alt="Modifica" tabindex="0" onclick="ModificaNome()">
                                     <input type="text" id="campoCognome-ip" name="cognome" placeholder="Cognome">
-                                    <img id="frecciaEdit-ip" src="../Images/pencil.png" alt="Modifica" tabindex="0" onclick="ModificaCognome()">
+                                    <img class="frecciaEdit-ip" src="../Images/pencil.png" alt="Modifica" tabindex="0" onclick="ModificaCognome()">
                                 </div>
-                                <p id="domanda-ip">Chi può vedere il tuo nome?</p>
+                                <p class="domanda-ip">Chi può vedere il tuo nome?</p>
                                 <div class="center-align-ip">
-                                    <img class="publicInfo-ip" src="../Images/people_icon.png"> Chiunque può vedere queste informazioni quando visualizza il tuo profilo, comunica con te o quando consulta contenuti creati da te</p>
+                                    <img class="publicInfo-ip" src="../Images/people_icon.png" alt="Icona informazione pubblica">
+                                    <p>Chiunque può vedere queste informazioni quando visualizza il tuo profilo, comunica con te o quando consulta contenuti creati da te</p>
                                     <button type="submit" class="salva-ip" onclick="salvaModificheNome()">Salva</button>
-                                </div>
+                                    </div>
                             </div>  
                         </form>     
                     </div>
@@ -123,12 +122,13 @@
                             <div class="separator-ip"></div>
                                 <div class="left-align-ip">
                                     <input type="text" name="username" id="campoNick-ip" value="{USERNAME}" readonly>
-                                    <img id="frecciaEdit-ip" src="../Images/pencil.png" alt="Modifica" tabindex="0" onclick="ModificaNick()">
+                                    <img class="frecciaEdit-ip" src="../Images/pencil.png" alt="Modifica" tabindex="0" onclick="ModificaNick()">
                                 </div>
                             
-                                <p id="domanda-ip">Chi può vedere il tuo <span lang="en">Username</span>?</p>
+                                <p class="domanda-ip">Chi può vedere il tuo <span lang="en">Username</span>?</p>
                                 <div class="center-align-ip">
-                                    <img class="publicInfo-ip" src="../Images/people_icon.png"> Chiunque può vedere queste informazioni quando visualizza il tuo profilo, comunica con te o quando consulta contenuti creati da te</p>
+                                    <img class="publicInfo-ip" src="../Images/people_icon.png" alt="Icona informazione pubblica"> 
+                                    <p>Chiunque può vedere queste informazioni quando visualizza il tuo profilo, comunica con te o quando consulta contenuti creati da te</p>
                                     <button type="submit" class="salva-ip" onclick="salvaModificheNick()">Salva</button>
                                 </div>
                         </div>
@@ -141,27 +141,28 @@
                     <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">
                 </div>
                 <div class="content-ip">
-                <div id="privacy-ip">
+                <div class="privacy-ip">
                         <h2>Modifica Genere</h2>
                         <div class="separator-ip"></div>
                         <form action="../PHP/infoPersonali.php" method="POST">
                             <div id="elenco-genere-ip">
                                 <label>
-                                    <p class="p_privacy-ip">Maschio</p>
                                     <input type="radio" name="genere" value="Maschio">
+                                    Maschio
                                 </label>
                                 <label>
-                                    <p class="p_privacy-ip">Femmina</p>
                                     <input type="radio" name="genere" value="Femmina">
+                                    Femmina
                                 </label>
                                 <label>
-                                    <p class="p_privacy-ip">Altro</p>
                                     <input type="radio" name="genere" value="Altro">
+                                    Altro
                                 </label>
                             </div>
-                            <p id="domanda-ip">Chi può vedere il tuo genere?</p>
-                            <div class="center-align-ip">
-                                <img class="publicInfo-ip" src="../Images/lock.png"> Queste informazioni sono private, puoi vederle solo te</p>
+                            <p class="domanda-ip">Chi può vedere il tuo Genere?</p>
+                                <div class="center-align-ip">
+                                <img class="publicInfo-ip" src="../Images/lock.png" alt="Icona informazione privata"> 
+                                <p>Queste informazioni sono private, puoi vederle solo te</p>
                                 <button type="submit" class="salva-ip" onclick="salvaModificheGenere()">Salva</button>
                             </div>
                         </form>            
@@ -170,7 +171,11 @@
 
             <div class="option-ip">
                 <span>Data di nascita:</span>
-                <p id="data-ip"><time datetime="{DATANASCITA}">{DATANASCITA}</time></p>
+                <p id="data-ip"><time id="datetimeToday">{DATANASCITA}</time></p>
+                <script>
+                    var dataNascita = "{DATANASCITA}";
+                    document.getElementById("datetimeToday").textContent = dataNascita;
+                </script>                
                 <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">
             </div>
             <div class="content-ip">
@@ -197,9 +202,9 @@
                             </select>
                             <input type="number" id="year-ip" name="year" placeholder="Anno" min="1900" max="2024" required>
                         </div>
-                        <p id="domanda-ip">Chi può vedere la tua data di nascita?</p>
+                        <p class="domanda-ip">Chi può vedere la tua data di nascita?</p>
                             <div class="center-align-ip">
-                                <img class="publicInfo-ip" src="../Images/lock.png"> Queste informazioni sono private, puoi vederle solo te</p>
+                                <img class="publicInfo-ip" src="../Images/lock.png" alt="Icona informazione privata"> Queste informazioni sono private, puoi vederle solo te
                                 <button type="submit" class="salva-ip" onclick="aggiornaDataNascita()">Salva</button>
                             </div>
                     </div>
@@ -213,50 +218,48 @@
                 <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">
             </div>
             <div class="content-ip">
-            <div id="privacy-ip">
-                <form action="../PHP/infoPersonali.php"method="POST">
-                    <div class="mod-nome-ip">
-                        <h2>Modifica <span lang="en">Email</span></h2>
-                        <div class="separator-ip"></div>
-                            <div class="left-align-ip">
-                                    <input type="text" name="email" id="campoEmail-ip" value="{EMAIL}" readonly>
-                                    <img id="frecciaEdit-ip" src="../Images/pencil.png" alt="Modifica" tabindex="0" onclick="ModificaEmail()">
-                            </div>
-                            <p id="domanda-ip">Chi può vedere la tua <span lang="en">Email</span>?</p>
-                            <div class="center-align-ip">
-                                <img class="publicInfo-ip" src="../Images/people_icon.png"> Chiunque può vedere queste informazioni quando visualizza il tuo profilo, comunica con te o quando consulta contenuti creati da te</p>
-                                <button type="submit" class="salva-ip" onclick="salvaModificheEmail()">Salva</button>
-                            </div>
-                    </div> 
-                </form>           
+                <div class="privacy-ip">
+                    <form action="../PHP/infoPersonali.php" method="POST">
+                        <div class="mod-nome-ip">
+                            <h2>Modifica <span lang="en">Email</span></h2>
+                            <div class="separator-ip"></div>
+                                <div class="left-align-ip">
+                                        <input type="text" name="email" id="campoEmail-ip" value="{EMAIL}" readonly>
+                                        <img class="frecciaEdit-ip" src="../Images/pencil.png" alt="Modifica" tabindex="0" onclick="ModificaEmail()">
+                                </div>
+                                <p class="domanda-ip">Chi può vedere la tua <span lang="en">Email</span>?</p>
+                                <div class="center-align-ip">
+                                    <img class="publicInfo-ip" src="../Images/people_icon.png" alt="Icona informazione pubblica"> Chiunque può vedere queste informazioni quando visualizza il tuo profilo, comunica con te o quando consulta contenuti creati da te
+                                    <button type="submit" class="salva-ip" onclick="salvaModificheEmail()">Salva</button>
+                                </div>
+                        </div> 
+                    </form>           
+                </div>
             </div>
-        </div>
-        <div class="option-ip">
-            <span>Numero di telefono:</span>
-            <p id="numero-ip">{TELEFONO}</p>
-            <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">        
-        </div>
-        <div class="content-ip">
-            <form action="../PHP/infoPersonali.php" method="POST">
-                <div id="modTel-ip">
-                    <h2>Modifica numero di telefono</h2>
-                    <div class="separator-ip"></div>
+            <div class="option-ip">
+                <span>Numero di telefono:</span>
+                <p id="numero-ip">{TELEFONO}</p>
+                <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">        
+            </div>
+            <div class="content-ip">
+                <form action="../PHP/infoPersonali.php" method="POST">
+                    <div id="modTel-ip">
+                        <h2>Modifica numero di telefono</h2>
+                        <div class="separator-ip"></div>
                         <div class="left-align-ip">
-                            <img id="bandierina-ip" src="../Images/italy.png">
+                            <img id="bandierina-ip" src="../Images/italy.png" alt="Prefisso italiano">
                             <input type="text" name="telefono" id="campoTel-ip" value="{TELEFONO}" readonly>
-                            <img id="frecciaEdit-ip" src="../Images/pencil.png" alt="Modifica" tabindex="0" onclick="ModificaTel()">
+                            <img class="frecciaEdit-ip" src="../Images/pencil.png" alt="Modifica" tabindex="0" onclick="ModificaTel()">
                         </div>
-                    
-                        <p id="domanda-ip">Chi può vedere il tuo numero di telefono?</p>
+                        <p class="domanda-ip">Chi può vedere il tuo numero di telefono?</p>
                         <div class="center-align-ip">
-                            <img class="publicInfo-ip" src="../Images/lock.png"> Queste informazioni sono private, puoi vederle solo te</p>
+                            <img class="publicInfo-ip" src="../Images/lock.png" alt="Icona informazione privata"> Queste informazioni sono private, puoi vederle solo te
                             <button type="submit" class="salva-ip" onclick="salvaModificheTel()">Salva</button>
                         </div>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 </body>
 </html>
