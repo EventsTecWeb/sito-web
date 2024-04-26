@@ -1003,7 +1003,7 @@ div #pannello-principale-reg{
 #container-destro-reg {
     padding-left: 2.5vw;
     height: 45vh;
-    width: 45vh;
+    width: 40%;
 }
 #container-destro-reg form, #container-destro-reg label, #container-destro-reg button {
     margin-bottom: 15px; 
@@ -1022,8 +1022,8 @@ div #pannello-principale-reg{
 
 /*---------------------------------------------------------ACCESSO------------------------------------------------------------*/
 .buttonSubmit {
-    width: 7vw;
-    height: 4vh;
+    width: 14vw;
+    height: 5vh;
     background: #656565;
     border: none;
     border-radius: 16px;
@@ -1115,7 +1115,7 @@ div #pannello-principale-acc{
 #container-destro-acc {
     padding-left: 2.5vw;
     height: 45vh;
-    width: 35vh;
+    width: 30%;
 }
 #container-destro-acc form, #container-destro-acc label, #container-destro-acc button {
     margin-bottom: 15px; 
@@ -2639,7 +2639,8 @@ textarea {
     }
     #container-destro-acc {
         order: 1;
-        padding-left:9vw;
+        margin-left:25%;
+        width: 50%;
     }
     #container-sinistro-acc {
         order: 2;
@@ -2672,7 +2673,10 @@ textarea {
         flex-direction: column;
     }
     #container-destro-reg {
+        padding-left: 0;
         order: 1;
+        margin-left: 20%;
+        width: 60%;
     }
     #container-sinistro-reg {
         order: 2;
@@ -2801,7 +2805,8 @@ textarea {
     }
     header h1{
         padding-top: 0.5vh;
-        background-size: 50%;
+        margin-top: 2vh;
+        margin-bottom: 2vh;
     }
     header {
         position: relative; 
