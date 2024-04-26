@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Partners - Events</title>
+    <meta name="keywords" content="events, eventi, concerti, cultura, mostre, spettacoli, Partners, collaboratori, sponsor">
+    <meta name="description" content="Scopri i nostri partner su Events, il social network per gli amanti degli eventi. Collaboriamo con aziende e organizzazioni per offrire esperienze uniche e supportare la nostra missione di connettere gli appassionati di eventi.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../events.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,400&display=swap">
+    <link rel="shortcut icon" href="../Images/events_logo_site_e.png">
+    <script src="../JS/sideMenu.js"></script>
+</head>
+
+<body>
+    <a class="skip-link visually-hidden" href="#privacy-sicu" id="skipLink">Salta al contenuto principale</a>
+    <header>
+        <a href="../PHP/home.php">
+            <h1>Events</h1>
+        </a>
+        <div class="header-items">
+            <div class="search-container">
+                <form id="searchBarA" action="../PHP/searchbar.php" role="search" method="POST">
+                    <input type="text" id="searchBar" name="cerca_evento" placeholder="Cerca...">
+                    <button type="submit" id="searchButton">
+                        <img src="../Images/search.png" alt="Pulsante per eseguire la ricerca">
+                    </button>
+                </form>
+            </div>
+            <a href="../PHP/eventi_salvati.php" class="bottoneStar">
+                <img src="../Images/star_full.png" alt="Pulsante per portarti alla pagina contenente i tuoi eventi salvati">
+            </a>
+            <button class="bottoneHamburger">
+                <img src="../Images/menu-button-of-three-horizontal-lines.png" alt="Bottone per link nascosti in formato cellulare">
+            </button>
+            <nav>
+                <ul class="linkPagina">
+                    <li><a id="returnHomeHeader" href="../PHP/home.php">HOMEPAGE</a></li>
+                    <li>PARTNERS</li>
+                    <li><a id="ChiSiamoLink" href="../HTML/chiSiamo.html">CHI SIAMO</a></li>
+                </ul>
+            </nav>
+            <a href="../PHP/indexProfilo.php" class="bottonePlus">
+                <img src="../Images/add.png" alt="Bottone per creare un nuovo evento">
+            </a>
+            <a href="../PHP/infoPersonali.php" class="bottoneProfilo">
+                <img src="../Images/user.png" alt="Bottone per accedere ai dati del proprio profilo">
+            </a>
+            <nav aria-label="breadcrumb" id="bread">
+                <p>Ti trovi in: Partners</p>
+            </nav>
+        </div>
+    </header>
+    <div id="overlay" class="overlay">
+        <div id="sideMenu" class="side-menu">
+            <a href="javascript:void(0)" class="closebtn">&times;</a>
+            <a href="../PHP/home.php">Homepage</a>
+            <a href="../PHP/infoPersonali.php">Profilo</a>
+            <a href="../PHP/indexProfilo.php">Crea Evento</a>
+            <a href="../HTML/chiSiamo.html">Chi siamo</a>
+            <a href="#">Partners</a>
+        </div>
+    </div>
+    <main>
+        <div id="partner-container">
+            <h1>I nostri Partner</h1>
+            <p class="partner-text-why">Essere partner della nostra associazione offre una serie di vantaggi significativi per la tua azienda, specialmente se operi nel settore della gestione degli eventi. Grazie alla nostra collaborazione, avrai accesso a strumenti e risorse esclusive che potranno arricchire e ottimizzare la tua piattaforma. Inoltre, potrai usufruire di opportunità di networking con altri professionisti del settore, aprendo la porta a partnership strategiche e nuove prospettive di business. La visibilità aumentata tramite le nostre piattaforme di comunicazione ti consentirà di raggiungere un pubblico più vasto e di posizionarti come leader nel mercato degli eventi. Infine, il supporto personalizzato che offriamo ti aiuterà a sviluppare e implementare soluzioni innovative per soddisfare al meglio le esigenze dei tuoi clienti.
+            </p>
+            <div id="partners-logos">
+                <div class="partner-image">
+                    <img src="../Images/anima_underground.png" alt="Logo Anima Underground">
+                </div>
+                <div class="partner-image">
+                    <img src="../Images/hall_padova.png" alt="Logo Hall Padova">
+                </div>
+                <div class="partner-image">
+                    <img src="../Images/villa_bonin.png" alt="Logo Villa Bonin">
+                </div>
+                <div class="partner-image">
+                    <img src="../Images/nordest.png" alt="Logo Nordest">
+                </div>
+                <div class="partner-image">
+                    <img src="../Images/custom.png" alt="Logo Custom">
+                </div>
+                <div class="partner-image">
+                    <img src="../Images/unipd_logo.png" alt="Logo Università di Padova">
+                </div>
+            </div>                
+        </div>
+    </main>
+</body>
+</html>

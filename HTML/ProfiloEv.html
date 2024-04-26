@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="it">
+<head> 
+  <meta charset="UTF-8">
+  <title>Eventi creati - Events</title>
+  <meta name="description" content= "Esplora e gestisci i tuoi eventi su Events, il social network per gli amanti degli eventi. Trova gli eventi che hai creato.">
+  <meta name="keywords" content="events, eventi, concerti, cultura, mostre, spettacoli, profilo utente, nome utente, eventi creati, evento personalizzato, mio evento">
+  <link rel="stylesheet" href="../events.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,400&display=swap">
+  <link rel="shortcut icon" href="../Images/events_logo_site_e.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="../JS/scriptSkip.js"></script>
+  <script src="../JS/sideMenu.js"></script>
+</head>
+<body>
+  <a class="skip-link visually-hidden" href="#eventiSalvati-es" id="skipLink">Salta al contenuto principale</a>
+  <header>
+    <a href="../PHP/home.php">
+      <h1>Events</h1>
+  </a>
+    <div class="header-items">
+      <div class="search-container">
+        <form id="searchBarA" action="../PHP/searchbar.php" role="search" method="POST">
+            <input type="text" id="searchBar" name="cerca_evento" placeholder="Cerca...">
+            <button type="submit" id="searchButton">
+              <img src="../Images/search.png" alt="Pulsante per eseguire la ricerca">
+            </button>
+        </form>
+      </div>
+      <a href="../PHP/eventi_salvati.php" class="bottoneStar">
+          <img src="../Images/star_full.png" alt="Pulsante per portarti alla pagina contenente i tuoi eventi salvati">
+      </a>
+      <button class="bottoneHamburger">
+        <img src="../Images/menu-button-of-three-horizontal-lines.png" alt="Bottone per link nascosti in formato cellulare">
+      </button>
+      <nav>
+        <ul class="linkPagina">
+          <li><a id="returnHomeHeader" href="../PHP/home.php">HOMEPAGE</a></li>
+          <li><a id="PartnersLink" href="../HTML/partner.html">PARTNERS</a></li>
+          <li><a id="ChiSiamoLink" href="../HTML/chiSiamo.html">CHI SIAMO</a></li>
+        </ul>
+      </nav>
+      <a href="../PHP/indexProfilo.php" class="bottonePlus">
+        <img src="../Images/add.png" alt="Bottone per creare un nuovo evento">
+      </a>
+      <a href="../PHP/infoPersonali.php" class="bottoneProfilo">
+        <img src="../Images/user.png" alt="Bottone per accedere ai dati del proprio profilo">
+      </a>
+      <nav aria-label="breadcrumb" id="bread">
+        <p>Ti trovi in: <span lang="en"><a class="returnBread" href="../PHP/home.php">Home</a></span> >> Eventi Creati</p>
+      </nav>
+    </div>
+  </header>
+    
+  <div id="overlay" class="overlay"></div>
+    <div id="sideMenu" class="side-menu">
+      <a href="javascript:void(0)" class="closebtn">&times;</a>
+      <a href="../PHP/home.php">Homepage</a>
+      <a href="../PHP/infoPersonali.php">Profilo</a>
+      <a href="../PHP/indexProfilo.php">Crea Evento</a>
+      <a href="../HTML/chiSiamo.html">Chi siamo</a>
+      <a href="../HTML/partner.html">Partners</a>
+    </div>
+    <nav id="menuCenter">
+      <ul class="menu-orizzontale">
+          <li><a href="../PHP/infoPersonali.php">Informazioni Personali</a></li>
+          <li><a id="mo-pulsanteSingolo" href="../PHP/profiloEv.php">Eventi Creati</a></li>
+          <li><a href="../PHP/eventi_salvati.php">Eventi Salvati</a></li>
+          <li><a href="../PHP/impo_sicu.php">Impostazioni e Sicurezza</a></li>
+      </ul>
+    </nav>
+    <div class="wrapper_eventi">
+      <nav id="menuleft">
+        <ul>
+          <li><a href="../PHP/infoPersonali.php"><button>Informazioni Personali</button></a></li>
+          <li><a href="../PHP/profiloEv.php"><button  id="buttonEventiCreati">Eventi Creati</button></a></li>
+          <li><a href="../PHP/eventi_salvati.php"><button>Eventi Salvati</button></a></li>
+          <li><a href="../PHP/impo_sicu.php"><button>Impostazioni e Sicurezza</button></a></li>
+        </ul>
+      </nav>
+      <div id="eventiCreati-ev">
+        {EVENTICREATI}
+      </div>
+    </div>
+</body>
+</html>

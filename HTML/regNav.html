@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+<head> 
+  <meta charset="UTF-8">
+  <title>Registrati - Events</title>
+  <meta name="description" content= "Registrati ad Events per non perdere le ultime novità e partecipare alle attività.">
+  <meta name="keywords" content="events, eventi, concerti, cultura, mostre, spettacoli, registrazione, iscrizione, partecipazione, events">
+  <link rel="stylesheet" href="../events.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,400&display=swap">
+  <link rel="shortcut icon" href="../Images/events_logo_site_e.png">
+  <script src="../JS/scriptSkip.js"></script>
+  <script src="../JS/sideMenu.js"></script>
+</head>
+<body>
+  <a class="skip-link visually-hidden" href="#pannello-principale-reg" id="skipLink">Salta al contenuto principale</a>
+  <header>
+    <h1>Events</h1>
+  </header>
+  <div id="pannello-principale-reg">
+    <div id="container-sinistro-reg">
+      <div class="image-container-ragComp-reg">
+      </div>
+      <p id="infoNoAccount-reg">Hai già un account? <a></a><a href="../PHP/accessNav.php" id="linkRegistrati">Accedi</a></p>
+    </div>
+    <div id="container-destro-reg">
+      <p id="registratiScritta-reg">Registrati</p>
+      <form action="../PHP/registrazione.php" method="POST">
+        <label for="nomeInput" class="visually-hidden">Nome</label>
+        <input type="text" id="nomeInput" name="nome" placeholder="Nome...">
+        <label for="cognomeInput" class="visually-hidden">Cognome</label>
+        <input type="text" id="cognomeInput" name="cognome" placeholder="Cognome...">
+        <label for="nomeUtenteInput" class="visually-hidden">Nome Utente</label>
+        <input type="text" id="nomeUtenteInput" name="username" placeholder="Nome Utente...">
+        <label for="mailInput" class="visually-hidden">Mail</label>
+        <input type="text" id="mailInput" name="email" placeholder="email...">
+        <label for="passwordInput" class="visually-hidden">Password</label>
+        <input type="password" id="passwordInput" name="password" placeholder="Password...">
+        <input type="password" id="passwordConfirmInput" name="password_confirm" placeholder="Conferma Password">        
+        <input type="submit" value="Registrati" class="buttonSubmit">
+      </form>
+      {ERRORE}
+    </div>
+  </div>
+</body>
+</html>
