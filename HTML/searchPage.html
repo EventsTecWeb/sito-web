@@ -54,12 +54,12 @@
         </header>
 		<div id="overlay" class="overlay">
             <div id="sideMenu" class="side-menu">
-                <a href="javascript:void(0)" class="closebtn">&times;</a>
-                <a href="../PHP/home.php">Homepage</a>
-                <a href="../PHP/infoPersonali.php">Profilo</a>
-                <a href="../PHP/indexProfilo.php">Crea Evento</a>
-                <a href="../HTML/chiSiamo.html">Chi siamo</a>
-                <a href="../HTML/partner.html">Partners</a>
+                <a href="javascript:void(0)" class="closebtn" tabindex="-1">&times;</a>
+                <a href="../PHP/home.php" tabindex="-1">Homepage</a>
+                <a href="../PHP/infoPersonali.php" tabindex="-1">Profilo</a>
+                <a href="../PHP/indexProfilo.php" tabindex="-1">Crea Evento</a>
+                <a href="../HTML/chiSiamo.html" tabindex="-1">Chi siamo</a>
+                <a href="../HTML/partner.html" tabindex="-1">Partners</a>
             </div>
 	    </div>
     <div id="nameSearched-se">
@@ -69,6 +69,13 @@
         <div id="container_risultati_ricerca">
             {RISULTATI}
         </div>
-    </div>        
+    </div>
+    <footer id="footer">
+        <div class="torna-su">
+            <a href="#" id="tornaSuBtn">
+                <img src="../Images/up-arrow.png" alt="Ritorna all'inizio della pagina">
+            </a>
+        </div>                
+    </footer>   
 </body>
 </html>

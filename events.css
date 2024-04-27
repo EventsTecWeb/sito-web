@@ -1973,7 +1973,26 @@ textarea {
     color: #666;
     margin-top: 5px;
     word-wrap: break-word;}
-    
+/*--------------------------------------------------------------TORNA SU---------------------------------------------------------------*/
+#tornaSuBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    height: 8vh;
+    width: 8vh;
+    z-index: 9999;
+    border-radius: 50%;
+    background-color: rgba(45, 45, 45, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;}
+#tornaSuBtn img {
+    height: 70%;
+    width: 70%;}
+.hide-footer {
+    display: none;
+}
+
 @media screen and (max-width: 620px) {
     /*---------------------------PAGINA EVENTO---------------------------*/
     .container_dx-pe {
@@ -2119,7 +2138,6 @@ textarea {
         position: fixed; 
         top: 1em; 
         left: 1em; 
-        background-color: #ffffff;
         color: black; 
         padding: 0.5em; 
         font-size: 0.8em; 
@@ -2157,9 +2175,7 @@ textarea {
         position: relative;}
     .wrapper, .wrapper_eventi {
         padding-top: 3vh;
-        display: flex;
-        flex-direction: column; 
-        align-items: center;}
+        display: flex;}
     .header-items {
         margin-top: -0.7vw;
         display: flex;
@@ -2215,8 +2231,6 @@ textarea {
     .cardCreato-ev { 
         width: 100%;}
     /*---------------------------IMPO SICUREZZA--------------------------*/
-    .wrapper #menuleft, .wrapper_eventi #menuleft {
-        display: none;}
     .settings-sicu h2 {
         text-align: center;}
     #bread{
