@@ -130,10 +130,16 @@ function getEventiSalvati($conn, $id)
     $stmt->execute();
     $resultEventi = $stmt->get_result();
     $stmt->close();
+
+    $eventi = array(); // Inizializza un array per memorizzare i risultati
+
     if ($resultEventi && $resultEventi->num_rows > 0) {
-        return $resultEventi;
+        while ($row = $resultEventi->fetch_assoc()) {
+            $eventi[] = $row; // Aggiunge ogni riga all'array
+        }
+        return $eventi;
     } else {
-        return false; 
+        return array(); // Se non ci sono risultati, restituisci un array vuoto
     }
 }
 function getEventiCreati($conn, $id)
