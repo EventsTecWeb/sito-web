@@ -22,15 +22,15 @@
                     <form id="searchBarA" action="../PHP/searchbar.php" role="search" method="POST">
                         <input type="text" id="searchBar" name="cerca_evento" placeholder="Cerca...">
                         <button type="submit" id="searchButton">
-                            <img src="../Images/search.png" alt="Pulsante per eseguire la ricerca">
+                            <img src="../Images/search.png" alt="Esegui la ricerca">
                         </button>
                     </form>
                 </div>
                 <a href="../PHP/eventi_salvati.php" class="bottoneStar">
-                    <img src="../Images/star_full.png" alt="Pulsante per portarti alla pagina contenente i tuoi eventi salvati">
+                    <img src="../Images/star_full.png" alt="Vai alla pagina contenente i tuoi eventi salvati">
                 </a>
                 <button class="bottoneHamburger">
-                    <img src="../Images/menu-button-of-three-horizontal-lines.png" alt="Bottone per link nascosti in formato cellulare">
+                    <img src="../Images/menu-button-of-three-horizontal-lines.png" alt="Apri il menu ad hamburger">
                 </button>
                 <nav>
                     <ul class="linkPagina">
@@ -40,10 +40,10 @@
                     </ul>
                 </nav>
 		        <a href="../PHP/indexProfilo.php" class="bottonePlus">
-                    <img src="../Images/add.png" alt="Bottone per creare un nuovo evento">
+                    <img src="../Images/add.png" alt="Creare un nuovo evento">
                 </a>
                 <a href="../PHP/infoPersonali.php" class="bottoneProfilo">
-                    <img src="../Images/user.png" alt="Bottone per accedere ai dati del proprio profilo">
+                    <img src="../Images/user.png" alt="Accedi ai dati del tuo profilo">
                 </a>
                 <nav aria-label="breadcrumb" id="bread">
                     <p>Ti trovi in: Home</p>
@@ -51,13 +51,13 @@
 	        </div>
         </header>
 		<div id="overlay" class="overlay">
-            <div id="sideMenu" class="side-menu">
-                <a href="javascript:void(0)" class="closebtn">&times;</a>
-                <a href="#">Homepage</a>
-                <a href="../PHP/infoPersonali.php">Profilo</a>
-                <a href="../PHP/indexProfilo.php">Crea Evento</a>
-                <a href="../HTML/chiSiamo.html">Chi siamo</a>
-                <a href="../HTML/partner.html">Partners</a>
+            <div id="sideMenu" class="side-menu" aria-hidden="true">
+                <a href="javascript:void(0)" class="closebtn" tabindex="-1">&times;</a>
+                <a href="#" tabindex="-1">Homepage</a>
+                <a href="../PHP/infoPersonali.php" tabindex="-1">Profilo</a>
+                <a href="../PHP/indexProfilo.php" tabindex="-1">Crea Evento</a>
+                <a href="../HTML/chiSiamo.html" tabindex="-1">Chi siamo</a>
+                <a href="../HTML/partner.html" tabindex="-1">Partners</a>
             </div>
 	    </div>
         <main>
@@ -69,20 +69,20 @@
                         </div>
                         <div class="home-evidenza-generi">
                             <a href="#" id="ricerca-genere-musica">
-                                <img src="../Images/evento1.jpg" alt="pulsante per ricerca genere musica" class="generiImmagini-home">
-                                <h3>Musica</h3>
+                                <img src="../Images/evento1.jpg" alt="Ricerca genere musica" class="generiImmagini-home">
+                                <h3 aria-hidden="true">Musica</h3>
                             </a>
                             <a href="#" id="ricerca-genere-arte">
-                                <img src="../Images/evento2.png" alt="pulsante per ricerca genere arte" class="generiImmagini-home">
-                                <h3>Arte</h3>
+                                <img src="../Images/evento2.png" alt="Ricerca genere arte" class="generiImmagini-home">
+                                <h3 aria-hidden="true">Arte</h3>
                             </a>
                             <a href="#" id="ricerca-genere-sport">
-                                <img src="../Images/evento3.jpg" alt="pulsante per ricerca genere sport" class="generiImmagini-home">
-                                <h3>Sport</h3>
+                                <img src="../Images/evento3.jpg" alt="Ricerca genere sport" class="generiImmagini-home">
+                                <h3 aria-hidden="true">Sport</h3>
                             </a>
                             <a href="#" id="ricerca-genere-teatro">
-                                <img src="../Images/evento4.jpg" alt="pulsante per ricerca genere teatro" class="generiImmagini-home">
-                                <h3>Teatro</h3>
+                                <img src="../Images/evento4.jpg" alt="Ricerca genere teatro" class="generiImmagini-home">
+                                <h3 aria-hidden="true">Teatro</h3>
                             </a>
                         </div>
                     </div>
@@ -105,5 +105,12 @@
                 </div>
             </div>
         </main>
+        <footer id="footer">
+            <div class="torna-su">
+                <a href="#" id="tornaSuBtn">
+                    <img src="../Images/up-arrow.png" alt="Ritorna all'inizio della pagina">
+                </a>
+            </div>                
+        </footer>
     </body> 
 </html>

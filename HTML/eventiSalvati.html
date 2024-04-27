@@ -55,33 +55,40 @@
   
   <div id="overlay" class="overlay"></div>
         <div id="sideMenu" class="side-menu">
-          <a href="javascript:void(0)" class="closebtn">&times;</a>
-          <a href="../PHP/home.php">Homepage</a>
-          <a href="../PHP/infoPersonali.php">Profilo</a>
-          <a href="../PHP/indexProfilo.php">Crea Evento</a>
-          <a href="../HTML/chiSiamo.html">Chi siamo</a>
-          <a href="../HTML/partner.html">Partners</a>
+          <a href="javascript:void(0)" class="closebtn" tabindex="-1">&times;</a>
+          <a href="../PHP/home.php" tabindex="-1">Homepage</a>
+          <a href="../PHP/infoPersonali.php" tabindex="-1">Profilo</a>
+          <a href="../PHP/indexProfilo.php" tabindex="-1">Crea Evento</a>
+          <a href="../HTML/chiSiamo.html" tabindex="-1">Chi siamo</a>
+          <a href="../HTML/partner.html" tabindex="-1">Partners</a>
         </div>
   <nav id="menuCenter">
     <ul class="menu-orizzontale">
         <li><a href="../PHP/infoPersonali.php">Informazioni Personali</a></li>
+        <li><a href="../PHP/impo_sicu.php">Impostazioni e Sicurezza</a></li>
         <li><a href="../PHP/profiloEv.php">Eventi Creati</a></li>
         <li><a id="mo-pulsanteSingolo" href="#">Eventi Salvati</a></li>
-        <li><a href="../PHP/impo_sicu.php">Impostazioni e Sicurezza</a></li>
     </ul>
 </nav>
 <div class="wrapper_eventi">
     <nav id="menuleft">
       <ul>
-        <li><a href="../PHP/infoPersonali.php"><button>Informazioni Personali</button></a></li>
-        <li><a href="../PHP/profiloEv.php"><button>Eventi Creati</button></a></li>
-        <li><a href="../PHP/eventi_salvati.php"><button  id="buttonEventiSalvati">Eventi Salvati</button></a></li>
-        <li><a href="../PHP/impo_sicu.php"><button>Impostazioni e Sicurezza</button></a></li>
-    </ul>
+          <li><button onclick="window.location.href='../PHP/infoPersonali.php'">Informazioni Personali</button></li>
+          <li><button onclick="window.location.href='../PHP/impo_sicu.php'">Impostazioni e Sicurezza</button></li>
+          <li><button onclick="window.location.href='../PHP/profiloEv.php'">Eventi Creati</button></li>
+          <li><button id="buttonEventiSalvati" onclick="window.location.href='#'">Eventi Salvati</button></li>
+      </ul>
     </nav>
     <div id="eventiSalvati-es">
     {EVENTI}
     </div>
   </div>
+  <footer id="footer">
+    <div class="torna-su">
+        <a href="#" id="tornaSuBtn">
+            <img src="../Images/up-arrow.png" alt="Ritorna all'inizio della pagina">
+        </a>
+    </div>                
+</footer>
 </body>
 </html>
