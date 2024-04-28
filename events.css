@@ -1435,8 +1435,9 @@ textarea {
 #chi_siamo_main p{
     font-size: 1.2em;
     margin-bottom: 1em;
+    margin-left: 3vh;
     margin-right: 7vh;
-    text-align: justify;}
+    text-align:start;}
 #chi_siamo_main h2{
         font-size: 2em;
         margin-bottom: 0.5em;
