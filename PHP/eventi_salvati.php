@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['username']) && !isset($_SESSION['email'])) {
-    header("Location: pagina_non_autorizzata.php");
+    header("Location: ../PHP/404.php");
     exit();
 }
 

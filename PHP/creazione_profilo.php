@@ -18,7 +18,7 @@ $result = effettuaRegistrazione($conn, $email, $username, $nome, $cognome, $pass
 if($result===false){
 	echo "<p>dai inseriti sbagliati</p>";
 }else{
-	header("Location: ../HTML/home.html");
+	header("Location: ../PHP/home.php");
 }
 
 $conn->close();
