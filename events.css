@@ -187,7 +187,6 @@ header:after {
 .skip-link {
     position: absolute;
     left: 0;
-    background-color: #ffffff;
     color: black; 
     padding: 1em; 
     z-index: 999;
@@ -351,13 +350,6 @@ input[type="text"] {
     display: none;}
 .option-sicu.open span:nth-child(2) {
     display: inline-block;}
-#privacy-sicu {
-    border: 1px solid #ccc;
-    border-radius: 50px;
-    padding: 60px;
-    padding-top: 30px;
-    width: 80%;
-    margin: 2vh auto;}
 .p_privacy-sicu{
     margin-bottom: -0.5vh;}
 #domanda-sicu{
@@ -1437,24 +1429,25 @@ textarea {
     background-color: rgba(14, 31, 187, 1);}
 /*-------------------------------------------------------------CHI SIAMO--------------------------------------------------------------*/
 #chi_siamo_main{
-    text-align: left;
-    padding: 4em 1em 2px 4em;
+    text-align: center;
+    padding: 2em 1em 2px 2em;
     font-family: 'Poppins', sans-serif;}
 #chi_siamo_main p{
     font-size: 1.2em;
-    margin-bottom: 1em;}
+    margin-bottom: 1em;
+    margin-right: 7vh;
+    text-align: justify;}
 #chi_siamo_main h2{
         font-size: 2em;
         margin-bottom: 0.5em;
         font-weight: bold;}
-.chi_siamo{
-    padding: 0 2em 2.5em 0;}
 #contenitore-cs {
     overflow: hidden;}
 #contenitore-cs >  img {
-    width: 30%;
+    width: 40%;
     height: auto;
     margin-right: 1em;
+    margin-left: 1em;
     float: right;}
 /*-------------------------------------------------------INFO PERSONALI----------------------------------------------------------*/
 #menuleft #buttonInfoPersonali{
@@ -2158,11 +2151,12 @@ textarea {
         margin-top: 8vh;}
     /*-----------------------------CHI SIAMO----------------------------*/
     #contenitore-cs >  img {
-        width: 60%;
-        margin-left: 20%;
+        width: 80%;
+        margin-left: 5%;
         height: auto;
-        float:none;
-        margin-bottom: 0.5em;}
+        float:none;}
+    .chi_siamo{
+        margin-top: 0vh;}
 }
 @media screen and (max-width: 830px) 
 { 
