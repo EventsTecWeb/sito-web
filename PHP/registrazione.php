@@ -41,16 +41,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($existing_user_by_email) {
             $registration_feedback .= "<p class='signin-error'>Questa email è già stata utilizzata all'interno del nostro sito</p>";
             $error_count++;
+            
         } 
         if ($error_count === 1) {
             $res = effettuaRegistrazione($conn, $email, $username, $nome, $cognome, $password,"Femmina");
-            if ($res === "") {
+            if ($res === null) {
                 $res = getUserByMailOrUsername($conn, $username);
                 if ($res === false) {
                     header('Location: 404.php');
                     exit();
                 } else {
-                    $_SESSION['user_id'] = $res['utente_id'];
                     header('Location: ../php/accessNav.php');
                     exit();
                 }
