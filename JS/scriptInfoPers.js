@@ -4,12 +4,14 @@ $(document).ready(function(){
         var originalSrc = img.data('original-src');
         var alternateSrc = img.data('alternate-src');
         
-        if (img.attr('src') === originalSrc) {
-            img.attr('src', alternateSrc);
-        } else {
+        // Cambia l'icona
+        if ($(this).next('.content-ip').is(":visible")) {
             img.attr('src', originalSrc);
+        } else {
+            img.attr('src', alternateSrc);
         }
         
+        // Apre o chiude la sezione
         $(this).next('.content-ip').slideToggle("slow");
     });
 });

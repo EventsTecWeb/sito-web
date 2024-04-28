@@ -100,9 +100,12 @@ if (!isset($privacy_profile)) {
 }
 
 $errore = "<p class='impo-error'> $txt_error </p>";
+$pass = "<p class='pass_example-ip'> ******** </p>";
 
 $template = str_replace('{ERROR}', $errore, $template);
 $template = str_replace('{PRIVACY}', $privacy_profile, $template);
+$template = str_replace('{PASSWORD}', $pass, $template);
+
 echo $template;
 
 $conn->close();
