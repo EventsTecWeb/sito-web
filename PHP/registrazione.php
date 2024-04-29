@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             
         } 
         if ($error_count === 1) {
-            $res = effettuaRegistrazione($conn, $email, $username, $nome, $cognome, $password,"Femmina","Pubblico");
+            $res = effettuaRegistrazione($conn, $email, $username, $nome, $cognome, $password,"Altro","Pubblico");
             if ($res === null) {
                 $res = getUserByMailOrUsername($conn, $username);
                 if ($res === false) {

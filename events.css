@@ -752,8 +752,8 @@ div #pannello-principale-reg{
     text-decoration: underline;}
 #infoNoAccount-reg #linkRegistrati:hover{
     text-decoration: none;}
-#container-sinistro-reg{
-    padding-top: 8.5vh;}
+/* #container-sinistro-reg{
+    padding-top: 8.5vh;} */
 #registratiScritta-reg{
     font-family: Poppins, sans-serif;
     width: 20%; 
@@ -841,8 +841,8 @@ div #pannello-principale-acc{
     text-decoration: underline;}
 #infoNoAccount-acc #linkRegistrati:hover{
     text-decoration: none;}
-#container-sinistro-acc{
-    padding-top: 4.5vh;}
+/* #container-sinistro-acc{
+    padding-top: 4.5vh;} */
 #container-sinistro-acc #container-destro-acc{
     width: 110%;}
 #accediScritta-acc{
@@ -878,7 +878,7 @@ div #pannello-principale-acc{
     font-size:large;}
 #container-destro-acc {
     padding-left: 2.5vw;
-    height: 45vh;
+    height: 30vh;
     width: 30%;}
 #container-destro-acc form, #container-destro-acc label, #container-destro-acc button {
     margin-bottom: 15px;}
@@ -1373,62 +1373,6 @@ textarea {
     font-size: 20px;}
 #invia:hover{
     background-color: rgba(14, 31, 187, 1);}
-/*----------------------------------------------------------PAGINA DI VERIFICA--------------------------------------------------------*/
-/* #pannello-principale-ver {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    font-family: 'Poppins', sans-serif;}
-.userInformations-ver {
-    text-align: center;}
-.userInformations-ver h2{
-    font-size: 4vh;
-    font-weight: bolder;}
-.userAccount-ver {
-    background-color: white;
-    border-radius: 6vh;
-    display: flex;
-    align-items: center;
-    border: 0.3vh solid black;}
-.userImage-ver img {
-    width: 8vh;
-    height: 8vh;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 2vh;
-    margin-left: 2vh;}
-.userEmail-ver {
-    font-size: 3vh;
-    font-weight: 500;
-    margin-right: 4vh;}
-.infoText-ver{
-    font-size: 2.5vh;
-    text-align: center;}
-#showPasswordLabel-ver{
-    font-size: 2.6vh;
-    font-family: 'Poppins', sans-serif;}
-.continueButton-ver {
-    margin-top: 4vh;
-    background: #656565;
-    border: none;
-    border-radius: 2vh;
-    color: white;
-    font-size: 2.5vh;
-    font-weight: bold;
-    cursor: pointer;
-    height: 6.5vh;
-    width: 16vh; 
-    max-width: none;
-    padding-top: 1.5vh;
-    font-family: 'Poppins', sans-serif;
-    padding: 1vh 0; 
-    box-sizing: border-box; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center;}
-.continueButton-ver:hover{
-    background-color: rgba(55, 111, 194);} */
 /*-------------------------------------------------------------CHI SIAMO--------------------------------------------------------------*/
 #chi_siamo_main{
     text-align: center;
@@ -2023,7 +1967,7 @@ textarea {
         padding-top: 1vh;}
     /*------------------------------ACCESSO------------------------------*/
     .buttonSubmit{
-        width: 16vw;
+        width: 20vw;
         height: 4vh;}
     .image-container-ragComp-acc {
         background-image: url('Images/people.png');
