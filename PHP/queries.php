@@ -322,7 +322,7 @@ function getPermessiByUsername($conn, $user){
 }
 
 
-function effettuaRegistrazione($conn, $email, $username, $nome, $cognome, $password, $genere) {
+function effettuaRegistrazione($conn, $email, $username, $nome, $cognome, $password, $genere, $privacy) {
     $queryCheck = "SELECT utente_id FROM Utenti WHERE email = ? OR username = ?";
     $stmtCheck = $conn->prepare($queryCheck);
     $stmtCheck->bind_param("ss", $email, $username);
@@ -331,9 +331,9 @@ function effettuaRegistrazione($conn, $email, $username, $nome, $cognome, $passw
     if ($resultCheck->num_rows > 0) {
         return "Email o username già utilizzati.";
     } else {
-        $sql = "INSERT INTO Utenti (nome, cognome, genere, username, permessi, email, password) VALUES (?, ?, ?, ?, 0, ?, ?)";
+        $sql = "INSERT INTO Utenti (nome, cognome, genere, username, permessi, email, password, privacy) VALUES (?, ?, ?, ?, 0, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ssssss", $nome, $cognome, $genere, $username, $email, $password);
+        $stmt->bind_param("sssssss", $nome, $cognome, $genere, $username, $email, $password, $privacy);
         $stmt->execute();
         $stmt->close();
         return null;
