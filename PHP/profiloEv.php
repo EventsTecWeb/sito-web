@@ -18,7 +18,7 @@ if (isset($_SESSION['user_id'])) {
                         </p>';
     } else {
         while($evento = $ris->fetch_assoc()){
-            $eventiCreati .= '<div class="cardCreato-ev" id="event2Salvato-es">
+            $eventiCreati .= '<div class="cardCreato-ev">
                                 <div class="card-body-creati-ev">
                                 <a class="a_evento" href="../PHP/pageEvent.php?evento='.$evento["evento_id"].'">
                                     <img src="' . $evento["url_immagine"] . '" class="container-immagini-eventi-ev" alt="scheda dell&#39;evento '.$evento["titolo"].'">

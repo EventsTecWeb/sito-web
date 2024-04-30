@@ -958,7 +958,7 @@ div #pannello-principale-acc{
 .settings-sicu{
     font-family: Inter, sans-serif;}
 /*---------------------------PRIVACY----------------------------*/
-.option-sicu #option-ip{
+.option-sicu #option-ip, .option-sicu #option-ps{
     margin-bottom: 0;
     margin-top: 0;
     margin-left: -10%;}

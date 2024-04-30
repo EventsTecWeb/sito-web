@@ -17,7 +17,7 @@ if (isset($_SESSION['user_id'])) {
                         </p>';
     } else if(is_array($ris)) {
         foreach($ris as $evento) {
-            $eventiSalvati.='<div class="cardSalvato-es" id="event4Salvato-es">
+            $eventiSalvati.='<div class="cardSalvato-es">
             <a class="a_evento" href="../PHP/pageEvent.php?evento='.$evento["evento_id"].'">
                                     <div class="card-body-salvati-es">
                                         <img src="' . $evento["url_immagine"] . '" class="container-immagini-eventi-es" alt="scheda dell&#39;evento '.$evento["titolo"].'">
