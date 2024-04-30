@@ -284,8 +284,7 @@ input[type="text"] {
     justify-content: space-between;}
 /*-------------------------------------------------------/ICONACLICCABILEEVENTO---------------------------------------------------------*/
 .a_evento{
-    text-decoration: none;
-    color: black;}
+    text-decoration: none;}
 #mo-pulsanteSingolo{
     color: white;
     background-color: #454545;}
@@ -714,7 +713,6 @@ input[type="text"] {
 .NomiLinkCreati-ev{
     font-family: Arial, Helvetica, sans-serif;
     font-family: 'Roboto', sans-serif;
-    color: rgb(0, 0, 0); 
     text-decoration: underline;}
 .NomiLinkCreati-ev:hover {
     text-decoration: none;}
@@ -926,8 +924,9 @@ div #pannello-principale-acc{
 .NomiLinkSalvati-es{ 
     font-family: Arial, Helvetica, sans-serif; 
     font-family: 'Roboto', sans-serif; 
-    color: rgb(0, 0, 0); 
     text-decoration: underline;}
+.a_evento .NomiLinkCreati-ev:visited {
+        color: gray;}
 .NomiLinkSalvati-es:hover { 
     text-decoration: none;}
 .infoEventoSalvato-es{ 
@@ -1778,6 +1777,8 @@ textarea {
     border-radius: 10px;
     width: 90%;
     height: auto;}
+.descrizioneEventiT-home{
+    text-decoration: underline;}
 .descrizioneEventiT-home, .descrizioneEventiD-home, .descrizioneEventiG-home {
     word-wrap: break-word;
     overflow-wrap: break-word;
@@ -1796,7 +1797,8 @@ textarea {
 .column-home:hover {
     transform: scale(1.1);}
 #ricerca-genere-musica, #ricerca-genere-arte, #ricerca-genere-sport, #ricerca-genere-teatro{
-    color: #000000;}
+    /* color: #000000; */
+}
 /*------------------------------------------------------------TERMINI------------------------------------------------------------------*/
 .text_termini{
     font-size: 2.5vh;
@@ -1870,9 +1872,7 @@ textarea {
     border-radius: 3%;}
 .NomiLinkCreati-ev{ 
     font-family: Arial, Helvetica, sans-serif; 
-    font-family: 'Roboto', sans-serif; 
-    color: rgb(0, 0, 0); 
-    text-decoration: underline;}
+    font-family: 'Roboto', sans-serif;}
 .NomiLinkCreati-ev:hover { 
     text-decoration: none;}
 .infoEventoCreato-ev{ 
