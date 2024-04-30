@@ -76,6 +76,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $txt_error = "Errore nell'eliminazione dei record da eventisalvati: " . $stmt_elimina_eventisalvati->error;
                 }
                 $stmt_elimina_eventisalvati->close();
+            }
+            elseif (isset($_POST['logout'])) { 	
+                logout();	
+                exit;	
             }            
         } else {
             $txt_error = "Utente non trovato.";

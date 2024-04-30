@@ -168,11 +168,6 @@
                             </label>                        
                         </div>
                         <button type="submit" id="eliminaButton-sicu" name="elimina-account" disabled="disabled" onclick="togliCookie()">Elimina</button>
-                        <script>
-                            function togliCookie(){
-                                document.cookie = "cookiesBanner" + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/';
-                            }
-                        </script>
                     </div>
                 </div>
             </form>
@@ -194,7 +189,12 @@
                             </label>
                         </div>
                         <div class="button-container-sicu">
-                            <button type="submit" id="esciButton-sicu" name="logout" disabled="disabled">Esci</button>
+                            <button type="submit" id="esciButton-sicu" name="logout" disabled="disabled" onclick="togliCookie()">Esci</button>
+                            <script>
+                                function togliCookie(){
+                                    document.cookie = "cookiesBanner" + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/';
+                                }
+                            </script>
                         </div>
                     </div>
                 </div>
