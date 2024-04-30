@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $required_fields = ['username', 'password', 'email', 'password_confirm', 'nome', 'cognome'];
     foreach ($required_fields as $field) {
         if (empty($_POST[$field])) {
-            $registration_feedback .= "<p class='signin-error'>Il campo $field è obbligatorio</p>";
+            $registration_feedback .= "<p class='signin-error' tabindex='0'>Il campo $field è obbligatorio</p>";
             $error_count++;
         }
     }
@@ -18,11 +18,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $password = $_POST['password'];
             $password_confirm = $_POST['password_confirm'];
             if ($password !== $password_confirm) {
-                $registration_feedback .= "<p class='signin-error'>Le password non corrispondono</p>";
+                $registration_feedback .= "<p class='signin-error' tabindex='0'>Le password non corrispondono</p>";
                 $error_count++;
             }
         } else {
-            $registration_feedback .= "<p class='signin-error'>Devi compilare entrambi i campi password</p>";
+            $registration_feedback .= "<p class='signin-error' tabindex='0'>Devi compilare entrambi i campi password</p>";
             $error_count++;
         }
     }
@@ -35,11 +35,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $existing_user_by_username = getUserByMailOrUsername($conn, $username);
         $existing_user_by_email = getUserByMailOrUsername($conn, $email);
         if ($existing_user_by_username) {
-            $registration_feedback .= "<p class='signin-error'>Questo username è già stato utilizzato all'interno del nostro sito</p>";
+            $registration_feedback .= "<p class='signin-error' tabindex='0'>Questo username è già stato utilizzato all'interno del nostro sito</p>";
             $error_count++;
         } 
         if ($existing_user_by_email) {
-            $registration_feedback .= "<p class='signin-error'>Questa email è già stata utilizzata all'interno del nostro sito</p>";
+            $registration_feedback .= "<p class='signin-error' tabindex='0'>Questa email è già stata utilizzata all'interno del nostro sito</p>";
             $error_count++;
             
         } 
@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     exit();
                 }
             } else {
-                $registration_feedback .= "<p class='signin-error'>$res</p>";
+                $registration_feedback .= "<p class='signin-error' tabindex='0'>$res</p>";
                 $error_count++;
             }
         }

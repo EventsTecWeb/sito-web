@@ -152,7 +152,7 @@ $evento .= '</div>
     </div>
 </div>';
 
-$errore = "<p class='event-error'> $txt_error </p>";
+$errore = "<p class='event-error' tabindex='0'> $txt_error </p>";
 
 $template = str_replace('{IMMAGINE}', $immagine, $template);
 $template = str_replace('{ERRORE}', $errore, $template);

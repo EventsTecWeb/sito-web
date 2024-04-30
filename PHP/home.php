@@ -22,18 +22,18 @@ if ($results!=null) {
         $luogo = $row['luogo'];
         $costo = $row['costo'];
     } else {
-        $error = '<p>Errore! Nessun <span lang="en">evento</span> trovato. Riprova o se il problema persiste contattare l\'amministrazione.</p>';
+        $error = '<p>Errore! Nessun evento trovato. Riprova o se il problema persiste contattare l\'amministrazione.</p>';
         header('Location:404.html');
     }
 } else {
-    $error = '<p>Errore! Nessun <span lang="en">evento</span> trovato. Riprova o se il problema persiste contattare l\'amministrazione.</p>';
+    $error = '<p>Errore! Nessun evento trovato. Riprova o se il problema persiste contattare l\'amministrazione.</p>';
     header('Location:404.html');
 }
 
 $evidenza = '<div class="column-home-e">
     <a class="a_evento" href="../PHP/pageEvent.php?evento='.$row["evento_id"].'">
         <div class="container-home-evidenza-e">
-            <img src="'.$row["url_immagine"].'" alt="Scheda dell&#39;evento '.$row["titolo"].'">
+            <img src="'.$row["url_immagine"].'" alt="Scheda dell&#39;evento in evidenza: '.$row["titolo"].'">
             <h4 class="descrizioneEventiT-home" aria-hidden="true">'.$row["titolo"].'</h4>
             <p class="descrizioneEventiD-home" aria-hidden="true">'.$row["data_inizio"].' - '.$row["luogo"].'</p>
             <p class="descrizioneEventiD-home" aria-hidden="true">'.$row["categoria"].'</p>

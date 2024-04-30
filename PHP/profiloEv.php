@@ -19,18 +19,18 @@ if (isset($_SESSION['user_id'])) {
     } else {
         while($evento = $ris->fetch_assoc()){
             $eventiCreati .= '<div class="cardCreato-ev">
-                                <div class="card-body-creati-ev">
-                                <a class="a_evento" href="../PHP/pageEvent.php?evento='.$evento["evento_id"].'">
-                                    <img src="' . $evento["url_immagine"] . '" class="container-immagini-eventi-ev" alt="scheda dell&#39;evento '.$evento["titolo"].'">
-                                    <div class="NomiLinkCreati-ev" aria-hidden="true">
-                                        <h3>'.$evento["titolo"].'</h3>
-                                    </div>
-                                    <p class="infoEventoCreato-ev" aria-hidden="true">'.$evento["data_inizio"].'</p>
-                                    <p class="infoEventoCreato-ev" aria-hidden="true">'.$evento["orario_inizio"].' – '.$evento["luogo"].'</p>
-                                    <span class="genereEventoCreato-ev" aria-hidden="true">'.$evento["categoria"].'</span>
-                                    </div>
-                                </a>
-                            </div>';
+            <div class="card-body-creati-ev">
+                <a class="a_evento" href="../PHP/pageEvent.php?evento='.$evento["evento_id"].'">
+                    <img src="' . $evento["url_immagine"] . '" class="container-immagini-eventi-ev" alt="scheda dell&#39;evento '.$evento["titolo"].'">
+                    <div class="NomiLinkCreati-ev" aria-hidden="true">
+                        <h3>'.$evento["titolo"].'</h3>
+                    </div>
+                    <p class="infoEventoCreato-ev" aria-hidden="true">'.$evento["data_inizio"].'</p>
+                    <p class="infoEventoCreato-ev" aria-hidden="true">'.$evento["orario_inizio"].' – '.$evento["luogo"].'</p>
+                    <span class="genereEventoCreato-ev" aria-hidden="true">'.$evento["categoria"].'</span>
+                </a>
+            </div>
+        </div>';
         }
     }
 } else {

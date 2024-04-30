@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $user = getUserByMailOrUsername($conn, $utente);
     $conn->close();
     if ($user === false) {
-        $errore_credenziali="<p class='signin-error'>L'username che è stato inserito oppure la password sono errate, si prega di ricontrolare i valori inseriti nei campi.</p>";
+        $errore_credenziali="<p class='signin-error' tabindex='0'>L'username che è stato inserito oppure la password sono errate, si prega di ricontrolare i valori inseriti nei campi.</p>";
     } else {
         $mail = $user['email'];
         if ($password == $user['password'] && $mail == $user['email']) {
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			header('Location: ../php/home.php');
             exit();
         } else { 
-            $errore_credenziali="<p class='signin-error'>L'username che è stato inserito oppure la password sono errate, si prega di ricontrolare i valori inseriti nei campi.</p>";
+            $errore_credenziali="<p class='signin-error' tabindex='0'>L'username che è stato inserito oppure la password sono errate, si prega di ricontrolare i valori inseriti nei campi.</p>";
         }
     }
 }
