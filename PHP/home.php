@@ -56,7 +56,6 @@ if($result_last_seen!=null){
     }
 } else {
     $error = '<p>Errore! Nessun evento trovato. Riprova o se il problema persiste contattare l\'amministrazione.</p>';
-    header('Location:404.html');
 }
 
 $lastSeen = '<div class="column-home-e">
