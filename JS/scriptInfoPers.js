@@ -1,17 +1,23 @@
 $(document).ready(function(){
     $(".option-ip").click(function(){
-        var img = $(this).find('img');
+        toggleContent($(this));
+    });
+    $(".option-ip").keypress(function(event){
+        if (event.which === 13) {
+            toggleContent($(this));
+        }
+    });
+    function toggleContent(element) {
+        var img = element.find('img');
         var originalSrc = img.data('original-src');
         var alternateSrc = img.data('alternate-src');
-        
-        if (img.attr('src') === originalSrc) {
-            img.attr('src', alternateSrc);
-        } else {
+        if (element.next('.content-ip').is(":visible")) {
             img.attr('src', originalSrc);
+        } else {
+            img.attr('src', alternateSrc);
         }
-        
-        $(this).next('.content-ip').slideToggle("slow");
-    });
+        element.next('.content-ip').slideToggle("slow");
+    }
 });
 
 function ModificaNome() {

@@ -6,6 +6,7 @@
   <meta name="description" content="Inserisci un nuovo evento su Events, il social network per gli amanti degli eventi. Condividi il tuo evento con la comunità e raggiungi un vasto pubblico di appassionati.">
   <meta name="keywords" content="Events, eventi, concerti, cultura, mostre, spettacoli,crea evento, nuovo evento, creazione, inserimento evento, nuovo">
   <link rel="stylesheet" href="../events.css">
+  <link rel="stylesheet" href="../print.css" media="print">
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,400&display=swap">
   <link rel="shortcut icon" href="../Images/events_logo_site_e.png">
@@ -16,7 +17,7 @@
 </head>
 <body>
     <header>
-        <a class="skip-link visually-hidden" href="#box" id="skipLink">Salta al contenuto principale</a>
+        <a class="skip-link visually-hidden" href="#urlInsertImmagine" id="skipLink">Salta al contenuto principale</a>
         <a href="../PHP/home.php">
             <h1>Events</h1>
         </a>
@@ -30,10 +31,10 @@
                 </form>
             </div>
             <a href="../PHP/eventi_salvati.php" class="bottoneStar">
-                <img src="../Images/star_full.png" alt="Pulsante per portarti alla pagina contenente i tuoi eventi salvati">
+                <img src="../Images/star_full.png" alt="Vai alla pagina contenente i tuoi eventi salvati">
             </a>
             <button class="bottoneHamburger">
-                <img src="../Images/menu-button-of-three-horizontal-lines.png" alt="Bottone per link nascosti in formato cellulare">
+                <img src="../Images/menu-button-of-three-horizontal-lines.png" alt="Apri il menu ad hamburger">
             </button>
             <nav>
                 <ul class="linkPagina">
@@ -43,7 +44,7 @@
                 </ul>
             </nav>
             <a href="../PHP/infoPersonali.php" class="bottoneProfilo">
-                <img src="../Images/user.png" alt="Bottone per accedere ai dati del proprio profilo">
+                <img src="../Images/user.png" alt="Accedi ai dati del tuo profilo">
             </a>
             <nav aria-label="breadcrumb" id="bread">
                 <p>Ti trovi in: <span lang="en"><a id="returnHome" href="../PHP/home.php">Home</a></span> >> Creazione evento</p>
@@ -80,7 +81,7 @@
     <div id="box">
         {FOTOPROFILO} 
         <form action="../PHP/indexProfilo.php" method="POST">
-            <label for="imageURL">URL immagine dell'evento:</label>
+            <label for="imageURL" id="urlInsertImmagine">URL immagine dell'evento:</label>
                 <input type="text" id="imageURL" name="imageURL">
 
             <label for="eventName">Nome dell'evento:</label>

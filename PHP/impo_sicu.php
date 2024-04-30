@@ -3,8 +3,8 @@ session_start();
 
 $template = file_get_contents("../HTML/impoSicu.html");
 
-
 $txt_error = "";
+$privacy_profile = "";
 
 if (!isset($_SESSION['username']) && !isset($_SESSION['email'])) {
     header("Location: ../HTML/index.html");
@@ -86,9 +86,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
+if (isset($_SESSION['username']) || isset($_SESSION['email'])) {
+    $user = isset($_SESSION['username']) ? $_SESSION['username'] : $_SESSION['email'];
+    $userData = getUserByMailOrUsername($conn, $user);
+    if ($userData) {
+        $userId = $userData['utente_id'];
+        $privacy_profile = $userData['privacy'];
+    }
+}
+
+if (!isset($privacy_profile)) {
+    $privacy_profile = "";
+}
+
 $errore = "<p class='impo-error'> $txt_error </p>";
+$pass = "<p class='pass_example-ip'> ******** </p>";
 
 $template = str_replace('{ERROR}', $errore, $template);
+$template = str_replace('{PRIVACY}', $privacy_profile, $template);
+$template = str_replace('{PASSWORD}', $pass, $template);
+
 echo $template;
 
 $conn->close();

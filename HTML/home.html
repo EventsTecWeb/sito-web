@@ -6,6 +6,7 @@
         <meta name="keywords" content="Events, eventi, concerti, cultura, mostre, spettacoli, home, ricerca eventi">
         <meta name="description" content="Benvenuto nella homepage di Events, il social network per gli amanti degli eventi. Trova e scopri una vasta gamma di eventi culturali, concerti, mostre, spettacoli e altro ancora nella tua zona.">
 		<link rel="stylesheet" href="../events.css">
+        <link rel="stylesheet" href="../print.css" media="print">
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,400&display=swap">
         <link rel="shortcut icon" href="../Images/events_logo_site_e.png">
@@ -14,7 +15,7 @@
         <script src="../JS/searchByGenere.js"></script>
     </head>
     <body>
-		<a class="skip-link visually-hidden" href="#privacy-sicu" id="skipLink">Salta al contenuto principale</a>
+		<a class="skip-link visually-hidden" href="#ricerca-genere-musica" id="skipLink">Salta al contenuto principale</a>
         <header>
             <h1>Events</h1>
             <div class="header-items">
@@ -22,7 +23,7 @@
                     <form id="searchBarA" action="../PHP/searchbar.php" role="search" method="POST">
                         <input type="text" id="searchBar" name="cerca_evento" placeholder="Cerca...">
                         <button type="submit" id="searchButton">
-                            <img src="../Images/search.png" alt="Esegui la ricerca">
+                            <img src="../Images/search.png" alt="Pulsante per eseguire la ricerca">
                         </button>
                     </form>
                 </div>
@@ -40,7 +41,7 @@
                     </ul>
                 </nav>
 		        <a href="../PHP/indexProfilo.php" class="bottonePlus">
-                    <img src="../Images/add.png" alt="Creare un nuovo evento">
+                    <img src="../Images/add.png" alt="Crea un nuovo evento">
                 </a>
                 <a href="../PHP/infoPersonali.php" class="bottoneProfilo">
                     <img src="../Images/user.png" alt="Accedi ai dati del tuo profilo">
@@ -107,8 +108,8 @@
         </main>
         <footer id="footer">
             <div class="torna-su">
-                <a href="#" id="tornaSuBtn">
-                    <img src="../Images/up-arrow.png" alt="Ritorna all'inizio della pagina">
+                <a href="#" id="tornaSuBtn" style="color: white;">
+                    <img src="../Images/up-arrow.png" alt="Torna all'inizio della pagina">
                 </a>
             </div>                
         </footer>

@@ -6,6 +6,7 @@
   <meta name="description" content= "Questa è la pagina delle impostazioni del profilo events. Gli utenti possono modificare le loro informazioni personali, preferenze per gli eventi e impostazioni di privacy e sicurezza.">
   <meta name="keywords" content="Events, eventi, concerti, cultura, mostre, spettacoli,impostazioni profilo, informazioni sicurezza, privacy, sicurezza, gestione account">
   <link rel="stylesheet" href="../events.css">
+  <link rel="stylesheet" href="../print.css" media="print">
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,400&display=swap">
   <link rel="shortcut icon" href="../Images/events_logo_site_e.png">
@@ -37,10 +38,10 @@
                 });
             </script>
                 <a href="../PHP/eventi_salvati.php" class="bottoneStar">
-                    <img src="../Images/star_full.png" alt="Pulsante per portarti alla pagina contenente i tuoi eventi salvati">
+                    <img src="../Images/star_full.png" alt="Vai alla pagina contenente i tuoi eventi salvati">
                 </a>
         <button class="bottoneHamburger">
-            <img src="../Images/menu-button-of-three-horizontal-lines.png" alt="Bottone per link nascosti in formato cellulare">
+            <img src="../Images/menu-button-of-three-horizontal-lines.png" alt="Apri il menu ad hamburger">
         </button>
         <nav>
             <ul class="linkPagina">
@@ -50,10 +51,10 @@
             </ul>
         </nav>
         <a href="../PHP/indexProfilo.php" class="bottonePlus">
-            <img src="../Images/add.png" alt="Bottone per creare un nuovo evento">
+            <img src="../Images/add.png" alt="Crea un nuovo evento">
         </a>
         <a href="../PHP/infoPersonali.php" class="bottoneProfilo">
-            <img src="../Images/user.png" alt="Bottone per accedere ai dati del proprio profilo">
+            <img src="../Images/user.png" alt="Accedi ai dati del tuo profilo">
         </a>
         <nav aria-label="breadcrumb" id="bread">
             <p>Ti trovi in: <span lang="en"><a id="returnHome" href="../PHP/home.php">Home</a></span> >> Impostazioni e Sicurezza</p>
@@ -90,8 +91,9 @@
         <div class="settings-sicu">
             {ERROR}
             <h2>Impostazioni e Sicurezza</h2>
-            <div class="option-sicu">
-                <span>Privacy profilo</span>
+            <div class="option-sicu" tabindex="0" aria-label="Sezione per modificare la privacy del tuo profilo">
+                <span>Privacy profilo:</span>
+                <p id="option-ip">{PRIVACY}</p>
                 <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">
             </div>
             <div class="content-sicu">
@@ -120,8 +122,9 @@
                 </form>
             </div>
             <form action="../PHP/impo_sicu.php" method="POST">
-                    <div class="option-sicu">
+                    <div class="option-sicu" tabindex="0" aria-label="Sezione per modificare la password">
                     <span>Password</span>
+                    <p id="option-ps">{PASSWORD}</p>
                     <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">
                 </div>
                 <div class="content-sicu">
@@ -143,7 +146,7 @@
                 </div>
             </form>
             <form action="../PHP/impo_sicu.php" method="POST">
-                <div class="option-sicu">
+                <div class="option-sicu" tabindex="0" aria-label="Sezione per eliminare il tuo profilo">
                     <span class="titolini-sicu">Elimina</span>
                     <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">
                 </div>
@@ -171,7 +174,7 @@
             </form>
             
             <form action="../PHP/impo_sicu.php" method="POST">
-                <div class="option-sicu">
+                <div class="option-sicu" tabindex="0" aria-label="Sezione per uscire dal tuo profilo">
                     <span class="titolini-sicu">Esci dall'<span lang="en">account</span></span>
                     <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">
                 </div>
@@ -197,8 +200,8 @@
     </div>
     <footer id="footer">
         <div class="torna-su">
-            <a href="#" id="tornaSuBtn">
-                <img src="../Images/up-arrow.png" alt="Ritorna all'inizio della pagina">
+            <a href="#" id="tornaSuBtn" style="color: white;">
+                <img src="../Images/up-arrow.png" alt="Torna all'inizio della pagina">
             </a>
         </div>                
     </footer>

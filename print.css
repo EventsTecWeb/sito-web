@@ -1,0 +1,92 @@
+nav[aria-label="breadcrumb"] , .bottoneHamburger img , ul.linkPagina , ul.linkPagina li, ul.linkPagina a:visited, #ChiSiamoLink, #ChiSiamoLink:hover, #PartnersLink, #PartnersLink:hover, #AccediLink, #returnHomeHeader, #returnHomeHeader:hover, #AccediLink:hover, #RegistratiLink, #RegistratiLink:hover, input[type="text" ] #searchBar, #searchBar, #searchBar::placeholder, .bottoneStar, .bottoneStar img, .bottonePlus, .bottonePlus img, .bottoneProfilo, .bottoneProfilo img, #searchButton, #searchButton img, #searchButton, .bottoneStar, .bottoneHamburger, .bottoneStar, header:after, .visually-hidden, .skip-link, .skip-link, .skip-link:visited {
+    display: none;}
+header h1{
+    text-indent: -999em;
+    font-size: 4em;
+    line-height: 1.5em;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20%;
+    display: contents;
+    text-decoration: none;
+    color: black;
+    font-family: 'Poppins', sans-serif;}
+#breadcrumb {
+    color: black;
+    padding: 0;
+    margin: 0;}
+body {
+    margin: 10px;}
+/*-----------------------------------------------------------ACCESSNAV----------------------------------------------------------------*/
+  .buttonSubmit {
+    background-color: #000000;
+    color: #000000;}
+/*-----------------------------------------------------------TERMINI------------------------------------------------------------------*/
+#footerIndex{
+    display:none;}
+/*-----------------------------------------------------------REGISTRAZIONE------------------------------------------------------------*/
+#registratiScritta-reg{
+    margin-bottom:50px;}
+.buttonSubmit {
+    border: 1px solid #000000; }
+#linkRegistrati{
+    color: #000;}
+/*-----------------------------------------------------------INFO/IMPO----------------------------------------------------------------*/
+#privacy-ip button{
+    border: 1px solid black; 
+    color: #000;}
+#modNick-ip button{    
+    border: 1px solid black; 
+    color: #000;}
+#modTel-ip button{    
+    border: 1px solid black; 
+    color: #000;}
+#mod-data-ip .salva-ip{
+    border: 1px solid black; 
+    color: #000; }
+/*----------------------------------------------------------INDEXPROFILO--------------------------------------------------------------*/
+#invia{
+    border: 1px solid black; 
+    color: #000; }
+/*----------------------------------------------------------INDEX---------------------------------------------------------------------*/
+.buttonIndex {
+    border: 1px solid black; 
+    color: #000;  
+    font-size:20px;
+    height: 70px;
+    width: 120px;}
+/*---------------------------------------------------------IMPOSICU--------------------------------------------------------------------*/
+#privacy-sicu button{
+    border: 1px solid black; 
+    color: #000;  }
+#modPass-sicu button{
+    border: 1px solid black; 
+    color: #000;  }
+#eliAcc-sicu #eliminaButton-sicu {
+    border: 1px solid black; 
+    color: #000;  }
+#esciAcc-sicu #esciButton-sicu {
+    border: 1px solid black; 
+    color: #000;  }
+/*---------------------------------------------------------ERROR500-------------------------------------------------------------------*/
+#error-container h1{
+    color: black;}
+#error-container a{
+    color:#000;}
+/*---------------------------------------------------------CHISIAMO-------------------------------------------------------------------*/
+#contenitore-cs > img{
+    display:none;} 
+/*---------------------------------------------------------SUBMIT---------------------------------------------------------------------*/
+.buttonSubmit{
+    border: 1px solid black; 
+    color: #000;
+    font-size:20px;
+    height: 70px;
+    width: 120px;}
+/*---------------------------------------------------------TORNASU---------------------------------------------------------------------*/
+.torna-su{
+    display:none;}
+/*---------------------------------------------------------PARTNER---------------------------------------------------------------------*/
+#partner-container .partner-text-why{
+    font-size: 1em;}

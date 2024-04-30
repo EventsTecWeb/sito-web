@@ -12,7 +12,8 @@ nav[aria-label="breadcrumb"] {
     width: 100%; 
     bottom: -5vh;
     font-size: small;
-    text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);}
+    text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+    font-weight: bold;}
 header .bottoneHamburger {
     border-radius: 50%; 
     width: 30px; 
@@ -187,7 +188,6 @@ header:after {
 .skip-link {
     position: absolute;
     left: 0;
-    background-color: #ffffff;
     color: black; 
     padding: 1em; 
     z-index: 999;
@@ -284,8 +284,7 @@ input[type="text"] {
     justify-content: space-between;}
 /*-------------------------------------------------------/ICONACLICCABILEEVENTO---------------------------------------------------------*/
 .a_evento{
-    text-decoration: none;
-    color: black;}
+    text-decoration: none;}
 #mo-pulsanteSingolo{
     color: white;
     background-color: #454545;}
@@ -314,13 +313,13 @@ input[type="text"] {
 	font-size:20px;}
 /*--------------------------------CSS SPECIFICO PAG. IMPOSTAZIONI E SICUREZZA--------------------------------------------*/
 .impo-error{
-    color: red;
+    color: #DF0E0E;
     font-family: Arial, Helvetica, sans-serif;
     font-family: 'Poppins', sans-serif;
     font-size: 2.5vh;
     text-align: center;}
 .titolini-sicu{
-    color: red;}
+    color: #DF0E0E;}
 #settings-sicu {
     float: right;
     width: 80%; 
@@ -351,13 +350,6 @@ input[type="text"] {
     display: none;}
 .option-sicu.open span:nth-child(2) {
     display: inline-block;}
-#privacy-sicu {
-    border: 1px solid #ccc;
-    border-radius: 50px;
-    padding: 60px;
-    padding-top: 30px;
-    width: 80%;
-    margin: 2vh auto;}
 .p_privacy-sicu{
     margin-bottom: -0.5vh;}
 #domanda-sicu{
@@ -383,7 +375,7 @@ input[type="text"] {
 #info-text-privacy-sicu {
     margin-bottom: 20px;}
 .button-impo-sicu{
-    background-color: rgba(114, 162, 233, 1);
+    background-color: rgba(55, 111, 194);
     color: white;
     border: none;
     padding: 15px 32px;
@@ -441,7 +433,7 @@ input[type="text"] {
     font-size: 25px;
     font-family: Inter, sans-serif;}
 #warning-sicu {
-    border: 3px solid red;
+    border: 3px solid #DF0E0E;
     margin: 10px;
     padding: 15px;
     display: flex;
@@ -449,7 +441,7 @@ input[type="text"] {
     align-items: center;
     text-align: center;}
 .warning-icon-password-sicu {
-    color: red;}
+    color: #DF0E0E;}
 .checkbox-sicu {
     margin: 20px;}
 .checkbox-sicu {
@@ -471,7 +463,7 @@ input[type="text"] {
     flex-direction: column;
     align-items: center;}
 #eliAcc-sicu #eliminaButton-sicu:hover {
-    background-color: red;}
+    background-color: #DF0E0E;}
 #vertical-center-password-sicu {
     display: flex;
     flex-direction: column;
@@ -496,7 +488,7 @@ input[type="text"] {
     font-size: 2vh;
     padding: 2vh;}
 #esciAcc-sicu #esciButton-sicu {
-    background-color: rgba(114, 162, 233, 1);
+    background-color: rgba(55, 111, 194);
     color: white;
     border: none;
     padding: 15px 32px;
@@ -573,7 +565,6 @@ input[type="text"] {
     display: block;
     text-align: center; 
     margin-top: 10px; 
-    color: rgb(0, 0, 0); 
     text-decoration: underline;}
 #TerminiCondizioni:hover {
     text-decoration: none;}
@@ -721,7 +712,6 @@ input[type="text"] {
 .NomiLinkCreati-ev{
     font-family: Arial, Helvetica, sans-serif;
     font-family: 'Roboto', sans-serif;
-    color: rgb(0, 0, 0); 
     text-decoration: underline;}
 .NomiLinkCreati-ev:hover {
     text-decoration: none;}
@@ -731,7 +721,7 @@ input[type="text"] {
 #posizione-ev span {
     font-size: 20px;
     /* font-style: bold; */
-    color: red;}
+    color: #DF0E0E;}
 .infoText-ev {
     padding-left: 1vh}
 /*--------------------------------------------------REGISTRAZIONE----------------------------------------------------------*/
@@ -759,8 +749,8 @@ div #pannello-principale-reg{
     text-decoration: underline;}
 #infoNoAccount-reg #linkRegistrati:hover{
     text-decoration: none;}
-#container-sinistro-reg{
-    padding-top: 8.5vh;}
+/* #container-sinistro-reg{
+    padding-top: 8.5vh;} */
 #registratiScritta-reg{
     font-family: Poppins, sans-serif;
     width: 20%; 
@@ -801,7 +791,7 @@ div #pannello-principale-reg{
 #ricordamiLabel-reg{
     font-family: Poppins, sans-serif;}
 .signin-error {
-    color: red;
+    color: #DF0E0E;
     font-family: Arial, Helvetica, sans-serif;
     font-family: 'Poppins', sans-serif;
     font-size: small;
@@ -848,8 +838,8 @@ div #pannello-principale-acc{
     text-decoration: underline;}
 #infoNoAccount-acc #linkRegistrati:hover{
     text-decoration: none;}
-#container-sinistro-acc{
-    padding-top: 4.5vh;}
+/* #container-sinistro-acc{
+    padding-top: 4.5vh;} */
 #container-sinistro-acc #container-destro-acc{
     width: 110%;}
 #accediScritta-acc{
@@ -885,7 +875,7 @@ div #pannello-principale-acc{
     font-size:large;}
 #container-destro-acc {
     padding-left: 2.5vw;
-    height: 45vh;
+    height: 30vh;
     width: 30%;}
 #container-destro-acc form, #container-destro-acc label, #container-destro-acc button {
     margin-bottom: 15px;}
@@ -933,8 +923,9 @@ div #pannello-principale-acc{
 .NomiLinkSalvati-es{ 
     font-family: Arial, Helvetica, sans-serif; 
     font-family: 'Roboto', sans-serif; 
-    color: rgb(0, 0, 0); 
     text-decoration: underline;}
+.a_evento .NomiLinkCreati-ev:visited {
+        color: gray;}
 .NomiLinkSalvati-es:hover { 
     text-decoration: none;}
 .infoEventoSalvato-es{ 
@@ -954,7 +945,8 @@ div #pannello-principale-acc{
     font-size: 1.3em;}
 /*----------------------------------------------------------IMPO SICUREZZA------------------------------------------------------------*/
 .titolini-sicu{
-    color: red;}
+    color: #DF0E0E;
+    font-weight: bold;}
 .settings-sicu {
     float: right;
     width: 80%; 
@@ -966,6 +958,10 @@ div #pannello-principale-acc{
 .settings-sicu{
     font-family: Inter, sans-serif;}
 /*---------------------------PRIVACY----------------------------*/
+.option-sicu #option-ip, .option-sicu #option-ps{
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-left: -10%;}
 #privacy-sicu {
     border: 1px solid #ccc;
     border-radius: 50px;
@@ -987,7 +983,7 @@ div #pannello-principale-acc{
 .info-text-sicu {
     margin-bottom: 20px;}
 #privacy-sicu button{
-    background-color: rgba(114, 162, 233, 1);
+    background-color: rgba(55, 111, 194);
     color: white;
     border: none;
     padding: 15px 32px;
@@ -1032,7 +1028,7 @@ div #pannello-principale-acc{
 #labelRepP-sicu{
     margin-bottom:-0.2vh;}
 #modPass-sicu button{
-    background-color: rgba(114, 162, 233, 1);
+    background-color: rgba(55, 111, 194);
     color: white;
     border: none;
     padding: 15px 32px;
@@ -1060,7 +1056,7 @@ div #pannello-principale-acc{
     align-items: center;
     text-align: center;}
 .warning-sicu {
-    border: 3px solid red;
+    border: 3px solid #DF0E0E;
     margin: 10px;
     padding: 15px;
     display: flex;
@@ -1068,7 +1064,7 @@ div #pannello-principale-acc{
     align-items: center;
     text-align: center;}
 .warning-icon-sicu {
-    color: red;}
+    color: #DF0E0E;}
 #eliAcc-sicu #eliminaButton-sicu {
     background-color: darkred;
     color: white;
@@ -1124,7 +1120,7 @@ div #pannello-principale-acc{
 /*--------------------------------------------------------PAGINA EVENTO----------------------------------------------------------------*/
 .event-error {
     margin-top: 5vh;
-    color: red;
+    color: #DF0E0E;
     font-family: Arial, Helvetica, sans-serif;
     font-family: 'Poppins', sans-serif;
     font-size: 3vh;
@@ -1283,7 +1279,7 @@ div #pannello-principale-acc{
 #posizione-se span{
 	font-size:20px;
 	/* font-style:bold; */
-	color:red;}
+	color:#DF0E0E;}
 .infoText-se {
     padding-left: 1vh}
 /*-----------------------------------------------------------PROFILO-----------------------------------------------------------------*/
@@ -1363,7 +1359,7 @@ textarea {
     margin-bottom: 16px;
     resize: none;}
 #invia {
-    background-color: rgba(114, 162, 233, 1);
+    background-color: rgba(55, 111, 194);
     color: #fff;
     padding: 10px 15px;
     border: none;
@@ -1375,82 +1371,28 @@ textarea {
     font-size: 20px;}
 #invia:hover{
     background-color: rgba(14, 31, 187, 1);}
-/*----------------------------------------------------------PAGINA DI VERIFICA--------------------------------------------------------*/
-#pannello-principale-ver {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    font-family: 'Poppins', sans-serif;}
-.userInformations-ver {
-    text-align: center;}
-.userInformations-ver h2{
-    font-size: 4vh;
-    font-weight: bolder;}
-.userAccount-ver {
-    background-color: white;
-    border-radius: 6vh;
-    display: flex;
-    align-items: center;
-    border: 0.3vh solid black;}
-.userImage-ver img {
-    width: 8vh;
-    height: 8vh;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 2vh;
-    margin-left: 2vh;}
-.userEmail-ver {
-    font-size: 3vh;
-    font-weight: 500;
-    margin-right: 4vh;}
-.infoText-ver{
-    font-size: 2.5vh;
-    text-align: center;}
-#showPasswordLabel-ver{
-    font-size: 2.6vh;
-    font-family: 'Poppins', sans-serif;}
-.continueButton-ver {
-    margin-top: 4vh;
-    background: #656565;
-    border: none;
-    border-radius: 2vh;
-    color: white;
-    font-size: 2.5vh;
-    font-weight: bold;
-    cursor: pointer;
-    height: 6.5vh;
-    width: 16vh; 
-    max-width: none;
-    padding-top: 1.5vh;
-    font-family: 'Poppins', sans-serif;
-    padding: 1vh 0; 
-    box-sizing: border-box; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center;}
-.continueButton-ver:hover{
-    background-color: rgba(14, 31, 187, 1);}
 /*-------------------------------------------------------------CHI SIAMO--------------------------------------------------------------*/
 #chi_siamo_main{
-    text-align: left;
-    padding: 4em 1em 2px 4em;
+    text-align: center;
+    padding: 2em 1em 2px 2em;
     font-family: 'Poppins', sans-serif;}
 #chi_siamo_main p{
     font-size: 1.2em;
-    margin-bottom: 1em;}
+    margin-bottom: 1em;
+    margin-left: 3vh;
+    margin-right: 7vh;
+    text-align:start;}
 #chi_siamo_main h2{
         font-size: 2em;
         margin-bottom: 0.5em;
         font-weight: bold;}
-.chi_siamo{
-    padding: 0 2em 2.5em 0;}
 #contenitore-cs {
     overflow: hidden;}
 #contenitore-cs >  img {
-    width: 30%;
+    width: 40%;
     height: auto;
     margin-right: 1em;
+    margin-left: 1em;
     float: right;}
 /*-------------------------------------------------------INFO PERSONALI----------------------------------------------------------*/
 #menuleft #buttonInfoPersonali{
@@ -1554,7 +1496,7 @@ textarea {
     margin-bottom: 20px;}
 .privacy-ip button{
     margin-top: 2vh;
-    background-color: rgba(114, 162, 233, 1);
+    background-color: rgba(55, 111, 194);
     color: white;
     border: none;
     padding: 15px 32px;
@@ -1601,7 +1543,7 @@ textarea {
     margin-bottom:-0.2vh;}
 #modNick-ip button, #modTel-ip button{
     margin-top: 2vh;
-    background-color: rgba(114, 162, 233, 1);
+    background-color: rgba(55, 111, 194);
     color: white;
     border: none;
     padding: 15px 32px;
@@ -1649,7 +1591,7 @@ textarea {
     margin-bottom: 20px;}
 #mod-data-ip .salva-ip {
     margin-top: 2vh;
-    background-color: rgba(114, 162, 233, 1);
+    background-color: rgba(55, 111, 194);
     color: white;
     border: none;
     padding: 15px 32px;
@@ -1661,6 +1603,12 @@ textarea {
     border-radius: 16px;}
 #mod-data-ip .salva-ip:hover {
     background-color: rgba(14, 31, 187, 1);}
+.content-ip {
+        display: none;}
+.pass_example-ip{
+    font-weight: bolder;
+    margin-bottom: 0;
+    margin-left: 5vh;}
 /*----------------------------------------------------------PARTNERS------------------------------------------------------------*/
 #partner-container {
     margin-top: 20px;
@@ -1828,6 +1776,8 @@ textarea {
     border-radius: 10px;
     width: 90%;
     height: auto;}
+.descrizioneEventiT-home{
+    text-decoration: underline;}
 .descrizioneEventiT-home, .descrizioneEventiD-home, .descrizioneEventiG-home {
     word-wrap: break-word;
     overflow-wrap: break-word;
@@ -1846,7 +1796,8 @@ textarea {
 .column-home:hover {
     transform: scale(1.1);}
 #ricerca-genere-musica, #ricerca-genere-arte, #ricerca-genere-sport, #ricerca-genere-teatro{
-    color: #000000;}
+    /* color: #000000; */
+}
 /*------------------------------------------------------------TERMINI------------------------------------------------------------------*/
 .text_termini{
     font-size: 2.5vh;
@@ -1920,9 +1871,7 @@ textarea {
     border-radius: 3%;}
 .NomiLinkCreati-ev{ 
     font-family: Arial, Helvetica, sans-serif; 
-    font-family: 'Roboto', sans-serif; 
-    color: rgb(0, 0, 0); 
-    text-decoration: underline;}
+    font-family: 'Roboto', sans-serif;}
 .NomiLinkCreati-ev:hover { 
     text-decoration: none;}
 .infoEventoCreato-ev{ 
@@ -2017,7 +1966,7 @@ textarea {
         padding-top: 1vh;}
     /*------------------------------ACCESSO------------------------------*/
     .buttonSubmit{
-        width: 16vw;
+        width: 20vw;
         height: 4vh;}
     .image-container-ragComp-acc {
         background-image: url('Images/people.png');
@@ -2154,11 +2103,12 @@ textarea {
         margin-top: 8vh;}
     /*-----------------------------CHI SIAMO----------------------------*/
     #contenitore-cs >  img {
-        width: 60%;
-        margin-left: 20%;
+        width: 80%;
+        margin-left: 5%;
         height: auto;
-        float:none;
-        margin-bottom: 0.5em;}
+        float:none;}
+    .chi_siamo{
+        margin-top: 0vh;}
 }
 @media screen and (max-width: 830px) 
 { 
