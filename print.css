@@ -1,7 +1,5 @@
 nav[aria-label="breadcrumb"] , .bottoneHamburger img , ul.linkPagina , ul.linkPagina li, ul.linkPagina a:visited, #ChiSiamoLink, #ChiSiamoLink:hover, #PartnersLink, #PartnersLink:hover, #AccediLink, #returnHomeHeader, #returnHomeHeader:hover, #AccediLink:hover, #RegistratiLink, #RegistratiLink:hover, input[type="text" ] #searchBar, #searchBar, #searchBar::placeholder, .bottoneStar, .bottoneStar img, .bottonePlus, .bottonePlus img, .bottoneProfilo, .bottoneProfilo img, #searchButton, #searchButton img, #searchButton, .bottoneStar, .bottoneHamburger, .bottoneStar, header:after, .visually-hidden, .skip-link, .skip-link, .skip-link:visited {
-    display: none;
-}
-
+    display: none;}
 header h1{
     text-indent: -999em;
     font-size: 4em;
@@ -13,127 +11,82 @@ header h1{
     display: contents;
     text-decoration: none;
     color: black;
-    font-family: 'Poppins', sans-serif;
-}
-
+    font-family: 'Poppins', sans-serif;}
 #breadcrumb {
     color: black;
     padding: 0;
-    margin: 0;
-}
-
+    margin: 0;}
 body {
-    margin: 10px;
-}
-
-/*-------------------ACCESSNAV----------------------------------------*/
+    margin: 10px;}
+/*-----------------------------------------------------------ACCESSNAV----------------------------------------------------------------*/
   .buttonSubmit {
     background-color: #000000;
-    color: #000000;
-}
-
-/*---------------TERMINI--------------------------*/
+    color: #000000;}
+/*-----------------------------------------------------------TERMINI------------------------------------------------------------------*/
 #footerIndex{
-    display:none;
-}
-/*---------------TERMINI--------------------------*/
-
-/*----------------REGISTRAZIONE----------------------*/
+    display:none;}
+/*-----------------------------------------------------------REGISTRAZIONE------------------------------------------------------------*/
 #registratiScritta-reg{
-    margin-bottom:50px;
-}
-
+    margin-bottom:50px;}
 .buttonSubmit {
-    border: 1px solid #000000; 
-}
-
+    border: 1px solid #000000; }
 #linkRegistrati{
-    color: #000;
-}
-/*----------------REGISTRAZIONE----------------------*/
-/*----------------INFO/IMPO--------------------------*/
+    color: #000;}
+/*-----------------------------------------------------------INFO/IMPO----------------------------------------------------------------*/
 #privacy-ip button{
     border: 1px solid black; 
-    color: #000;
-}
-
+    color: #000;}
 #modNick-ip button{    
     border: 1px solid black; 
-    color: #000;
-}
-
+    color: #000;}
 #modTel-ip button{    
     border: 1px solid black; 
-    color: #000;
-}
-
+    color: #000;}
 #mod-data-ip .salva-ip{
     border: 1px solid black; 
-    color: #000; 
-}
-/*-------indexProfilo------*/
+    color: #000; }
+/*----------------------------------------------------------INDEXPROFILO--------------------------------------------------------------*/
 #invia{
     border: 1px solid black; 
-    color: #000; 
-}
-/*------------index----------------*/
+    color: #000; }
+/*----------------------------------------------------------INDEX---------------------------------------------------------------------*/
 .buttonIndex {
     border: 1px solid black; 
     color: #000;  
     font-size:20px;
     height: 70px;
-    width: 120px;
-}
-/*------------index----------------*/
-/*------------imposicu----------------*/
+    width: 120px;}
+/*---------------------------------------------------------IMPOSICU--------------------------------------------------------------------*/
 #privacy-sicu button{
     border: 1px solid black; 
-    color: #000;  
-}
-
+    color: #000;  }
 #modPass-sicu button{
     border: 1px solid black; 
-    color: #000;  
-}
-
+    color: #000;  }
 #eliAcc-sicu #eliminaButton-sicu {
     border: 1px solid black; 
-    color: #000;  
-}
-
+    color: #000;  }
 #esciAcc-sicu #esciButton-sicu {
     border: 1px solid black; 
-    color: #000;  
-}
-/*------------imposicu----------------*/
-/*-----------error500--------------*/
+    color: #000;  }
+/*---------------------------------------------------------ERROR500-------------------------------------------------------------------*/
 #error-container h1{
-    color: black;
-}
-
+    color: black;}
 #error-container a{
-    color:#000;
-}
-/*-----------error500--------------*/
-/*-------chisiamo------*/
+    color:#000;}
+/*---------------------------------------------------------CHISIAMO-------------------------------------------------------------------*/
 #contenitore-cs > img{
-    display:none;
-} 
-/*-------chisiamo------*/
-
+    display:none;} 
+/*---------------------------------------------------------SUBMIT---------------------------------------------------------------------*/
 .buttonSubmit{
     border: 1px solid black; 
     color: #000;
     font-size:20px;
     height: 70px;
-    width: 120px;
-}
-
-/*-------------------TORNASU-----------------------------*/
+    width: 120px;}
+/*---------------------------------------------------------TORNASU---------------------------------------------------------------------*/
 .torna-su{
-    display:none;
-}
-/*-------------------chisiamo-----------------------------*/
+    display:none;}
+/*---------------------------------------------------------PARTNER---------------------------------------------------------------------*/
 #partner-container .partner-text-why{
-    font-size: 1em;
-}
+    font-size: 1em;}
