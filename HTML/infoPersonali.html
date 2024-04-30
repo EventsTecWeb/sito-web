@@ -32,10 +32,10 @@
                 </form>
             </div>
             <a href="../PHP/eventi_salvati.php" class="bottoneStar">
-                <img src="../Images/star_full.png" alt="Pulsante per portarti alla pagina contenente i tuoi eventi salvati">
+                <img src="../Images/star_full.png" alt="Vai alla pagina contenente i tuoi eventi salvati">
             </a>
             <button class="bottoneHamburger">
-                <img src="../Images/menu-button-of-three-horizontal-lines.png" alt="Bottone per link nascosti in formato cellulare">
+                <img src="../Images/menu-button-of-three-horizontal-lines.png" alt="Apri il menu ad hamburger">
             </button>
             <nav>
                 <ul class="linkPagina">
@@ -45,10 +45,10 @@
                 </ul>
             </nav>
             <a href="../PHP/indexProfilo.php" class="bottonePlus">
-                <img src="../Images/add.png" alt="Bottone per creare un nuovo evento">
+                <img src="../Images/add.png" alt="Crea un nuovo evento">
             </a>
             <a href="../PHP/infoPersonali.php" class="bottoneProfilo">
-                <img src="../Images/user.png" alt="Bottone per accedere ai dati del proprio profilo">
+                <img src="../Images/user.png" alt="Accedi ai dati del tuo profilo">
             </a>
             <nav aria-label="breadcrumb" id="bread">
                 <p>Ti trovi in: <span lang="en"><a id="returnHome" href="../PHP/home.php">Home</a></span> >> Profilo</p>
@@ -83,10 +83,10 @@
             </nav>
             <div class="settings-ip">
                 <h2>Informazioni Personali</h2>
-                <div class="option-ip">
-                    <span>Nome e Cognome:</span>
-                    <p id="nome-ip">{NOME}</p>
-                    <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">
+                <div class="option-ip" tabindex="0" aria-label="Sezione per modificare il tuo nome e cognome">
+                    <span aria-hidden="true">Nome e Cognome:</span>
+                    <p id="nome-ip" aria-hidden="true">{NOME}</p>
+                    <img aria-hidden="true" src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">
                 </div>
                 <div class="content-ip">
                     <div class="privacy-ip">
@@ -96,9 +96,9 @@
                                 <div class="separator-ip"></div>
                                 <div class="left-align-ip">
                                     <input type="text" id="campoNome-ip" name="nome" placeholder="Nome">
-                                    <img class="frecciaEdit-ip" src="../Images/pencil.png" alt="Modifica" tabindex="0" onclick="ModificaNome()">
+                                    <img class="frecciaEdit-ip" src="../Images/pencil.png" alt="Modifica il tuo nome" tabindex="0" onclick="ModificaNome()">
                                     <input type="text" id="campoCognome-ip" name="cognome" placeholder="Cognome">
-                                    <img class="frecciaEdit-ip" src="../Images/pencil.png" alt="Modifica" tabindex="0" onclick="ModificaCognome()">
+                                    <img class="frecciaEdit-ip" src="../Images/pencil.png" alt="Modifica il cognome" tabindex="0" onclick="ModificaCognome()">
                                 </div>
                                 <p class="domanda-ip">Chi può vedere il tuo nome?</p>
                                 <div class="center-align-ip">
@@ -111,7 +111,7 @@
                     </div>
                 </div>
                 
-                <div class="option-ip">
+                <div class="option-ip" tabindex="0" aria-label="Sezione per modificare il tuo username">
                     <span lang="en">Username:</span>
                     <p id="username-ip">{USERNAME}</p>
                     <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">        
@@ -123,7 +123,7 @@
                             <div class="separator-ip"></div>
                                 <div class="left-align-ip">
                                     <input type="text" name="username" id="campoNick-ip" value="{USERNAME}" readonly>
-                                    <img class="frecciaEdit-ip" src="../Images/pencil.png" alt="Modifica" tabindex="0" onclick="ModificaNick()">
+                                    <img class="frecciaEdit-ip" src="../Images/pencil.png" alt="Modifica il tuo username" tabindex="0" onclick="ModificaNick()">
                                 </div>
                             
                                 <p class="domanda-ip">Chi può vedere il tuo <span lang="en">Username</span>?</p>
@@ -136,7 +136,7 @@
                     </form>
                 </div>
 
-                <div class="option-ip">
+                <div class="option-ip" tabindex="0" aria-label="Sezione per modificare il tuo genere">
                     <span>Genere:</span>
                     <p id="genere-ip">{GENERE}</p>
                     <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">
@@ -170,7 +170,7 @@
                 </div>
             </div>
 
-            <div class="option-ip">
+            <div class="option-ip" tabindex="0" aria-label="Sezione per modificare la tua data di nascita">
                 <span>Data di nascita:</span>
                 <p id="data-ip">{DATANASCITA}</p>         
                 <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">
@@ -209,7 +209,7 @@
             </div>
 
             <h2>Informazioni di contatto:</h2>
-            <div class="option-ip">
+            <div class="option-ip" tabindex="0" aria-label="Sezione per modificare la tua email">
                 <span lang="en">Email</span>
                 <p id="email-ip">{EMAIL}</p>
                 <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">
@@ -222,7 +222,7 @@
                             <div class="separator-ip"></div>
                                 <div class="left-align-ip">
                                         <input type="text" name="email" id="campoEmail-ip" value="{EMAIL}" readonly>
-                                        <img class="frecciaEdit-ip" src="../Images/pencil.png" alt="Modifica" tabindex="0" onclick="ModificaEmail()">
+                                        <img class="frecciaEdit-ip" src="../Images/pencil.png" alt="Modifica la tua email" tabindex="0" onclick="ModificaEmail()">
                                 </div>
                                 <p class="domanda-ip">Chi può vedere la tua <span lang="en">Email</span>?</p>
                                 <div class="center-align-ip">
@@ -233,7 +233,7 @@
                     </form>           
                 </div>
             </div>
-            <div class="option-ip">
+            <div class="option-ip" tabindex="0" aria-label="Sezione per modificare il tuo numero di telefono">
                 <span>Numero di telefono:</span>
                 <p id="numero-ip">{TELEFONO}</p>
                 <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">        
@@ -246,7 +246,7 @@
                         <div class="left-align-ip">
                             <img id="bandierina-ip" src="../Images/italy.png" alt="Prefisso italiano">
                             <input type="text" name="telefono" id="campoTel-ip" value="{TELEFONO}" readonly>
-                            <img class="frecciaEdit-ip" src="../Images/pencil.png" alt="Modifica" tabindex="0" onclick="ModificaTel()">
+                            <img class="frecciaEdit-ip" src="../Images/pencil.png" alt="Modifica il tuo numero di telefono" tabindex="0" onclick="ModificaTel()">
                         </div>
                         <p class="domanda-ip">Chi può vedere il tuo numero di telefono?</p>
                         <div class="center-align-ip">

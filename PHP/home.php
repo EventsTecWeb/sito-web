@@ -31,11 +31,11 @@ if ($results!=null) {
 }
 
 $evidenza = '<div class="column-home-e">
-    <a class="a_evento" href="../PHP/pageEvent.php?evento='.$row["evento_id"].'" alt="premi per accedere alla pagina dell&#39;evento">
+    <a class="a_evento" href="../PHP/pageEvent.php?evento='.$row["evento_id"].'">
         <div class="container-home-evidenza-e">
             <img src="'.$row["url_immagine"].'" alt="Scheda dell&#39;evento '.$row["titolo"].'">
             <h4 class="descrizioneEventiT-home" aria-hidden="true">'.$row["titolo"].'</h4>
-            <time class="descrizioneEventiD-home" datetime="'.$row["data_inizio"].' - '.$row["luogo"].'" aria-hidden="true"></time>
+            <p class="descrizioneEventiD-home" aria-hidden="true">'.$row["data_inizio"].' - '.$row["luogo"].'</p>
             <p class="descrizioneEventiD-home" aria-hidden="true">'.$row["categoria"].'</p>
         </div>
     </a>
@@ -49,11 +49,11 @@ if (!is_null($pEventi)) {
     foreach ($pEventi as $evento) {
 		$prossimiEventi.=
 		'<div class="column-home">
-        <a class="a_evento" href="../PHP/pageEvent.php?evento='.$evento["evento_id"].'" alt="premi per accedere alla pagina dell&#39;evento">
+        <a class="a_evento" href="../PHP/pageEvent.php?evento='.$evento["evento_id"].'">
             <div class="container-home-evidenza">
                 <img src="'.$evento["url_immagine"].'" alt="scheda dell&#39;evento '.$evento["titolo"].'">
                 <h4 class="descrizioneEventiT-home" aria-hidden="true">'.$evento["titolo"].'</h4>
-                <time class="descrizioneEventiD-home" datetime="2023-12-11 21:00" aria-hidden="true">'.$evento["data_inizio"].'</time>
+                <p class="descrizioneEventiD-home" aria-hidden="true">'.$evento["data_inizio"].'</p>
                 <p class="descrizioneEventiL-home" aria-hidden="true">'.$evento["luogo"].'</p>
                 <p class="descrizioneEventiG-home" aria-hidden="true">'.$evento["categoria"].'</p>
             </div>

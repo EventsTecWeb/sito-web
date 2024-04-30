@@ -8,7 +8,7 @@ if (!isset($_SESSION['username']) && !isset($_SESSION['email'])) {
 }
 function generateSearchResultItem($evento) {
     return '<div class="column-home">
-    <a class="a_evento" href="../PHP/pageEvent.php?evento='.$evento["evento_id"].'" alt="premi per accedere alla pagina dell&#39evento">
+    <a class="a_evento" href="../PHP/pageEvent.php?evento='.$evento["evento_id"].'">
                     <div class="container-home-evidenza">
                         <img src="'.$evento["url_immagine"].'" alt="music event">
                         <h4 class="descrizioneEventiRic">'.$evento["titolo"].'</h4>
@@ -35,11 +35,11 @@ if(isset($_POST["cerca_evento"])){
     $results = getProssimiEventi($conn);
 }
 if($results == "empty") {
-    $ricerca = "<p>Inserisci un termine di ricerca</p>";
+    $ricerca = "<h2>Inserisci un termine di ricerca</h2>";
 } else if($results == false && $resultsC == false) {
-    $ricerca = "<p>Nessun risultato trovato per &#34" .$ricerca ."&#34</p>";
+    $ricerca = "<h2>Nessun risultato trovato per &#34" .$ricerca ."&#34</h2>";
 } else {
-    $ricerca = "<p>Risultati per: &#34" . $ricerca . "&#34</p>";
+    $ricerca = "<h2>Risultati per: &#34" . $ricerca . "&#34</h2>";
     if($results != false) {
         foreach ($results as $evento) {
             $ricercaris .= generateSearchResultItem($evento);

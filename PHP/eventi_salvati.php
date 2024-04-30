@@ -18,14 +18,14 @@ if (isset($_SESSION['user_id'])) {
     } else if(is_array($ris)) {
         foreach($ris as $evento) {
             $eventiSalvati.='<div class="cardSalvato-es" id="event4Salvato-es">
-            <a class="a_evento" href="../PHP/pageEvent.php?evento='.$evento["evento_id"].'" alt="premi per accedere alla pagina dell&#39evento">
+            <a class="a_evento" href="../PHP/pageEvent.php?evento='.$evento["evento_id"].'">
                                     <div class="card-body-salvati-es">
-                                        <img src="' . $evento["url_immagine"] . '" class="container-immagini-eventi-es">
+                                        <img src="' . $evento["url_immagine"] . '" class="container-immagini-eventi-es" alt="scheda dell&#39;evento '.$evento["titolo"].'">
                                         <div class="NomiLinkSalvati-es">
-                                            <h3>' . $evento["titolo"] . '</h3>
+                                            <h3 aria-hidden="true">' . $evento["titolo"] . '</h3>
                                         </div>
-                                        <p class="infoEventoSalvato-es">' . $evento["orario_inizio"] . ' – ' . $evento["luogo"] . '</p>
-                                        <p class="genereEventoSalvato-es">' . $evento["categoria"] . '</p>
+                                        <p class="infoEventoSalvato-es" aria-hidden="true">' . $evento["orario_inizio"] . ' – ' . $evento["luogo"] . '</p>
+                                        <p class="genereEventoSalvato-es" aria-hidden="true">' . $evento["categoria"] . '</p>
                                     </div>
                                 </a>
                             </div>';

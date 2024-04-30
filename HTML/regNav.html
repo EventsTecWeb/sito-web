@@ -13,7 +13,7 @@
   <script src="../JS/scriptSkip.js"></script>
 </head>
 <body>
-  <a class="skip-link visually-hidden" href="#pannello-principale-reg" id="skipLink">Salta al contenuto principale</a>
+  <a class="skip-link visually-hidden" href="#registratiScritta-reg" id="skipLink">Salta al contenuto principale</a>
   <header>
     <h1>Events</h1>
     <nav aria-label="breadcrumb" id="bread">
@@ -29,16 +29,16 @@
     <div id="container-destro-reg">
       <p id="registratiScritta-reg">Registrati</p>
       <form action="../PHP/registrazione.php" method="POST">
-        <label for="nomeInput" class="visually-hidden">Nome</label>
-        <input type="text" id="nomeInput" name="nome" placeholder="Nome...">
-        <label for="cognomeInput" class="visually-hidden">Cognome</label>
-        <input type="text" id="cognomeInput" name="cognome" placeholder="Cognome...">
-        <label for="nomeUtenteInput" class="visually-hidden">Nome Utente</label>
-        <input type="text" id="nomeUtenteInput" name="username" placeholder="Nome Utente...">
-        <label for="mailInput" class="visually-hidden">Mail</label>
-        <input type="text" id="mailInput" name="email" placeholder="email...">
-        <label for="passwordInput" class="visually-hidden">Password</label>
-        <input type="password" id="passwordInput" name="password" placeholder="Password...">
+        <label for="nomeInput" class="visually-hidden" aria-hidden="true">Nome</label>
+        <input type="text" id="nomeInput" name="nome" placeholder="Nome">
+        <label for="cognomeInput" class="visually-hidden" aria-hidden="true">Cognome</label>
+        <input type="text" id="cognomeInput" name="cognome" placeholder="Cognome">
+        <label for="nomeUtenteInput" class="visually-hidden" aria-hidden="true">Nome Utente</label>
+        <input type="text" id="nomeUtenteInput" name="username" placeholder="Nome Utente">
+        <label for="mailInput" class="visually-hidden" aria-hidden="true">Mail</label>
+        <input type="text" id="mailInput" name="email" placeholder="email">
+        <label for="passwordInput" class="visually-hidden" aria-hidden="true">Password</label>
+        <input type="password" id="passwordInput" name="password" placeholder="Password">
         <input type="password" id="passwordConfirmInput" name="password_confirm" placeholder="Conferma Password">        
         <input type="submit" value="Registrati" class="buttonSubmit">
       </form>
