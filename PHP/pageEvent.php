@@ -126,20 +126,35 @@ $evento = '<div id="pannello-principale-pe">
         <div class="container_dx-pe">';
             if (interessato($conn, $_SESSION['user_id'], $_GET['evento'])) {
                 $evento .= '<form method="post" action="pageEvent.php?evento='.$row["evento_id"].'">
-                <button id="salvaEventoButton" class="sonoInteressato-pe" name="disdici_evento" value="' . $row['evento_id'] . '">Non mi interessa più</button>
-            </form>';
+                <button id="salvaEventoButton" class="sonoInteressato-pe" name="disdici_evento" value="' . $row['evento_id'] . '" onclick="togliCookieEvento()">Non mi interessa più</button>
+                    <script>
+                        function togliCookieEvento() {
+                            if(getCookie("cookiesBanner") == '.$row["evento_id"].'){
+                                setCookie("cookiesBanner", 0 , 1);
+                            }
+                        }
+                    </script>
+                </form>';
             }else{
                 $evento .= '<form method="post" action="pageEvent.php?evento='.$row["evento_id"].'">
-                <button id="salvaEventoButton" class="sonoInteressato-pe" name="salva_evento" value="' . $row['evento_id'] . '" onclick="salvaEvento()">Mi interessa!</button>
+                <button id="salvaEventoButton" class="sonoInteressato-pe" name="salva_evento" value="' . $row['evento_id'] . '" onclick="salvaCookieEvento()">Mi interessa!</button>
                 <script>
-                    function salvaEvento() {
+                    function salvaCookieEvento() {
                         setCookie("cookiesBanner", '.$row["evento_id"].' , 1);
                     }
                 </script>
                 </form>';
             }
             if ($is_admin == 1) {
-                $evento .= '<form method="POST" action="pageEvent.php?evento='.$row["evento_id"].'"><button name="elimina" class="elimina-pe">Elimina</button></form>';
+                $evento .= '<form method="POST" action="pageEvent.php?evento='.$row["evento_id"].'"><button name="elimina" class="elimina-pe">Elimina</button>
+                    <script>
+                        function togliCookieEvento() {
+                            if(getCookie("cookiesBanner") == '.$row["evento_id"].'){
+                                setCookie("cookiesBanner", 0 , 1);
+                            }
+                        }
+                    </script>
+                </form>';
             }
 $evento .= '</div>
     </div>
