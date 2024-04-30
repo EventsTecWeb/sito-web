@@ -125,16 +125,16 @@ $evento = '<div id="pannello-principale-pe">
         </div>
         <div class="container_dx-pe">';
             if (interessato($conn, $_SESSION['user_id'], $_GET['evento'])) {
-                $evento .= '<form method="post" action="pageEvent.php?evento='.$row["evento_id"].'"">
+                $evento .= '<form method="post" action="pageEvent.php?evento='.$row["evento_id"].'">
                 <button id="salvaEventoButton" class="sonoInteressato-pe" name="disdici_evento" value="' . $row['evento_id'] . '">Non mi interessa più</button>
             </form>';
             }else{
-                $evento .= '<form method="post" action="pageEvent.php?evento='.$row["evento_id"].'"">
+                $evento .= '<form method="post" action="pageEvent.php?evento='.$row["evento_id"].'">
                 <button id="salvaEventoButton" class="sonoInteressato-pe" name="salva_evento" value="' . $row['evento_id'] . '">Mi interessa!</button>
             </form>';
             }
             if ($is_admin == 1) {
-                $evento .= '<form method="POST" action="pageEvent.php?evento='.$row["evento_id"].'"><button name="elimina" class="sonoInteressato-pe">Elimina</button></form>';
+                $evento .= '<form method="POST" action="pageEvent.php?evento='.$row["evento_id"].'"><button name="elimina" class="elimina-pe">Elimina</button></form>';
             }
 $evento .= '</div>
     </div>

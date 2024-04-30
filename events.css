@@ -1165,7 +1165,7 @@ div #pannello-principale-acc{
     display: flex;
     align-items: center; 
     justify-content: flex-end;}
-.container_dx-pe .sonoInteressato-pe {
+.container_dx-pe .sonoInteressato-pe, .container_dx-pe .elimina-pe {
     margin-right: 2vh;
     padding: 2vh 4vh; 
     background-color: #4b4b4b; 
@@ -1210,6 +1210,8 @@ div #pannello-principale-acc{
     padding-bottom: 4vh;}
 .sonoInteressato-pe:hover {
     background-color: rgba(14, 31, 187, 1);}
+.elimina-pe:hover {
+    background-color: #ad0a0a;}
 /*--------------------------------------------------------------RICERCA EVENTO---------------------------------------------------------*/
 #container_risultati_ricerca { 
     width: 100%; 
