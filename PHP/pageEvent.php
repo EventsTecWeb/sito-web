@@ -130,8 +130,13 @@ $evento = '<div id="pannello-principale-pe">
             </form>';
             }else{
                 $evento .= '<form method="post" action="pageEvent.php?evento='.$row["evento_id"].'">
-                <button id="salvaEventoButton" class="sonoInteressato-pe" name="salva_evento" value="' . $row['evento_id'] . '">Mi interessa!</button>
-            </form>';
+                <button id="salvaEventoButton" class="sonoInteressato-pe" name="salva_evento" value="' . $row['evento_id'] . '" onclick="salvaEvento()">Mi interessa!</button>
+                <script>
+                    function salvaEvento() {
+                        setCookie("cookiesBanner", '.$row["evento_id"].' , 1);
+                    }
+                </script>
+                </form>';
             }
             if ($is_admin == 1) {
                 $evento .= '<form method="POST" action="pageEvent.php?evento='.$row["evento_id"].'"><button name="elimina" class="elimina-pe">Elimina</button></form>';

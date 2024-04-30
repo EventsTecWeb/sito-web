@@ -86,6 +86,21 @@ function getEventiByTitolo($conn, $titolo)
     }
 }
 
+function getEventiByID($conn, $id)
+{
+    $queryEventi = "SELECT * FROM Eventi WHERE evento_id = ?";
+    $stmt = $conn->prepare($queryEventi);
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $resultEventi = $stmt->get_result();
+    $stmt->close();
+    if ($resultEventi && $resultEventi->num_rows > 0) {
+        return $resultEventi;
+    } else {
+        return false;
+    }
+}
+
 function getEventiByCategoria($conn, $categoria)
 {
     $queryEventi = "SELECT * FROM Eventi WHERE categoria LIKE ?";
@@ -101,6 +116,7 @@ function getEventiByCategoria($conn, $categoria)
         return false;
     }
 }
+
 
 function getEventiByDate($conn, $month)
 {
@@ -425,5 +441,14 @@ function nonInteressato($conn, $evento , $user) {
         return false;
     } else {
         return true;
+    }
+}
+
+
+function getCookieValue($name) {
+    if(isset($_COOKIE[$name])) {
+        return $_COOKIE[$name];
+    } else {
+        return null;
     }
 }
