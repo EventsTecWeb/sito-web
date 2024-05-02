@@ -20,7 +20,7 @@ if (isset($_SESSION['user_id'])) {
             $eventiSalvati.='<div class="cardSalvato-es">
             <a class="a_evento" href="../PHP/pageEvent.php?evento='.$evento["evento_id"].'">
                                     <div class="card-body-salvati-es">
-                                        <img src="' . $evento["url_immagine"] . '" class="container-immagini-eventi-es" alt="scheda dell&#39;evento '.$evento["titolo"].'">
+                                        <img src="' . $evento["url_immagine"] . '" class="container-immagini-eventi-ev" alt="scheda dell&#39;evento '.$evento["titolo"].'">
                                         <div class="NomiLinkSalvati-es">
                                             <h3 aria-hidden="true">' . $evento["titolo"] . '</h3>
                                         </div>

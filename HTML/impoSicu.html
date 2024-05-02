@@ -14,7 +14,9 @@
   <script src="../JS/scriptImpoSic.js"></script>
   <script src="../JS/scriptSkip.js"></script>
   <script src="../JS/sideMenu.js"></script>
+  <script src="../JS/Cookies/cookies.js"></script>
 </head>
+
 <body>
     <a class="skip-link visually-hidden" href="#privacy-sicu" id="skipLink">Salta al contenuto principale</a>
     <header>
@@ -151,7 +153,6 @@
                     <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">
                 </div>
                 <div class="content-sicu">
-                    <!-- Contenuto da mostrare/nascondere per la seconda opzione -->
                     <div id="eliAcc-sicu" class="vertical-center">
                         <h2>Elimina <span lang="en">account</span></h2>
                         <div class="separator-sicu"></div>
@@ -168,7 +169,7 @@
                                 <input type="checkbox" id="read-sicu" name="read" value="read" onchange="document.getElementById('eliminaButton-sicu').disabled = !this.checked;">Ho letto e desidero continuare
                             </label>                        
                         </div>
-                        <button type="submit" id="eliminaButton-sicu" name="elimina-account" disabled="disabled">Elimina</button>
+                        <button type="submit" id="eliminaButton-sicu" name="elimina-account" disabled="disabled" onclick="togliCookie()">Elimina</button>
                     </div>
                 </div>
             </form>
@@ -179,7 +180,6 @@
                     <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">
                 </div>
                 <div class="content-sicu">
-                    <!-- Contenuto da mostrare/nascondere per la seconda opzione -->
                     <div id="esciAcc-sicu">
                         <h2>Esci dall' <span lang="en">account</span></h2>
                         <div class="separator-sicu"></div>
@@ -191,7 +191,12 @@
                             </label>
                         </div>
                         <div class="button-container-sicu">
-                            <button type="submit" id="esciButton-sicu" name="logout" disabled="disabled">Esci</button>
+                            <button type="submit" id="esciButton-sicu" name="logout" disabled="disabled" onclick="togliCookie()">Esci</button>
+                            <script>
+                                function togliCookie(){
+                                    document.cookie = "cookiesBanner" + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/';
+                                }
+                            </script>
                         </div>
                     </div>
                 </div>

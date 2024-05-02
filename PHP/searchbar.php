@@ -10,11 +10,11 @@ function generateSearchResultItem($evento) {
     return '<div class="column-home">
     <a class="a_evento" href="../PHP/pageEvent.php?evento='.$evento["evento_id"].'">
                     <div class="container-home-evidenza">
-                        <img src="'.$evento["url_immagine"].'" alt="music event">
-                        <h4 class="descrizioneEventiRic">'.$evento["titolo"].'</h4>
-                        <time class="descrizioneEventiRicD" datetime="2023-12-11 21:00">'.$evento["data_inizio"].'</time>
-                        <p class="descrizioneEventiRicL">'.$evento["luogo"].'</p>
-                        <p class="descrizioneEventiRicG">'.$evento["categoria"].'</p>
+                        <img src="'.$evento["url_immagine"].'" alt="Scheda dell&#39;evento '.$evento["titolo"].'">
+                        <h4 class="descrizioneEventiRic" aria-hidden="true">'.$evento["titolo"].'</h4>
+                        <time class="descrizioneEventiRicD" datetime="2023-12-11 21:00" aria-hidden="true">'.$evento["data_inizio"].'</time>
+                        <p class="descrizioneEventiRicL" aria-hidden="true">'.$evento["luogo"].'</p>
+                        <p class="descrizioneEventiRicG" aria-hidden="true">'.$evento["categoria"].'</p>
                     </div>
                 </a>
             </div>';
@@ -35,11 +35,11 @@ if(isset($_POST["cerca_evento"])){
     $results = getProssimiEventi($conn);
 }
 if($results == "empty") {
-    $ricerca = "<h2>Inserisci un termine di ricerca</h2>";
+    $ricerca = "<h2 tabindex='0'>Inserisci un termine di ricerca</h2>";
 } else if($results == false && $resultsC == false) {
-    $ricerca = "<h2>Nessun risultato trovato per &#34" .$ricerca ."&#34</h2>";
+    $ricerca = "<h2 tabindex='0'>Nessun risultato trovato per &#34" .$ricerca ."&#34</h2>";
 } else {
-    $ricerca = "<h2>Risultati per: &#34" . $ricerca . "&#34</h2>";
+    $ricerca = "<h2 tabindex='0'>Risultati per: &#34" . $ricerca . "&#34</h2>";
     if($results != false) {
         foreach ($results as $evento) {
             $ricercaris .= generateSearchResultItem($evento);

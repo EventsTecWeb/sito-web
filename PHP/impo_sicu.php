@@ -53,31 +53,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 } else {
                     $txt_error = "Le password non corrispondono.";
                 }
-            } if (isset($_POST['elimina-account'])) {
-                $sql_elimina_eventi = "DELETE FROM eventi WHERE creatore_id = ?";
-                $stmt_elimina_eventi = $conn->prepare($sql_elimina_eventi);
-                $stmt_elimina_eventi->bind_param("i", $userId);
-                if ($stmt_elimina_eventi->execute()) {
+            } 
+            if (isset($_POST['elimina-account'])) {
+                // Elimina i record da eventisalvati che fanno riferimento all'utente
+                $sql_elimina_eventisalvati = "DELETE FROM eventisalvati WHERE utente_id = ?";
+                $stmt_elimina_eventisalvati = $conn->prepare($sql_elimina_eventisalvati);
+                $stmt_elimina_eventisalvati->bind_param("i", $userId);
+                if ($stmt_elimina_eventisalvati->execute()) {
+                    // Ora che le righe figlio sono state eliminate, procedi con l'eliminazione dell'utente
                     $sql_elimina_utente = "DELETE FROM Utenti WHERE utente_id = ?";
                     $stmt_elimina_utente = $conn->prepare($sql_elimina_utente);
                     $stmt_elimina_utente->bind_param("i", $userId);
                     if ($stmt_elimina_utente->execute()) {
                         $txt_error = "Account eliminato con successo.";
-                        logout();
-                        exit;
+                        logout(); // Effettua il logout dell'utente dopo l'eliminazione dell'account
+                        exit; // Esci dallo script
                     } else {
                         $txt_error = "Errore nell'eliminazione dell'account: " . $stmt_elimina_utente->error;
                     }
                     $stmt_elimina_utente->close();
                 } else {
-                    $txt_error = "Errore nell'eliminazione degli eventi: " . $stmt_elimina_eventi->error;
+                    $txt_error = "Errore nell'eliminazione dei record da eventisalvati: " . $stmt_elimina_eventisalvati->error;
                 }
-                $stmt_elimina_eventi->close();
+                $stmt_elimina_eventisalvati->close();
             }
-             elseif (isset($_POST['logout'])) { 
-                logout();
-                exit;
-            }
+            elseif (isset($_POST['logout'])) { 	
+                logout();	
+                exit;	
+            }            
         } else {
             $txt_error = "Utente non trovato.";
         }

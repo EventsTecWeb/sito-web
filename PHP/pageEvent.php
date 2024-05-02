@@ -108,6 +108,12 @@ if ($userData) {
     $is_admin = $userData['permessi'];
 }
 
+function togliCookieEvento() {
+    if(getCookie("cookiesBanner") == '.$row["evento_id"].'){
+        setCookie("cookiesBanner", 0 , 1);
+    }
+}
+
 $immagine = '<div class="boxImage-pe">
 <div class="imgEvent-pe">
     <img src="' . $row['url_immagine'] . '" alt="immagine evento">
@@ -125,16 +131,17 @@ $evento = '<div id="pannello-principale-pe">
         </div>
         <div class="container_dx-pe">';
             if (interessato($conn, $_SESSION['user_id'], $_GET['evento'])) {
-                $evento .= '<form method="post" action="pageEvent.php?evento='.$row["evento_id"].'"">
+                $evento .= '<form method="post" action="pageEvent.php?evento='.$row["evento_id"].'">
                 <button id="salvaEventoButton" class="sonoInteressato-pe" name="disdici_evento" value="' . $row['evento_id'] . '">Non mi interessa più</button>
-            </form>';
+                </form>';
             }else{
-                $evento .= '<form method="post" action="pageEvent.php?evento='.$row["evento_id"].'"">
+                $evento .= '<form method="post" action="pageEvent.php?evento='.$row["evento_id"].'">
                 <button id="salvaEventoButton" class="sonoInteressato-pe" name="salva_evento" value="' . $row['evento_id'] . '">Mi interessa!</button>
-            </form>';
+                </form>';
             }
             if ($is_admin == 1) {
-                $evento .= '<form method="POST" action="pageEvent.php?evento='.$row["evento_id"].'"><button name="elimina" class="sonoInteressato-pe">Elimina</button></form>';
+                $evento .= '<form method="POST" action="pageEvent.php?evento='.$row["evento_id"].'"><button name="elimina" class="elimina-pe">Elimina</button>
+                </form>';
             }
 $evento .= '</div>
     </div>
@@ -152,7 +159,7 @@ $evento .= '</div>
     </div>
 </div>';
 
-$errore = "<p class='event-error'> $txt_error </p>";
+$errore = "<p class='event-error' tabindex='0'> $txt_error </p>";
 
 $template = str_replace('{IMMAGINE}', $immagine, $template);
 $template = str_replace('{ERRORE}', $errore, $template);
