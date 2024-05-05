@@ -3,10 +3,10 @@
 require_once 'queries.php';
 session_start();
 
-// Controllo della connessione
 if ($conn->connect_error) {
     die("Connessione fallita: " . $conn->connect_error);
 }
+
 $email = clearInput($_POST['mail']);
 $username = clearInput($_POST['username']);
 $nome = clearInput($_POST['nome']);

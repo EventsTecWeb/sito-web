@@ -2,8 +2,8 @@
 require_once 'queries.php';
 session_start();
 
-if (!isset($_SESSION['username']) && !isset($_SESSION['email'])) {
-    header("Location: ../HTML/index.html");
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+    header('Location: ../HTML/index.html');
     exit();
 }
 

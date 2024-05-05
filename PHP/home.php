@@ -2,11 +2,10 @@
 
 session_start();
 
-if (!isset($_SESSION['username']) && !isset($_SESSION['email'])) {
-    header("Location: pagina_non_autorizzata.php");
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+    header('Location: ../HTML/index.html');
     exit();
 }
-
 require_once 'queries.php';
 $template = file_get_contents("../HTML/home.html");
 
