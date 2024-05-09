@@ -1605,8 +1605,6 @@ textarea {
     border-radius: 16px;}
 #mod-data-ip .salva-ip:hover {
     background-color: rgba(14, 31, 187, 1);}
-.content-ip {
-        display: none;}
 .pass_example-ip{
     font-weight: bolder;
     margin-bottom: 0;
