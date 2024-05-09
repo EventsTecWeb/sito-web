@@ -1313,6 +1313,11 @@ div #pannello-principale-acc{
     flex-direction: column;
     width: 80%;
     font-family: 'Poppins', sans-serif;}
+#box .impo-error{
+    margin-left: 4.5vh;
+    margin-right: 4.5vh;
+    word-wrap: normal;
+}
 #profile-info-container{
     order: 1;}
 #box form {
