@@ -32,20 +32,24 @@ if(isset($_SESSION['username']) || isset($_SESSION['email'])) {
         $eventCategory = $_POST["eventCategory"];
         $eventDescription = $_POST["eventDescription"];
         if ($eventStartDate > $eventEndDate) {
-            $messaggio= "<div>Errore: La data di inizio dell'evento non può essere successiva alla data di fine.</div>";
+            $messaggio= "<p class='impo-error'>Errore: La data di inizio dell'evento non può essere successiva alla data di fine.</p>";
         } elseif ($eventStartDate == $eventEndDate && $eventStartTime >= $eventEndTime) {
-            $messaggio= "<div>Errore: L'ora di inizio dell'evento non può essere successiva o uguale all'ora di fine.</div>";
+            $messaggio= "<p class='impo-error'>Errore: L'ora di inizio dell'evento non può essere successiva o uguale all'ora di fine.</p>";
         }
         $eventImageURL = $_POST["imageURL"];
         if (!empty($eventName) && !empty($eventStartDate) && !empty($eventImageURL)) {
-        $sql = "INSERT INTO eventi (titolo, descrizione, data_inizio, data_fine, orario_inizio, orario_fine, luogo, costo, categoria, creatore_id, url_immagine) VALUES ('$eventName', '$eventDescription', '$eventStartDate','$eventEndDate','$eventStartTime','$eventEndTime', '$eventLocation','$eventCost','$eventCategory','$userId', '$eventImageURL')";
-        if ($conn->query($sql) === TRUE) {
-            $messaggio="<div>inserito con successo</div>";
+            if (file_exists($eventImageURL)) {
+                $sql = "INSERT INTO eventi (titolo, descrizione, data_inizio, data_fine, orario_inizio, orario_fine, luogo, costo, categoria, creatore_id, url_immagine) VALUES ('$eventName', '$eventDescription', '$eventStartDate','$eventEndDate','$eventStartTime','$eventEndTime', '$eventLocation','$eventCost','$eventCategory','$userId', '$eventImageURL')";
+                if ($conn->query($sql) === TRUE) {
+                    $messaggio="<p class='impo-error'>Inserito con successo</p>";
+                } else {
+                    $messaggio= "<p class='impo-error'>Errore: " . $sql . "<br>" . $conn->error."</p>";
+                }
+            } else {
+                $messaggio = "<p class='impo-error'>Errore: L'immagine specificata non esiste nell'archivio.</p>";
+            }
         } else {
-            $messaggio= "<div>Errore: " . $sql . "<br>" . $conn->error."</div>";
-        }
-        }else {
-            $messaggio = "<div>I campi Nome, Data inizio e URL Immagine sono obbligatori.</div>";
+            $messaggio = "<p class='impo-error'>I campi Nome, Data inizio e URL Immagine sono obbligatori.</p>";
         }
     } else {
         header('Location: ../php/505.php');

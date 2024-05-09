@@ -1965,6 +1965,7 @@ textarea {
     margin-left: 2vh;
     font-size: 2vh;
     font-weight: 700;
+    border-radius: 8px;
     transition: background 0.07s, color 0.07s, border-color 0.07s;}
 .cookie-banner button:hover{
     background: #fff;
@@ -1972,6 +1973,10 @@ textarea {
     color: #000000;}
 .hidden{
     display: none;}
+.cookie-banner p{
+    margin-left: 3vh;
+    margin-right: 3vh;
+}
 @media screen and (max-width: 620px) {
     /*---------------------------PAGINA EVENTO---------------------------*/
     .container_dx-pe {

@@ -1,23 +1,38 @@
 document.addEventListener("DOMContentLoaded", function() {
     const $cookieBanner = document.querySelector(".cookie-banner");
-    const $cookieBannerButton = document.querySelector(".cookie-banner button");
+    const $cookieBannerAcceptButton = document.querySelector(".cookie-banner .accept-btn");
+    const $cookieBannerRejectButton = document.querySelector(".cookie-banner .reject-btn");
     const $evidenzaBox = document.querySelector(".home-evidenza-last-box");
 
-    if ($cookieBannerButton) {
+    if ($cookieBannerAcceptButton && $cookieBannerRejectButton) {
         const cookieName = 'cookiesBanner';
         const hasCookie = getCookie(cookieName);
+        const sessionStorageKey = 'cookieAccepted';
 
-        if(!hasCookie) {
+        const sessionStorageAccepted = sessionStorage.getItem(sessionStorageKey);
+
+        if (!hasCookie && sessionStorageAccepted !== null) {
+            if (sessionStorageAccepted === 'true') {
+                $evidenzaBox.classList.remove("hidden");
+            }
+            $cookieBanner.classList.add("hidden");
+        } else if (!hasCookie) {
             $cookieBanner.classList.remove("hidden");
-        } else if(getCookie(cookieName) !== "0") {
+        } else if (getCookie(cookieName) !== "0") {
             $evidenzaBox.classList.remove("hidden");
         }
 
-        $cookieBannerButton.addEventListener("click", () => {
+        $cookieBannerAcceptButton.addEventListener("click", () => {
             setCookie(cookieName, 0, 31);
+            sessionStorage.setItem(sessionStorageKey, 'true');
+            $cookieBanner.remove();
+        });
+
+        $cookieBannerRejectButton.addEventListener("click", () => {
+            sessionStorage.setItem(sessionStorageKey, 'false');
             $cookieBanner.remove();
         });
     } else {
-        console.error("Pulsante non trovato. Assicurati che il pulsante esista nel tuo HTML.");
+        console.error("Pulsanti non trovati. Assicurati che i pulsanti esistano nel tuo HTML.");
     }
 });

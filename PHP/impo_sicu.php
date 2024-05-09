@@ -54,19 +54,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 }
             } 
             if (isset($_POST['elimina-account'])) {
-                // Elimina i record da eventisalvati che fanno riferimento all'utente
                 $sql_elimina_eventisalvati = "DELETE FROM eventisalvati WHERE utente_id = ?";
                 $stmt_elimina_eventisalvati = $conn->prepare($sql_elimina_eventisalvati);
                 $stmt_elimina_eventisalvati->bind_param("i", $userId);
                 if ($stmt_elimina_eventisalvati->execute()) {
-                    // Ora che le righe figlio sono state eliminate, procedi con l'eliminazione dell'utente
                     $sql_elimina_utente = "DELETE FROM Utenti WHERE utente_id = ?";
                     $stmt_elimina_utente = $conn->prepare($sql_elimina_utente);
                     $stmt_elimina_utente->bind_param("i", $userId);
                     if ($stmt_elimina_utente->execute()) {
                         $txt_error = "Account eliminato con successo.";
-                        logout(); // Effettua il logout dell'utente dopo l'eliminazione dell'account
-                        exit; // Esci dallo script
+                        logout();
+                        exit;
                     } else {
                         $txt_error = "Errore nell'eliminazione dell'account: " . $stmt_elimina_utente->error;
                     }

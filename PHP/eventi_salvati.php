@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
@@ -24,6 +25,7 @@ if (isset($_SESSION['user_id'])) {
                                         <div class="NomiLinkSalvati-es">
                                             <h3 aria-hidden="true">' . $evento["titolo"] . '</h3>
                                         </div>
+                                        <p class="infoEventoSalvato-es" aria-hidden="true">'.$evento["data_inizio"].'</p>
                                         <p class="infoEventoSalvato-es" aria-hidden="true">' . $evento["orario_inizio"] . ' – ' . $evento["luogo"] . '</p>
                                         <p class="genereEventoSalvato-es" aria-hidden="true">' . $evento["categoria"] . '</p>
                                     </div>
