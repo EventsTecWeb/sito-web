@@ -2,6 +2,12 @@
 require_once 'queries.php';
 session_start();
 include 'user_session.php';
+
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+    header('Location: ../HTML/index.html');
+    exit();
+}
+
 $accedi_stringa = gestisciAccesso($conn);
 
 $result_events = getEventi($conn);
