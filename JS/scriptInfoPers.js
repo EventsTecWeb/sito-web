@@ -1,20 +1,24 @@
 $(document).ready(function(){
+    $(".content-ip").hide();
+
     $(".option-ip").click(function(){
         toggleContent($(this));
     });
+
     $(".option-ip").keypress(function(event){
         if (event.which === 13) {
             toggleContent($(this));
         }
     });
+
     function toggleContent(element) {
         var img = element.find('img');
         var originalSrc = img.data('original-src');
         var alternateSrc = img.data('alternate-src');
-        if (element.next('.content-ip').is(":visible")) {
-            img.attr('src', originalSrc);
-        } else {
+        if (img.attr('src') === originalSrc) {
             img.attr('src', alternateSrc);
+        } else {
+            img.attr('src', originalSrc);
         }
         element.next('.content-ip').slideToggle("slow");
     }

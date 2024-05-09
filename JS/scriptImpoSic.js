@@ -1,13 +1,16 @@
 $(document).ready(function(){
     $(".content-sicu").hide();
+
     $(".option-sicu").click(function(){
         toggleContent($(this));
     });
+
     $(".option-sicu").keypress(function(event){
         if (event.which === 13) {
             toggleContent($(this));
         }
     });
+
     function toggleContent(element) {
         var img = element.find('img');
         var originalSrc = img.data('original-src');
