@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
-<head> 
+<head>
   <meta charset="UTF-8">
   <title>Crea evento - Events</title>
   <meta name="description" content="Inserisci un nuovo evento su Events, il social network per gli amanti degli eventi. Condividi il tuo evento con la comunità e raggiungi un vasto pubblico di appassionati.">
@@ -54,14 +54,14 @@
         </div>
     </header>
     <div id="overlay" class="overlay"></div>
-        <div id="sideMenu" class="side-menu">
-            <a href="javascript:void(0)" class="closebtn" tabindex="-1">&times;</a>
-            <a href="../PHP/home.php" tabindex="-1">Homepage</a>
-            <a href="../PHP/infoPersonali.php" tabindex="-1">Profilo</a>
-            <a href="#" tabindex="-1">Crea Evento</a>
-            <a href="../HTML/chiSiamo.html" tabindex="-1">Chi siamo</a>
-            <a href="../HTML/partner.html" tabindex="-1">Partners</a>
-        </div>
+    <div id="sideMenu" class="side-menu">
+        <a href="javascript:void(0)" class="closebtn" tabindex="-1">&times;</a>
+        <a href="../PHP/home.php" tabindex="-1">Homepage</a>
+        <a href="../PHP/infoPersonali.php" tabindex="-1">Profilo</a>
+        <a href="#" tabindex="-1">Crea Evento</a>
+        <a href="../HTML/chiSiamo.html" tabindex="-1">Chi siamo</a>
+        <a href="../HTML/partner.html" tabindex="-1">Partners</a>
+    </div>
 
     <nav id="menuCenter">
         <ul class="menu-orizzontale">
@@ -80,60 +80,59 @@
                 <li><button onclick="window.location.href='../PHP/eventi_salvati.php'">Eventi Salvati</button></li>
             </ul>
         </nav>
-    <div id="box">
-        {FOTOPROFILO} 
-        <form action="../PHP/indexProfilo.php" method="POST">
-            <label for="imageURL" id="urlInsertImmagine">URL immagine dell'evento:</label>
-                <input type="text" id="imageURL" name="imageURL">
+        <div id="box">
+            <form action="../PHP/indexProfilo.php" method="POST" enctype="multipart/form-data">
+                <label for="fileToUpload" id="urlInsertImmagine">URL immagine dell'evento:</label>
+                <input type="file" name="fileToUpload" id="fileToUpload">
 
-            <label for="eventName">Nome dell'evento:</label>
-            <input type="text" id="eventName" name="eventName">
-    
-            <div class="form-group">
-                <div>
-                    <label for="eventStartDate">Data d'inizio:</label>
-                    <input type="date" id="eventStartDate" name="eventStartDate">
+                <label for="eventName">Nome dell'evento:</label>
+                <input type="text" id="eventName" name="eventName">
+        
+                <div class="form-group">
+                    <div>
+                        <label for="eventStartDate">Data d'inizio:</label>
+                        <input type="date" id="eventStartDate" name="eventStartDate">
+                    </div>
+                    <div>
+                        <label for="eventStartTime">Orario d'inizio:</label>
+                        <input type="time" id="eventStartTime" name="eventStartTime">
+                    </div>
                 </div>
-                <div>
-                    <label for="eventStartTime">Orario d'inizio:</label>
-                    <input type="time" id="eventStartTime" name="eventStartTime">
+
+                <div class="form-group">
+                    <div>
+                        <label for="eventEndDate">Data di fine:</label>
+                        <input type="date" id="eventEndDate" name="eventEndDate">
+                    </div>
+                    <div>
+                        <label for="eventEndTime">Orario di fine:</label>
+                        <input type="time" id="eventEndTime" name="eventEndTime">
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-group">
-                <div>
-                    <label for="eventEndDate">Data di fine:</label>
-                    <input type="date" id="eventEndDate" name="eventEndDate">
-                </div>
-                <div>
-                    <label for="eventEndTime">Orario di fine:</label>
-                    <input type="time" id="eventEndTime" name="eventEndTime">
-                </div>
-            </div>
+                <label for="eventLocation">Luogo:</label>
+                <input type="text" id="eventLocation" name="eventLocation">
 
-            <label for="eventLocation">Luogo:</label>
-            <input type="text" id="eventLocation" name="eventLocation">
+                <label for="eventCost">Costo:</label>
+                <input type="text" id="eventCost" name="eventCost">
 
-            <label for="eventCost">Costo:</label>
-            <input type="text" id="eventCost" name="eventCost">
-
-            <label for="eventCategory">Categoria evento:</label>
-            <select id="eventCategory" name="eventCategory">
-                <option value="Musica">Musica</option>
-                <option value="Sport">Sport</option>
-                <option value="Cibo">Cibo</option>
-                <option value="Arte">Arte</option>
-                <option value="Teatro">Teatro</option>
-                <option value="Conferenze">Conferenze</option>
-                <option value="Beneficenza">Beneficenza</option>
-            </select>
-    
-            <label for="eventDescription">Descrizione dell'evento:</label>
-            <textarea id="eventDescription" name="eventDescription"></textarea>
-    
-            <button id="invia" type="submit" value="Invia">Invia</button>
-        </form>
-        {MESSAGGIO}
+                <label for="eventCategory">Categoria evento:</label>
+                <select id="eventCategory" name="eventCategory">
+                    <option value="Musica">Musica</option>
+                    <option value="Sport">Sport</option>
+                    <option value="Cibo">Cibo</option>
+                    <option value="Arte">Arte</option>
+                    <option value="Teatro">Teatro</option>
+                    <option value="Conferenze">Conferenze</option>
+                    <option value="Beneficenza">Beneficenza</option>
+                </select>
+        
+                <label for="eventDescription">Descrizione dell'evento:</label>
+                <textarea id="eventDescription" name="eventDescription"></textarea>
+        
+                <button id="invia" type="submit" value="Invia">Invia</button>
+            </form>
+            {MESSAGGIO}
         </div>
     </div>
 </body>

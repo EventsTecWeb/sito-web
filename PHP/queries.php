@@ -225,19 +225,23 @@ function updateUserPhone($conn, $userId, $newPhone) {
 }
 
 function getProssimiEventi($conn) {
-    $query = "SELECT * 
-    FROM Eventi 
-    WHERE data_inizio > NOW()
-        AND creatore_id IN (
-            SELECT utente_id
-            FROM utenti
-            WHERE privacy = 'Pubblico' OR privacy IS NULL
-            ) 
-    ORDER BY data_inizio ASC LIMIT 12";
+    $query = "
+        SELECT e.*
+        FROM Eventi e
+        JOIN utenti u ON e.creatore_id = u.utente_id
+        WHERE e.data_inizio > NOW()
+          AND (u.privacy = 'Pubblico' OR u.privacy IS NULL)
+        ORDER BY e.data_inizio ASC
+        LIMIT 12
+    ";
     $result = $conn->query($query);
+    
+    if ($result === false) {
+        die("Errore nella query: " . $conn->error);
+    }
     if ($result->num_rows > 0) {
         $eventi = array();
-        while($row = $result->fetch_assoc()) {
+        while ($row = $result->fetch_assoc()) {
             $eventi[] = $row;
         }
         return $eventi;
@@ -245,6 +249,7 @@ function getProssimiEventi($conn) {
         return null;
     }
 }
+
 
 function updateUserEmail($conn, $userId, $newEmail) {
     $query = "UPDATE Utenti SET email = ? WHERE utente_id = ?";
@@ -450,5 +455,35 @@ function getCookieValue($name) {
         return $_COOKIE[$name];
     } else {
         return null;
+    }
+}
+
+function inserisciEvento($conn, $titolo, $descrizione, $data_inizio, $data_fine, $orario_inizio, $orario_fine, $luogo, $costo, $categoria, $creatore_id, $url_immagine) {
+    $titolo = clearInput(strip_tags($titolo));
+    $descrizione = clearInput(strip_tags($descrizione));
+    $data_inizio = clearInput(strip_tags($data_inizio));
+    $data_fine = clearInput(strip_tags($data_fine));
+    $orario_inizio = clearInput(strip_tags($orario_inizio));
+    $orario_fine = clearInput(strip_tags($orario_fine));
+    $luogo = clearInput(strip_tags($luogo));
+    $costo = clearInput(strip_tags($costo));
+    $categoria = clearInput(strip_tags($categoria));
+    $creatore_id = clearInput(strip_tags($creatore_id));
+    $url_immagine = clearInput(strip_tags($url_immagine));
+
+    $sql = "INSERT INTO eventi (titolo, descrizione, data_inizio, data_fine, orario_inizio, orario_fine, luogo, costo, categoria, creatore_id, url_immagine)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+    if ($stmt = $conn->prepare($sql)) {
+        $stmt->bind_param("sssssssssis", $titolo, $descrizione, $data_inizio, $data_fine, $orario_inizio, $orario_fine, $luogo, $costo, $categoria, $creatore_id, $url_immagine);
+
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            return "Errore durante l'inserimento dell'evento: " . $stmt->error;
+        }
+        $stmt->close();
+    } else {
+        return "Errore durante la preparazione della dichiarazione: " . $conn->error;
     }
 }
