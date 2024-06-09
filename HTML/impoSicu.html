@@ -34,11 +34,6 @@
                     </form>
                 </div>
             </div>
-            <script>
-                document.getElementById("searchButton").addEventListener("click", function() {
-                    document.getElementById("searchBarA").submit();
-                });
-            </script>
                 <a href="../PHP/eventi_salvati.php" class="bottoneStar">
                     <img src="../Images/star_full.png" alt="Vai alla pagina contenente i tuoi eventi salvati">
                 </a>
@@ -59,8 +54,9 @@
             <img src="../Images/user.png" alt="Accedi ai dati del tuo profilo">
         </a>
         <nav aria-label="breadcrumb" id="bread">
-            <p>Ti trovi in: <span lang="en"><a id="returnHome" href="../PHP/home.php">Home</a></span> >> Impostazioni e Sicurezza</p>
+            <p>Ti trovi in: <span lang="en"><a id="returnHome" href="../PHP/home.php">Home</a></span> &gt;&gt; Impostazioni e Sicurezza </p>
         </nav>
+        
     </div>
     </header>
     <div id="overlay" class="overlay"></div>
@@ -169,7 +165,7 @@
                                 <input type="checkbox" id="read-sicu" name="read" value="read" onchange="document.getElementById('eliminaButton-sicu').disabled = !this.checked;">Ho letto e desidero continuare
                             </label>                        
                         </div>
-                        <button type="submit" id="eliminaButton-sicu" name="elimina-account" disabled="disabled" onclick="togliCookie()">Elimina</button>
+                        <button type="submit" id="eliminaButton-sicu" name="elimina-account" disabled="disabled">Elimina</button>
                     </div>
                 </div>
             </form>
@@ -191,12 +187,7 @@
                             </label>
                         </div>
                         <div class="button-container-sicu">
-                            <button type="submit" id="esciButton-sicu" name="logout" disabled="disabled" onclick="togliCookie()">Esci</button>
-                            <script>
-                                function togliCookie(){
-                                    document.cookie = "cookiesBanner" + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/';
-                                }
-                            </script>
+                            <button type="submit" id="esciButton-sicu" name="logout" disabled="disabled">Esci</button>
                         </div>
                     </div>
                 </div>
