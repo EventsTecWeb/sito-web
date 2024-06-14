@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
-<head> 
+<head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <title>Pagina evento - Events</title>
@@ -14,23 +14,10 @@
     <script src="../JS/scriptSkip.js"></script>
     <script src="../JS/sideMenu.js"></script>
     <script src="../JS/Cookies/cookies.js"></script>
+    <script src="../JS/scriptPaginaEvento.js"></script>
 </head>
 
 <body>
-    <script>
-        function getParamValue(param) {
-            const queryString = window.location.search;
-            const urlParams = new URLSearchParams(queryString);
-            return urlParams.get(param);
-        }
-        const cookieName = 'cookiesBanner';
-        const hasCookie = getCookie(cookieName);
-        if(hasCookie){
-            if (getCookie(cookieName) !== 0) {
-            setCookie(cookieName, getParamValue('evento'), 31);
-            }
-        }
-    </script>
     <a class="skip-link visually-hidden" href="#pannello-principale-pe" id="skipLink">Salta al contenuto principale</a>
     <header>
         <a href="../PHP/home.php">
@@ -65,8 +52,8 @@
                 <img src="../Images/user.png" alt="Accedi ai dati del tuo profilo">
             </a>
             <nav aria-label="breadcrumb" id="bread">
-                <p>Ti trovi in: <span lang="en"><a id="returnHome" href="../PHP/home.php">Home</a></span> >> Pagina Evento </p>
-            </nav>
+                <p>Ti trovi in: <span lang="en"><a id="returnHome" href="../PHP/home.php">Home</a></span> &gt;&gt; Pagina Evento </p>
+            </nav>            
         </div>
     </header>
     <div id="overlay" class="overlay"></div>

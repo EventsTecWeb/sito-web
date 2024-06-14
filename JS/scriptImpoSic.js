@@ -22,4 +22,12 @@ $(document).ready(function(){
         }
         element.next('.content-sicu').slideToggle("slow");
     }
+
+    $("#searchButton").click(function() {
+        $("#searchBarA").submit();
+    });
+
+    window.togliCookie = function() {
+        document.cookie = "cookiesBanner=; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/";
+    };
 });

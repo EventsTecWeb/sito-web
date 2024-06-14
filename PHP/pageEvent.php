@@ -32,16 +32,16 @@ if (isset($_POST['salva_evento'])) {
 }
 
 if (isset($_POST['elimina'])) {
-    if(eliminaEvento($conn, $_GET['evento'])){
+    if (eliminaEvento($conn, $_GET['evento'])) {
         header("Location: ../php/home.php");
         exit();
-    }else{
-        $txt_error = "Si è verificato un errore durante l`eliminazione dell'evento.";
+    } else {
+        $txt_error = "Si è verificato un errore durante l'eliminazione dell'evento.";
     }
 }
 
 if (isset($_POST['disdici_evento'])) {
-    if(nonInteressato($conn, $_GET['evento'], $_SESSION['user_id'])) {
+    if (nonInteressato($conn, $_GET['evento'], $_SESSION['user_id'])) {
         $txt_error = "Evento tolto dagli eventi salvati";
     } else {
         $txt_error = "Si è verificato un errore durante la rimozione dell'evento dagli eventi salvati";
@@ -53,6 +53,10 @@ $evento_id = $_GET["evento"];
 $template = file_get_contents("../HTML/pageEvent.html");
 
 $row = getEventiByIdQuery($conn, $evento_id);
+
+if (!$row) {
+    $txt_error = "Evento non trovato.";
+}
 
 $resultPartecipanti = getPartecipantiEvento($conn, $evento_id);
 $frase_partecipanti = "Interessa a: ";
@@ -88,15 +92,15 @@ function getItalianMonth($month) {
 $data_inizio = strftime("%d", strtotime($row['data_inizio'])) . ' ' . getItalianMonth(strftime("%B", strtotime($row['data_inizio']))) . strftime(" %Y", strtotime($row['data_inizio']));
 $orario_inizio = strftime("%H:%M", strtotime($row['orario_inizio']));
 
-if($row['data_fine'] == null){
+if ($row['data_fine'] == null) {
     $data_fine = $data_inizio;
-}else{
+} else {
     $data_fine = strftime("%d", strtotime($row['data_fine'])) . ' ' . getItalianMonth(strftime("%B", strtotime($row['data_fine']))) . strftime(" %Y", strtotime($row['data_fine']));
 }
 
-if($row['orario_fine'] == null){
+if ($row['orario_fine'] == null) {
     $orario_fine = $orario_inizio;
-}else{
+} else {
     $orario_fine = strftime("%H:%M", strtotime($row['orario_fine']));
 }
 
@@ -108,11 +112,7 @@ if ($userData) {
     $is_admin = $userData['permessi'];
 }
 
-function togliCookieEvento() {
-    if(getCookie("cookiesBanner") == '.$row["evento_id"].'){
-        setCookie("cookiesBanner", 0 , 1);
-    }
-}
+$is_creator = ($userId == $row['creatore_id']);
 
 $immagine = '<div class="boxImage-pe">
 <div class="imgEvent-pe">
@@ -130,19 +130,19 @@ $evento = '<div id="pannello-principale-pe">
             <p>Prezzo: ' . $row['costo'] . '</p>
         </div>
         <div class="container_dx-pe">';
-            if (interessato($conn, $_SESSION['user_id'], $_GET['evento'])) {
-                $evento .= '<form method="post" action="pageEvent.php?evento='.$row["evento_id"].'">
+if (interessato($conn, $_SESSION['user_id'], $_GET['evento'])) {
+    $evento .= '<form method="post" action="pageEvent.php?evento=' . $row["evento_id"] . '">
                 <button id="salvaEventoButton" class="sonoInteressato-pe" name="disdici_evento" value="' . $row['evento_id'] . '">Non mi interessa più</button>
                 </form>';
-            }else{
-                $evento .= '<form method="post" action="pageEvent.php?evento='.$row["evento_id"].'">
+} else {
+    $evento .= '<form method="post" action="pageEvent.php?evento=' . $row["evento_id"] . '">
                 <button id="salvaEventoButton" class="sonoInteressato-pe" name="salva_evento" value="' . $row['evento_id'] . '">Mi interessa!</button>
                 </form>';
-            }
-            if ($is_admin == 1) {
-                $evento .= '<form method="POST" action="pageEvent.php?evento='.$row["evento_id"].'"><button name="elimina" class="elimina-pe">Elimina</button>
+}
+if ($is_admin == 1 || $is_creator) {
+    $evento .= '<form method="POST" action="pageEvent.php?evento=' . $row["evento_id"] . '"><button name="elimina" class="elimina-pe">Elimina</button>
                 </form>';
-            }
+}
 $evento .= '</div>
     </div>
     <div class="containerSecondario-pe">

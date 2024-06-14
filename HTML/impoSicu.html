@@ -3,27 +3,22 @@
 <head> 
   <meta charset="UTF-8">
   <title>Impostazioni e sicurezza - Events</title>
-  <meta name="description" content= "Questa è la pagina delle impostazioni del profilo events. Gli utenti possono modificare le loro informazioni personali, preferenze per gli eventi e impostazioni di privacy e sicurezza.">
-  <meta name="keywords" content="Events, eventi, concerti, cultura, mostre, spettacoli,impostazioni profilo, informazioni sicurezza, privacy, sicurezza, gestione account">
+  <meta name="description" content="Questa è la pagina delle impostazioni del profilo events. Gli utenti possono modificare le loro informazioni personali, preferenze per gli eventi e impostazioni di privacy e sicurezza.">
+  <meta name="keywords" content="Events, eventi, concerti, cultura, mostre, spettacoli, impostazioni profilo, informazioni sicurezza, privacy, sicurezza, gestione account">
   <link rel="stylesheet" href="../events.css">
   <link rel="stylesheet" href="../print.css" media="print">
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
+  <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Poppins'>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,400&display=swap">
   <link rel="shortcut icon" href="../Images/events_logo_site_e.png">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="../JS/scriptImpoSic.js"></script>
-  <script src="../JS/scriptSkip.js"></script>
-  <script src="../JS/sideMenu.js"></script>
-  <script src="../JS/Cookies/cookies.js"></script>
 </head>
 
 <body>
     <a class="skip-link visually-hidden" href="#privacy-sicu" id="skipLink">Salta al contenuto principale</a>
     <header>
-        <a href="../PHP/home.php">
-            <h1>Events</h1>
-        </a>
-        <div class="header-items">
+        <div class="header-top">
+            <a href="../PHP/home.php">
+                <h1>Events</h1>
+            </a>
             <div class="header-items">
                 <div class="search-container">
                     <form id="searchBarA" action="../PHP/searchbar.php" role="search" method="POST">
@@ -33,45 +28,39 @@
                         </button>
                     </form>
                 </div>
-            </div>
-            <script>
-                document.getElementById("searchButton").addEventListener("click", function() {
-                    document.getElementById("searchBarA").submit();
-                });
-            </script>
                 <a href="../PHP/eventi_salvati.php" class="bottoneStar">
                     <img src="../Images/star_full.png" alt="Vai alla pagina contenente i tuoi eventi salvati">
                 </a>
-        <button class="bottoneHamburger">
-            <img src="../Images/menu-button-of-three-horizontal-lines.png" alt="Apri il menu ad hamburger">
-        </button>
-        <nav>
-            <ul class="linkPagina">
-                <li><a id="returnHomeHeader" href="../PHP/home.php">HOMEPAGE</a></li>
-                <li><a id="PartnersLink" href="../HTML/partner.html">PARTNERS</a></li>
-                <li><a id="ChiSiamoLink" href="../HTML/chiSiamo.html">CHI SIAMO</a></li>
-            </ul>
-        </nav>
-        <a href="../PHP/indexProfilo.php" class="bottonePlus">
-            <img src="../Images/add.png" alt="Crea un nuovo evento">
-        </a>
-        <a href="../PHP/infoPersonali.php" class="bottoneProfilo">
-            <img src="../Images/user.png" alt="Accedi ai dati del tuo profilo">
-        </a>
-        <nav aria-label="breadcrumb" id="bread">
-            <p>Ti trovi in: <span lang="en"><a id="returnHome" href="../PHP/home.php">Home</a></span> >> Impostazioni e Sicurezza</p>
-        </nav>
-    </div>
-    </header>
-    <div id="overlay" class="overlay"></div>
-        <div id="sideMenu" class="side-menu">
-            <a href="javascript:void(0)" class="closebtn" tabindex="-1">&times;</a>
-            <a href="../PHP/home.php" tabindex="-1">Homepage</a>
-            <a href="../PHP/infoPersonali.php" tabindex="-1">Profilo</a>
-            <a href="../PHP/indexProfilo.php" tabindex="-1">Crea Evento</a>
-            <a href="../HTML/chiSiamo.html" tabindex="-1">Chi siamo</a>
-            <a href="../HTML/partner.html" tabindex="-1">Partners</a>
+                <button class="bottoneHamburger" aria-expanded="false" aria-controls="sideMenu">
+                    <img src="../Images/menu-button-of-three-horizontal-lines.png" alt="Apri il menu ad hamburger">
+                </button>
+                <nav>
+                    <ul class="linkPagina">
+                        <li><a id="returnHomeHeader" href="../PHP/home.php">HOMEPAGE</a></li>
+                        <li><a id="PartnersLink" href="../HTML/partner.html">PARTNERS</a></li>
+                        <li><a id="ChiSiamoLink" href="../HTML/chiSiamo.html">CHI SIAMO</a></li>
+                    </ul>
+                </nav>
+                <a href="../PHP/indexProfilo.php" class="bottonePlus">
+                    <img src="../Images/add.png" alt="Crea un nuovo evento">
+                </a>
+                <a href="../PHP/infoPersonali.php" class="bottoneProfilo">
+                    <img src="../Images/user.png" alt="Accedi ai dati del tuo profilo">
+                </a>
+            </div>
         </div>
+        <nav aria-label="breadcrumb" id="bread">
+            <p>Ti trovi in: <span lang="en"><a id="returnHome" href="../PHP/home.php">Home</a></span> &gt;&gt; Impostazioni e Sicurezza </p>
+        </nav>
+    </header>
+    <div id="sideMenu" class="side-menu">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeSideMenu()">&times;</a>
+        <a href="../PHP/home.php">Homepage</a>
+        <a href="../PHP/infoPersonali.php">Profilo</a>
+        <a href="../PHP/indexProfilo.php">Crea Evento</a>
+        <a href="../HTML/chiSiamo.html">Chi siamo</a>
+        <a href="../HTML/partner.html">Partners</a>
+    </div>
 
     <nav id="menuCenter">
         <ul class="menu-orizzontale">
@@ -89,45 +78,43 @@
                 <li><button onclick="window.location.href='../PHP/profiloEv.php'">Eventi Creati</button></li>
                 <li><button onclick="window.location.href='../PHP/eventi_salvati.php'">Eventi Salvati</button></li>
             </ul>
-          </nav>
+        </nav>
         <div class="settings-sicu">
             {ERROR}
             <h2>Impostazioni e Sicurezza</h2>
             <div class="option-sicu" tabindex="0" aria-label="Sezione per modificare la privacy del tuo profilo">
                 <span>Privacy profilo:</span>
                 <p id="option-ip">{PRIVACY}</p>
-                <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">
             </div>
             <div class="content-sicu">
-                <form action="../PHP/impo_sicu.php" method="POST">
+                <form action="../PHP/impoSicu.php" method="POST">
                     <div id="privacy-sicu">
                         <div class="privacy-settings-sicu">
                             <h2>Privacy dell'account</h2>
                             <div class="separator-sicu"></div>
-                                <div class="left-align-sicu">
-                                    <label>
-                                        <input type="radio" name="privacy" value="Pubblico">
-                                        <span class="p_privacy-sicu">Pubblico</span>
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="privacy" value="Privato">
-                                        <span class="p_privacy-sicu">Privato</span>
-                                    </label>
-                                </div>
-                                <p id="domanda-sicu">Chi può vedere i tuoi contenuti?</p>
-                                <div class="center-align-sicu">
-                                    <p class="info-text-sicu">La configurazione di un profilo come pubblico su Events implica la visibilità delle attività salvate e degli eventi creati da te da parte di altri utenti. Al contrario, se il profilo è impostato come privato, queste informazioni saranno nascoste agli altri utenti.</p>
-                                    <button type="submit" name="update-password" class="button-impo-sicu">Salva</button>
-                                </div>
+                            <div class="left-align-sicu">
+                                <label>
+                                    <input type="radio" name="privacy" value="Pubblico">
+                                    <span class="p_privacy-sicu">Pubblico</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="privacy" value="Privato">
+                                    <span class="p_privacy-sicu">Privato</span>
+                                </label>
+                            </div>
+                            <p id="domanda-sicu">Chi può vedere i tuoi contenuti?</p>
+                            <div class="center-align-sicu">
+                                <p class="info-text-sicu">La configurazione di un profilo come pubblico su Events implica la visibilità delle attività salvate e degli eventi creati da te da parte di altri utenti. Al contrario, se il profilo è impostato come privato, queste informazioni saranno nascoste agli altri utenti.</p>
+                                <button type="submit" name="update-privacy" class="button-impo-sicu">Salva</button>
+                            </div>
                         </div>            
                     </div>
                 </form>
             </div>
-            <form action="../PHP/impo_sicu.php" method="POST">
-                    <div class="option-sicu" tabindex="0" aria-label="Sezione per modificare la password">
+            <form action="../PHP/impoSicu.php" method="POST">
+                <div class="option-sicu" tabindex="0" aria-label="Sezione per modificare la password">
                     <span>Password</span>
                     <p id="option-ps">{PASSWORD}</p>
-                    <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">
                 </div>
                 <div class="content-sicu">
                     <div id="modPass-sicu">
@@ -147,10 +134,9 @@
                     </div>
                 </div>
             </form>
-            <form action="../PHP/impo_sicu.php" method="POST">
+            <form action="../PHP/impoSicu.php" method="POST">
                 <div class="option-sicu" tabindex="0" aria-label="Sezione per eliminare il tuo profilo">
                     <span class="titolini-sicu">Elimina</span>
-                    <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">
                 </div>
                 <div class="content-sicu">
                     <div id="eliAcc-sicu" class="vertical-center">
@@ -169,15 +155,14 @@
                                 <input type="checkbox" id="read-sicu" name="read" value="read" onchange="document.getElementById('eliminaButton-sicu').disabled = !this.checked;">Ho letto e desidero continuare
                             </label>                        
                         </div>
-                        <button type="submit" id="eliminaButton-sicu" name="elimina-account" disabled="disabled" onclick="togliCookie()">Elimina</button>
+                        <button type="submit" id="eliminaButton-sicu" name="elimina-account" disabled="disabled">Elimina</button>
                     </div>
                 </div>
             </form>
             
-            <form action="../PHP/impo_sicu.php" method="POST">
+            <form action="../PHP/impoSicu.php" method="POST">
                 <div class="option-sicu" tabindex="0" aria-label="Sezione per uscire dal tuo profilo">
                     <span class="titolini-sicu">Esci dall'<span lang="en">account</span></span>
-                    <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">
                 </div>
                 <div class="content-sicu">
                     <div id="esciAcc-sicu">
@@ -191,12 +176,7 @@
                             </label>
                         </div>
                         <div class="button-container-sicu">
-                            <button type="submit" id="esciButton-sicu" name="logout" disabled="disabled" onclick="togliCookie()">Esci</button>
-                            <script>
-                                function togliCookie(){
-                                    document.cookie = "cookiesBanner" + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/';
-                                }
-                            </script>
+                            <button type="submit" id="esciButton-sicu" name="logout" disabled="disabled">Esci</button>
                         </div>
                     </div>
                 </div>
