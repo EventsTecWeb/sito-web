@@ -11,9 +11,10 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
     exit();
 }
 
-require_once 'queries.php';
+require_once 'queries.php'; // Assicurati di usare require_once per evitare inclusioni multiple
 include 'user_session.php';
 $accedi_stringa = gestisciAccesso($conn);
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_SESSION['username']) || isset($_SESSION['email'])) {

@@ -54,6 +54,7 @@ if (isset($_SESSION['username']) || isset($_SESSION['email'])) {
                     $messaggio .= $ris;
                 } else {
                     $eventId = $conn->insert_id;
+                    $messaggio .= "<p class='success'>Evento inserito con successo.</p>";
 
                     if (isset($_FILES["fileToUpload"]) && $_FILES["fileToUpload"]["error"] == 0) {
                         $imageFileType = strtolower(pathinfo($_FILES["fileToUpload"]["name"], PATHINFO_EXTENSION));
@@ -79,6 +80,7 @@ if (isset($_SESSION['username']) || isset($_SESSION['email'])) {
                             if (resizeImage($_FILES["fileToUpload"]["tmp_name"], $target_file, $fixed_width, $fixed_height)) {
                                 $eventImageURL = $target_file;
                                 updateEventImage($conn, $eventId, $eventImageURL);
+                                $messaggio .= "<p class='success'>Immagine caricata con successo.</p>";
                             } else {
                                 $messaggio .= "Non è stato possibile caricare la foto.<br>";
                             }
@@ -99,7 +101,7 @@ if (isset($_SESSION['username']) || isset($_SESSION['email'])) {
 }
 
 $template = str_replace('{FOTOPROFILO}', htmlspecialchars($profile_image_path), $template);
-$template = str_replace('{MESSAGGIO}', htmlspecialchars($messaggio), $template);
+$template = str_replace('{MESSAGGIO}', $messaggio, $template);
 
 echo $template;
 

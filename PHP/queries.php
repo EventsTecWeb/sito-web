@@ -20,20 +20,12 @@ function getPartecipantiEvento($conn, $evento_id) {
     return $result;
 }
 
+
+
 function logout() {
-    session_start();
-    
-    $_SESSION = array();
-    if (ini_get("session.use_cookies")) {
-        $params = session_get_cookie_params();
-        setcookie(session_name(), '', time() - 42000,
-            $params["path"], $params["domain"],
-            $params["secure"], $params["httponly"]
-        );
-    }
-    
-    session_destroy();
-    header("Location: /../HTML/index.html");
+    // session_write_close to make sure all session data is saved before redirect
+    session_write_close();
+    header('Location: ../HTML/index.html');
     exit();
 }
 
