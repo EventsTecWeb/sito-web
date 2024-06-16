@@ -2,11 +2,222 @@
 body {
     min-width: 500px;}
 /*------------------------------------------------------------/INTESTAZIONE-------------------------------------------------------------*/
+
+/* General header styling */
 header {
+    width: 100%;
+    background-color: #fff; /* Set a background color for clarity */
+}
+
+#header_container {
+    display: flex;
+    flex-direction: column;
+}
+
+header h1 {
+    text-indent: -999em;
+    background-image: url("Images/eventsLogoRid.png");
+    font-size: 4em;
+    line-height: 1.5em;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20%;
+}
+
+#navbar_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 1em;
+}
+
+#left_half_nav, #right_half_nav {
+    display: flex;
+    align-items: center;
+}
+
+#searchbar_nav {
+    flex-grow: 1;
+}
+
+#searchBar {
+    width: 70%;
+    height: 7vh;
+    background: #f4f4f4;
+    border-radius: 20px;
+    border: none;
+    text-indent: 10px;
+    font-family: 'Poppins', sans-serif;
+    margin-right: 1vw;
+    transition: width 1s ease-in-out;
+    align-items: center;
+}
+
+#searchBar::placeholder {
+    color: rgb(111, 111, 111);
+}
+
+#searchButton {
+    border-radius: 50%;
+    height: 6vh;
+    width: 6vh;
+    border: none;
+    background: none;
+    background-color: #f4f4f4;
+}
+
+#searchButton img {
+    width: 4vh;
+    height: 4vh;
+    object-fit: cover;
+}
+
+#left_half_nav{
+    width: 100%;
+}
+
+#center_nav {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    width: 80%;
+}
+
+#right_half_nav {
+    display: flex; /* Arrange items in a row */
+    flex-direction: row; /* Arrange items horizontally */
+    align-items: center; /* Center items vertically */
+    margin-right: 4vh;
+}
+
+#right_half_nav > div {
+    margin-left: 2vw;
+}
+
+
+
+#eventi_salvati img,
+#new_event_nav img {
+    width: 5vh;
+    height: 5vh;
+}
+
+#profilo_nav img{
+    width: 7vh;
+    height: 7vh;
+}
+
+#collegeamenti_nav {
+    width: 60%;
+}
+
+#collegamenti_nav nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+#collegamenti_nav nav ul li {
+    margin-right: 5vh;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2vw;
+    text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+#hamburger_nav {
+    display: none; /* Initially hidden */
+}
+
+#hamburger_nav button {
+    border-radius: 50%;
+    width: 5vh; /* Increase size for better visibility */
+    height: 5vh; /* Increase size for better visibility */
+    border: none;
+    background: none; /* Remove default styling */
+    padding: 0; /* Remove padding */
+}
+
+#hamburger_nav img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#breadcrumb_header nav {
+    padding-left: 1vw;
+    font-family: 'Poppins', sans-serif;
+    /* margin-top: -1vh; */
+}
+
+header::after{
+    content: '';
+    display: block;
+    border-bottom: 1px solid #ccc;
+    margin-top: 10px;
+}
+
+/* Responsive styling for hamburger menu */
+@media (max-width: 870px) {
+    #left_half_nav{
+        width: 70%;
+    }
+    #hamburger_nav img{
+        margin-top: 0.5vh;
+        width: 5.5vh;
+        height: 5.5vh;
+    }
+    #center_nav, #profilo_nav, #new_event_nav{
+        display: none; /* Hide other elements */
+    }
+
+    #hamburger_nav {
+        display: block; /* Show hamburger menu */
+        margin-right: 2vh;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* header {
+    width: 100%;
+    background-color: #fff;
     margin-top: 0vh;
     position:relative;}
-.header-items {
+#header_container {
     display: flex;
+    flex-direction: column;
+}
+#logo_header {
+    display: flex;
+    align-items: center;
+    margin-left: 1em;
+}
+#searchbar_nav {
+    flex-grow: 1;
+}
+
+#item_navbar {
+    display: flex;
+    align-items: center;
+    flex-grow: 2;
     justify-content: space-around;}
 nav[aria-label="breadcrumb"] {
     position: absolute;
@@ -51,42 +262,6 @@ ul.linkPagina li {
     text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);}
 ul.linkPagina a:visited {
     color: rgb(166, 96, 166);}
-#ChiSiamoLink{
-    text-align: center; 
-    color: rgb(0, 0, 0); 
-    text-decoration: underline;
-    padding-right: 2.0%;}
-#ChiSiamoLink:hover {
-    text-decoration: none;}
-#PartnersLink{
-    text-align: center; 
-    color: rgb(0, 0, 0); 
-    text-decoration: underline;
-    padding-right: 2.0%;}
-#PartnersLink:hover {
-    text-decoration: none;}
-#AccediLink{
-    text-align: center; 
-    color: rgb(0, 0, 0); 
-    text-decoration: underline;
-    padding-right: 2.0%;
-    pointer-events: none;
-    cursor: default;}
-#returnHomeHeader{
-    text-align: center; 
-    color: rgb(0, 0, 0); 
-    text-decoration: underline;
-    padding-right: 2.0%;}
-#returnHomeHeader:hover {
-    text-decoration: none;}
-#AccediLink:hover {
-    text-decoration: none;}
-#RegistratiLink{
-    text-align: center; 
-    color: rgb(0, 0, 0); 
-    text-decoration: underline;}
-#RegistratiLink:hover {
-    text-decoration: none;}
 input[type="text" ] #searchBar {
     border: none; 
     border-bottom: 1px solid black; 
@@ -97,19 +272,53 @@ input[type="text" ] #searchBar {
 #searchBar {
     width: 65vh;
     height: 7vh;
-    left: 2vh;
-    top: 2vh;
     background: #f4f4f4;
-    mix-blend-mode: normal;
     border-radius: 20px;
     border: none;
     text-indent: 10px;
-    font-family: Arial, Helvetica, sans-serif;
     font-family: 'Poppins', sans-serif;
-    margin-right:1vw;
+    margin-right: 1vw;
     transition: width 1s ease-in-out;}
 #searchBar::placeholder {
     color: rgb(111, 111, 111);}
+#eventi_salvati img,
+#new_event_nav img,
+#profilo_nav img {
+    width: 30px;
+    height: 30px;
+}
+#collegamenti_nav nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+#collegamenti_nav nav ul li {
+    margin-right: 5vh;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2vw;
+    text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+#hamburger_nav button {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: none;
+}
+
+#hamburger_nav img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#breadcrumb_header nav {
+    padding-left: 1vw;
+    font-family: 'Poppins', sans-serif;
+    margin-top: -10px;
+}
+
+
 .bottoneStar {
     border-radius: 50%; 
     width: 7vh; 
@@ -154,18 +363,17 @@ input[type="text" ] #searchBar {
     object-fit: cover; 
     border-radius: 50%;}
 #searchButton {
-    margin-right: 1vh;
-    border-radius: 50%; 
-    width: 7vh; 
-    height: 7vh; 
-    overflow: hidden; 
-    border: none;}
-#searchButton img{
-    padding-top: 5px;
-    width: 90%;
-    height: auto; 
-    border: none; 
-    object-fit: cover;}
+    border-radius: 50%;
+    width: 7vh;
+    height: 7vh;
+    border: none;
+    background: none;
+}
+#searchButton img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 #searchButton, .bottoneStar, .bottoneHamburger {
     position: relative;
     margin-bottom: -6vh;}
@@ -176,6 +384,22 @@ header:after {
     display: block;
     border-bottom: 1px solid #ccc;
     margin-top: 10px;}
+
+
+
+    @media (max-width: 768px) {
+        #navbar_header {
+            display: none;
+        }
+    
+        #hamburger_nav {
+            display: block;
+        }
+    }
+ */
+
+
+
 /*------------------------------------------------------------SKIP PRINCIPALE---------------------------------------------------------*/
 .visually-hidden {
     position: absolute;
@@ -1628,7 +1852,7 @@ textarea {
     color: #333;
     text-align: center;
     margin-bottom: 20px;}
-#partner-container .partner-text-why {
+#partner-container #partner-text-why {
     font-size: 1.4em;
     color: #2b2b2b;
     text-align: center;
@@ -2152,7 +2376,7 @@ textarea {
 @media screen and (max-width: 830px) 
 { 
     /*---------------------------INTESTAZIONE---------------------------*/
-    .bottoneStar {
+    /* .bottoneStar {
         position: relative;
         margin-left: 13vw;
         margin-bottom: -1vh;}
@@ -2191,7 +2415,7 @@ textarea {
         width: 6vh; 
         height: 6vh; 
         margin: auto; 
-        margin-left: 6vh;}
+        margin-left: 2vh;}
     header .bottoneHamburger, #searchButton,.bottoneStar, #searchBar {
         display: inline-block; 
         vertical-align: middle;}
@@ -2215,7 +2439,7 @@ textarea {
     header .linkPagina{
         display: none;}
     .bottonePlus, .bottoneProfilo{
-        display: none;}
+        display: none;} */
     /*---------------------------EVENTI CREATI---------------------------*/
     .cardCreato-ev { 
         width: 100%;}
@@ -2302,7 +2526,7 @@ textarea {
 }
 @media screen and (max-width: 980px) {
     /*---------------------------INTESTAZIONE--------------------------*/
-    #searchButton, .bottoneStar {
+    /* #searchButton, .bottoneStar {
         height: 5vh;
         width: 5vh;}
     ul.linkPagina li {
@@ -2311,7 +2535,7 @@ textarea {
         font-family: 'Roboto', sans-serif;
         font-size: 0.8em;
         margin-right: 5vh; 
-        text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);}
+        text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);} */
 }
 @media screen and (max-width: 1000px) 
 { 
@@ -2341,10 +2565,10 @@ textarea {
 }
 @media screen and (max-width: 1100px) {
     /*----------------------------INTESTAZIONE--------------------------*/
-    #searchBar {
+    /* #searchBar {
         width: 40vh; 
         height: 6vh; 
-        transition: width 1s ease-in-out;}
+        transition: width 1s ease-in-out;} */
 }
 @media screen and (max-width: 1700px) {
     /*------------------------PROFILO CREAZIONE-------------------------*/
