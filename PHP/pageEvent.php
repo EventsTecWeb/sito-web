@@ -116,18 +116,18 @@ $is_creator = ($userId == $row['creatore_id']);
 
 $immagine = '<div class="boxImage-pe">
 <div class="imgEvent-pe">
-    <img src="' . $row['url_immagine'] . '" alt="immagine evento">
+    <img src="' . $row['url_immagine'] . '">
 </div>
 </div>';
 
 $evento = '<div id="pannello-principale-pe">
     <div class="containerPrincipale-pe">
         <div class="container_sx-pe">
-            <h2>' . $row['titolo'] . '</h2>
-            <p class="dataEvento-pe">Inizio: <time datetime="' . $row['data_inizio'] . '">' . $data_inizio . ' alle ore ' . $orario_inizio . '</time></p>
-            <p class="dataEvento-pe">Fine: <time datetime="' . $row['data_fine'] . '">' . $data_fine . ' alle ore ' . $orario_fine . '</time></p>
-            <p>Luogo: ' . $row['luogo'] . '</p>
-            <p>Prezzo: ' . $row['costo'] . '</p>
+            <h2 tabindex="0">' . $row['titolo'] . '</h2>
+            <p class="dataEvento-pe" tabindex="0">Inizio: <time datetime="' . $row['data_inizio'] . '">' . $data_inizio . ' alle ore ' . $orario_inizio . '</time></p>
+            <p class="dataEvento-pe" tabindex="0">Fine: <time datetime="' . $row['data_fine'] . '">' . $data_fine . ' alle ore ' . $orario_fine . '</time></p>
+            <p tabindex="0">Luogo: ' . $row['luogo'] . '</p>
+            <p tabindex="0">Prezzo: ' . $row['costo'] . '</p>
         </div>
         <div class="container_dx-pe">';
 if (interessato($conn, $_SESSION['user_id'], $_GET['evento'])) {
@@ -149,13 +149,13 @@ $evento .= '</div>
         <h2><span style="font-weight:bold;">Dettagli</span></h2>
         <div class="accountEvento-pe">
             <img src="../Images/idea.png" alt="Account">
-            <p class="accountName-pe">Evento di <span style="font-weight:bold;">' . $username_creatore . '</span></p>
+            <p class="accountName-pe" tabindex="0">Evento di <span style="font-weight:bold;">' . $username_creatore . '</span></p>
         </div>
         <div class="personeInteressate-pe">
             <img src="../Images/people_icon_small.png" alt="Immagine persone interessate">
-            <p class="peopleInterested-pe">' . $frase_partecipanti . '</p>
+            <p class="peopleInterested-pe" tabindex="0">' . $frase_partecipanti . '</p>
         </div>
-        <div class="descrizione-pe"><span style="font-weight:bold;">Descrizione: </span>' . $row['descrizione'] . '</div>
+        <div class="descrizione-pe" tabindex="0"><span style="font-weight:bold;">Descrizione: </span>' . $row['descrizione'] . '</div>
     </div>
 </div>';
 

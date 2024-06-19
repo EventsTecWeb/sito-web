@@ -53,6 +53,10 @@ function getEventi($conn) {
     return $result;
 }
 
+function validateEmail($email) {
+    return filter_var($email, FILTER_VALIDATE_EMAIL);
+}
+
 function getEventiByTitolo($conn, $titolo)
 {
     $queryEventi = "SELECT * 
@@ -80,6 +84,11 @@ function getEventiByTitolo($conn, $titolo)
         return False;
     }
 }
+
+function validateName($name) {
+    return preg_match('/^[a-zA-Z\s\']+$/', $name);
+}
+
 
 function getEventiByID($conn, $id)
 {
