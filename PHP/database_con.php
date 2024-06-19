@@ -2,7 +2,7 @@
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "prova_tecweb";
+    $dbname = "events";
     try {
         $conn = new mysqli($servername, $username, $password, $dbname);
                 if ($conn->connect_error) {
