@@ -4,12 +4,28 @@ session_start();
 
 $registration_feedback = '';
 $template = file_get_contents('../HTML/regNav.html');
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $error_count = 1;
     $required_fields = ['username', 'password', 'email', 'password_confirm', 'nome', 'cognome'];
     foreach ($required_fields as $field) {
         if (empty($_POST[$field])) {
             $registration_feedback .= "<p class='signin-error' tabindex='0'>Il campo $field è obbligatorio</p>";
+            $error_count++;
+        }
+    }
+    if ($error_count === 1) {
+        if (!validateName($_POST['nome'])) {
+            $registration_feedback .= "<p class='signin-error' tabindex='0'>Il nome contiene caratteri non validi</p>";
+            $error_count++;
+        }
+        if (!validateName($_POST['cognome'])) {
+            $registration_feedback .= "<p class='signin-error' tabindex='0'>Il cognome contiene caratteri non validi</p>";
+            $error_count++;
+        }
+        if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+            $registration_feedback .= "<p class='signin-error' tabindex='0'>L'email non è valida</p>";
             $error_count++;
         }
     }
@@ -41,10 +57,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($existing_user_by_email) {
             $registration_feedback .= "<p class='signin-error' tabindex='0'>Questa email è già stata utilizzata all'interno del nostro sito</p>";
             $error_count++;
-            
         } 
         if ($error_count === 1) {
-            $res = effettuaRegistrazione($conn, $email, $username, $nome, $cognome, $password,"Altro","Pubblico");
+            $res = effettuaRegistrazione($conn, $email, $username, $nome, $cognome, $password, "Altro", "Pubblico");
             if ($res === null) {
                 $res = getUserByMailOrUsername($conn, $username);
                 if ($res === false) {
@@ -70,5 +85,4 @@ if (!empty($registration_feedback)) {
 
 echo $template;
 $conn->close();
-
 ?>

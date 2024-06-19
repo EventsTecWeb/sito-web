@@ -48,44 +48,42 @@ if (isset($_SESSION['username']) || isset($_SESSION['email'])) {
             }
 
             if ($uploadOk && !empty($eventName) && !empty($eventStartDate)) {
-                $ris = inserisciEvento($conn, $eventName, $eventDescription, $eventStartDate, $eventEndDate, $eventStartTime, $eventEndTime, $eventLocation, $eventCost, $eventCategory, $userId, null);
+                if (isset($_FILES["fileToUpload"]) && $_FILES["fileToUpload"]["error"] == 0) {
+                    $imageFileType = strtolower(pathinfo($_FILES["fileToUpload"]["name"], PATHINFO_EXTENSION));
+                    $target_file = $target_dir . 'event_' . uniqid() . '.' . $imageFileType;
+                    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
 
-                if ($ris !== true) {
-                    $messaggio .= $ris;
-                } else {
-                    $eventId = $conn->insert_id;
-                    $messaggio .= "<p class='success'>Evento inserito con successo.</p>";
+                    if ($check === false) {
+                        $messaggio .= "<p class='impo-error'>Il file non è un'immagine.</p>";
+                        $uploadOk = 0;
+                    }
 
-                    if (isset($_FILES["fileToUpload"]) && $_FILES["fileToUpload"]["error"] == 0) {
-                        $imageFileType = strtolower(pathinfo($_FILES["fileToUpload"]["name"], PATHINFO_EXTENSION));
-                        $target_file = $target_dir . 'event_' . $eventId . '.' . $imageFileType;
-                        $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+                    if ($_FILES["fileToUpload"]["size"] > 500000) {
+                        $messaggio .= "<p class='impo-error'>Il file è troppo grande.</p>";
+                        $uploadOk = 0;
+                    }
 
-                        if ($check === false) {
-                            $messaggio .= "Il file non è un'immagine.<br>";
-                            $uploadOk = 0;
-                        }
+                    if (!in_array($imageFileType, ['jpg', 'png', 'jpeg', 'gif'])) {
+                        $messaggio .= "<p class='impo-error'>Solo i formati JPG, JPEG, PNG e GIF sono permessi.</p>";
+                        $uploadOk = 0;
+                    }
 
-                        if ($_FILES["fileToUpload"]["size"] > 500000) {
-                            $messaggio .= "Il file è troppo grande.<br>";
-                            $uploadOk = 0;
-                        }
+                    if ($uploadOk) {
+                        if (resizeImage($_FILES["fileToUpload"]["tmp_name"], $target_file, $fixed_width, $fixed_height)) {
+                            $eventImageURL = $target_file;
+                            $ris = inserisciEvento($conn, $eventName, $eventDescription, $eventStartDate, $eventEndDate, $eventStartTime, $eventEndTime, $eventLocation, $eventCost, $eventCategory, $userId, $eventImageURL);
 
-                        if (!in_array($imageFileType, ['jpg', 'png', 'jpeg', 'gif'])) {
-                            $messaggio .= "Solo i formati JPG, JPEG, PNG e GIF sono permessi.<br>";
-                            $uploadOk = 0;
-                        }
-
-                        if ($uploadOk) {
-                            if (resizeImage($_FILES["fileToUpload"]["tmp_name"], $target_file, $fixed_width, $fixed_height)) {
-                                $eventImageURL = $target_file;
-                                updateEventImage($conn, $eventId, $eventImageURL);
-                                $messaggio .= "<p class='success'>Immagine caricata con successo.</p>";
+                            if ($ris !== true) {
+                                $messaggio .= "<p class='impo-error'>" . $ris . "</p>";
                             } else {
-                                $messaggio .= "Non è stato possibile caricare la foto.<br>";
+                                $messaggio .= "<p class='success'>Evento inserito con successo.</p>";
                             }
+                        } else {
+                            $messaggio .= "<p class='impo-error'>Non è stato possibile caricare la foto.</p>";
                         }
                     }
+                } else {
+                    $messaggio .= "<p class='impo-error'>Caricamento dell'immagine obbligatorio.</p>";
                 }
             } else {
                 $messaggio .= "<p class='impo-error'>I campi Nome e Data inizio sono obbligatori.</p>";

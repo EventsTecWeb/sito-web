@@ -21,48 +21,66 @@ if(isset($_POST["day"]) and isset($_POST["month"]) and isset($_POST["year"])){
 }
 
 if(isset($_SESSION['username']) || isset($_SESSION['email'])) {
+    $errors = [];
+
     if(isset($_POST["day"]) and isset($_POST["month"]) and isset($_POST["year"])){
         insertUserDateOfBirth($conn, $_SESSION['user_id'], $dateOfBirth);
     }
+
     if(isset($_POST["email"])){
         $newEmail = clearInput($_POST["email"]);
-        $currentUserEmail = isset($_SESSION['email']) ? $_SESSION['email'] : $_SESSION['username'];
-        if ($newEmail !== $currentUserEmail) {
-            $existingUser = getUserByMailOrUsername($conn, $newEmail);
-            if($existingUser) {
-                echo "<script>alert('Questa email è già associata a un altro utente. Si prega di scegliere un\'altra email.');</script>";
-            }else{
-                updateUserEmail($conn, $_SESSION['user_id'], $newEmail);        
-                $_SESSION["email"] = $newEmail;
+        if (!validateEmail($newEmail)) {
+            $errors[] = "L'email non è valida";
+        } else {
+            $currentUserEmail = isset($_SESSION['email']) ? $_SESSION['email'] : $_SESSION['username'];
+            if ($newEmail !== $currentUserEmail) {
+                $existingUser = getUserByMailOrUsername($conn, $newEmail);
+                if($existingUser) {
+                    $errors[] = "Questa email è già associata a un altro utente. Si prega di scegliere un'altra email.";
+                } else {
+                    updateUserEmail($conn, $_SESSION['user_id'], $newEmail);
+                    $_SESSION["email"] = $newEmail;
+                }
             }
         }
     }
+
     if(isset($_POST["telefono"])){
         updateUserPhone($conn, $_SESSION['user_id'], clearInput($_POST["telefono"]));
     }
+
     if(isset($_POST["genere"])){
         updateUserGender($conn, $_SESSION['user_id'], clearInput($_POST["genere"]));
     }
+
     if(isset($_POST["username"])){
         $newUsername = clearInput($_POST["username"]);
         $currentUserEmail = isset($_SESSION['email']) ? $_SESSION['email'] : $_SESSION['username'];
         if ($newUsername !== $currentUserEmail) {
             $existingUser = getUserByMailOrUsername($conn, $newUsername);
             if($existingUser) {
-                echo "<script>alert('Questo username è già associato a un altro utente. Si prega di scegliere un\'altro username.');</script>";
-            }else{
+                $errors[] = "Questo username è già associato a un altro utente. Si prega di scegliere un altro username.";
+            } else {
                 updateUserUsername($conn, $_SESSION['user_id'], clearInput($_POST["username"]));
                 $_SESSION["username"] = $newUsername;
             }
         }
     }
+
     if(isset($_POST["nome"]) && isset($_POST["cognome"])) {
         $nome = clearInput($_POST["nome"]);
         $cognome = clearInput($_POST["cognome"]);
-        if(!empty($nome) && !empty($cognome)) {
+        if (!validateName($nome)) {
+            $errors[] = "Il nome contiene caratteri non validi";
+        }
+        if (!validateName($cognome)) {
+            $errors[] = "Il cognome contiene caratteri non validi";
+        }
+        if(empty($errors)) {
             updateUserName($conn, $_SESSION['user_id'], $nome, $cognome);
         }
     }
+
     $user = isset($_SESSION['username']) ? $_SESSION['username'] : $_SESSION['email'];
     $userData = getUserByMailOrUsername($conn, $user);
     if ($userData) {
@@ -82,6 +100,13 @@ if(isset($_SESSION['username']) || isset($_SESSION['email'])) {
         $template = str_replace('{TELEFONO}', $telefono, $template);
         $template = str_replace('{PROFILE_IMAGE_PATH}', $profile_image_path, $template);
     }
+
+    if (!empty($errors)) {
+        foreach ($errors as $error) {
+            $template .= "<p class='signin-error' tabindex='0'>{$error}</p>";
+        }
+    }
 }
 echo $template;
+$conn->close();
 ?>
