@@ -17,26 +17,25 @@
   <header>
     <h1>Events</h1>
     <nav aria-label="breadcrumb" id="bread">
-      <p>Ti trovi in: <span lang="en"><a id="returnHome" href="../HTML/index.html">Index</a></span> >> Accedi</p>
+      <p>Ti trovi in: <span lang="en"><a id="returnHome" href="../HTML/index.html">Index</a></span> &gt;&gt; Accedi</p>
     </nav>
-</header>
-<div id="overlay" class="overlay"></div>
+  </header>
+  <div id="overlay" class="overlay"></div>
     <div id="pannello-principale-acc">
-        <div id="container-sinistro-acc">
-          <div class="image-container-ragComp-acc">
-          </div>
-          <p id="infoNoAccount-acc">Non hai un account: <a></a><a href="../PHP/registrazione.php" id="linkRegistrati">Registrati</a></p>
+      <div id="container-sinistro-acc">
+        <div class="image-container-ragComp-acc">
         </div>
-        <div id="container-destro-acc">
-          <p id="accediScritta-acc">Accedi</p>
-          <form action="../PHP/accessNav.php" method="POST">
-            <input type="text" id="usernameInput-acc" name="username" placeholder="Username">
-            <input type="password" id="passwordInput-acc" name="password" placeholder="Password">
-            <input type="submit" class="buttonSubmit" value="Accedi">
-          </form>
-          {ERRORE}
-        </div>
+        <p id="infoNoAccount-acc">Non hai un account: <a href="../PHP/registrazione.php" id="linkRegistrati">Registrati</a></p>
       </div>
-      
+      <div id="container-destro-acc">
+      <p id="accediScritta-acc">Accedi</p>
+      <form action="../PHP/accessNav.php" method="POST">
+        <input type="text" id="usernameInput-acc" name="username" placeholder="Username">
+        <input type="password" id="passwordInput-acc" name="password" placeholder="Password">
+        <input type="submit" class="buttonSubmit" value="Accedi">
+      </form>
+      {ERRORE}
+    </div>
+  </div> 
 </body>
 </html>

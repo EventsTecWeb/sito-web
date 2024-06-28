@@ -16,79 +16,83 @@
   <script src="../JS/Cookies/cookies.js"></script>
 </head>
 <body>
-  <a class="skip-link visually-hidden" href="#a_evento" id="skipLink">Salta al contenuto principale</a>
-  <header>
-    <div id="header_container">
-        <a href="../PHP/home.php">
-            <h1>Events</h1>
-        </a>
-        <div id="navbar_header">
-            <div id="left_half_nav">
-                <div id="searchbar_nav">
-                    <form id="searchBarA" action="../PHP/searchbar.php" role="search" method="POST">
-                        <input type="text" id="searchBar" name="cerca_evento" placeholder="Cerca...">
-                        <button type="submit" id="searchButton">
-                            <img src="../Images/search.png" alt="Pulsante per eseguire la ricerca">
+    <a class="skip-link visually-hidden" href="#a_evento" id="skipLink">Salta al contenuto principale</a>
+    <header>
+        <div id="header_container">
+            <a href="../PHP/home.php">
+                <h1>Events</h1>
+            </a>
+            <div id="navbar_header">
+                <div id="left_half_nav">
+                    <div id="searchbar_nav">
+                        <form id="searchBarA" action="../PHP/searchbar.php" role="search" method="POST">
+                            <input type="text" id="searchBar" name="cerca_evento" placeholder="Cerca..." aria-label="Barra di ricerca">
+                            <button type="submit" id="searchButton" aria-label="Pulsante per eseguire la ricerca">
+                                <img src="../Images/search.png" >
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div id="center_nav">
+                    <div id="collegamenti_nav">
+                        <nav aria-label="Link Navbar">
+                            <ul class="linkPagina">
+                                <li><a class="navbarLink" href="../PHP/home.php">HOMEPAGE</a></li>
+                                <li><a class="navbarLink" href="../HTML/partner.html">PARTNERS</a></li>
+                                <li><a class="navbarLink" href="../HTML/chiSiamo.html">CHI SIAMO</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div id="right_half_nav">
+                    <div id="new_event_nav">
+                        <a href="../PHP/indexProfilo.php">
+                            <img src="../Images/add.png" alt="Crea un nuovo evento">
+                        </a>
+                    </div>
+                    <div id="eventi_salvati">
+                        <a href="../PHP/eventi_salvati.php">
+                            <img src="../Images/star_full.png" alt="Vai alla pagina contenente i tuoi eventi salvati">
+                        </a>
+                    </div>
+                    <div id="profilo_nav">
+                        <a href="../PHP/infoPersonali.php">
+                            <img src="../Images/user.png" alt="Accedi ai dati del tuo profilo">
+                        </a>
+                    </div>
+                    <div id="hamburger_nav">
+                        <button class="bottoneHamburger" aria-label="Apri il menu ad hamburger">
+                            <img src="../Images/menu-button-of-three-horizontal-lines.png">
                         </button>
-                    </form>
-                </div>
-            </div>
-            <div id="center_nav">
-                <div id="collegamenti_nav">
-                    <nav>
-                        <ul class="linkPagina">
-                            <li><a id="PartnersLink" href="../PHP/home.php">HOMEPAGE</a></li>
-                            <li><a id="PartnersLink" href="../HTML/partner.html">PARTNERS</a></li>
-                            <li><a id="ChiSiamoLink" href="../HTML/chiSiamo.html">CHI SIAMO</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-            <div id="right_half_nav">
-                <div id="new_event_nav">
-                    <a href="../PHP/indexProfilo.php">
-                        <img src="../Images/add.png" alt="Crea un nuovo evento">
-                    </a>
-                </div>
-                <div id="eventi_salvati">
-                    <a href="../PHP/eventi_salvati.php">
-                        <img src="../Images/star_full.png" alt="Vai alla pagina contenente i tuoi eventi salvati">
-                    </a>
-                </div>
-                <div id="profilo_nav">
-                    <a href="../PHP/infoPersonali.php">
-                        <img src="../Images/user.png" alt="Accedi ai dati del tuo profilo">
-                    </a>
-                </div>
-                <div id="hamburger_nav">
-                    <button class="bottoneHamburger">
-                        <img src="../Images/menu-button-of-three-horizontal-lines.png" alt="Apri il menu ad hamburger">
-                    </button>
+                    </div>
                 </div>
             </div>
         </div>
+    </header>
+    <div id="breadcrumb_header">
+        <nav aria-label="breadcrumb" id="bread">
+            <p>Ti trovi in: <span lang="en"><a id="returnHome" href="../PHP/home.php">Home</a></span> &gt;&gt; Eventi Creati </p>
+        </nav>
     </div>
-</header>
-    
-  <div id="overlay" class="overlay"></div>
+    <div id="overlay" class="overlay"></div>
     <div id="sideMenu" class="side-menu">
-      <a href="javascript:void(0)" class="closebtn" tabindex="-1">&times;</a>
-      <a href="../PHP/home.php" tabindex="-1">Homepage</a>
-      <a href="../PHP/infoPersonali.php" tabindex="-1">Profilo</a>
-      <a href="../PHP/indexProfilo.php" tabindex="-1">Crea Evento</a>
-      <a href="../HTML/chiSiamo.html" tabindex="-1">Chi siamo</a>
-      <a href="../HTML/partner.html" tabindex="-1">Partners</a>
+        <a href="javascript:void(0)" class="closebtn" tabindex="-1">&times;</a>
+        <a href="../PHP/home.php" tabindex="-1">Homepage</a>
+        <a href="../PHP/infoPersonali.php" tabindex="-1">Profilo</a>
+        <a href="../PHP/indexProfilo.php" tabindex="-1">Crea Evento</a>
+        <a href="../HTML/chiSiamo.html" tabindex="-1">Chi siamo</a>
+        <a href="../HTML/partner.html" tabindex="-1">Partners</a>
     </div>
-    <nav id="menuCenter">
-      <ul class="menu-orizzontale">
-          <li><a href="../PHP/infoPersonali.php">Informazioni Personali</a></li>
-          <li><a href="../PHP/impo_sicu.php">Impostazioni e Sicurezza</a></li>
-          <li><a id="mo-pulsanteSingolo" href="../PHP/profiloEv.php">Eventi Creati</a></li>
-          <li><a href="../PHP/eventi_salvati.php">Eventi Salvati</a></li>
-      </ul>
+    <nav id="menuCenter" aria-label="Menu centrale">
+        <ul class="menu-orizzontale">
+            <li><a href="../PHP/infoPersonali.php">Informazioni Personali</a></li>
+            <li><a href="../PHP/impo_sicu.php">Impostazioni e Sicurezza</a></li>
+            <li><a id="mo-pulsanteSingolo" href="../PHP/profiloEv.php">Eventi Creati</a></li>
+            <li><a href="../PHP/eventi_salvati.php">Eventi Salvati</a></li>
+        </ul>
     </nav>
     <div class="wrapper_eventi">
-      <nav id="menuleft">
+        <nav id="menuleft" aria-label="Menu laterale">
         <ul>
             <li><button onclick="window.location.href='../PHP/infoPersonali.php'">Informazioni Personali</button></li>
             <li><button onclick="window.location.href='../PHP/impo_sicu.php'">Impostazioni e Sicurezza</button></li>
@@ -96,17 +100,17 @@
             <li><button onclick="window.location.href='../PHP/eventi_salvati.php'">Eventi Salvati</button></li>
             <li><button onclick="window.location.href='../PHP/indexProfilo.php'">Crea evento</button></li>
         </ul>
-      </nav>
-      <div id="eventiCreati-ev">
+        </nav>
+        <div id="eventiCreati-ev">
         {EVENTICREATI}
-      </div>
+        </div>
     </div>
     <footer id="footer">
-      <div class="torna-su">
-          <a href="#" id="tornaSuBtn" style="color: white;">
-              <img src="../Images/up-arrow.png" alt="Torna all'inizio della pagina">
-          </a>
-      </div>                
-  </footer>
+        <div class="torna-su">
+            <a href="#" id="tornaSuBtn" style="color: white;">
+                <img src="../Images/up-arrow.png" alt="Torna all'inizio della pagina">
+            </a>
+        </div>                
+    </footer>
 </body>
 </html>

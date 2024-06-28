@@ -28,20 +28,20 @@
                 <div id="left_half_nav">
                     <div id="searchbar_nav">
                         <form id="searchBarA" action="../PHP/searchbar.php" role="search" method="POST">
-                            <input type="text" id="searchBar" name="cerca_evento" placeholder="Cerca...">
-                            <button type="submit" id="searchButton">
-                                <img src="../Images/search.png" alt="Pulsante per eseguire la ricerca">
+                            <input type="text" id="searchBar" name="cerca_evento" placeholder="Cerca..." aria-label="Barra di ricerca">
+                            <button type="submit" id="searchButton" aria-label="Pulsante per eseguire la ricerca">
+                                <img src="../Images/search.png" >
                             </button>
                         </form>
                     </div>
                 </div>
                 <div id="center_nav">
                     <div id="collegamenti_nav">
-                        <nav>
+                        <nav aria-label="Link Navbar">
                             <ul class="linkPagina">
-                                <li><a id="PartnersLink" href="../PHP/home.php">HOMEPAGE</a></li>
-                                <li><a id="PartnersLink" href="../HTML/partner.html">PARTNERS</a></li>
-                                <li><a id="ChiSiamoLink" href="../HTML/chiSiamo.html">CHI SIAMO</a></li>
+                                <li><a class="navbarLink" href="../PHP/home.php">HOMEPAGE</a></li>
+                                <li><a class="navbarLink" href="../HTML/partner.html">PARTNERS</a></li>
+                                <li><a class="navbarLink" href="../HTML/chiSiamo.html">CHI SIAMO</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -63,14 +63,19 @@
                         </a>
                     </div>
                     <div id="hamburger_nav">
-                        <button class="bottoneHamburger">
-                            <img src="../Images/menu-button-of-three-horizontal-lines.png" alt="Apri il menu ad hamburger">
+                        <button class="bottoneHamburger" aria-label="Apri il menu ad hamburger">
+                            <img src="../Images/menu-button-of-three-horizontal-lines.png">
                         </button>
                     </div>
                 </div>
             </div>
         </div>
     </header>
+    <div id="breadcrumb_header">
+        <nav aria-label="breadcrumb" id="bread">
+            <p>Ti trovi in: <span lang="en"><a id="returnHome" href="../PHP/home.php">Home</a></span> &gt;&gt; Informazioni Personali </p>
+        </nav>
+    </div>
     <div id="overlay" class="overlay"></div>
         <div id="sideMenu" class="side-menu">
             <a href="javascript:void(0)" class="closebtn" tabindex="-1">&times;</a>
@@ -80,7 +85,7 @@
             <a href="../HTML/chiSiamo.html" tabindex="-1">Chi siamo</a>
             <a href="../HTML/partner.html" tabindex="-1">Partners</a>
         </div>
-        <nav id="menuCenter">
+        <nav id="menuCenter" aria-label="Menu orizzontale">
             <ul class="menu-orizzontale">
                 <li><a id="mo-pulsanteSingolo" href="#">Informazioni Personali</a></li>
                 <li><a href="../PHP/impo_sicu.php">Impostazioni e Sicurezza</a></li>
@@ -89,7 +94,7 @@
             </ul>
         </nav>
         <div class="wrapper">
-            <nav id="menuleft">
+            <nav id="menuleft" aria-label="Menu laterale">
                 <ul>
                     <li><button id="buttonInfoPersonali" onclick="window.location.href='#'">Informazioni Personali</button></li>
                     <li><button onclick="window.location.href='../PHP/impo_sicu.php'">Impostazioni e Sicurezza</button></li>
@@ -100,10 +105,10 @@
             </nav>
             <div class="settings-ip">
                 <h2>Informazioni Personali</h2>
-                <div class="option-ip" tabindex="0" aria-label="Sezione per modificare il tuo nome e cognome">
-                    <span aria-hidden="true">Nome e Cognome:</span>
+                <div class="option-ip">
+                    <span>Nome e Cognome:</span>
                     <p id="nome-ip" aria-hidden="true">{NOME}</p>
-                    <img aria-hidden="true" src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">
+                    <img src="../Images/down-filled-triangular-arrow.png" alt="Sezione per modificare Nome e Cognome" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png" tabindex="0">
                 </div>
                 <div class="content-ip">
                     <div class="privacy-ip">
@@ -128,10 +133,10 @@
                     </div>
                 </div>
                 
-                <div class="option-ip" tabindex="0" aria-label="Sezione per modificare il tuo username">
+                <div class="option-ip">
                     <span lang="en">Username:</span>
                     <p id="username-ip">{USERNAME}</p>
-                    <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">        
+                    <img src="../Images/down-filled-triangular-arrow.png" alt="Sezione per modificare Username" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png" tabindex="0">        
                 </div>
                 <div class="content-ip">
                     <form action="../PHP/infoPersonali.php" method="POST">
@@ -153,10 +158,10 @@
                     </form>
                 </div>
 
-                <div class="option-ip" tabindex="0" aria-label="Sezione per modificare il tuo genere">
+                <div class="option-ip">
                     <span>Genere:</span>
                     <p id="genere-ip">{GENERE}</p>
-                    <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">
+                    <img src="../Images/down-filled-triangular-arrow.png" alt="Sezione per modificare Genere" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png" tabindex="0">
                 </div>
                 <div class="content-ip">
                 <div class="privacy-ip">
@@ -187,10 +192,10 @@
                 </div>
             </div>
 
-            <div class="option-ip" tabindex="0" aria-label="Sezione per modificare la tua data di nascita">
+            <div class="option-ip">
                 <span>Data di nascita:</span>
                 <p id="data-ip">{DATANASCITA}</p>         
-                <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">
+                <img src="../Images/down-filled-triangular-arrow.png" alt="Sezione per modificare Data di Nascita" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png" tabindex="0">
             </div>
             <div class="content-ip">
                 <form action="../PHP/infoPersonali.php" method="POST">
@@ -198,8 +203,8 @@
                         <h2>Modifica data di nascita</h2>
                         <div class="separator-ip"></div>
                         <div class="date-input-ip">
-                            <input type="number" id="day-ip" name="day" placeholder="Giorno" min="1" max="31" required>
-                            <select id="month-ip" name="month" onchange="updateDays()" required>
+                            <input type="number" id="day-ip" name="day" aria-label="Seleziona un giorno" placeholder="Giorno" min="1" max="31" required>
+                            <select id="month-ip" name="month" aria-label="Seleziona un mese" onchange="updateDays()" required>
                                 <option value="" disabled selected>Mese</option>
                                 <option value="01">Gennaio</option>
                                 <option value="02">Febbraio</option>
@@ -214,22 +219,22 @@
                                 <option value="11">Novembre</option>
                                 <option value="12">Dicembre</option>
                             </select>
-                            <input type="number" id="year-ip" name="year" placeholder="Anno" min="1900" max="2024" required>
+                            <input type="number" id="year-ip" name="year" aria-label="Seleziona un anno" placeholder="Anno" min="1900" max="2024" required>
                         </div>
                         <p class="domanda-ip">Chi può vedere la tua data di nascita?</p>
-                            <div class="center-align-ip">
-                                <img class="publicInfo-ip" src="../Images/lock.png" alt="Icona informazione privata"> Queste informazioni sono private, puoi vederle solo te
-                                <button type="submit" class="salva-ip" onclick="aggiornaDataNascita()">Salva</button>
-                            </div>
+                        <div class="center-align-ip">
+                            <img class="publicInfo-ip" src="../Images/lock.png" alt="Icona informazione privata"> Queste informazioni sono private, puoi vederle solo te
+                            <button type="submit" class="salva-ip" onclick="aggiornaDataNascita()">Salva</button>
+                        </div>
                     </div>
                 </form>
             </div>
 
             <h2>Informazioni di contatto:</h2>
-            <div class="option-ip" tabindex="0" aria-label="Sezione per modificare la tua email">
+            <div class="option-ip">
                 <span lang="en">Email</span>
                 <p id="email-ip">{EMAIL}</p>
-                <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">
+                <img src="../Images/down-filled-triangular-arrow.png" alt="Sezione per modificare Email" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png" tabindex="0">
             </div>
             <div class="content-ip">
                 <div class="privacy-ip">
@@ -250,10 +255,10 @@
                     </form>           
                 </div>
             </div>
-            <div class="option-ip" tabindex="0" aria-label="Sezione per modificare il tuo numero di telefono">
+            <div class="option-ip">
                 <span>Numero di telefono:</span>
                 <p id="numero-ip">{TELEFONO}</p>
-                <img src="../Images/down-filled-triangular-arrow.png" alt="Dropdown Arrow" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png">        
+                <img src="../Images/down-filled-triangular-arrow.png" alt="Sezione per modificare Numero di Telefono" data-original-src="../Images/down-filled-triangular-arrow.png" data-alternate-src="../Images/down-filled-triangular-arrow-destra.png" tabindex="0">        
             </div>
             <div class="content-ip">
                 <form action="../PHP/infoPersonali.php" method="POST">

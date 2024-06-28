@@ -85,8 +85,4 @@ if (!empty($registration_feedback)) {
 
 echo $template;
 $conn->close();
-<<<<<<< HEAD
 ?>
-=======
-?>
->>>>>>> 96fb5c765cf37aaacf35b78d9c8bbdeedf33e8c2

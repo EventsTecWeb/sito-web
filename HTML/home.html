@@ -33,20 +33,20 @@
                     <div id="left_half_nav">
                         <div id="searchbar_nav">
                             <form id="searchBarA" action="../PHP/searchbar.php" role="search" method="POST">
-                                <input type="text" id="searchBar" name="cerca_evento" placeholder="Cerca...">
-                                <button type="submit" id="searchButton">
-                                    <img src="../Images/search.png" alt="Pulsante per eseguire la ricerca">
+                                <input type="text" id="searchBar" name="cerca_evento" placeholder="Cerca..." aria-label="Barra di ricerca">
+                                <button type="submit" id="searchButton" aria-label="Pulsante per eseguire la ricerca">
+                                    <img src="../Images/search.png">
                                 </button>
                             </form>
                         </div>
                     </div>
                     <div id="center_nav">
                         <div id="collegamenti_nav">
-                            <nav>
+                            <nav aria-label="Link Navbar">
                                 <ul class="linkPagina">
                                     <li>HOMEPAGE</li>
-                                    <li><a id="PartnersLink" href="../HTML/partner.html">PARTNERS</a></li>
-                                    <li><a id="ChiSiamoLink" href="../HTML/chiSiamo.html">CHI SIAMO</a></li>
+                                    <li><a class="navbarLink" href="../HTML/partner.html">PARTNERS</a></li>
+                                    <li><a class="navbarLink" href="../HTML/chiSiamo.html">CHI SIAMO</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -68,8 +68,8 @@
                             </a>
                         </div>
                         <div id="hamburger_nav">
-                            <button class="bottoneHamburger">
-                                <img src="../Images/menu-button-of-three-horizontal-lines.png" alt="Apri il menu ad hamburger">
+                            <button class="bottoneHamburger" aria-label="Apri il menu ad hamburger">
+                                <img src="../Images/menu-button-of-three-horizontal-lines.png" >
                             </button>
                         </div>
                     </div>
@@ -78,7 +78,7 @@
         </header>
         <div id="breadcrumb_header">
             <nav aria-label="breadcrumb" id="bread">
-                <p>Ti trovi in: <span lang="en"><a id="returnHome" href="../PHP/home.php">Home</a></span> &gt;&gt; Eventi Salvati </p>
+                <p>Ti trovi in: <span lang="en">Home</span></p>
             </nav>
         </div>
 		<div id="overlay" class="overlay">
@@ -99,19 +99,19 @@
                             <h2>Generi in evidenza:</h2>
                         </div>
                         <div class="home-evidenza-generi">
-                            <a href="#" id="ricerca-genere-musica">
+                            <a id="ricerca-genere-musica">
                                 <img src="../Images/musica.webp" alt="Ricerca genere musica" class="generiImmagini-home">
                                 <h3 aria-hidden="true">Musica</h3>
                             </a>
-                            <a href="#" id="ricerca-genere-arte">
+                            <a id="ricerca-genere-arte">
                                 <img src="../Images/arte.jpg" alt="Ricerca genere arte" class="generiImmagini-home">
                                 <h3 aria-hidden="true">Arte</h3>
                             </a>
-                            <a href="#" id="ricerca-genere-sport">
+                            <a id="ricerca-genere-sport">
                                 <img src="../Images/sport.jpg" alt="Ricerca genere sport" class="generiImmagini-home">
                                 <h3 aria-hidden="true">Sport</h3>
                             </a>
-                            <a href="#" id="ricerca-genere-teatro">
+                            <a id="ricerca-genere-teatro">
                                 <img src="../Images/teatro.jpg" alt="Ricerca genere teatro" class="generiImmagini-home">
                                 <h3 aria-hidden="true">Teatro</h3>
                             </a>
